@@ -147,10 +147,6 @@ article .gallery img {
   opacity: 0;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   filter: alpha(opacity=0);
-/*
-      &:first-of-type
-        //display block
-        opacity 1*/
 }
 article .gallery .control {
   opacity: 0;

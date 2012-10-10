@@ -77,7 +77,7 @@
           </div>
         
         <div class="alignright">
-          <a href="http://zespia.twblog/2010/07/31/cssedit-tw#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://zespia.tw/blog/2010/07/31/cssedit-tw#disqus_thread" class="comment-link">Comments</a>
         </div>
       
       <div class="clearfix"></div>
@@ -105,24 +105,27 @@
     </header>
     <div class="entry">
       
-        <pre>Error: Unknown logic tag at line 12: "blockquote".
-    at Object.exports.parse (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/lib/parser.js:256:23)
-    at createTemplate (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:84:35)
-    at getTemplate (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:124:26)
-    at Object.exports.compile (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:168:16)
-    at load (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/article.js:40:27)
-    at output (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:13:14)
-    at output (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:13:14)
-    at Object.exports.renderer.register.store.renderer.(anonymous function) [as md] (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/extend.js:34:9)
-    at Object.exports.render (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:29:20)
-    at load (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/article.js:37:14)</pre>
+        <p><img src="https://lh6.googleusercontent.com/-aD3LTmu8mrw/TxlEXkT230I/AAAAAAAAEN4/9qsi4VD_uPM/s0/ff16_06.jpg" alt="因為當天沒帶相機，所以沒有 Cosplay 照片，也沒有塗鴉板的照片，只能放場刊的照片充數了">
+
+</p>
+<p>豔陽高照的盛夏，數千人（大概）集結於台大體育館，就為了耐心守候這一天的到來，7/24~25 的開拓動漫祭！（開頭好像新聞報導？）本次因為沒跟團，所以時間非常自由，8 點半才從土城出發，到達時隊伍末端早已延伸至看不見會場的盡頭，旁邊是我根本不知道是啥小的鬼建築物，邊玩 PSP 邊喊腳麻，等到 10 點半開場，隊伍開始往前移動。
+
+</p>
+<p>說不定繞了台大一圈，經過了椰林大道和一堆學系進入會場之後，已經 11 點了，大致繞了 1F 一圈之後，找了幾個看起來人氣很旺的攤位排隊。（沒主見XD）大約 12 點，接到了朋友的電話，此時差不多已經採購結束（窮），於是前往跟朋友會合。
+
+</p>
+
       
     </div>
     <footer>
       
         
+          <div class="alignleft">
+            <a href="/blog/2010/07/25/ff-event-16#more" class="more-link">Read More</a>
+          </div>
+        
         <div class="alignright">
-          <a href="http://zespia.twblog/2010/07/25/ff-event-16#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://zespia.tw/blog/2010/07/25/ff-event-16#disqus_thread" class="comment-link">Comments</a>
         </div>
       
       <div class="clearfix"></div>
@@ -170,7 +173,7 @@
           </div>
         
         <div class="alignright">
-          <a href="http://zespia.twblog/2010/07/10/transmit-4-zh-tw#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://zespia.tw/blog/2010/07/10/transmit-4-zh-tw#disqus_thread" class="comment-link">Comments</a>
         </div>
       
       <div class="clearfix"></div>
@@ -218,7 +221,7 @@
           </div>
         
         <div class="alignright">
-          <a href="http://zespia.twblog/2010/07/05/mactubes-zh-tw#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://zespia.tw/blog/2010/07/05/mactubes-zh-tw#disqus_thread" class="comment-link">Comments</a>
         </div>
       
       <div class="clearfix"></div>
@@ -278,7 +281,7 @@
           </div>
         
         <div class="alignright">
-          <a href="http://zespia.twblog/2010/07/05/betterzip-zh-tw#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://zespia.tw/blog/2010/07/05/betterzip-zh-tw#disqus_thread" class="comment-link">Comments</a>
         </div>
       
       <div class="clearfix"></div>
@@ -367,6 +370,39 @@
 </div>
 
 
+<div class="widget twitter">
+  <h3 class="title">Tweets</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+(function($){
+  $.getScript('/js/moment.min.js', function(){
+    var url = 'https://api.twitter.com/1/statuses/user_timeline/tommy351.json?count=5&exclude_replies=' + (false ? 0 : 1) + '&trim_user=true&callback=?';
+
+    var linkify = function(text){
+      text = text
+        .replace(/(https?:\/\/)([\w\-:;?&=+.%#\/]+)/gi, '<a href="$1$2">$2</a>')
+        .replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>')
+        .replace(/(^|\W)#(\w+)/g, '$1<a href="http://search.twitter.com/search?q=%23$2">#$2</a>');
+
+      return text;
+    };
+
+    $.getJSON(url, function(json){
+      var result = '';
+
+      for (var i=0, len=json.length; i<len; i++){
+        var item = json[i];
+        result += '<li>' + linkify(item.text) + '<small>' + moment(item.created_at).fromNow() + '</small></li>';
+      }
+
+      $('#tweets').html(result);
+    });
+  })
+})(jQuery);
+</script>
+
 </aside>
     <div class="clearfix"></div>
   </div>
@@ -376,7 +412,10 @@
   
 </div>
 <div class="clearfix"></div></footer>
-  
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
 <script type="text/javascript">
 var disqus_shortname = 'zespiatw';
 
@@ -393,8 +432,6 @@ var disqus_script = 'count.js';
 }());
 </script>
 
-
-<script src="/js/gallery.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">

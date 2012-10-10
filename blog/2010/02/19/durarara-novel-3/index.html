@@ -53,17 +53,22 @@
     </header>
     <div class="entry">
       
-        <pre>Error: Unknown logic tag at line 13: "blockquote".
-    at Object.exports.parse (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/lib/parser.js:256:23)
-    at createTemplate (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:84:35)
-    at getTemplate (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:124:26)
-    at Object.exports.compile (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:168:16)
-    at load (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/article.js:40:27)
-    at output (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:13:14)
-    at output (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:13:14)
-    at Object.exports.renderer.register.store.renderer.(anonymous function) [as md] (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/extend.js:34:9)
-    at Object.exports.render (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:29:20)
-    at load (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/article.js:37:14)</pre>
+        <p><img src="https://lh5.googleusercontent.com/-FtO1tDwgVPM/TxqD26KLJ9I/AAAAAAAAEfk/yyPVIStrmA4/s0/durarara_03_01.jpg" alt="這本書真厚...（464頁）">
+
+</p>
+<p>這本書是跟上篇的天降之物 5 一起買回來的，花費 240 元，大概是受了動畫的影響，我才會去買這本書的吧。
+
+</p>
+<p>我從 6：00 看到 12：00，從第 2 集看到第 3 集，可說是非常爽快，裡頭都是一堆怪人（沒半個正常人！），發現杏里是「罪歌」的「母親」時也讓我嚇了一跳，~~明明杏里的胸部是那麼漂亮~~，可見動畫安排的伏筆還真多。
+
+</p>
+<p>另外，大概是因為太厚了，感覺插圖真少，不過透過作者的文筆也能自己想像就是了。
+
+</p>
+<p><blockquote>
+題外話：我的網誌明明副標寫「一些 ACG 的心得...」，卻直到現在都還沒有半個遊戲的文章，反而是漫畫和輕小說的文章，看來我得把 ACG 改成 ACN 了吧。
+</blockquote>
+</p>
       
     </div>
     <footer>
@@ -180,6 +185,39 @@
 </div>
 
 
+<div class="widget twitter">
+  <h3 class="title">Tweets</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+(function($){
+  $.getScript('/js/moment.min.js', function(){
+    var url = 'https://api.twitter.com/1/statuses/user_timeline/tommy351.json?count=5&exclude_replies=' + (false ? 0 : 1) + '&trim_user=true&callback=?';
+
+    var linkify = function(text){
+      text = text
+        .replace(/(https?:\/\/)([\w\-:;?&=+.%#\/]+)/gi, '<a href="$1$2">$2</a>')
+        .replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>')
+        .replace(/(^|\W)#(\w+)/g, '$1<a href="http://search.twitter.com/search?q=%23$2">#$2</a>');
+
+      return text;
+    };
+
+    $.getJSON(url, function(json){
+      var result = '';
+
+      for (var i=0, len=json.length; i<len; i++){
+        var item = json[i];
+        result += '<li>' + linkify(item.text) + '<small>' + moment(item.created_at).fromNow() + '</small></li>';
+      }
+
+      $('#tweets').html(result);
+    });
+  })
+})(jQuery);
+</script>
+
 </aside>
     <div class="clearfix"></div>
   </div>
@@ -189,7 +227,10 @@
   
 </div>
 <div class="clearfix"></div></footer>
-  
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
 <script type="text/javascript">
 var disqus_shortname = 'zespiatw';
 
@@ -206,8 +247,6 @@ var disqus_script = 'embed.js';
 }());
 </script>
 
-
-<script src="/js/gallery.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">

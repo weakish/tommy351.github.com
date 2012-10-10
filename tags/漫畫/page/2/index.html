@@ -54,24 +54,25 @@
     </header>
     <div class="entry">
       
-        <pre>Error: Unknown logic tag at line 25: "blockquote".
-    at Object.exports.parse (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/lib/parser.js:256:23)
-    at createTemplate (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:84:35)
-    at getTemplate (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:124:26)
-    at Object.exports.compile (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:168:16)
-    at load (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/article.js:40:27)
-    at output (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:13:14)
-    at output (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:13:14)
-    at Object.exports.renderer.register.store.renderer.(anonymous function) [as md] (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/extend.js:34:9)
-    at Object.exports.render (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:29:20)
-    at load (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/article.js:37:14)</pre>
+        <p><img src="https://lh4.googleusercontent.com/-BGaU_EM7XDE/TxqGCnOrufI/AAAAAAAAEgQ/CWux4H89T6w/s0/polyphonica_3_1.jpg" alt="">
+
+</p>
+<h2>第13奏 Choice</h2>
+<p>受到「嘆息的異邦人」恐怖攻擊的尤吉莉兩姊妹，朵莉絲拉耶決定犧牲自己的生命來救回兩人的生命，但這是個失敗率極高的魔法，在多重的選擇下，尤吉利先生決定演奏神曲，透過犧牲朵莉絲拉耶的生命來救回自己的兩個女兒。
+
+</p>
+
       
     </div>
     <footer>
       
         
+          <div class="alignleft">
+            <a href="/blog/2009/11/11/polyphonica-3#more" class="more-link">Read More</a>
+          </div>
+        
         <div class="alignright">
-          <a href="http://zespia.twblog/2009/11/11/polyphonica-3#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://zespia.tw/blog/2009/11/11/polyphonica-3#disqus_thread" class="comment-link">Comments</a>
         </div>
       
       <div class="clearfix"></div>
@@ -162,6 +163,39 @@
 </div>
 
 
+<div class="widget twitter">
+  <h3 class="title">Tweets</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+(function($){
+  $.getScript('/js/moment.min.js', function(){
+    var url = 'https://api.twitter.com/1/statuses/user_timeline/tommy351.json?count=5&exclude_replies=' + (false ? 0 : 1) + '&trim_user=true&callback=?';
+
+    var linkify = function(text){
+      text = text
+        .replace(/(https?:\/\/)([\w\-:;?&=+.%#\/]+)/gi, '<a href="$1$2">$2</a>')
+        .replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>')
+        .replace(/(^|\W)#(\w+)/g, '$1<a href="http://search.twitter.com/search?q=%23$2">#$2</a>');
+
+      return text;
+    };
+
+    $.getJSON(url, function(json){
+      var result = '';
+
+      for (var i=0, len=json.length; i<len; i++){
+        var item = json[i];
+        result += '<li>' + linkify(item.text) + '<small>' + moment(item.created_at).fromNow() + '</small></li>';
+      }
+
+      $('#tweets').html(result);
+    });
+  })
+})(jQuery);
+</script>
+
 </aside>
     <div class="clearfix"></div>
   </div>
@@ -171,7 +205,10 @@
   
 </div>
 <div class="clearfix"></div></footer>
-  
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
 <script type="text/javascript">
 var disqus_shortname = 'zespiatw';
 
@@ -188,8 +225,6 @@ var disqus_script = 'count.js';
 }());
 </script>
 
-
-<script src="/js/gallery.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">

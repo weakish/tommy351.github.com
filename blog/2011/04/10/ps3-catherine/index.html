@@ -53,17 +53,38 @@
     </header>
     <div class="entry">
       
-        <pre>Error: Unknown logic tag at line 30: "blockquote".
-    at Object.exports.parse (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/lib/parser.js:256:23)
-    at createTemplate (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:84:35)
-    at getTemplate (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:124:26)
-    at Object.exports.compile (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:168:16)
-    at load (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/article.js:40:27)
-    at output (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:13:14)
-    at output (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:13:14)
-    at Object.exports.renderer.register.store.renderer.(anonymous function) [as md] (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/extend.js:34:9)
-    at Object.exports.render (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:29:20)
-    at load (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/article.js:37:14)</pre>
+        <p><img src="http://i.minus.com/iVd4RKlY7q4KD.jpg" alt="※封面僅供參考">
+
+</p>
+<p>文森特（Vincent）是個 32 歲的系統工程師，希望能夠一個人自由自在的生活。最近，凱薩琳（Katherine，簡稱 K 子）的不斷逼婚，讓文森特開始深思自己的未來，是否該找個安定的工作養活家庭？是否該停止漂泊與她共度下半輩子？
+
+</p>
+<span id="more"></span>
+
+<p><img src="http://i.minus.com/i79JGowBHn3ir.jpg" alt="">
+
+</p>
+<p>正當文森特在酒吧買醉，一名妙齡女子，凱薩琳（Catherine，簡稱 C 子）走進了酒吧，文森特的眼球馬上就被 C 子所吸引，不小心共度了激情的一夜，優柔寡斷的文森特不知該怎麼辦，只能兩邊繼續隱瞞下去。他每夜陷入可怕的惡夢，一個懲罰對愛情不忠者的地獄，只能不斷往上爬尋求倖存，而這就是遊戲的主軸。
+
+</p>
+<p><img src="http://i.minus.com/iix5b68q5f9yo.jpg" alt="這只是一個屁股頭，絕對不是最終BOSS">
+
+</p>
+<p>隨著時間的推進，身邊同樣的遭遇者漸漸犧牲，而 K 子也發現了文森特不忠的事實，文森特越來越焦慮，好不容易終於進入了第7夜，理論上應該是惡夢的盡頭，然而醒來卻發現，C 子拿出刀子脅迫，打算殺害 K 子，然而卻不幸失手身亡，K 子感到徬徨，決定與文森特分手。
+
+</p>
+<p>文森特體認到自己不能沒有 K 子的存在，回想過去一週，發現根本沒有人知道 C 子的存在，原來她只不過是文森特心中的理想投影，一切都是店長的陰謀！文森特與店長立了約定，一旦文森特逃出惡夢，就得釋放所有人，並給文森特的戀情一個機會。
+
+</p>
+<p><img src="http://i.minus.com/ibhkh1DRRs3iBV.jpg" alt="">
+
+</p>
+<p>終於從惡夢歸來，K 子重新接納了文森特，兩人成為了戀人。（K 子 NORMAL END）
+
+</p>
+<p><blockquote>
+以上是花了 11 小時以 EASY 難度完成的好人結局，老實說光是 EASY 模式就讓人有夠累了，不過身為一名神經病的自虐系玩家（ゝω・）u，目前正在以 NORMAL 模式進行人渣路線，沒有 UNDO 功能真的讓人很惱羞。
+</blockquote></p>
       
     </div>
     <footer>
@@ -180,6 +201,39 @@
 </div>
 
 
+<div class="widget twitter">
+  <h3 class="title">Tweets</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+(function($){
+  $.getScript('/js/moment.min.js', function(){
+    var url = 'https://api.twitter.com/1/statuses/user_timeline/tommy351.json?count=5&exclude_replies=' + (false ? 0 : 1) + '&trim_user=true&callback=?';
+
+    var linkify = function(text){
+      text = text
+        .replace(/(https?:\/\/)([\w\-:;?&=+.%#\/]+)/gi, '<a href="$1$2">$2</a>')
+        .replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>')
+        .replace(/(^|\W)#(\w+)/g, '$1<a href="http://search.twitter.com/search?q=%23$2">#$2</a>');
+
+      return text;
+    };
+
+    $.getJSON(url, function(json){
+      var result = '';
+
+      for (var i=0, len=json.length; i<len; i++){
+        var item = json[i];
+        result += '<li>' + linkify(item.text) + '<small>' + moment(item.created_at).fromNow() + '</small></li>';
+      }
+
+      $('#tweets').html(result);
+    });
+  })
+})(jQuery);
+</script>
+
 </aside>
     <div class="clearfix"></div>
   </div>
@@ -189,7 +243,10 @@
   
 </div>
 <div class="clearfix"></div></footer>
-  
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
 <script type="text/javascript">
 var disqus_shortname = 'zespiatw';
 
@@ -206,8 +263,6 @@ var disqus_script = 'embed.js';
 }());
 </script>
 
-
-<script src="/js/gallery.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">

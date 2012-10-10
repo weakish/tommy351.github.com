@@ -16,12 +16,13 @@
   var play = function(parent, item, callback){
     var width = parent.width();
 
-    item.load(function(){
-      var nWidth = this.naturalWidth,
-        nHeight = this.naturalHeight;
+    item.imagesLoaded(function(){
+      var _this = this[0],
+        nWidth = _this.naturalWidth,
+        nHeight = _this.naturalHeight;
 
       callback();
-      $(this).animate({opacity: 1}, 500);
+      this.animate({opacity: 1}, 500);
       parent.animate({height: width * nHeight / nWidth}, 500);
     });
   };
@@ -30,34 +31,35 @@
     var $this = $(this),
       current = 0,
       photoset = $this.children('.photoset').children(),
-      all = photoset.length;
+      all = photoset.length,
+      loading = true;
 
     play($this, photoset.eq(0), function(){
-      /*
-      $this.on('click', '.prev', function(){
-        var next = (current - 1) % all;
-        play($this, photoset.eq(next), function(){
-          photoset.eq(current).animate({opacity: 0}, 500);
-          current = next;
-        });
-      }).on('click', '.next', function(){
-        var next = (current + 1) % all;
-        play($this, photoset.eq(next), function(){
-          photoset.eq(current).animate({opacity: 0}, 500);
-          current = next;
-        });
-      });*/
+      loading = false;
     });
-    
 
-    /*
-    async.forEach(photoset, function(item, next){
-      $(item).load(function(){
-        arr.push([this.naturalWidth, this.naturalHeight]);
-        next();
-      });
-    }, function(){
-      $this.css('height', width * arr[0][1] / arr[0][0]);
-    });*/
+    $this.on('click', '.prev', function(){
+      if (!loading){
+        var next = (current - 1) % all;
+        loading = true;
+
+        play($this, photoset.eq(next), function(){
+          photoset.eq(current).animate({opacity: 0}, 500);
+          loading = false;
+          current = next;
+        });
+      }
+    }).on('click', '.next', function(){
+      if (!loading){
+        var next = (current + 1) % all;
+        loading = true;
+
+        play($this, photoset.eq(next), function(){
+          photoset.eq(current).animate({opacity: 0}, 500);
+          loading = false;
+          current = next;
+        });
+      }
+    });
   });
 })(jQuery);

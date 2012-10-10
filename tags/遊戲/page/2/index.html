@@ -71,7 +71,7 @@
           </div>
         
         <div class="alignright">
-          <a href="http://zespia.twblog/2010/10/09/k-on-psp#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://zespia.tw/blog/2010/10/09/k-on-psp#disqus_thread" class="comment-link">Comments</a>
         </div>
       
       <div class="clearfix"></div>
@@ -129,7 +129,7 @@
           </div>
         
         <div class="alignright">
-          <a href="http://zespia.twblog/2010/05/09/psp-mgspw#disqus_thread" class="comment-link">Comments</a>
+          <a href="http://zespia.tw/blog/2010/05/09/psp-mgspw#disqus_thread" class="comment-link">Comments</a>
         </div>
       
       <div class="clearfix"></div>
@@ -220,6 +220,39 @@
 </div>
 
 
+<div class="widget twitter">
+  <h3 class="title">Tweets</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+(function($){
+  $.getScript('/js/moment.min.js', function(){
+    var url = 'https://api.twitter.com/1/statuses/user_timeline/tommy351.json?count=5&exclude_replies=' + (false ? 0 : 1) + '&trim_user=true&callback=?';
+
+    var linkify = function(text){
+      text = text
+        .replace(/(https?:\/\/)([\w\-:;?&=+.%#\/]+)/gi, '<a href="$1$2">$2</a>')
+        .replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>')
+        .replace(/(^|\W)#(\w+)/g, '$1<a href="http://search.twitter.com/search?q=%23$2">#$2</a>');
+
+      return text;
+    };
+
+    $.getJSON(url, function(json){
+      var result = '';
+
+      for (var i=0, len=json.length; i<len; i++){
+        var item = json[i];
+        result += '<li>' + linkify(item.text) + '<small>' + moment(item.created_at).fromNow() + '</small></li>';
+      }
+
+      $('#tweets').html(result);
+    });
+  })
+})(jQuery);
+</script>
+
 </aside>
     <div class="clearfix"></div>
   </div>
@@ -229,7 +262,10 @@
   
 </div>
 <div class="clearfix"></div></footer>
-  
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
 <script type="text/javascript">
 var disqus_shortname = 'zespiatw';
 
@@ -246,8 +282,6 @@ var disqus_script = 'count.js';
 }());
 </script>
 
-
-<script src="/js/gallery.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">

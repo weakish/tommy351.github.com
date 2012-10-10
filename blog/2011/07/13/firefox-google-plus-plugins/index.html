@@ -53,17 +53,41 @@
     </header>
     <div class="entry">
       
-        <pre>Error: Unknown logic tag at line 19: "blockquote".
-    at Object.exports.parse (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/lib/parser.js:256:23)
-    at createTemplate (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:84:35)
-    at getTemplate (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:124:26)
-    at Object.exports.compile (/Users/SkyArrow/Documents/Project Hexo/hexo/node_modules/swig/index.js:168:16)
-    at load (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/article.js:40:27)
-    at output (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:13:14)
-    at output (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:13:14)
-    at Object.exports.renderer.register.store.renderer.(anonymous function) [as md] (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/extend.js:34:9)
-    at Object.exports.render (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/render.js:29:20)
-    at load (/Users/SkyArrow/Documents/Project Hexo/hexo/lib/article.js:37:14)</pre>
+        <p><img src="http://i.minus.com/ihQ0s0iWJDgNU.jpeg" alt="">
+
+</p>
+<p>大約在兩週前，Google 發表了新的社群服務「Google+」，雖然很多人都說 Facebook 和 Google+ 有很大的不同，不過對我而言 Google+ 就是個宅宅版的 Facebook 罷了，我懶得去分析什麼社群網站的情勢了，今天的重點也不在這裡。
+
+</p>
+<p>雖然 Google+ 已經發表了一段時間，針對 Firefox 所做的擴充元件還是很少，幾乎沒有，反倒是Chrome的擴充套件數量不斷提昇，因此上週六（7/9）我吃飽太閒試著用 jQuery 寫了生平第一個瀏覽器腳本「Google+ Hide Comments」，一個行數不到 40 行的簡單腳本，本來想試著研究 Firefox 擴充套件，但最後太複雜還要先裝一堆擴充套件於是作罷。
+
+</p>
+<span id="more"></span>
+
+<h2>Google+ Hide Comments</h2>
+<p><img src="http://i.minus.com/ibezLR2xu8BKlc.jpg" alt="">
+
+</p>
+<p>此腳本的功能如上圖，啟用後會在每篇文章的留言後加入&quot;Toggle comments&quot;的連結，點擊&quot;Toggle comments&quot;連結可以展開、摺疊留言。
+
+</p>
+<p><blockquote>
+已停止更新
+</blockquote>
+
+</p>
+<h2>Google+ Hover Zoom</h2>
+<p><img src="http://i.minus.com/i4Xjzr8VGpgHM.jpg" alt="">
+
+</p>
+<p>滑鼠移入即可顯示原圖，並能從側邊的下載按鈕直接下載原圖。很簡單的功能，不過他媽的正規表達式有夠難寫，根本天書。目前正規表達式與判斷式的問題應該都修正完畢，未來預計擴充設定頁面的功能並改善效能。
+
+</p>
+<p><a href="http://userscripts.org/scripts/show/106681">下載</a>
+
+</p>
+<p>我的網誌有種變成雙週刊的趨勢，每兩週才一篇新文章，明後天再發一篇 Steins;Gate 的文章吧。<a href="http://gplus.to/SkyArrow">我的 Google+</a>
+</p>
       
     </div>
     <footer>
@@ -180,6 +204,39 @@
 </div>
 
 
+<div class="widget twitter">
+  <h3 class="title">Tweets</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+(function($){
+  $.getScript('/js/moment.min.js', function(){
+    var url = 'https://api.twitter.com/1/statuses/user_timeline/tommy351.json?count=5&exclude_replies=' + (false ? 0 : 1) + '&trim_user=true&callback=?';
+
+    var linkify = function(text){
+      text = text
+        .replace(/(https?:\/\/)([\w\-:;?&=+.%#\/]+)/gi, '<a href="$1$2">$2</a>')
+        .replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>')
+        .replace(/(^|\W)#(\w+)/g, '$1<a href="http://search.twitter.com/search?q=%23$2">#$2</a>');
+
+      return text;
+    };
+
+    $.getJSON(url, function(json){
+      var result = '';
+
+      for (var i=0, len=json.length; i<len; i++){
+        var item = json[i];
+        result += '<li>' + linkify(item.text) + '<small>' + moment(item.created_at).fromNow() + '</small></li>';
+      }
+
+      $('#tweets').html(result);
+    });
+  })
+})(jQuery);
+</script>
+
 </aside>
     <div class="clearfix"></div>
   </div>
@@ -189,7 +246,10 @@
   
 </div>
 <div class="clearfix"></div></footer>
-  
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
 <script type="text/javascript">
 var disqus_shortname = 'zespiatw';
 
@@ -206,8 +266,6 @@ var disqus_script = 'embed.js';
 }());
 </script>
 
-
-<script src="/js/gallery.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
