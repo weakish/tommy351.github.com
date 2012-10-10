@@ -3,7 +3,7 @@
   <title><![CDATA[Zespia]]></title>
   <link href="http://zespia.tw/atom.xml" rel="self"/>
   <link href="http://zespia.tw"/>
-  <updated>2012-10-10T16:15:44.587Z</updated>
+  <updated>2012-10-10T16:39:21.789Z</updated>
   <id>http://zespia.tw</id>
   <author>
     <name>SkyArrow</name>
@@ -17,7 +17,7 @@
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibobbTlfxZgITW.jpg" alt="阿霞的鍊金工房 ─ 黃昏市場之煉金術士">
 
 </p>
-<p>當初看到煉金術士系列新作的名稱時，便不禁噗哧笑了出來，這名稱實在太具有台灣風味，~~如果主角是一位提著菜籃的歐巴桑的話絕對會變神作~~。
+<p>當初看到煉金術士系列新作的名稱時，便不禁噗哧笑了出來，這名稱實在太具有台灣風味，<del>如果主角是一位提著菜籃的歐巴桑的話絕對會變神作</del>。
 
 </p>
 <span id="more"></span>
@@ -32,13 +32,13 @@
 <p>而主角「<strong>愛夏</strong>」居住於偏僻的遺跡旁，一個人以賣藥維生。數年前，妹妹「<strong>妮歐</strong>」在出外採集藥草的過程中失蹤了。
 
 </p>
-<p>某天，愛夏一如往常的去附近的藥草園採集時，耳中突然響起妮歐的呼喚，但是一瞬間便消失了。此時，~~愉悅叔叔~~「<strong>奇斯葛里夫</strong>」登場，要求愛夏學習煉金術，唯有這樣才能找回妮歐。
+<p>某天，愛夏一如往常的去附近的藥草園採集時，耳中突然響起妮歐的呼喚，但是一瞬間便消失了。此時，<del>愉悅叔叔</del>「<strong>奇斯葛里夫</strong>」登場，要求愛夏學習煉金術，唯有這樣才能找回妮歐。
 
 </p>
 <p>故事從此展開，系統沒有多大變化，新增了一個日記系統，必須集得一定的點數才能寫日記（為何愛夏不直接寫就好了，這筆記是有結界嗎）。裝備煉成取消，所有的裝備都必須從魔物或任務取得，若要強化武器則是自己煉成砥石（武器） / 染料（防具），並在物品欄使用。
 
 </p>
-<p>相較於前作，這代的畫面真的變得很讚，人物模組更加精細，畫面也變得流暢許多，然而缺點就是取消了立繪、說話時的嘴型非常詭異，~~以及闇榮的併購使得價錢提昇了一些~~。
+<p>相較於前作，這代的畫面真的變得很讚，人物模組更加精細，畫面也變得流暢許多，然而缺點就是取消了立繪、說話時的嘴型非常詭異，<del>以及闇榮的併購使得價錢提昇了一些</del>。
 
 </p>
 <p>這篇文章本來在7月時就該寫好了，不過一時發懶所以乾脆等到中文版推出時再發佈。中文版的品質很不錯，看起來似乎沒有什麼嚴重的問題。
@@ -81,7 +81,7 @@
 <p>數個月前，接到了來自 <a href="http://caramel623.k2-ani.com/">卡梅爾 Anime</a> 的委託，請我重新設計一個 <a href="http://wordpress.org/">WordPress</a> 主題，因為我當時正忙著準備備審資料，因此而暫時擱置了一段時間。
 
 </p>
-<p>又過了一個月，我加入了畢籌會（畢業典禮籌劃會），忙著 ~~和妹子聊天~~ 製作畢業影片，而完全忽略了這回事。
+<p>又過了一個月，我加入了畢籌會（畢業典禮籌劃會），忙著 <del>和妹子聊天</del> 製作畢業影片，而完全忽略了這回事。
 
 </p>
 <p>直到畢業後，我突然想起這件事，便決定開始著手進行；然而因為去年提交 <a href="http://wordpress.org/">WordPress</a> 主題一直被退件令我一直懷恨在心，我毅然決定捨棄 <a href="http://wordpress.org/">WordPress</a>，自己從頭打造一個類似於 <a href="http://wordpress.org/">WordPress</a> 的 CMS 系統。
@@ -182,7 +182,7 @@
 <li><a href="https://mongohq.com/">MongoHQ</a>：免費 16 MB</li>
 <li><a href="https://mongolab.com/">MongoLab</a>：免費 240 MB</li>
 </ul>
-<p>明眼人都知道要選 <a href="https://mongolab.com/">MongoLab</a> 啊啊啊啊啊！！！！~~就像胸部一樣，大一點的總是比較好啊啊啊啊啊！！！！~~
+<p>明眼人都知道要選 <a href="https://mongolab.com/">MongoLab</a> 啊啊啊啊啊！！！！<del>就像胸部一樣，大一點的總是比較好啊啊啊啊啊！！！！</del>
 
 </p>
 <h2>外觀</h2>
@@ -204,7 +204,7 @@
 <p><img src="http://i.minus.com/iCuLiRAi4Birx.png" alt="">
 
 </p>
-<p>因此只能改成這個樣子了，可以很明顯的看出，就跟 <a href="https://plus.google.com/">Google+</a> 一樣，頁面主體很明顯的往左偏，右邊一大片空白什麼也沒有，~~以後可以拿來放廣告~~。
+<p>因此只能改成這個樣子了，可以很明顯的看出，就跟 <a href="https://plus.google.com/">Google+</a> 一樣，頁面主體很明顯的往左偏，右邊一大片空白什麼也沒有，<del>以後可以拿來放廣告</del>。
 
 </p>
 <p><img src="http://i.minus.com/illxd31CdxXIq.png" alt="">
@@ -298,10 +298,10 @@
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iNmV7aO65tXdE.jpg" alt="ユイザキ - ミサカとおしゃべりしよ (id=22543726)">
 
 </p>
-<p>雖然標題名為 First Order，但請不要誤會，內容與 Last Order 毫無關係，如果你還對下文抱持任何的期待的話，就 ~~當作被騙~~ 看完這篇文章吧！
+<p>雖然標題名為 First Order，但請不要誤會，內容與 Last Order 毫無關係，如果你還對下文抱持任何的期待的話，就 <del>當作被騙</del> 看完這篇文章吧！
 
 </p>
-<p>~~很久很久以前~~，一位名為<strong>新堂楓</strong>的紳士向我提出了主題製作的<a href="http://zespia.tw/blog/2011/05/27/corner-theme/#comment-418034559">委託</a>，然而因學測前 ~~打混~~ 用功念書很忙所以暫時推辭掉了。事隔2個月後，當我正沈醉於學測後混到不行的頹廢生活時，一則私訊闖進了我的生活，使我再度啟動塵封已久的 <a href="http://wordpress.org/">WordPress</a>。
+<p><del>很久很久以前</del>，一位名為<strong>新堂楓</strong>的紳士向我提出了主題製作的<a href="http://zespia.tw/blog/2011/05/27/corner-theme/#comment-418034559">委託</a>，然而因學測前 <del>打混</del> 用功念書很忙所以暫時推辭掉了。事隔2個月後，當我正沈醉於學測後混到不行的頹廢生活時，一則私訊闖進了我的生活，使我再度啟動塵封已久的 <a href="http://wordpress.org/">WordPress</a>。
 
 </p>
 <span id="more"></span>
@@ -454,7 +454,7 @@
 
 </p>
 <h2>結論</h2>
-<p>Windows 8 Consumer Preview 讓人感覺不太好用，就像是將 Metro UI 故意強加在Windows 7上，Metro UI 雖然美觀，卻失去了 Windows 7 的操作直覺性，希望微軟未來能改進傳統介面與 Metro UI 的整合性，~~讓我們一起期待<a href="http://www.apple.com/macosx/mountain-lion/">Mountain Lion</a>吧~~！</p>]]></content>
+<p>Windows 8 Consumer Preview 讓人感覺不太好用，就像是將 Metro UI 故意強加在Windows 7上，Metro UI 雖然美觀，卻失去了 Windows 7 的操作直覺性，希望微軟未來能改進傳統介面與 Metro UI 的整合性，<del>讓我們一起期待<a href="http://www.apple.com/macosx/mountain-lion/">Mountain Lion</a>吧</del>！</p>]]></content>
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 audio 實驗]]></title>
@@ -497,7 +497,7 @@
 <p><img src="http://i.minus.com/iXoN5AU2JBOHU.png" alt="">
 
 </p>
-<p>無論是倒影、中間的圓圈進度表都與<a href="http://zh.wikipedia.org/wiki/Cover_Flow">CoverFlow</a>非常相像，但這種樣式實在 ~~太麻煩了~~ 不便使用者操作，所以從<a href="http://www.premiumpixels.com/freebies/compact-music-player-psd/">Premium Pixels</a>偷點子過來，稍微加油添醋一下，完成了播放器介面 Ver. 2。
+<p>無論是倒影、中間的圓圈進度表都與<a href="http://zh.wikipedia.org/wiki/Cover_Flow">CoverFlow</a>非常相像，但這種樣式實在 <del>太麻煩了</del> 不便使用者操作，所以從<a href="http://www.premiumpixels.com/freebies/compact-music-player-psd/">Premium Pixels</a>偷點子過來，稍微加油添醋一下，完成了播放器介面 Ver. 2。
 
 </p>
 <p><img src="http://i.minus.com/imrTH5W7km1vj.png" alt="Ver.2 與 Ver.1 完全不像？這種事情不重要啦！">
@@ -507,7 +507,7 @@
 <p>介面完成自爽一下之後，就得面對麻煩的 JavaScript 了，播放、暫停非常簡單，按鈕按下去執行鄉對應的動作即可，然而音量調整與進度條該如何處理呢？
 
 </p>
-<p>雖然本次的重點是<strong>消磨時間</strong>，但再去造一個輪子實在他媽的太累了，於是 ~~聰明如我~~ 請到了 <a href="http://jqueryui.com/">jQuery UI</a>，Slider 功能壓縮後需要約 20KB 的空間，有點龐大不過方便就好。
+<p>雖然本次的重點是<strong>消磨時間</strong>，但再去造一個輪子實在他媽的太累了，於是 <del>聰明如我</del> 請到了 <a href="http://jqueryui.com/">jQuery UI</a>，Slider 功能壓縮後需要約 20KB 的空間，有點龐大不過方便就好。
 
 </p>
 <p>時間的控制方式如下，單位為秒數，例如跳至第 100 秒的位置：
@@ -555,10 +555,10 @@
 
 </p>
 <pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> playlist = [</div><div class="line">    {</div><div class="line">        title: <span class="string">'Tell Your World'</span>,</div><div class="line">        artist: <span class="string">'livetune feat.初音ミク'</span>,</div><div class="line">        album: <span class="string">'Tell Your World'</span>,</div><div class="line">        cover: <span class="string">'cover/tell_your_world.jpg'</span>,</div><div class="line">        mp3: <span class="string">'music/tell_your_world.mp3'</span>,</div><div class="line">        ogg: <span class="string">'music/tell_your_world.ogg'</span></div><div class="line">    }</div><div class="line">];</div></pre></td></tr></table></figure></code></pre>
-<p><code>title</code>為標題，<code>artist</code>為演出者，<code>album</code>為專輯名稱，<code>cover</code>為專輯封面的路徑，<code>mp3</code>、<code>ogg</code>分別為音樂檔案的路徑，建議備妥兩種格式的檔案，~~要不然 Firefox 和 Opera 不就只能去死了嗎？~~
+<p><code>title</code>為標題，<code>artist</code>為演出者，<code>album</code>為專輯名稱，<code>cover</code>為專輯封面的路徑，<code>mp3</code>、<code>ogg</code>分別為音樂檔案的路徑，建議備妥兩種格式的檔案，<del>要不然 Firefox 和 Opera 不就只能去死了嗎？</del>
 
 </p>
-<p>因為做到最後頭腦快爆炸了，懶得做 Flash fallback，~~IE 請去死一死吧。~~
+<p>因為做到最後頭腦快爆炸了，懶得做 Flash fallback，<del>IE 請去死一死吧。</del>
 
 </p>
 <p><a href="http://zespia.tw/lab/coverart">範例</a>｜<a href="http://zespia.tw/lab/coverart/example.zip">下載</a>
@@ -672,7 +672,7 @@
 <p>最近花了一週的時間，終於完成 Octopress 的佈景主題，並搬移舊站（zespia.twbbs.org）的文章及留言，發現自已以前的文章實在有夠中二，看得連自己都想揍螢幕，於是偷偷撤下了部分文章。
 
 </p>
-<p>為了慶祝新站落成，便決定寫一篇超級簡易（大概啦）的 jQuery 頁籤製作教學，~~懷著感恩的心看吧！~~
+<p>為了慶祝新站落成，便決定寫一篇超級簡易（大概啦）的 jQuery 頁籤製作教學，<del>懷著感恩的心看吧！</del>
 
 </p>
 <span id="more"></span>
@@ -933,7 +933,7 @@
 
 
 </p>
-<p>最近課業繁重，無法抽出時間撰寫網誌，於是 ~~寫這篇文章來騙人氣~~ 再介紹一次之前寫的 2 個 Google+ 腳本。上圖與本文毫無關係，純粹是在 Pixiv 上隨便抓一張圖片而已。
+<p>最近課業繁重，無法抽出時間撰寫網誌，於是 <del>寫這篇文章來騙人氣</del> 再介紹一次之前寫的 2 個 Google+ 腳本。上圖與本文毫無關係，純粹是在 Pixiv 上隨便抓一張圖片而已。
 
 </p>
 <h2>Google+ Motionless</h2>
@@ -965,7 +965,7 @@
 <p>Storage 的功能基本上與 cookie 大致相同，然而儲存空間比 cookie 大多了，cookie 僅有 4KB 的空間，Storage卻有5MB的空間，讓開發者能夠好好善用。此功能的使用方式非常簡單，分為：Local Storage 與 Session Storage，顧名思義，兩者都是將資料儲存於用戶端的功能，然而前者能儲存的時間較長，直到使用者清除快取前都不會被刪除，而後者在使用者關閉分頁後資料就會被刪除；兩者的使用方式完全相同，以下皆以 Local Storage 作為示範。
 
 </p>
-<p>下文皆使用 jQuery 1.7.1。~~（因為我只會 jQuery）~~
+<p>下文皆使用 jQuery 1.7.1。<del>（因為我只會 jQuery）</del>
 
 </p>
 <h2>基礎</h2>
@@ -1002,7 +1002,7 @@
 <p>陣列大概是讓我最頭痛的部份，同前文所述，Storage 僅支援字串，所以必須先以特殊的分隔符號來隔開每個元素。<em>（如|, $, ;等符號，隨你喜歡）</em>
 
 </p>
-<p>如果你在下面的陣列中看到德文，那只是我突然中二病發作而已，~~如果你看得懂的話代表你也是個廚二~~。
+<p>如果你在下面的陣列中看到德文，那只是我突然中二病發作而已，<del>如果你看得懂的話代表你也是個廚二</del>。
 
 </p>
 <pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = {[<span class="string">'one'</span>, <span class="string">'eins'</span>], [<span class="string">'two'</span>, <span class="string">'zwei'</span>], [<span class="string">'three'</span>, <span class="string">'drew'</span>], [<span class="string">'four'</span>, <span class="string">'vier'</span>]};</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    storage[i] = storage[i].join(<span class="string">';'</span>);</div><div class="line">}</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div></pre></td></tr></table></figure></code></pre>
@@ -1077,7 +1077,7 @@
 </blockquote>
 
 </p>
-<p>這代的畫面相較於前兩代又進步了一些，光影的處理做得更棒了，<a href="http://www.nicovideo.jp/watch/sm14822011">~~精美的3D模組也讓人感到讚嘆~~</a>；在介面上，提供了更貼心的服務，可以直接從「開拓」和「依賴」頁面連結到調和選單，特殊的道具也做了清楚的標示。此外，這一代女主角的聲音大概是我最喜歡的，沒有前兩代過嗲的感覺。
+<p>這代的畫面相較於前兩代又進步了一些，光影的處理做得更棒了，<a href="http://www.nicovideo.jp/watch/sm14822011"><del>精美的3D模組也讓人感到讚嘆</del></a>；在介面上，提供了更貼心的服務，可以直接從「開拓」和「依賴」頁面連結到調和選單，特殊的道具也做了清楚的標示。此外，這一代女主角的聲音大概是我最喜歡的，沒有前兩代過嗲的感覺。
 
 </p>
 <h2>結局</h2>
@@ -1123,7 +1123,7 @@
 <p><img src="http://i.minus.com/i4mm5lhI9WKtw.jpg" alt="">
 
 </p>
-<p><strong>人気者の今日</strong>（條件：每位角色的好感度大於 80）<br>與每位朋友的好感度大於 80。~~梅露露成功建立後宮。~~
+<p><strong>人気者の今日</strong>（條件：每位角色的好感度大於 80）<br>與每位朋友的好感度大於 80。<del>梅露露成功建立後宮。</del>
 
 </p>
 <p>托托莉x咪咪太棒了！諸君，我愛百合！我愛百合！
@@ -1335,7 +1335,7 @@
 
 </p>
 <h2>後記</h2>
-<p>這大概是我寫過最長的一篇文章，內容可能會有點枯燥乏味、充滿錯誤，~~而且一張萌圖都沒有~~，各位客倌就把這當成一篇筆記文章吧！</p>]]></content>
+<p>這大概是我寫過最長的一篇文章，內容可能會有點枯燥乏味、充滿錯誤，<del>而且一張萌圖都沒有</del>，各位客倌就把這當成一篇筆記文章吧！</p>]]></content>
   </entry>
   <entry>
     <title type="html"><![CDATA[Pixiv Custom 2.0 更新！代碼更精簡，功能更豐富！]]></title>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-  <link rel="alternate" href="/atom.xml" title="Zespia" type="application/atom+xml">
+  <link rel="alternate" href="http://feeds.feedburner.com/zespia" title="Zespia" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -89,7 +89,7 @@
 <p><img src="http://i.minus.com/iXoN5AU2JBOHU.png" alt="">
 
 </p>
-<p>無論是倒影、中間的圓圈進度表都與<a href="http://zh.wikipedia.org/wiki/Cover_Flow">CoverFlow</a>非常相像，但這種樣式實在 ~~太麻煩了~~ 不便使用者操作，所以從<a href="http://www.premiumpixels.com/freebies/compact-music-player-psd/">Premium Pixels</a>偷點子過來，稍微加油添醋一下，完成了播放器介面 Ver. 2。
+<p>無論是倒影、中間的圓圈進度表都與<a href="http://zh.wikipedia.org/wiki/Cover_Flow">CoverFlow</a>非常相像，但這種樣式實在 <del>太麻煩了</del> 不便使用者操作，所以從<a href="http://www.premiumpixels.com/freebies/compact-music-player-psd/">Premium Pixels</a>偷點子過來，稍微加油添醋一下，完成了播放器介面 Ver. 2。
 
 </p>
 <p><img src="http://i.minus.com/imrTH5W7km1vj.png" alt="Ver.2 與 Ver.1 完全不像？這種事情不重要啦！">
@@ -99,7 +99,7 @@
 <p>介面完成自爽一下之後，就得面對麻煩的 JavaScript 了，播放、暫停非常簡單，按鈕按下去執行鄉對應的動作即可，然而音量調整與進度條該如何處理呢？
 
 </p>
-<p>雖然本次的重點是<strong>消磨時間</strong>，但再去造一個輪子實在他媽的太累了，於是 ~~聰明如我~~ 請到了 <a href="http://jqueryui.com/">jQuery UI</a>，Slider 功能壓縮後需要約 20KB 的空間，有點龐大不過方便就好。
+<p>雖然本次的重點是<strong>消磨時間</strong>，但再去造一個輪子實在他媽的太累了，於是 <del>聰明如我</del> 請到了 <a href="http://jqueryui.com/">jQuery UI</a>，Slider 功能壓縮後需要約 20KB 的空間，有點龐大不過方便就好。
 
 </p>
 <p>時間的控制方式如下，單位為秒數，例如跳至第 100 秒的位置：
@@ -147,10 +147,10 @@
 
 </p>
 <pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> playlist = [</div><div class="line">    {</div><div class="line">        title: <span class="string">'Tell Your World'</span>,</div><div class="line">        artist: <span class="string">'livetune feat.初音ミク'</span>,</div><div class="line">        album: <span class="string">'Tell Your World'</span>,</div><div class="line">        cover: <span class="string">'cover/tell_your_world.jpg'</span>,</div><div class="line">        mp3: <span class="string">'music/tell_your_world.mp3'</span>,</div><div class="line">        ogg: <span class="string">'music/tell_your_world.ogg'</span></div><div class="line">    }</div><div class="line">];</div></pre></td></tr></table></figure></code></pre>
-<p><code>title</code>為標題，<code>artist</code>為演出者，<code>album</code>為專輯名稱，<code>cover</code>為專輯封面的路徑，<code>mp3</code>、<code>ogg</code>分別為音樂檔案的路徑，建議備妥兩種格式的檔案，~~要不然 Firefox 和 Opera 不就只能去死了嗎？~~
+<p><code>title</code>為標題，<code>artist</code>為演出者，<code>album</code>為專輯名稱，<code>cover</code>為專輯封面的路徑，<code>mp3</code>、<code>ogg</code>分別為音樂檔案的路徑，建議備妥兩種格式的檔案，<del>要不然 Firefox 和 Opera 不就只能去死了嗎？</del>
 
 </p>
-<p>因為做到最後頭腦快爆炸了，懶得做 Flash fallback，~~IE 請去死一死吧。~~
+<p>因為做到最後頭腦快爆炸了，懶得做 Flash fallback，<del>IE 請去死一死吧。</del>
 
 </p>
 <p><a href="http://zespia.tw/lab/coverart">範例</a>｜<a href="http://zespia.tw/lab/coverart/example.zip">下載</a>
@@ -346,6 +346,20 @@ var disqus_shortname = 'zespiatw';
 (function($){
   $('.fancybox').fancybox();
 })(jQuery);
+</script>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4910098-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 </script>
 
 </body>

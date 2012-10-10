@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-  <link rel="alternate" href="/atom.xml" title="Zespia" type="application/atom+xml">
+  <link rel="alternate" href="http://feeds.feedburner.com/zespia" title="Zespia" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -64,7 +64,7 @@
 <p>Storage 的功能基本上與 cookie 大致相同，然而儲存空間比 cookie 大多了，cookie 僅有 4KB 的空間，Storage卻有5MB的空間，讓開發者能夠好好善用。此功能的使用方式非常簡單，分為：Local Storage 與 Session Storage，顧名思義，兩者都是將資料儲存於用戶端的功能，然而前者能儲存的時間較長，直到使用者清除快取前都不會被刪除，而後者在使用者關閉分頁後資料就會被刪除；兩者的使用方式完全相同，以下皆以 Local Storage 作為示範。
 
 </p>
-<p>下文皆使用 jQuery 1.7.1。~~（因為我只會 jQuery）~~
+<p>下文皆使用 jQuery 1.7.1。<del>（因為我只會 jQuery）</del>
 
 </p>
 <h2>基礎</h2>
@@ -101,7 +101,7 @@
 <p>陣列大概是讓我最頭痛的部份，同前文所述，Storage 僅支援字串，所以必須先以特殊的分隔符號來隔開每個元素。<em>（如|, $, ;等符號，隨你喜歡）</em>
 
 </p>
-<p>如果你在下面的陣列中看到德文，那只是我突然中二病發作而已，~~如果你看得懂的話代表你也是個廚二~~。
+<p>如果你在下面的陣列中看到德文，那只是我突然中二病發作而已，<del>如果你看得懂的話代表你也是個廚二</del>。
 
 </p>
 <pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = {[<span class="string">'one'</span>, <span class="string">'eins'</span>], [<span class="string">'two'</span>, <span class="string">'zwei'</span>], [<span class="string">'three'</span>, <span class="string">'drew'</span>], [<span class="string">'four'</span>, <span class="string">'vier'</span>]};</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    storage[i] = storage[i].join(<span class="string">';'</span>);</div><div class="line">}</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div></pre></td></tr></table></figure></code></pre>
@@ -294,6 +294,20 @@ var disqus_shortname = 'zespiatw';
 (function($){
   $('.fancybox').fancybox();
 })(jQuery);
+</script>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4910098-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 </script>
 
 </body>
