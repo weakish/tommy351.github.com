@@ -3,7 +3,7 @@
   <title><![CDATA[Zespia]]></title>
   <link href="http://zespia.tw/atom.xml" rel="self"/>
   <link href="http://zespia.tw"/>
-  <updated>2012-10-10T15:53:36.417Z</updated>
+  <updated>2012-10-10T16:15:44.587Z</updated>
   <id>http://zespia.tw</id>
   <author>
     <name>SkyArrow</name>
@@ -11,9 +11,9 @@
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
   <entry>
     <title type="html"><![CDATA[愛夏的煉金工房 ─ 黃昏大地之煉金術士]]></title>
-    <link>http://zespia.tw/blog/2012/09/05/atelier-ayesha</link>
+    <link>http://zespia.tw/blog/2012/09/05/atelier-ayesha/</link>
     <updated>2012-09-05T10:39:00.000Z</updated>
-    <id>http://zespia.tw/blog/2012/09/05/atelier-ayesha</id>
+    <id>http://zespia.tw/blog/2012/09/05/atelier-ayesha/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibobbTlfxZgITW.jpg" alt="阿霞的鍊金工房 ─ 黃昏市場之煉金術士">
 
 </p>
@@ -72,9 +72,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Node.js 初試 ─ Nyanko]]></title>
-    <link>http://zespia.tw/blog/2012/07/14/nodejs-nyanko</link>
+    <link>http://zespia.tw/blog/2012/07/14/nodejs-nyanko/</link>
     <updated>2012-07-13T16:14:00.000Z</updated>
-    <id>http://zespia.tw/blog/2012/07/14/nodejs-nyanko</id>
+    <id>http://zespia.tw/blog/2012/07/14/nodejs-nyanko/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iKst8nFEGcU8A.png" alt="">
 
 </p>
@@ -233,9 +233,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[私用主題 Phase]]></title>
-    <link>http://zespia.tw/blog/2012/05/02/new-theme-phase</link>
+    <link>http://zespia.tw/blog/2012/05/02/new-theme-phase/</link>
     <updated>2012-05-02T01:35:00.000Z</updated>
-    <id>http://zespia.tw/blog/2012/05/02/new-theme-phase</id>
+    <id>http://zespia.tw/blog/2012/05/02/new-theme-phase/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iMujOkELjjcra.png" alt="">
 
 </p>
@@ -292,9 +292,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[First Order]]></title>
-    <link>http://zespia.tw/blog/2012/03/16/first-order</link>
+    <link>http://zespia.tw/blog/2012/03/16/first-order/</link>
     <updated>2012-03-16T13:06:00.000Z</updated>
-    <id>http://zespia.tw/blog/2012/03/16/first-order</id>
+    <id>http://zespia.tw/blog/2012/03/16/first-order/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iNmV7aO65tXdE.jpg" alt="ユイザキ - ミサカとおしゃべりしよ (id=22543726)">
 
 </p>
@@ -370,9 +370,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Windows 8 Consumer Preview 試玩]]></title>
-    <link>http://zespia.tw/blog/2012/03/03/windows-8-preview</link>
+    <link>http://zespia.tw/blog/2012/03/03/windows-8-preview/</link>
     <updated>2012-03-03T11:54:00.000Z</updated>
-    <id>http://zespia.tw/blog/2012/03/03/windows-8-preview</id>
+    <id>http://zespia.tw/blog/2012/03/03/windows-8-preview/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iQ6n16BPfbQc.jpg" alt="">
 
 </p>
@@ -458,9 +458,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 audio 實驗]]></title>
-    <link>http://zespia.tw/blog/2012/02/04/lab-html5-audio</link>
+    <link>http://zespia.tw/blog/2012/02/04/lab-html5-audio/</link>
     <updated>2012-02-04T05:29:00.000Z</updated>
-    <id>http://zespia.tw/blog/2012/02/04/lab-html5-audio</id>
+    <id>http://zespia.tw/blog/2012/02/04/lab-html5-audio/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/inE9d4C1xPbYD.png" alt="">
 
 </p>
@@ -575,9 +575,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Slash — 專為 Octopress 設計的極簡主題]]></title>
-    <link>http://zespia.tw/blog/2012/01/25/slash-theme</link>
+    <link>http://zespia.tw/blog/2012/01/25/slash-theme/</link>
     <updated>2012-01-25T08:27:00.000Z</updated>
-    <id>http://zespia.tw/blog/2012/01/25/slash-theme</id>
+    <id>http://zespia.tw/blog/2012/01/25/slash-theme/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i8oyJmY5lRJEJ.png" alt="">
 
 </p>
@@ -628,9 +628,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[如何利用 CSS 製作多級選單？]]></title>
-    <link>http://zespia.tw/blog/2012/01/24/css-multi-level-menu</link>
+    <link>http://zespia.tw/blog/2012/01/24/css-multi-level-menu/</link>
     <updated>2012-01-24T00:00:00.000Z</updated>
-    <id>http://zespia.tw/blog/2012/01/24/css-multi-level-menu</id>
+    <id>http://zespia.tw/blog/2012/01/24/css-multi-level-menu/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibx37Gknqf5wtK.PNG" alt="一般常見的選單">
 
 </p>
@@ -663,9 +663,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[如何利用 jQuery 製作頁籤？]]></title>
-    <link>http://zespia.tw/blog/2012/01/21/jquery-tabs</link>
+    <link>http://zespia.tw/blog/2012/01/21/jquery-tabs/</link>
     <updated>2012-01-21T10:10:00.000Z</updated>
-    <id>http://zespia.tw/blog/2012/01/21/jquery-tabs</id>
+    <id>http://zespia.tw/blog/2012/01/21/jquery-tabs/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i3hFGFugcShjF.jpg" alt="在文章中放入不相干的圖片好像已經成為定番？隨便啦">
 
 </p>
@@ -749,9 +749,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Hello Octopress!]]></title>
-    <link>http://zespia.tw/blog/2012/01/14/hello-octopress</link>
+    <link>http://zespia.tw/blog/2012/01/14/hello-octopress/</link>
     <updated>2012-01-14T07:52:00.000Z</updated>
-    <id>http://zespia.tw/blog/2012/01/14/hello-octopress</id>
+    <id>http://zespia.tw/blog/2012/01/14/hello-octopress/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i4CFI4qZAFEct.png" alt="">
 
 </p>
@@ -926,9 +926,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Google+ Motionless & Filter]]></title>
-    <link>http://zespia.tw/blog/2011/09/17/google-scripts-2</link>
+    <link>http://zespia.tw/blog/2011/09/17/google-scripts-2/</link>
     <updated>2011-09-17T00:00:00.000Z</updated>
-    <id>http://zespia.tw/blog/2011/09/17/google-scripts-2</id>
+    <id>http://zespia.tw/blog/2011/09/17/google-scripts-2/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ieJceSDuuo3RS.png" alt="サイノウサンプラー | ryosios（id=21795820）">
 
 
@@ -951,9 +951,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 Storage 的使用彙整]]></title>
-    <link>http://zespia.tw/blog/2011/08/04/html5-storage</link>
+    <link>http://zespia.tw/blog/2011/08/04/html5-storage/</link>
     <updated>2011-08-04T10:01:00.000Z</updated>
-    <id>http://zespia.tw/blog/2011/08/04/html5-storage</id>
+    <id>http://zespia.tw/blog/2011/08/04/html5-storage/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ich1TucSOe08P.jpg" alt="找不到相關的圖，各位就把小惡魔胸前的脂肪塊當做Storage吧！（id=21000433）">
 
 </p>
@@ -1016,9 +1016,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Google+ Hide Comments & Hover Zoom]]></title>
-    <link>http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins</link>
+    <link>http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/</link>
     <updated>2011-07-13T00:00:00.000Z</updated>
-    <id>http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins</id>
+    <id>http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ihQ0s0iWJDgNU.jpeg" alt="">
 
 </p>
@@ -1057,9 +1057,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[鍊金術士梅露露 ～亞蘭德的鍊金術士 3～]]></title>
-    <link>http://zespia.tw/blog/2011/07/01/ps3-meruru</link>
+    <link>http://zespia.tw/blog/2011/07/01/ps3-meruru/</link>
     <updated>2011-07-01T07:44:00.000Z</updated>
-    <id>http://zespia.tw/blog/2011/07/01/ps3-meruru</id>
+    <id>http://zespia.tw/blog/2011/07/01/ps3-meruru/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ib1v5x6fsVI7ue.jpeg" alt="相機又被老媽搶走了，反正我攝影技術也不好，乾脆直接貼官網的桌布吧（逃）">
 
 </p>
@@ -1143,9 +1143,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Corner 1.0 正式版推出！]]></title>
-    <link>http://zespia.tw/blog/2011/05/27/corner-theme</link>
+    <link>http://zespia.tw/blog/2011/05/27/corner-theme/</link>
     <updated>2011-05-27T00:00:00.000Z</updated>
-    <id>http://zespia.tw/blog/2011/05/27/corner-theme</id>
+    <id>http://zespia.tw/blog/2011/05/27/corner-theme/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/igeV3vBq0HbXR.jpg" alt="">
 
 </p>
@@ -1247,9 +1247,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[如何使用 Settings API 製作佈景後台選項？]]></title>
-    <link>http://zespia.tw/blog/2011/05/22/how-to-use-settings-api</link>
+    <link>http://zespia.tw/blog/2011/05/22/how-to-use-settings-api/</link>
     <updated>2011-05-22T08:02:00.000Z</updated>
-    <id>http://zespia.tw/blog/2011/05/22/how-to-use-settings-api</id>
+    <id>http://zespia.tw/blog/2011/05/22/how-to-use-settings-api/</id>
     <content type="html"><![CDATA[<p>隨著 WordPress 版本號的推進，不只系統越變越肥大，外掛、佈景主題的條件也越來越嚴苛，全部規定必須使用官方的現有函數製作，雖然 WordPress 的函數庫真的很豐富很好用，不過這麼獨裁的規定著實讓人很不爽。
 
 </p>
@@ -1339,9 +1339,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Pixiv Custom 2.0 更新！代碼更精簡，功能更豐富！]]></title>
-    <link>http://zespia.tw/blog/2011/04/12/pixiv-custom-2-0-update</link>
+    <link>http://zespia.tw/blog/2011/04/12/pixiv-custom-2-0-update/</link>
     <updated>2011-04-12T00:00:00.000Z</updated>
-    <id>http://zespia.tw/blog/2011/04/12/pixiv-custom-2-0-update</id>
+    <id>http://zespia.tw/blog/2011/04/12/pixiv-custom-2-0-update/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iZT3XSFQ268L4.jpg" alt="其實這張圖與本文內容沒什麼關係，純粹當做福利罷了（id=18097491）">
 
 </p>
@@ -1424,9 +1424,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[凱薩琳（キャサリン）]]></title>
-    <link>http://zespia.tw/blog/2011/04/10/ps3-catherine</link>
+    <link>http://zespia.tw/blog/2011/04/10/ps3-catherine/</link>
     <updated>2011-04-10T00:00:00.000Z</updated>
-    <id>http://zespia.tw/blog/2011/04/10/ps3-catherine</id>
+    <id>http://zespia.tw/blog/2011/04/10/ps3-catherine/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iVd4RKlY7q4KD.jpg" alt="※封面僅供參考">
 
 </p>
@@ -1462,9 +1462,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[XLD - Mac 的無損格式解碼器]]></title>
-    <link>http://zespia.tw/blog/2011/03/27/xld-zh-tw</link>
+    <link>http://zespia.tw/blog/2011/03/27/xld-zh-tw/</link>
     <updated>2011-03-27T05:54:00.000Z</updated>
-    <id>http://zespia.tw/blog/2011/03/27/xld-zh-tw</id>
+    <id>http://zespia.tw/blog/2011/03/27/xld-zh-tw/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ib2AL5Hsjck8w0.jpg" alt="">
 
 </p>
@@ -1564,9 +1564,9 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[絕命異次元 2]]></title>
-    <link>http://zespia.tw/blog/2011/03/08/ps3-dead-space-2</link>
+    <link>http://zespia.tw/blog/2011/03/08/ps3-dead-space-2/</link>
     <updated>2011-03-08T05:37:00.000Z</updated>
-    <id>http://zespia.tw/blog/2011/03/08/ps3-dead-space-2</id>
+    <id>http://zespia.tw/blog/2011/03/08/ps3-dead-space-2/</id>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i6SnE5sjHJIlp.jpg" alt="">
 
 </p>
