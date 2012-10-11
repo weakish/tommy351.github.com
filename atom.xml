@@ -3,7 +3,8 @@
   <title><![CDATA[Zespia]]></title>
   <link href="http://zespia.tw/atom.xml" rel="self"/>
   <link href="http://zespia.tw"/>
-  <updated>2012-10-11T11:11:01.817Z</updated>
+  <updated>2012-10-11T11:30:27.018Z</updated>
+  <id>http://zespia.tw/</id>
   <author>
     <name><![CDATA[SkyArrow]]></name>
     <email><![CDATA[tommy351@gmail.com]]></email>
@@ -12,7 +13,9 @@
   <entry>
     <title type="html"><![CDATA[Hexo 颯爽登場！]]></title>
     <link href="http://zespia.tw/blog/2012/10/11/hexo-debut/"/>
-    <updated>2012-10-11T07:22:47.000Z</updated>
+    <id>http://zespia.tw/blog/2012/10/11/hexo-debut/</id>
+    <published>2012-10-11T07:22:47.000Z</published>
+    <updated>2012-10-11T09:45:20.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibpMKNkpRxVwsK.jpg" alt="ちり - Super sonic Child (id=29663134)">
 
 </p>
@@ -131,21 +134,15 @@
 </p>
 <iframe src="http://ghbtns.com/github-btn.html?user=tommy351&repo=hexo&type=watch&count=true"
   allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/ibpMKNkpRxVwsK.jpg" alt="ちり - Super sonic Child (id=29663134)">
-
-</p>
-<p>我想每個 <a href="http://octopress.org/">Octopress</a> 的使用者一定都有這樣的煩惱──隨著文章數量愈來愈多，檔案建立的速度愈來愈慢。本站目前已累積至 54 篇文章，每次建立檔案時，至少都需要花費一分鐘以上的時間。
-
-</p>
-<p>或許是因為 Ruby 天生就比較慢，而這種問題未來似乎也不會改善，<a href="https://github.com/mojombo/jekyll">Jekyll</a> 和 <a href="http://octopress.org/">Octopress</a> 已經一段時間沒有更新，那麼唯一的解決方案只有另覓其他 Blog Framework 了。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FJavaScript" term="JavaScript"/>
+    <category scheme="http://zespia.tw/tags%2FNode.js" term="Node.js"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[愛夏的煉金工房 ─ 黃昏大地之煉金術士]]></title>
     <link href="http://zespia.tw/blog/2012/09/05/atelier-ayesha/"/>
-    <updated>2012-09-05T10:39:00.000Z</updated>
+    <id>http://zespia.tw/blog/2012/09/05/atelier-ayesha/</id>
+    <published>2012-09-05T10:39:00.000Z</published>
+    <updated>2012-10-10T16:39:10.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibobbTlfxZgITW.jpg" alt="阿霞的鍊金工房 ─ 黃昏市場之煉金術士">
 
 </p>
@@ -201,18 +198,15 @@
 <li>女子会！：    「★ベルちゃんのお手伝い★」「★未来の美少女★」「★牛飼いの秘密★」「★ニオとの新たな約束★」達成</li>
 <li>賢者の庵：「真実の探求」「働くおねえさん」「秘宝ハンター」「女子会！」の条件を達成</li>
 </ul>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/ibobbTlfxZgITW.jpg" alt="阿霞的鍊金工房 ─ 黃昏市場之煉金術士">
-
-</p>
-<p>當初看到煉金術士系列新作的名稱時，便不禁噗哧笑了出來，這名稱實在太具有台灣風味，<del>如果主角是一位提著菜籃的歐巴桑的話絕對會變神作</del>。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FPS3" term="PS3"/>
+    <category scheme="http://zespia.tw/tags%2F%E9%81%8A%E6%88%B2" term="遊戲"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Node.js 初試 ─ Nyanko]]></title>
     <link href="http://zespia.tw/blog/2012/07/14/nodejs-nyanko/"/>
-    <updated>2012-07-13T16:14:00.000Z</updated>
+    <id>http://zespia.tw/blog/2012/07/14/nodejs-nyanko/</id>
+    <published>2012-07-13T16:14:00.000Z</published>
+    <updated>2012-10-10T16:37:31.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iKst8nFEGcU8A.png" alt="">
 
 </p>
@@ -368,24 +362,15 @@
 <p><a href="http://nyanko.herokuapp.com/">Nyanko</a> 目前正在封測中，也許會有很多 Bug，如果找到 Bug 的話麻煩透過左側工具列上的「意見反饋」向我回報。
 
 </p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/iKst8nFEGcU8A.png" alt="">
-
-</p>
-<p>數個月前，接到了來自 <a href="http://caramel623.k2-ani.com/">卡梅爾 Anime</a> 的委託，請我重新設計一個 <a href="http://wordpress.org/">WordPress</a> 主題，因為我當時正忙著準備備審資料，因此而暫時擱置了一段時間。
-
-</p>
-<p>又過了一個月，我加入了畢籌會（畢業典禮籌劃會），忙著 <del>和妹子聊天</del> 製作畢業影片，而完全忽略了這回事。
-
-</p>
-<p>直到畢業後，我突然想起這件事，便決定開始著手進行；然而因為去年提交 <a href="http://wordpress.org/">WordPress</a> 主題一直被退件令我一直懷恨在心，我毅然決定捨棄 <a href="http://wordpress.org/">WordPress</a>，自己從頭打造一個類似於 <a href="http://wordpress.org/">WordPress</a> 的 CMS 系統。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FNode.js" term="Node.js"/>
+    <category scheme="http://zespia.tw/tags%2FJavaScript" term="JavaScript"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[私用主題 Phase]]></title>
     <link href="http://zespia.tw/blog/2012/05/02/new-theme-phase/"/>
-    <updated>2012-05-02T01:35:00.000Z</updated>
+    <id>http://zespia.tw/blog/2012/05/02/new-theme-phase/</id>
+    <published>2012-05-02T01:35:00.000Z</published>
+    <updated>2012-09-22T01:18:51.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iMujOkELjjcra.png" alt="">
 
 </p>
@@ -439,18 +424,15 @@
 
 </p>
 <p>最近大學終於有了著落，空閒的時間變得更多了，也許該找份兼職來做，如果想找我設計佈景主題的話，可透過 Twitter 或 tommy351[at]gmail.com 與我洽談。最後就來一部氷菓 ED 吧，可見京阿尼砸了很多錢在賣肉上，明明只是兩位高中女生在滾床而已，卻能這麼嫵媚......。える好胸，摩耶花好腋啊。</p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/iMujOkELjjcra.png" alt="">
-
-</p>
-<p>一段時間沒更新網誌了，最近大學有了著落之後，便決定抽空寫篇文章。自從 <a href="http://zespia.tw/Octopress-Theme-Slash/index_tw.html">Slash</a> 發佈之後，使用者日漸增多，不時會有 Pull Request，大概已經有數十個網誌都選用 <a href="http://zespia.tw/Octopress-Theme-Slash/index_tw.html">Slash</a> 作為佈景主題，雖然獲得了極大的成就感，不過林北不爽「撞主題」的感覺，所以決定再製作一個屬於自己的佈景主題。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FOctopress" term="Octopress"/>
+    <category scheme="http://zespia.tw/tags%2F%E4%B8%BB%E9%A1%8C" term="主題"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[First Order]]></title>
     <link href="http://zespia.tw/blog/2012/03/16/first-order/"/>
-    <updated>2012-03-16T13:06:00.000Z</updated>
+    <id>http://zespia.tw/blog/2012/03/16/first-order/</id>
+    <published>2012-03-16T13:06:00.000Z</published>
+    <updated>2012-10-10T16:39:05.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iNmV7aO65tXdE.jpg" alt="ユイザキ - ミサカとおしゃべりしよ (id=22543726)">
 
 </p>
@@ -523,21 +505,15 @@
 <p>製作他人委託的主題並不像自己創作一樣容易，必須考慮到委託人的要求、感受，我覺得這次的成品並不夠完美，希望未來的合作能夠更加完美！
 
 </p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/iNmV7aO65tXdE.jpg" alt="ユイザキ - ミサカとおしゃべりしよ (id=22543726)">
-
-</p>
-<p>雖然標題名為 First Order，但請不要誤會，內容與 Last Order 毫無關係，如果你還對下文抱持任何的期待的話，就 <del>當作被騙</del> 看完這篇文章吧！
-
-</p>
-<p><del>很久很久以前</del>，一位名為<strong>新堂楓</strong>的紳士向我提出了主題製作的<a href="http://zespia.tw/blog/2011/05/27/corner-theme/#comment-418034559">委託</a>，然而因學測前 <del>打混</del> 用功念書很忙所以暫時推辭掉了。事隔2個月後，當我正沈醉於學測後混到不行的頹廢生活時，一則私訊闖進了我的生活，使我再度啟動塵封已久的 <a href="http://wordpress.org/">WordPress</a>。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FWordPress" term="WordPress"/>
+    <category scheme="http://zespia.tw/tags%2F%E4%B8%BB%E9%A1%8C" term="主題"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Windows 8 Consumer Preview 試玩]]></title>
     <link href="http://zespia.tw/blog/2012/03/03/windows-8-preview/"/>
-    <updated>2012-03-03T11:54:00.000Z</updated>
+    <id>http://zespia.tw/blog/2012/03/03/windows-8-preview/</id>
+    <published>2012-03-03T11:54:00.000Z</published>
+    <updated>2012-10-10T16:36:09.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iQ6n16BPfbQc.jpg" alt="">
 
 </p>
@@ -620,25 +596,14 @@
 </p>
 <h2>結論</h2>
 <p>Windows 8 Consumer Preview 讓人感覺不太好用，就像是將 Metro UI 故意強加在Windows 7上，Metro UI 雖然美觀，卻失去了 Windows 7 的操作直覺性，希望微軟未來能改進傳統介面與 Metro UI 的整合性，<del>讓我們一起期待<a href="http://www.apple.com/macosx/mountain-lion/">Mountain Lion</a>吧</del>！</p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/iQ6n16BPfbQc.jpg" alt="">
-
-</p>
-<p>前些日子，微軟發佈了 <a href="http://windows.microsoft.com/en-US/windows-8/iso">Windows 8 Consumer Preview</a>，雖然名稱有點冗長，不過內容和以往一樣，是給無聊人專用的測試版。
-
-</p>
-<ul>
-<li>下載：<a href="http://windows.microsoft.com/en-US/windows-8/iso"><a href="http://windows.microsoft.com/en-US/windows-8/iso">http://windows.microsoft.com/en-US/windows-8/iso</a></a></li>
-<li>序號：<code>DNJXJ-7XBW8-2378T-X22TX-BKG7J</code></li>
-</ul>
-<p>身為一名無聊高中生的我，ISO 檔一釋出便立刻下載，然而 Windows 8 並沒有符合我的期待。（軟粉不要打我）
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FWindows" term="Windows"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 audio 實驗]]></title>
     <link href="http://zespia.tw/blog/2012/02/04/lab-html5-audio/"/>
-    <updated>2012-02-04T05:29:00.000Z</updated>
+    <id>http://zespia.tw/blog/2012/02/04/lab-html5-audio/</id>
+    <published>2012-02-04T05:29:00.000Z</published>
+    <updated>2012-10-10T16:38:49.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/inE9d4C1xPbYD.png" alt="">
 
 </p>
@@ -750,18 +715,15 @@
 <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/html5-audio-and-video-what-you-must-know/">HTML5 Audio and Video: What you Must Know | Nettuts+</a></li>
 <li><a href="http://www.premiumpixels.com/freebies/compact-music-player-psd/">Free PSD: Compact Music Player | Premium Pixels</a></li>
 </ul>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/inE9d4C1xPbYD.png" alt="">
-
-</p>
-<p>寒假即將結束，不巧膝蓋突然中了一箭，便決定實驗 HTML5 <code>audio</code>標籤的效果，雖然已有 <a href="http://jplayer.org/">jPlayer</a> 這款輕便好用的播放器，但不折騰一下就沒辦法消磨時間了，所以本次的實驗品完全由我操刀。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FJavaScript" term="JavaScript"/>
+    <category scheme="http://zespia.tw/tags%2FHTML5" term="HTML5"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Slash — 專為 Octopress 設計的極簡主題]]></title>
     <link href="http://zespia.tw/blog/2012/01/25/slash-theme/"/>
-    <updated>2012-01-25T08:27:00.000Z</updated>
+    <id>http://zespia.tw/blog/2012/01/25/slash-theme/</id>
+    <published>2012-01-25T08:27:00.000Z</published>
+    <updated>2012-10-11T07:07:47.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i8oyJmY5lRJEJ.png" alt="">
 
 </p>
@@ -809,18 +771,15 @@
 <p>如果還有其他問題或建議，歡迎在以下留言。
 
 </p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/i8oyJmY5lRJEJ.png" alt="">
-
-</p>
-<p><a href="http://octopress.org/">Octopress</a> 雖然預設主題相當漂亮，支援眾多 HTML5 的新特性，但每個網誌都是同一個主題，令人有些厭煩。在決定轉移到 <a href="http://octopress.org/">Octopress</a> 的第一刻起，我就開始著手設計適用於 <a href="http://octopress.org/">Octopress</a> 的主題，在今天終於把檔案整理完畢，集合成一個獨立的 repo。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2F%E4%B8%BB%E9%A1%8C" term="主題"/>
+    <category scheme="http://zespia.tw/tags%2FOctopress" term="Octopress"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[如何利用 CSS 製作多級選單？]]></title>
     <link href="http://zespia.tw/blog/2012/01/24/css-multi-level-menu/"/>
-    <updated>2012-01-24T00:00:00.000Z</updated>
+    <id>http://zespia.tw/blog/2012/01/24/css-multi-level-menu/</id>
+    <published>2012-01-24T00:00:00.000Z</published>
+    <updated>2012-09-22T01:22:59.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibx37Gknqf5wtK.PNG" alt="一般常見的選單">
 
 </p>
@@ -850,21 +809,14 @@
 
 </p>
 <p>寫到最後反而發現詞窮，看來我真不是寫文章的料。總而言之，這是「大概很簡單」教學系列的第二彈，感謝你的收看！</p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/ibx37Gknqf5wtK.PNG" alt="一般常見的選單">
-
-</p>
-<p>選單常見於我們的生活當中，通常用於整理一系列的指令，簡化複雜的程序，使介面看起來更加友善。當應用程式愈複雜，功能愈多時，通常會利用多級選單將類似的指令組織成一個子選單。
-
-</p>
-<p>一般網頁常見到二級選單，利用 CSS 即可達成，有些會透過 JavaScript 增加更多效果，例如動畫、延遲等。多級選單一般常使用 JavaScript 達成，不過透過 CSS 也能做出簡單的多級選單。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FCSS" term="CSS"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[如何利用 jQuery 製作頁籤？]]></title>
     <link href="http://zespia.tw/blog/2012/01/21/jquery-tabs/"/>
-    <updated>2012-01-21T10:10:00.000Z</updated>
+    <id>http://zespia.tw/blog/2012/01/21/jquery-tabs/</id>
+    <published>2012-01-21T10:10:00.000Z</published>
+    <updated>2012-10-10T16:38:54.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i3hFGFugcShjF.jpg" alt="在文章中放入不相干的圖片好像已經成為定番？隨便啦">
 
 </p>
@@ -945,21 +897,14 @@
 
 </p>
 <p>最後的成果如上圖，當然細部的樣式、動畫請自行設定。希望這篇文章簡單易懂（？）的文章能夠幫助到你。最近預計再寫一篇 CSS Only 的多級選單教學，請拭目以待吧！</p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/i3hFGFugcShjF.jpg" alt="在文章中放入不相干的圖片好像已經成為定番？隨便啦">
-
-</p>
-<p>最近花了一週的時間，終於完成 Octopress 的佈景主題，並搬移舊站（zespia.twbbs.org）的文章及留言，發現自已以前的文章實在有夠中二，看得連自己都想揍螢幕，於是偷偷撤下了部分文章。
-
-</p>
-<p>為了慶祝新站落成，便決定寫一篇超級簡易（大概啦）的 jQuery 頁籤製作教學，<del>懷著感恩的心看吧！</del>
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FJavaScript" term="JavaScript"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Hello Octopress!]]></title>
     <link href="http://zespia.tw/blog/2012/01/14/hello-octopress/"/>
-    <updated>2012-01-14T07:52:00.000Z</updated>
+    <id>http://zespia.tw/blog/2012/01/14/hello-octopress/</id>
+    <published>2012-01-14T07:52:00.000Z</published>
+    <updated>2012-09-22T01:20:35.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i4CFI4qZAFEct.png" alt="">
 
 </p>
@@ -1131,42 +1076,15 @@
 <p>如果你是個 geek，<a href="http://octopress.org/">Octopress</a> 或許是不錯的選擇；如果不是的話，請繼續使用 <a href="http://wordpress.org/">WordPress</a> 吧！
 
 </p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/i4CFI4qZAFEct.png" alt="">
-
-</p>
-<p><a href="http://www.acsite.net/tw/">ACSite</a> 的空間即將在2012/1/31到期，而我又懶得續約，這時看到愈來愈多部落客都從 <a href="http://wordpress.org/">WordPress</a> 轉移到 <a href="http://octopress.org/">Octopress</a>，便開始試用 <a href="http://octopress.org/">Octopress</a>。
-
-</p>
-<p><a href="http://octopress.org/">Octopress</a> 與 <a href="http://wordpress.org/">WordPress</a> 同樣身為部落格系統，卻有相當大的不同：
-
-</p>
-<ul>
-<li><strong><a href="http://wordpress.org/">WordPress</a>：</strong><ul>
-<li>PHP</li>
-<li>動態網頁</li>
-<li>外掛多樣</li>
-<li>速度慢</li>
-<li>使用簡單</li>
-</ul>
-</li>
-<li><strong><a href="http://octopress.org/">Octopress</a>：</strong><ul>
-<li>Ruby</li>
-<li>靜態網頁</li>
-<li>剛起步，外掛還很少</li>
-<li>速度快</li>
-<li>geek 才會用</li>
-</ul>
-</li>
-</ul>
-<p>以下將簡單介紹 <a href="http://octopress.org/">Octopress</a> 的安裝與使用。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FOctopress" term="Octopress"/>
+    <category scheme="http://zespia.tw/tags%2FRuby" term="Ruby"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Google+ Motionless & Filter]]></title>
     <link href="http://zespia.tw/blog/2011/09/17/google-scripts-2/"/>
-    <updated>2011-09-17T00:00:00.000Z</updated>
+    <id>http://zespia.tw/blog/2011/09/17/google-scripts-2/</id>
+    <published>2011-09-17T00:00:00.000Z</published>
+    <updated>2012-10-10T16:39:03.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ieJceSDuuo3RS.png" alt="サイノウサンプラー | ryosios（id=21795820）">
 
 
@@ -1186,11 +1104,14 @@
 
 </p>
 <p><a href="http://userscripts.org/scripts/show/111206">下載（Ver. 1.0.1）</a></p>]]></content>
+    <category scheme="http://zespia.tw/tags%2FJavaScript" term="JavaScript"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 Storage 的使用彙整]]></title>
     <link href="http://zespia.tw/blog/2011/08/04/html5-storage/"/>
-    <updated>2011-08-04T10:01:00.000Z</updated>
+    <id>http://zespia.tw/blog/2011/08/04/html5-storage/</id>
+    <published>2011-08-04T10:01:00.000Z</published>
+    <updated>2012-10-10T16:36:49.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ich1TucSOe08P.jpg" alt="找不到相關的圖，各位就把小惡魔胸前的脂肪塊當做Storage吧！（id=21000433）">
 
 </p>
@@ -1250,18 +1171,14 @@
 <pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = localStorage[<span class="string">'test'</span>].split(<span class="string">'|||'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    <span class="comment">// do something</span></div><div class="line">}</div><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = localStorage[<span class="string">'test'</span>].split(<span class="string">'|||'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    <span class="keyword">var</span> item = storage[i].split(<span class="string">';'</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;item.length; j++){</div><div class="line">        <span class="comment">// do something</span></div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure></code></pre>
 <h2>後記</h2>
 <p>最近因為課業繁忙，網誌都放著生灰超過一個月了，於是心血來潮將最近寫腳本的心得寫成文章，可能會有錯誤，請多見諒。</p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/ich1TucSOe08P.jpg" alt="找不到相關的圖，各位就把小惡魔胸前的脂肪塊當做Storage吧！（id=21000433）">
-
-</p>
-<p>當初寫 Google+ Hover Zoom 這腳本時，壓根沒想過可以用 Greasemonkey 內建的參數來儲存資料，於是就選用 HTML5 的 Storage 功能來儲存資料，然而此功能僅能儲存字串（String），讓我花了好些時間上網找資料才能掌握此功能的使用方式。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FHTML5" term="HTML5"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Google+ Hide Comments & Hover Zoom]]></title>
     <link href="http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/"/>
-    <updated>2011-07-13T00:00:00.000Z</updated>
+    <id>http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/</id>
+    <published>2011-07-13T00:00:00.000Z</published>
+    <updated>2012-09-22T01:21:32.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ihQ0s0iWJDgNU.jpeg" alt="">
 
 </p>
@@ -1297,21 +1214,14 @@
 </p>
 <p>我的網誌有種變成雙週刊的趨勢，每兩週才一篇新文章，明後天再發一篇 Steins;Gate 的文章吧。<a href="http://gplus.to/SkyArrow">我的 Google+</a>
 </p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/ihQ0s0iWJDgNU.jpeg" alt="">
-
-</p>
-<p>大約在兩週前，Google 發表了新的社群服務「Google+」，雖然很多人都說 Facebook 和 Google+ 有很大的不同，不過對我而言 Google+ 就是個宅宅版的 Facebook 罷了，我懶得去分析什麼社群網站的情勢了，今天的重點也不在這裡。
-
-</p>
-<p>雖然 Google+ 已經發表了一段時間，針對 Firefox 所做的擴充元件還是很少，幾乎沒有，反倒是Chrome的擴充套件數量不斷提昇，因此上週六（7/9）我吃飽太閒試著用 jQuery 寫了生平第一個瀏覽器腳本「Google+ Hide Comments」，一個行數不到 40 行的簡單腳本，本來想試著研究 Firefox 擴充套件，但最後太複雜還要先裝一堆擴充套件於是作罷。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FJavaScript" term="JavaScript"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[鍊金術士梅露露 ～亞蘭德的鍊金術士 3～]]></title>
     <link href="http://zespia.tw/blog/2011/07/01/ps3-meruru/"/>
-    <updated>2011-07-01T07:44:00.000Z</updated>
+    <id>http://zespia.tw/blog/2011/07/01/ps3-meruru/</id>
+    <published>2011-07-01T07:44:00.000Z</published>
+    <updated>2012-10-10T16:38:37.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ib1v5x6fsVI7ue.jpeg" alt="相機又被老媽搶走了，反正我攝影技術也不好，乾脆直接貼官網的桌布吧（逃）">
 
 </p>
@@ -1392,18 +1302,15 @@
 </p>
 <h2>連結</h2>
 <p>全 CG <a href="http://www.multiupload.com/DOXTY733OZ">下載</a>｜<a href="https://picasaweb.google.com/105931860008509594725/3?authuser=0&amp;feat=directlink">相簿</a><br><a href="http://meruru.lostgamer.net/">メルルのアトリエ ～アーランドの錬金術士3～ 攻略Wiki – Lostgamer</a></p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/ib1v5x6fsVI7ue.jpeg" alt="相機又被老媽搶走了，反正我攝影技術也不好，乾脆直接貼官網的桌布吧（逃）">
-
-</p>
-<p>當初聽到這款遊戲的發售消息時，還有點猶豫自己到底該不該買，因為同一系列的托托莉我玩了將近一個月，還是摸不熟系統，最後只得來了「BAD END」的結局，但當我回神之時，手中的滑鼠已經不自覺地按下了「訂購」連結，於是乎就有你眼前的這篇文章了。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FPS3" term="PS3"/>
+    <category scheme="http://zespia.tw/tags%2F%E9%81%8A%E6%88%B2" term="遊戲"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Corner 1.0 正式版推出！]]></title>
     <link href="http://zespia.tw/blog/2011/05/27/corner-theme/"/>
-    <updated>2011-05-27T00:00:00.000Z</updated>
+    <id>http://zespia.tw/blog/2011/05/27/corner-theme/</id>
+    <published>2011-05-27T00:00:00.000Z</published>
+    <updated>2012-09-22T01:23:10.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/igeV3vBq0HbXR.jpg" alt="">
 
 </p>
@@ -1502,30 +1409,15 @@
 </ul>
 </li>
 </ul>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/igeV3vBq0HbXR.jpg" alt="">
-
-</p>
-<p>日前在法雅客時，碰巧看到了展示中的 Windows Phone 7，雖然我個人不是很喜歡微軟，不過 WP7 看來真的擺脫了前代的束縛，順暢又簡潔的介面不輸 iPhone。於是我便想依照 WP7 的風格來設計一個佈景主題，起初還摸不著頭緒，直到開學之後才突然靈感迸發，果然人類都必須直到開學後才會開始努力嗎...orz。
-
-</p>
-<p>這次相較於 Pixiv Custom，大幅簡化了部分語法，本來也想試著嘗試簡化後者的語法，不過之前我做得太混亂了，連我都有點看不懂XD，於是便放棄了。
-
-</p>
-<p>此佈景支援 WordPress 3.0 功能，「<strong>自定選單</strong>」以及「<strong>自定背景</strong>」，可支援 Banner 聯播，只需將「<strong>700x200px</strong>」的圖片放入<code>/headers</code>資料夾內，頁面重新整理時便會隨機顯示圖片。1.0 正式版已<strong>新增</strong>以下功能：
-
-</p>
-<ul>
-<li>AJAX 頁面導覽</li>
-<li>分享按鈕</li>
-<li>留言功能按鈕提示</li>
-<li>重新改版佈景設定頁面</li>
-</ul>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FWordPress" term="WordPress"/>
+    <category scheme="http://zespia.tw/tags%2F%E4%B8%BB%E9%A1%8C" term="主題"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[如何使用 Settings API 製作佈景後台選項？]]></title>
     <link href="http://zespia.tw/blog/2011/05/22/how-to-use-settings-api/"/>
-    <updated>2011-05-22T08:02:00.000Z</updated>
+    <id>http://zespia.tw/blog/2011/05/22/how-to-use-settings-api/</id>
+    <published>2011-05-22T08:02:00.000Z</published>
+    <updated>2012-10-10T16:39:01.000Z</updated>
     <content type="html"><![CDATA[<p>隨著 WordPress 版本號的推進，不只系統越變越肥大，外掛、佈景主題的條件也越來越嚴苛，全部規定必須使用官方的現有函數製作，雖然 WordPress 的函數庫真的很豐富很好用，不過這麼獨裁的規定著實讓人很不爽。
 
 </p>
@@ -1612,18 +1504,14 @@
 </p>
 <h2>後記</h2>
 <p>這大概是我寫過最長的一篇文章，內容可能會有點枯燥乏味、充滿錯誤，<del>而且一張萌圖都沒有</del>，各位客倌就把這當成一篇筆記文章吧！</p>]]></content>
-    <summary type="html"><![CDATA[<p>隨著 WordPress 版本號的推進，不只系統越變越肥大，外掛、佈景主題的條件也越來越嚴苛，全部規定必須使用官方的現有函數製作，雖然 WordPress 的函數庫真的很豐富很好用，不過這麼獨裁的規定著實讓人很不爽。
-
-</p>
-<p>因此，由於官方要求，我必須使用 Settings API 來製作主題選項，但官方文件的資料的資訊實在太少了，在下沒慧根實在看不懂，經過 Google 百般尋覓後，將我較喜歡的幾篇文章（見參考出處）整合寫成了這篇文章，我沒有 PHP 底子，只有在圖書館翻過幾本書，內文可能會有些錯誤，請見諒。
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FWordPress" term="WordPress"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Pixiv Custom 2.0 更新！代碼更精簡，功能更豐富！]]></title>
     <link href="http://zespia.tw/blog/2011/04/12/pixiv-custom-2-0-update/"/>
-    <updated>2011-04-12T00:00:00.000Z</updated>
+    <id>http://zespia.tw/blog/2011/04/12/pixiv-custom-2-0-update/</id>
+    <published>2011-04-12T00:00:00.000Z</published>
+    <updated>2012-09-22T01:17:46.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iZT3XSFQ268L4.jpg" alt="其實這張圖與本文內容沒什麼關係，純粹當做福利罷了（id=18097491）">
 
 </p>
@@ -1703,18 +1591,15 @@
 </li>
 </ul>
 <p>聽起來似乎沒什麼，事實上新增的功能也沒幾個，大部分的更動都是精簡代碼，所以為了增加霸氣，一次將版本號躍升到 2.0。（毆）相容性尚未測試，不過應該能夠完美支援除 IE 外的所有瀏覽器，如果有任何問題的話，請在下方留言吧。</p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/iZT3XSFQ268L4.jpg" alt="其實這張圖與本文內容沒什麼關係，純粹當做福利罷了（id=18097491）">
-
-</p>
-<p>這次的更新主要就只有四個字，「<strong>精簡代碼</strong>」，讓檔案保持在上一版的大小外又<strong>新增</strong>了一些更為詳細的後台設定，廢話不多說，以下就是本次的更新內容：
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2FWordPress" term="WordPress"/>
+    <category scheme="http://zespia.tw/tags%2F%E4%B8%BB%E9%A1%8C" term="主題"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[凱薩琳（キャサリン）]]></title>
     <link href="http://zespia.tw/blog/2011/04/10/ps3-catherine/"/>
-    <updated>2011-04-10T00:00:00.000Z</updated>
+    <id>http://zespia.tw/blog/2011/04/10/ps3-catherine/</id>
+    <published>2011-04-10T00:00:00.000Z</published>
+    <updated>2012-09-22T01:17:11.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iVd4RKlY7q4KD.jpg" alt="※封面僅供參考">
 
 </p>
@@ -1747,18 +1632,15 @@
 <p><blockquote>
 以上是花了 11 小時以 EASY 難度完成的好人結局，老實說光是 EASY 模式就讓人有夠累了，不過身為一名神經病的自虐系玩家（ゝω・）u，目前正在以 NORMAL 模式進行人渣路線，沒有 UNDO 功能真的讓人很惱羞。
 </blockquote></p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/iVd4RKlY7q4KD.jpg" alt="※封面僅供參考">
-
-</p>
-<p>文森特（Vincent）是個 32 歲的系統工程師，希望能夠一個人自由自在的生活。最近，凱薩琳（Katherine，簡稱 K 子）的不斷逼婚，讓文森特開始深思自己的未來，是否該找個安定的工作養活家庭？是否該停止漂泊與她共度下半輩子？
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2F%E9%81%8A%E6%88%B2" term="遊戲"/>
+    <category scheme="http://zespia.tw/tags%2FPS3" term="PS3"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[XLD - Mac 的無損格式解碼器]]></title>
     <link href="http://zespia.tw/blog/2011/03/27/xld-zh-tw/"/>
-    <updated>2011-03-27T05:54:00.000Z</updated>
+    <id>http://zespia.tw/blog/2011/03/27/xld-zh-tw/</id>
+    <published>2011-03-27T05:54:00.000Z</published>
+    <updated>2012-09-22T01:11:29.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ib2AL5Hsjck8w0.jpg" alt="">
 
 </p>
@@ -1855,28 +1737,7 @@
 </p>
 <h2>更新記錄</h2>
 <p><strong>2011/3/27</strong> XLD 20110312 (130.0) 中文化版本 Ver. 0.2 發佈，使用全新的 Cocoa UI 設計音軌列表視窗<br><strong>2010/6/6</strong> XLD 20100518 (120.3) 中文化版本 Ver. 0.1 發佈</p>]]></content>
-    <summary type="html"><![CDATA[<p><img src="http://i.minus.com/ib2AL5Hsjck8w0.jpg" alt="">
-
-</p>
-<p>這是一個專門解碼無損格式的軟體，可應用於：
-
-</p>
-<ul>
-<li><a href="http://flac.sourceforge.net/">(Ogg) FLAC</a> (.flac/oga)</li>
-<li><a href="http://www.monkeysaudio.com/">Monkey&#39;s Audio</a> (.ape)</li>
-<li><a href="http://www.wavpack.com/">Wavpack</a> (.wv)</li>
-<li><a href="http://www.true-audio.com/">TTA</a> (.tta)</li>
-<li>Apple Lossless (.m4a) [10.4 以上版本]</li>
-<li><a href="http://www.thbeck.de/Tak/Tak.html">TAK</a> (.tak) <a href="http://www.winehq.org/">需安裝 [Wine</a>]</li>
-<li><a href="http://www.etree.org/shncom.html">Shorten</a> (.shn) [僅限於 SHN v3]</li>
-<li>AIFF, WAV……等等</li>
-</ul>
-<p>也可以將 CD 打包成 Cue 格式，自動連接到網路上的資料庫獲取音軌名稱，直接編輯音軌的 Metadata（中繼資料），只是目前還不支援 Tak 格式。
-
-</p>
-<p><a href="http://tmkk.hp.infoseek.co.jp/xld/index.html">官方網站</a>
-
-</p>
-]]></summary>
+    <category scheme="http://zespia.tw/tags%2F%E4%B8%AD%E6%96%87%E5%8C%96" term="中文化"/>
+    <category scheme="http://zespia.tw/tags%2FMac" term="Mac"/>
   </entry>
 </feed>
