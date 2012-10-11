@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://zespia.tw/blog/2012/10/11/hexo-debut/</loc>
+    <lastmod>2012-10-11T09:45:20.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://zespia.tw/blog/2012/01/25/slash-theme/</loc>
+    <lastmod>2012-10-11T07:07:47.000Z</lastmod>
+  </url>
+  <url>
     <loc>http://zespia.tw/blog/2010/08/04/8-1-books/</loc>
     <lastmod>2012-10-10T16:39:12.000Z</lastmod>
   </url>
@@ -211,13 +219,5 @@
   <url>
     <loc>http://zespia.tw/blog/2011/03/27/xld-zh-tw/</loc>
     <lastmod>2012-09-22T01:11:29.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://zespia.tw/blog/2012/01/25/slash-theme/</loc>
-    <lastmod>2012-08-06T10:19:11.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://zespia.tw/lab/index.html</loc>
-    <lastmod>2012-05-01T10:41:35.000Z</lastmod>
   </url>
 </urlset>
