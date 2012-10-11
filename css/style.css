@@ -16,6 +16,16 @@ body {
   font-size: 14px;
   text-shadow: 0 0 1px transparent;
 }
+@media screen and (max-width: 1260px) {
+  body {
+    margin: 0 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 13px;
+  }
+}
 h1,
 h2,
 h3,
@@ -61,8 +71,35 @@ a:hover {
   width: 1200px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1260px) {
+  .inner {
+    width: 100%;
+  }
+}
 #main-col {
   width: 900px;
+}
+@media screen and (max-width: 1260px) {
+  #main-col {
+    width: 100%;
+    margin-right: -300px;
+  }
+}
+@media screen and (max-width: 900px) {
+  #main-col {
+    margin-right: 0;
+    float: none;
+  }
+}
+@media screen and (max-width: 1260px) {
+  #wrapper {
+    margin-right: 300px;
+  }
+}
+@media screen and (max-width: 900px) {
+  #wrapper {
+    margin-right: 0;
+  }
 }
 #header {
   text-shadow: 0 0 1px #fff;
@@ -127,6 +164,11 @@ article .post-content {
   padding: 20px 20px 15px 77px;
   margin-bottom: 50px;
   position: relative;
+}
+@media screen and (max-width: 600px) {
+  article .post-content {
+    padding-left: 20px;
+  }
 }
 article .gallery {
   overflow: hidden;
@@ -199,6 +241,11 @@ article header .icon {
   top: 20px;
   left: 20px;
   color: #258fb8;
+}
+@media screen and (max-width: 600px) {
+  article header .icon {
+    display: none;
+  }
 }
 article header .icon:before {
   position: absolute;
@@ -436,6 +483,12 @@ article footer .addthis iframe {
 }
 #sidebar {
   width: 270px;
+}
+@media screen and (max-width: 900px) {
+  #sidebar {
+    float: none;
+    width: 100%;
+  }
 }
 #sidebar .widget {
   background: #fff;
