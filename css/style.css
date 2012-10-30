@@ -103,7 +103,7 @@ a:hover {
 }
 #header {
   text-shadow: 0 0 1px #fff;
-  margin: 50px 0;
+  margin: 50px auto;
 }
 #header a {
   color: #999;
@@ -153,12 +153,6 @@ article.photo .icon:before {
 }
 article.link .icon:before {
   content: '\f0c1';
-}
-article.link .title a:after {
-  content: '\f08e';
-  color: #999;
-  font: 12px FontAwesome;
-  padding-left: 10px;
 }
 article .post-content {
   padding: 20px 20px 15px 77px;
@@ -272,8 +266,15 @@ article header .title a:hover {
   color: #258fb8;
   text-decoration: none;
 }
+article header .title a.link:after {
+  content: '\f08e';
+  color: #999;
+  font: 12px FontAwesome;
+  padding-left: 10px;
+}
 article .entry {
   text-align: justify;
+  line-height: 1.6;
 }
 article .entry p,
 article .entry blockquote,
@@ -282,6 +283,10 @@ article .entry ol,
 article .entry dl,
 article .entry table,
 article .entry iframe,
+article .entry h3,
+article .entry h4,
+article .entry h5,
+article .entry h6,
 article .entry .video-container {
   margin-top: 15px;
 }
@@ -289,9 +294,22 @@ article .entry blockquote {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   font-style: italic;
-  padding: 15px 30px 30px;
+  font-family: "Georgia", serif;
+  font-size: 1.2em;
+  padding: 0 30px 15px;
   text-align: center;
-  color: #999;
+}
+article .entry blockquote footer {
+  border-top: none;
+  font-size: 0.8em;
+  line-height: 1;
+  margin: 20px 0 0;
+  padding-top: 0;
+}
+article .entry blockquote footer cite:before {
+  content: '—';
+  color: #ccc;
+  padding: 0 0.5em;
 }
 article .entry code,
 article .entry pre {
@@ -333,21 +351,17 @@ article .entry dl dl {
   margin-top: 0;
 }
 article .entry h1,
-article .entry h2,
-article .entry h3,
-article .entry h4,
-article .entry h5,
-article .entry h6 {
+article .entry h2 {
   font-weight: normal;
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
   margin-top: 20px;
 }
-article .entry p,
-article .entry ul,
-article .entry ol,
-article .entry dl {
-  line-height: 1.6;
+article .entry h3,
+article .entry h4,
+article .entry h5,
+article .entry h6 {
+  font-weight: normal;
 }
 article .entry img,
 article .entry video {
@@ -390,6 +404,15 @@ article .entry .video-container embed {
   width: 100%;
   height: 100%;
   margin-top: 0;
+}
+article .entry .pullquote {
+  float: right;
+  border: none;
+  padding: 0;
+  margin: 1em 0 0.5em 1.5em;
+  text-align: left;
+  width: 45%;
+  font-size: 1.5em;
 }
 article footer {
   margin-top: 15px;
@@ -481,8 +504,39 @@ article footer .addthis iframe {
   padding-left: 10px;
   font-family: FontAwesome;
 }
+.archive-title {
+  color: #999;
+  font-weight: normal;
+  margin-bottom: 30px;
+  text-shadow: 0 0 1px #fff;
+}
+.archive-title:before {
+  font-family: FontAwesome;
+  content: '\f073';
+  padding-right: 15px;
+}
+.archive-title.tag:before {
+  content: '\f02b';
+}
+.archive-title.category:before {
+  content: '\f07b';
+}
+.archive {
+  -webkit-box-shadow: 1px 2px 3px #ddd;
+  box-shadow: 1px 2px 3px #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 50px;
+}
+.archive article {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.archive article .post-content {
+  margin-bottom: 0;
+}
 #sidebar {
   width: 270px;
+  line-height: 1.8em;
 }
 @media screen and (max-width: 900px) {
   #sidebar {
@@ -495,6 +549,7 @@ article footer .addthis iframe {
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   margin-bottom: 30px;
+  break-word: nowrap;
 }
 #sidebar .widget .title {
   padding: 15px 20px;
@@ -510,7 +565,6 @@ article footer .addthis iframe {
 #sidebar .widget ol,
 #sidebar .widget dl {
   list-style: none;
-  line-height: 1.8em;
 }
 #sidebar .widget ul ul,
 #sidebar .widget ol ul,
@@ -567,11 +621,54 @@ article footer .addthis iframe {
   color: #999;
   line-height: 1;
 }
+#sidebar .tagcloud .entry {
+  padding-right: 5px;
+}
+#sidebar .tagcloud a {
+  margin-right: 10px;
+}
 #footer {
   color: #999;
   margin-bottom: 50px;
   font: 0.9em/1.6 "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
+}
+.entry .gist {
+  background: #eee;
+  border: 1px solid #ddd;
+  margin-top: 15px;
+  padding: 7px 15px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  text-shadow: 0 0 1px #fff;
+  line-height: 1.6;
+  overflow: auto;
+}
+.entry .gist .gist-file {
+  border: none;
+  font-family: inherit;
+  margin: 0;
+}
+.entry .gist .gist-file .gist-data {
+  background: none;
+  border-bottom: none;
+}
+.entry .gist .gist-file .gist-data pre {
+  padding: 0 !important;
+  font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+}
+.entry .gist .gist-file .gist-meta {
+  background: none;
+  color: #999;
+  margin-top: 5px;
+  padding: 0;
+  text-shadow: 0 0 1px #fff;
+}
+.entry .gist .gist-file .gist-meta a {
+  color: #258fb8;
+}
+.entry .gist .gist-file .gist-meta a:visited {
+  color: #258fb8;
 }
 figure.highlight {
   background: #eee;
@@ -583,6 +680,15 @@ figure.highlight {
   text-shadow: 0 0 1px #fff;
   line-height: 1.6;
   overflow: auto;
+}
+figure.highlight figcaption {
+  color: #999;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  text-shadow: 0 0 1px #fff;
+}
+figure.highlight figcaption a {
+  float: right;
 }
 figure.highlight table {
   margin-top: 0;

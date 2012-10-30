@@ -2,10 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
   <title>Hexo 颯爽登場！ | Zespia</title>
   <meta name="author" content="SkyArrow">
-  
-  <meta name="description" content="我想每個 Octopress 的使用者一定都有這樣的煩惱──隨著文章數量愈來愈多，檔案建立的速度愈來愈慢。本站目前已累積至 54 篇文章，每次建立檔案時，至少都需要花費一分鐘以上的時間。或許是因為 Ruby 天生就比較慢，而這種問題未來似乎也不會改善，Jekyll 和 Octopress 已經一段時間沒有更新，那麼唯一的解決方案只有另覓其他 Blog Framework 了。">
   
   
   <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
@@ -30,23 +29,23 @@
 </head>
 
 <body>
-  <header id="header"><div class="inner">
-  <div class="alignleft">
-    <h1><a href="/">Zespia</a></h1>
-    <h2><a href="/"></a></h2>
-  </div>
-  <nav id="main-nav" class="alignright">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-    <div class="clearfix"></div>
-  </nav>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Zespia</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+    
+  </ul>
   <div class="clearfix"></div>
-</div></header>
+</nav>
+<div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 
@@ -54,15 +53,13 @@
   
   <div class="post-content">
     <header>
-      <div class="icon"></div>
       
-        <time datetime="2012-10-11T07:22:47.000Z"><a href="/blog/2012/10/11/hexo-debut/">Oct 11, 2012</a></time>
+        <div class="icon"></div>
+        <time datetime="2012-10-11T07:22:47.000Z"><a href="/blog/2012/10/11/hexo-debut/">2012/10/11</a></time>
       
       
         
-          
-            <h1 class="title">Hexo 颯爽登場！</h1>
-          
+          <h1 class="title">Hexo 颯爽登場！</h1>
         
       
     </header>
@@ -124,7 +121,7 @@
 
 </p>
 <h3>初始化</h3>
-<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">hexo init &lt;folder></div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">hexo init &lt;folder&gt;</div></pre></td></tr></table></figure></code></pre>
 <p>如果指定 <code>&lt;folder&gt;</code>，便會在目前的資料夾建立一個名為 <code>&lt;folder&gt;</code> 的新資料夾；否則會在目前資料夾初始化。
 
 </p>
@@ -132,13 +129,11 @@
 
 </p>
 <h3>佈署</h3>
-<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">hexo setup_deploy &lt;repository></div></pre></td></tr></table></figure></code></pre>
-<p>之後只要執行以下指令就能直接 deploy 了：
+<p>0.1.0 版後，佈署方式有所調整，請參見 <a href="https://github.com/tommy351/hexo/wiki/Deploy">https://github.com/tommy351/hexo/wiki/Deploy</a>。
 
 </p>
-<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure></code></pre>
 <h3>建立文章、分頁</h3>
-<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line">hexo new_post &lt;title></div><div class="line">hexo new_page &lt;title></div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line">hexo new_post &lt;title&gt;</div><div class="line">hexo new_page &lt;title&gt;</div></pre></td></tr></table></figure></code></pre>
 <p>Hexo 已經內建一些外掛了，你可以用這些外掛快速插入元素：
 
 </p>
@@ -186,35 +181,37 @@
 </p>
 <iframe src="http://ghbtns.com/github-btn.html?user=tommy351&repo=hexo&type=watch&count=true"
   allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe>
+
+
       
     </div>
     <footer>
       
         
         
-          
-          <div class="tags">
-            <a href="/tags/JavaScript">JavaScript</a>, <a href="/tags/Node.js">Node.js</a>
-          </div>
+  
+  <div class="tags">
+    <a href="/tags/JavaScript/">JavaScript</a>, <a href="/tags/Node.js/">Node.js</a>, <a href="/tags/Hexo/">Hexo</a>
+  </div>
+
         
-        
-          <div class="addthis addthis_toolbox addthis_default_style">
-            
-              <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-            
-            
-              <a class="addthis_button_tweet"></a>
-            
-            
-              <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-            
-            
-              <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-            
-            <a class="addthis_counter addthis_pill_style"></a>
-          </div>
-          <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
-        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -237,69 +234,56 @@
   </form>
 </div>
 
+
+
+
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
   
-    
-    <li><a href="/tags/CSS">CSS</a><small>1</small></li>
+    <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
-    
-    <li><a href="/tags/HTML5">HTML5</a><small>2</small></li>
+    <li><a href="/tags/HTML5/">HTML5</a><small>2</small></li>
   
-    
-    <li><a href="/tags/JavaScript">JavaScript</a><small>6</small></li>
+    <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Mac">Mac</a><small>16</small></li>
+    <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
   
-    
-    <li><a href="/tags/Node.js">Node.js</a><small>2</small></li>
+    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
-    
-    <li><a href="/tags/Octopress">Octopress</a><small>3</small></li>
+    <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PS3">PS3</a><small>5</small></li>
+    <li><a href="/tags/Octopress/">Octopress</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PSP">PSP</a><small>2</small></li>
+    <li><a href="/tags/PS3/">PS3</a><small>5</small></li>
   
-    
-    <li><a href="/tags/Ruby">Ruby</a><small>1</small></li>
+    <li><a href="/tags/PSP/">PSP</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Windows">Windows</a><small>1</small></li>
+    <li><a href="/tags/Ruby/">Ruby</a><small>1</small></li>
   
-    
-    <li><a href="/tags/WordPress">WordPress</a><small>5</small></li>
+    <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
-    
-    <li><a href="/tags/中文化">中文化</a><small>16</small></li>
+    <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
   
-    
-    <li><a href="/tags/主題">主題</a><small>6</small></li>
+    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
-    
-    <li><a href="/tags/同人誌">同人誌</a><small>2</small></li>
+    <li><a href="/tags/主題/">主題</a><small>6</small></li>
   
-    
-    <li><a href="/tags/天降之物">天降之物</a><small>1</small></li>
+    <li><a href="/tags/同人誌/">同人誌</a><small>2</small></li>
   
-    
-    <li><a href="/tags/活動">活動</a><small>2</small></li>
+    <li><a href="/tags/天降之物/">天降之物</a><small>1</small></li>
   
-    
-    <li><a href="/tags/漫畫">漫畫</a><small>6</small></li>
+    <li><a href="/tags/活動/">活動</a><small>2</small></li>
   
-    
-    <li><a href="/tags/輕小說">輕小說</a><small>8</small></li>
+    <li><a href="/tags/漫畫/">漫畫</a><small>6</small></li>
   
-    
-    <li><a href="/tags/遊戲">遊戲</a><small>7</small></li>
+    <li><a href="/tags/輕小說/">輕小說</a><small>8</small></li>
+  
+    <li><a href="/tags/遊戲/">遊戲</a><small>7</small></li>
   
   </ul>
 </div>
+
 
 
 <div class="widget twitter">

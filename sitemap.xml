@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://zespia.tw/blog/2012/10/29/hexo-update-0.1/</loc>
+    <lastmod>2012-10-30T17:17:12.000Z</lastmod>
+  </url>
+  <url>
     <loc>http://zespia.tw/blog/2012/10/11/hexo-debut/</loc>
-    <lastmod>2012-10-11T09:45:20.000Z</lastmod>
+    <lastmod>2012-10-29T14:31:15.000Z</lastmod>
   </url>
   <url>
     <loc>http://zespia.tw/blog/2012/01/25/slash-theme/</loc>

@@ -2,10 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
   <title>HTML5 audio 實驗 | Zespia</title>
   <meta name="author" content="SkyArrow">
-  
-  <meta name="description" content="寒假即將結束，不巧膝蓋突然中了一箭，便決定實驗 HTML5 audio標籤的效果，雖然已有 jPlayer 這款輕便好用的播放器，但不折騰一下就沒辦法消磨時間了，所以本次的實驗品完全由我操刀。">
   
   
   <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
@@ -30,23 +29,23 @@
 </head>
 
 <body>
-  <header id="header"><div class="inner">
-  <div class="alignleft">
-    <h1><a href="/">Zespia</a></h1>
-    <h2><a href="/"></a></h2>
-  </div>
-  <nav id="main-nav" class="alignright">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-    <div class="clearfix"></div>
-  </nav>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Zespia</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+    
+  </ul>
   <div class="clearfix"></div>
-</div></header>
+</nav>
+<div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 
@@ -54,15 +53,13 @@
   
   <div class="post-content">
     <header>
-      <div class="icon"></div>
       
-        <time datetime="2012-02-04T05:29:00.000Z"><a href="/blog/2012/02/04/lab-html5-audio/">Feb 4, 2012</a></time>
+        <div class="icon"></div>
+        <time datetime="2012-02-04T05:29:00.000Z"><a href="/blog/2012/02/04/lab-html5-audio/">2012/2/4</a></time>
       
       
         
-          
-            <h1 class="title">HTML5 audio 實驗</h1>
-          
+          <h1 class="title">HTML5 audio 實驗</h1>
         
       
     </header>
@@ -80,7 +77,7 @@
 <p>首先必須了解<code>audio</code>標籤的使用方式：
 
 </p>
-<pre><code class="lang-html"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">controls</span>></span></div><div class="line">    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.mp3"</span>></span></div><div class="line">    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.ogg"</span>></span></div><div class="line"><span class="tag">&lt;/<span class="title">audio</span>></span></div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-html"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">controls</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.mp3"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure></code></pre>
 <p>輸入以上代碼後，便可在網頁中看到瀏覽器內建的播放器。每種瀏覽器支援的播放類型不一，最保險的方法是備妥<code>mp3</code>、<code>ogg</code>。
 
 </p>
@@ -158,10 +155,10 @@
 <p>播放列表的製作過程有點髒，中途還重構了幾次，所以直接看範例應該會比較快，若對於範例內的程式碼感到疑惑，可在下方留言。
 
 </p>
-<p>範例內已設定了一些參數，可在<code>js/script.js</code>內更改。第 5 行的<code>continous</code>參數為連續播放，第6行的<code>autoplay</code>參數為自動播放，第7行的<code>playlist</code>陣列請自行設定，壓縮檔內<strong>不會</strong>附帶範例內的音樂檔案。<code>playlist</code>陣列的格式如下：
+<p>範例內已設定了一些參數，可在<code>js/script.js</code>內更改。第 5 行的<code>continous</code>參數為連續播放，第 6 行的<code>autoplay</code>參數為自動播放，第 7 行的<code>playlist</code>陣列請自行設定，壓縮檔內<strong>不會</strong>附帶範例內的音樂檔案。<code>playlist</code>陣列的格式如下：
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> playlist = [</div><div class="line">    {</div><div class="line">        title: <span class="string">'Tell Your World'</span>,</div><div class="line">        artist: <span class="string">'livetune feat.初音ミク'</span>,</div><div class="line">        album: <span class="string">'Tell Your World'</span>,</div><div class="line">        cover: <span class="string">'cover/tell_your_world.jpg'</span>,</div><div class="line">        mp3: <span class="string">'music/tell_your_world.mp3'</span>,</div><div class="line">        ogg: <span class="string">'music/tell_your_world.ogg'</span></div><div class="line">    }</div><div class="line">];</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> playlist = [</div><div class="line">    {</div><div class="line">        title: <span class="string">'Tell Your World'</span>,</div><div class="line">        artist: <span class="string">'livetune feat. 初音ミク'</span>,</div><div class="line">        album: <span class="string">'Tell Your World'</span>,</div><div class="line">        cover: <span class="string">'cover/tell_your_world.jpg'</span>,</div><div class="line">        mp3: <span class="string">'music/tell_your_world.mp3'</span>,</div><div class="line">        ogg: <span class="string">'music/tell_your_world.ogg'</span></div><div class="line">    }</div><div class="line">];</div></pre></td></tr></table></figure></code></pre>
 <p><code>title</code>為標題，<code>artist</code>為演出者，<code>album</code>為專輯名稱，<code>cover</code>為專輯封面的路徑，<code>mp3</code>、<code>ogg</code>分別為音樂檔案的路徑，建議備妥兩種格式的檔案，<del>要不然 Firefox 和 Opera 不就只能去死了嗎？</del>
 
 </p>
@@ -174,40 +171,41 @@
 <h2>參考出處</h2>
 <ul>
 <li><a href="http://jplayer.org/">jPlayer</a></li>
-<li><a href="http://blog.darkthread.net/post-2011-05-15-html5-audio.aspx">小試HTML 5 audio - 黑暗執行緒</a></li>
+<li><a href="http://blog.darkthread.net/post-2011-05-15-html5-audio.aspx">小試 HTML 5 audio - 黑暗執行緒</a></li>
 <li><a href="https://developer.mozilla.org/en/Using_HTML5_audio_and_video">Using HTML5 audio and video - MDN</a></li>
 <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/html5-audio-and-video-what-you-must-know/">HTML5 Audio and Video: What you Must Know | Nettuts+</a></li>
 <li><a href="http://www.premiumpixels.com/freebies/compact-music-player-psd/">Free PSD: Compact Music Player | Premium Pixels</a></li>
 </ul>
+
       
     </div>
     <footer>
       
         
         
-          
-          <div class="tags">
-            <a href="/tags/JavaScript">JavaScript</a>, <a href="/tags/HTML5">HTML5</a>
-          </div>
+  
+  <div class="tags">
+    <a href="/tags/JavaScript/">JavaScript</a>, <a href="/tags/HTML5/">HTML5</a>
+  </div>
+
         
-        
-          <div class="addthis addthis_toolbox addthis_default_style">
-            
-              <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-            
-            
-              <a class="addthis_button_tweet"></a>
-            
-            
-              <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-            
-            
-              <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-            
-            <a class="addthis_counter addthis_pill_style"></a>
-          </div>
-          <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
-        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -230,69 +228,56 @@
   </form>
 </div>
 
+
+
+
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
   
-    
-    <li><a href="/tags/CSS">CSS</a><small>1</small></li>
+    <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
-    
-    <li><a href="/tags/HTML5">HTML5</a><small>2</small></li>
+    <li><a href="/tags/HTML5/">HTML5</a><small>2</small></li>
   
-    
-    <li><a href="/tags/JavaScript">JavaScript</a><small>6</small></li>
+    <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Mac">Mac</a><small>16</small></li>
+    <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
   
-    
-    <li><a href="/tags/Node.js">Node.js</a><small>2</small></li>
+    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
-    
-    <li><a href="/tags/Octopress">Octopress</a><small>3</small></li>
+    <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PS3">PS3</a><small>5</small></li>
+    <li><a href="/tags/Octopress/">Octopress</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PSP">PSP</a><small>2</small></li>
+    <li><a href="/tags/PS3/">PS3</a><small>5</small></li>
   
-    
-    <li><a href="/tags/Ruby">Ruby</a><small>1</small></li>
+    <li><a href="/tags/PSP/">PSP</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Windows">Windows</a><small>1</small></li>
+    <li><a href="/tags/Ruby/">Ruby</a><small>1</small></li>
   
-    
-    <li><a href="/tags/WordPress">WordPress</a><small>5</small></li>
+    <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
-    
-    <li><a href="/tags/中文化">中文化</a><small>16</small></li>
+    <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
   
-    
-    <li><a href="/tags/主題">主題</a><small>6</small></li>
+    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
-    
-    <li><a href="/tags/同人誌">同人誌</a><small>2</small></li>
+    <li><a href="/tags/主題/">主題</a><small>6</small></li>
   
-    
-    <li><a href="/tags/天降之物">天降之物</a><small>1</small></li>
+    <li><a href="/tags/同人誌/">同人誌</a><small>2</small></li>
   
-    
-    <li><a href="/tags/活動">活動</a><small>2</small></li>
+    <li><a href="/tags/天降之物/">天降之物</a><small>1</small></li>
   
-    
-    <li><a href="/tags/漫畫">漫畫</a><small>6</small></li>
+    <li><a href="/tags/活動/">活動</a><small>2</small></li>
   
-    
-    <li><a href="/tags/輕小說">輕小說</a><small>8</small></li>
+    <li><a href="/tags/漫畫/">漫畫</a><small>6</small></li>
   
-    
-    <li><a href="/tags/遊戲">遊戲</a><small>7</small></li>
+    <li><a href="/tags/輕小說/">輕小說</a><small>8</small></li>
+  
+    <li><a href="/tags/遊戲/">遊戲</a><small>7</small></li>
   
   </ul>
 </div>
+
 
 
 <div class="widget twitter">

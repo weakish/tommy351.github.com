@@ -2,10 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
   <title>如何利用 CSS 製作多級選單？ | Zespia</title>
   <meta name="author" content="SkyArrow">
-  
-  <meta name="description" content="選單常見於我們的生活當中，通常用於整理一系列的指令，簡化複雜的程序，使介面看起來更加友善。當應用程式愈複雜，功能愈多時，通常會利用多級選單將類似的指令組織成一個子選單。一般網頁常見到二級選單，利用 CSS 即可達成，有些會透過 JavaScript 增加更多效果，例如動畫、延遲等。多級選單一般常使用 JavaScript 達成，不過透過 CSS 也能做出簡單的多級選單。">
   
   
   <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
@@ -30,23 +29,23 @@
 </head>
 
 <body>
-  <header id="header"><div class="inner">
-  <div class="alignleft">
-    <h1><a href="/">Zespia</a></h1>
-    <h2><a href="/"></a></h2>
-  </div>
-  <nav id="main-nav" class="alignright">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-    <div class="clearfix"></div>
-  </nav>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Zespia</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+    
+  </ul>
   <div class="clearfix"></div>
-</div></header>
+</nav>
+<div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 
@@ -54,15 +53,13 @@
   
   <div class="post-content">
     <header>
-      <div class="icon"></div>
       
-        <time datetime="2012-01-24T00:00:00.000Z"><a href="/blog/2012/01/24/css-multi-level-menu/">Jan 24, 2012</a></time>
+        <div class="icon"></div>
+        <time datetime="2012-01-24T00:00:00.000Z"><a href="/blog/2012/01/24/css-multi-level-menu/">2012/1/24</a></time>
       
       
         
-          
-            <h1 class="title">如何利用 CSS 製作多級選單？</h1>
-          
+          <h1 class="title">如何利用 CSS 製作多級選單？</h1>
         
       
     </header>
@@ -80,12 +77,12 @@
 <span id="more"></span>
 
 <h3>HTML</h3>
-<pre><code class="lang-html"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">nav</span>></span></div><div class="line">    <span class="tag">&lt;<span class="title">ul</span>></span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>></span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>></span>選單 1<span class="tag">&lt;/<span class="title">a</span>></span><span class="tag">&lt;/<span class="title">li</span>></span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>></span></div><div class="line">            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>></span>選單 2<span class="tag">&lt;/<span class="title">a</span>></span></div><div class="line">            <span class="tag">&lt;<span class="title">ul</span>></span></div><div class="line">                <span class="tag">&lt;<span class="title">li</span>></span></div><div class="line">                    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>></span>選單 2-1<span class="tag">&lt;/<span class="title">a</span>></span></div><div class="line">                    <span class="tag">&lt;<span class="title">ul</span>></span></div><div class="line">                        <span class="tag">&lt;<span class="title">li</span>></span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>></span>選單 2-1-1<span class="tag">&lt;/<span class="title">a</span>></span><span class="tag">&lt;/<span class="title">li</span>></span></div><div class="line">                        <span class="tag">&lt;<span class="title">li</span>></span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>></span>選單 2-1-2<span class="tag">&lt;/<span class="title">a</span>></span><span class="tag">&lt;/<span class="title">li</span>></span></div><div class="line">                    <span class="tag">&lt;/<span class="title">ul</span>></span></div><div class="line">                <span class="tag">&lt;/<span class="title">li</span>></span></div><div class="line">                <span class="tag">&lt;<span class="title">li</span>></span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>></span>選單 2-2<span class="tag">&lt;/<span class="title">a</span>></span><span class="tag">&lt;/<span class="title">li</span>></span></div><div class="line">                <span class="tag">&lt;<span class="title">li</span>></span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>></span>選單 2-3<span class="tag">&lt;/<span class="title">a</span>></span><span class="tag">&lt;/<span class="title">li</span>></span></div><div class="line">            <span class="tag">&lt;/<span class="title">ul</span>></span></div><div class="line">        <span class="tag">&lt;/<span class="title">li</span>></span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>></span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>></span>選單 3<span class="tag">&lt;/<span class="title">a</span>></span><span class="tag">&lt;/<span class="title">li</span>></span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>></span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>></span>選單 4<span class="tag">&lt;/<span class="title">a</span>></span><span class="tag">&lt;/<span class="title">li</span>></span></div><div class="line">    <span class="tag">&lt;/<span class="title">ul</span>></span></div><div class="line"><span class="tag">&lt;/<span class="title">nav</span>></span></div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-html"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">nav</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">ul</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">ul</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="title">li</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2-1<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="title">ul</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2-1-1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2-1-2<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2-2<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2-3<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 3<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 4<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">nav</span>&gt;</span></div></pre></td></tr></table></figure></code></pre>
 <p>選單的 HTML 如上，所有的選單物件都是可點選的連結，理論上無限層級。
 
 </p>
 <h3>CSS</h3>
-<pre><code class="lang-css"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div><div class="line-number">22</div><div class="line-number">23</div><div class="line-number">24</div><div class="line-number">25</div><div class="line-number">26</div><div class="line-number">27</div></pre></td><td class="code"><pre><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span>;</span> <span class="comment">/* 使子選單依照母選單的座標顯示 */</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 設定母選單的連結樣式 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="tag">a</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">url(detail.png)</span></span>;</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 當母選單下沒有子選單時，也就是說只有一個連結時，隱藏detail.png */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="tag">a</span><span class="pseudo">:only-child</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> none</span>;</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span><span class="pseudo">:hover</span> > <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span>;</span> <span class="comment">/* 滑鼠滑入母選單後，顯示子選單 */</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 二級選單顯示於一級選單的正下方 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span>;</span></div><div class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">100</span>%</span>;</span></div><div class="line">  <span class="rule"><span class="attribute">list-style</span>:<span class="value"> none</span>;</span></div><div class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span>;</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 三級選單則顯示於二級選單的右方 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">ul</span> <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span>;</span></div><div class="line">  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">100</span>%</span>;</span></div><div class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span>;</span></div><div class="line"><span class="rule">}</span></span></div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-css"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div><div class="line-number">22</div><div class="line-number">23</div><div class="line-number">24</div><div class="line-number">25</div><div class="line-number">26</div><div class="line-number">27</div></pre></td><td class="code"><pre><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative;</span></span> <span class="comment">/* 使子選單依照母選單的座標顯示 */</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 設定母選單的連結樣式 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="tag">a</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">url(detail.png)</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 當母選單下沒有子選單時，也就是說只有一個連結時，隱藏 detail.png */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="tag">a</span><span class="pseudo">:only-child</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> none;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span><span class="pseudo">:hover</span> &gt; <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> block;</span></span> <span class="comment">/* 滑鼠滑入母選單後，顯示子選單 */</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 二級選單顯示於一級選單的正下方 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute;</span></span></div><div class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">100</span>%;</span></span></div><div class="line">  <span class="rule"><span class="attribute">list-style</span>:<span class="value"> none;</span></span></div><div class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> none;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 三級選單則顯示於二級選單的右方 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">ul</span> <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute;</span></span></div><div class="line">  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">100</span>%;</span></span></div><div class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div></pre></td></tr></table></figure></code></pre>
 <p>這樣就完成了所有步驟，不需要繁複的 JavaScript，是不是很簡單呢？
 
 </p>
@@ -97,35 +94,36 @@
 
 </p>
 <p>寫到最後反而發現詞窮，看來我真不是寫文章的料。總而言之，這是「大概很簡單」教學系列的第二彈，感謝你的收看！</p>
+
       
     </div>
     <footer>
       
         
         
-          
-          <div class="tags">
-            <a href="/tags/CSS">CSS</a>
-          </div>
+  
+  <div class="tags">
+    <a href="/tags/CSS/">CSS</a>
+  </div>
+
         
-        
-          <div class="addthis addthis_toolbox addthis_default_style">
-            
-              <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-            
-            
-              <a class="addthis_button_tweet"></a>
-            
-            
-              <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-            
-            
-              <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-            
-            <a class="addthis_counter addthis_pill_style"></a>
-          </div>
-          <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
-        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -148,69 +146,56 @@
   </form>
 </div>
 
+
+
+
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
   
-    
-    <li><a href="/tags/CSS">CSS</a><small>1</small></li>
+    <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
-    
-    <li><a href="/tags/HTML5">HTML5</a><small>2</small></li>
+    <li><a href="/tags/HTML5/">HTML5</a><small>2</small></li>
   
-    
-    <li><a href="/tags/JavaScript">JavaScript</a><small>6</small></li>
+    <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Mac">Mac</a><small>16</small></li>
+    <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
   
-    
-    <li><a href="/tags/Node.js">Node.js</a><small>2</small></li>
+    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
-    
-    <li><a href="/tags/Octopress">Octopress</a><small>3</small></li>
+    <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PS3">PS3</a><small>5</small></li>
+    <li><a href="/tags/Octopress/">Octopress</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PSP">PSP</a><small>2</small></li>
+    <li><a href="/tags/PS3/">PS3</a><small>5</small></li>
   
-    
-    <li><a href="/tags/Ruby">Ruby</a><small>1</small></li>
+    <li><a href="/tags/PSP/">PSP</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Windows">Windows</a><small>1</small></li>
+    <li><a href="/tags/Ruby/">Ruby</a><small>1</small></li>
   
-    
-    <li><a href="/tags/WordPress">WordPress</a><small>5</small></li>
+    <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
-    
-    <li><a href="/tags/中文化">中文化</a><small>16</small></li>
+    <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
   
-    
-    <li><a href="/tags/主題">主題</a><small>6</small></li>
+    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
-    
-    <li><a href="/tags/同人誌">同人誌</a><small>2</small></li>
+    <li><a href="/tags/主題/">主題</a><small>6</small></li>
   
-    
-    <li><a href="/tags/天降之物">天降之物</a><small>1</small></li>
+    <li><a href="/tags/同人誌/">同人誌</a><small>2</small></li>
   
-    
-    <li><a href="/tags/活動">活動</a><small>2</small></li>
+    <li><a href="/tags/天降之物/">天降之物</a><small>1</small></li>
   
-    
-    <li><a href="/tags/漫畫">漫畫</a><small>6</small></li>
+    <li><a href="/tags/活動/">活動</a><small>2</small></li>
   
-    
-    <li><a href="/tags/輕小說">輕小說</a><small>8</small></li>
+    <li><a href="/tags/漫畫/">漫畫</a><small>6</small></li>
   
-    
-    <li><a href="/tags/遊戲">遊戲</a><small>7</small></li>
+    <li><a href="/tags/輕小說/">輕小說</a><small>8</small></li>
+  
+    <li><a href="/tags/遊戲/">遊戲</a><small>7</small></li>
   
   </ul>
 </div>
+
 
 
 <div class="widget twitter">

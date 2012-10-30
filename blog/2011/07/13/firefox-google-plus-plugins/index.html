@@ -2,10 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
   <title>Google+ Hide Comments &amp; Hover Zoom | Zespia</title>
   <meta name="author" content="SkyArrow">
-  
-  <meta name="description" content="大約在兩週前，Google 發表了新的社群服務「Google+」，雖然很多人都說 Facebook 和 Google+ 有很大的不同，不過對我而言 Google+ 就是個宅宅版的 Facebook 罷了，我懶得去分析什麼社群網站的情勢了，今天的重點也不在這裡。雖然 Google+ 已經發表了一段時間，針對 Firefox 所做的擴充元件還是很少，幾乎沒有，反倒是Chrome的擴充套件數量不斷提昇，因此上週六（7/9）我吃飽太閒試著用 jQuery 寫了生平第一個瀏覽器腳本「Google+ Hide Comments」，一個行數不到 40 行的簡單腳本，本來想試著研究 Firefox 擴充套件，但最後太複雜還要先裝一堆擴充套件於是作罷。">
   
   
   <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
@@ -30,23 +29,23 @@
 </head>
 
 <body>
-  <header id="header"><div class="inner">
-  <div class="alignleft">
-    <h1><a href="/">Zespia</a></h1>
-    <h2><a href="/"></a></h2>
-  </div>
-  <nav id="main-nav" class="alignright">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-    <div class="clearfix"></div>
-  </nav>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Zespia</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+    
+  </ul>
   <div class="clearfix"></div>
-</div></header>
+</nav>
+<div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 
@@ -54,15 +53,13 @@
   
   <div class="post-content">
     <header>
-      <div class="icon"></div>
       
-        <time datetime="2011-07-13T00:00:00.000Z"><a href="/blog/2011/07/13/firefox-google-plus-plugins/">Jul 13, 2011</a></time>
+        <div class="icon"></div>
+        <time datetime="2011-07-13T00:00:00.000Z"><a href="/blog/2011/07/13/firefox-google-plus-plugins/">2011/7/13</a></time>
       
       
         
-          
-            <h1 class="title">Google+ Hide Comments &amp; Hover Zoom</h1>
-          
+          <h1 class="title">Google+ Hide Comments &amp; Hover Zoom</h1>
         
       
     </header>
@@ -74,7 +71,7 @@
 <p>大約在兩週前，Google 發表了新的社群服務「Google+」，雖然很多人都說 Facebook 和 Google+ 有很大的不同，不過對我而言 Google+ 就是個宅宅版的 Facebook 罷了，我懶得去分析什麼社群網站的情勢了，今天的重點也不在這裡。
 
 </p>
-<p>雖然 Google+ 已經發表了一段時間，針對 Firefox 所做的擴充元件還是很少，幾乎沒有，反倒是Chrome的擴充套件數量不斷提昇，因此上週六（7/9）我吃飽太閒試著用 jQuery 寫了生平第一個瀏覽器腳本「Google+ Hide Comments」，一個行數不到 40 行的簡單腳本，本來想試著研究 Firefox 擴充套件，但最後太複雜還要先裝一堆擴充套件於是作罷。
+<p>雖然 Google+ 已經發表了一段時間，針對 Firefox 所做的擴充元件還是很少，幾乎沒有，反倒是 Chrome 的擴充套件數量不斷提昇，因此上週六（7/9）我吃飽太閒試著用 jQuery 寫了生平第一個瀏覽器腳本「Google+ Hide Comments」，一個行數不到 40 行的簡單腳本，本來想試著研究 Firefox 擴充套件，但最後太複雜還要先裝一堆擴充套件於是作罷。
 
 </p>
 <span id="more"></span>
@@ -83,14 +80,13 @@
 <p><img src="http://i.minus.com/ibezLR2xu8BKlc.jpg" alt="">
 
 </p>
-<p>此腳本的功能如上圖，啟用後會在每篇文章的留言後加入&quot;Toggle comments&quot;的連結，點擊&quot;Toggle comments&quot;連結可以展開、摺疊留言。
+<p>此腳本的功能如上圖，啟用後會在每篇文章的留言後加入 &quot;Toggle comments&quot; 的連結，點擊 &quot;Toggle comments&quot; 連結可以展開、摺疊留言。
 
 </p>
-<p><blockquote>
-已停止更新
-</blockquote>
-
+<blockquote><p>已停止更新
 </p>
+<footer></footer></blockquote>
+
 <h2>Google+ Hover Zoom</h2>
 <p><img src="http://i.minus.com/i4Xjzr8VGpgHM.jpg" alt="">
 
@@ -101,37 +97,37 @@
 <p><a href="http://userscripts.org/scripts/show/106681">下載</a>
 
 </p>
-<p>我的網誌有種變成雙週刊的趨勢，每兩週才一篇新文章，明後天再發一篇 Steins;Gate 的文章吧。<a href="http://gplus.to/SkyArrow">我的 Google+</a>
-</p>
+<p>我的網誌有種變成雙週刊的趨勢，每兩週才一篇新文章，明後天再發一篇 Steins;Gate 的文章吧。<a href="http://gplus.to/SkyArrow">我的 Google+</a></p>
+
       
     </div>
     <footer>
       
         
         
-          
-          <div class="tags">
-            <a href="/tags/JavaScript">JavaScript</a>
-          </div>
+  
+  <div class="tags">
+    <a href="/tags/JavaScript/">JavaScript</a>
+  </div>
+
         
-        
-          <div class="addthis addthis_toolbox addthis_default_style">
-            
-              <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-            
-            
-              <a class="addthis_button_tweet"></a>
-            
-            
-              <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-            
-            
-              <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-            
-            <a class="addthis_counter addthis_pill_style"></a>
-          </div>
-          <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
-        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -154,69 +150,56 @@
   </form>
 </div>
 
+
+
+
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
   
-    
-    <li><a href="/tags/CSS">CSS</a><small>1</small></li>
+    <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
-    
-    <li><a href="/tags/HTML5">HTML5</a><small>2</small></li>
+    <li><a href="/tags/HTML5/">HTML5</a><small>2</small></li>
   
-    
-    <li><a href="/tags/JavaScript">JavaScript</a><small>6</small></li>
+    <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Mac">Mac</a><small>16</small></li>
+    <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
   
-    
-    <li><a href="/tags/Node.js">Node.js</a><small>2</small></li>
+    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
-    
-    <li><a href="/tags/Octopress">Octopress</a><small>3</small></li>
+    <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PS3">PS3</a><small>5</small></li>
+    <li><a href="/tags/Octopress/">Octopress</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PSP">PSP</a><small>2</small></li>
+    <li><a href="/tags/PS3/">PS3</a><small>5</small></li>
   
-    
-    <li><a href="/tags/Ruby">Ruby</a><small>1</small></li>
+    <li><a href="/tags/PSP/">PSP</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Windows">Windows</a><small>1</small></li>
+    <li><a href="/tags/Ruby/">Ruby</a><small>1</small></li>
   
-    
-    <li><a href="/tags/WordPress">WordPress</a><small>5</small></li>
+    <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
-    
-    <li><a href="/tags/中文化">中文化</a><small>16</small></li>
+    <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
   
-    
-    <li><a href="/tags/主題">主題</a><small>6</small></li>
+    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
-    
-    <li><a href="/tags/同人誌">同人誌</a><small>2</small></li>
+    <li><a href="/tags/主題/">主題</a><small>6</small></li>
   
-    
-    <li><a href="/tags/天降之物">天降之物</a><small>1</small></li>
+    <li><a href="/tags/同人誌/">同人誌</a><small>2</small></li>
   
-    
-    <li><a href="/tags/活動">活動</a><small>2</small></li>
+    <li><a href="/tags/天降之物/">天降之物</a><small>1</small></li>
   
-    
-    <li><a href="/tags/漫畫">漫畫</a><small>6</small></li>
+    <li><a href="/tags/活動/">活動</a><small>2</small></li>
   
-    
-    <li><a href="/tags/輕小說">輕小說</a><small>8</small></li>
+    <li><a href="/tags/漫畫/">漫畫</a><small>6</small></li>
   
-    
-    <li><a href="/tags/遊戲">遊戲</a><small>7</small></li>
+    <li><a href="/tags/輕小說/">輕小說</a><small>8</small></li>
+  
+    <li><a href="/tags/遊戲/">遊戲</a><small>7</small></li>
   
   </ul>
 </div>
+
 
 
 <div class="widget twitter">

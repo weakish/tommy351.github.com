@@ -2,10 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
   <title>Slash — 專為 Octopress 設計的極簡主題 | Zespia</title>
   <meta name="author" content="SkyArrow">
-  
-  <meta name="description" content="Octopress 雖然預設主題相當漂亮，支援眾多 HTML5 的新特性，但每個網誌都是同一個主題，令人有些厭煩。在決定轉移到 Octopress 的第一刻起，我就開始著手設計適用於 Octopress 的主題，在今天終於把檔案整理完畢，集合成一個獨立的 repo。">
   
   
   <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
@@ -30,23 +29,23 @@
 </head>
 
 <body>
-  <header id="header"><div class="inner">
-  <div class="alignleft">
-    <h1><a href="/">Zespia</a></h1>
-    <h2><a href="/"></a></h2>
-  </div>
-  <nav id="main-nav" class="alignright">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-    <div class="clearfix"></div>
-  </nav>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Zespia</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+    
+  </ul>
   <div class="clearfix"></div>
-</div></header>
+</nav>
+<div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 
@@ -54,15 +53,13 @@
   
   <div class="post-content">
     <header>
-      <div class="icon"></div>
       
-        <time datetime="2012-01-25T08:27:00.000Z"><a href="/blog/2012/01/25/slash-theme/">Jan 25, 2012</a></time>
+        <div class="icon"></div>
+        <time datetime="2012-01-25T08:27:00.000Z"><a href="/blog/2012/01/25/slash-theme/">2012/1/25</a></time>
       
       
         
-          
-            <h1 class="title">Slash — 專為 Octopress 設計的極簡主題</h1>
-          
+          <h1 class="title">Slash — 專為 Octopress 設計的極簡主題</h1>
         
       
     </header>
@@ -90,12 +87,12 @@
 <p>只需在終端機輸入以下指令，即可完成安裝：
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>cd octopress</div><div class="line"><span class="variable">$ </span>git clone git<span class="symbol">:</span>/<span class="regexp">/github.com/tommy</span>351/<span class="constant">Octopress</span>-<span class="constant">Theme</span>-<span class="constant">Slash</span>.git .themes/slash</div><div class="line"><span class="variable">$ </span>rake install[<span class="string">'slash'</span>]</div><div class="line"><span class="variable">$ </span>rake generate</div></pre></td></tr></table></figure></code></pre>
+<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>cd octopress</div><div class="line"><span class="variable">$ </span>git clone <span class="symbol">git:</span>/<span class="regexp">/github.com/tommy</span>351/<span class="constant">Octopress</span>-<span class="constant">Theme</span>-<span class="constant">Slash</span>.git .themes/slash</div><div class="line"><span class="variable">$ </span>rake install[<span class="string">'slash'</span>]</div><div class="line"><span class="variable">$ </span>rake generate</div></pre></td></tr></table></figure></code></pre>
 <p>使用 zsh 時發生問題嗎？試試看<code>rake install\[&#39;slash&#39;\]</code>。
 
 </p>
 <h2>Q&amp;A</h2>
-<h3>如何顯示右上角的Facebook連結？</h3>
+<h3>如何顯示右上角的 Facebook 連結？</h3>
 <p>在<code>_config.yml</code>新增<code>facebook_user</code>參數，並填入您的 Facebook ID。
 
 </p>
@@ -103,11 +100,11 @@
 <p>編輯<code>slash</code>→<code>source</code>→<code>_includes</code>→<code>custom</code>→<code>navigation.html</code>。
 
 </p>
-<h3>如何隱藏頁首的Twitter訊息串？</h3>
+<h3>如何隱藏頁首的 Twitter 訊息串？</h3>
 <p>刪除<code>slash</code>→<code>source</code>→<code>_layouts</code>→<code>default.html</code>的第 6 行。
 
 </p>
-<h3>如何關閉Fancybox？</h3>
+<h3>如何關閉 Fancybox？</h3>
 <ol>
 <li>刪除<code>slash</code>→<code>source</code>→<code>_includes</code>→<code>after_footer.html</code>的第 4 行。</li>
 <li>刪除<code>slash</code>→<code>source</code>→<code>javascripts</code>→<code>caption.js</code>第 14 行。</li>
@@ -115,35 +112,36 @@
 <p>如果還有其他問題或建議，歡迎在以下留言。
 
 </p>
+
       
     </div>
     <footer>
       
         
         
-          
-          <div class="tags">
-            <a href="/tags/主題">主題</a>, <a href="/tags/Octopress">Octopress</a>
-          </div>
+  
+  <div class="tags">
+    <a href="/tags/主題/">主題</a>, <a href="/tags/Octopress/">Octopress</a>
+  </div>
+
         
-        
-          <div class="addthis addthis_toolbox addthis_default_style">
-            
-              <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-            
-            
-              <a class="addthis_button_tweet"></a>
-            
-            
-              <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-            
-            
-              <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-            
-            <a class="addthis_counter addthis_pill_style"></a>
-          </div>
-          <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
-        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -166,69 +164,56 @@
   </form>
 </div>
 
+
+
+
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
   
-    
-    <li><a href="/tags/CSS">CSS</a><small>1</small></li>
+    <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
-    
-    <li><a href="/tags/HTML5">HTML5</a><small>2</small></li>
+    <li><a href="/tags/HTML5/">HTML5</a><small>2</small></li>
   
-    
-    <li><a href="/tags/JavaScript">JavaScript</a><small>6</small></li>
+    <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Mac">Mac</a><small>16</small></li>
+    <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
   
-    
-    <li><a href="/tags/Node.js">Node.js</a><small>2</small></li>
+    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
-    
-    <li><a href="/tags/Octopress">Octopress</a><small>3</small></li>
+    <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PS3">PS3</a><small>5</small></li>
+    <li><a href="/tags/Octopress/">Octopress</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PSP">PSP</a><small>2</small></li>
+    <li><a href="/tags/PS3/">PS3</a><small>5</small></li>
   
-    
-    <li><a href="/tags/Ruby">Ruby</a><small>1</small></li>
+    <li><a href="/tags/PSP/">PSP</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Windows">Windows</a><small>1</small></li>
+    <li><a href="/tags/Ruby/">Ruby</a><small>1</small></li>
   
-    
-    <li><a href="/tags/WordPress">WordPress</a><small>5</small></li>
+    <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
-    
-    <li><a href="/tags/中文化">中文化</a><small>16</small></li>
+    <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
   
-    
-    <li><a href="/tags/主題">主題</a><small>6</small></li>
+    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
-    
-    <li><a href="/tags/同人誌">同人誌</a><small>2</small></li>
+    <li><a href="/tags/主題/">主題</a><small>6</small></li>
   
-    
-    <li><a href="/tags/天降之物">天降之物</a><small>1</small></li>
+    <li><a href="/tags/同人誌/">同人誌</a><small>2</small></li>
   
-    
-    <li><a href="/tags/活動">活動</a><small>2</small></li>
+    <li><a href="/tags/天降之物/">天降之物</a><small>1</small></li>
   
-    
-    <li><a href="/tags/漫畫">漫畫</a><small>6</small></li>
+    <li><a href="/tags/活動/">活動</a><small>2</small></li>
   
-    
-    <li><a href="/tags/輕小說">輕小說</a><small>8</small></li>
+    <li><a href="/tags/漫畫/">漫畫</a><small>6</small></li>
   
-    
-    <li><a href="/tags/遊戲">遊戲</a><small>7</small></li>
+    <li><a href="/tags/輕小說/">輕小說</a><small>8</small></li>
+  
+    <li><a href="/tags/遊戲/">遊戲</a><small>7</small></li>
   
   </ul>
 </div>
+
 
 
 <div class="widget twitter">

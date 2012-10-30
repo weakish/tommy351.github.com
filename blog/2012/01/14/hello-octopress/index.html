@@ -2,10 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
   <title>Hello Octopress! | Zespia</title>
   <meta name="author" content="SkyArrow">
-  
-  <meta name="description" content="ACSite 的空間即將在2012/1/31到期，而我又懶得續約，這時看到愈來愈多部落客都從 WordPress 轉移到 Octopress，便開始試用 Octopress。Octopress 與 WordPress 同樣身為部落格系統，卻有相當大的不同：WordPress：PHP動態網頁外掛多樣速度慢使用簡單Octopress：Ruby靜態網頁剛起步，外掛還很少速度快geek 才會用以下將簡單介紹 Octopress 的安裝與使用。">
   
   
   <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
@@ -30,23 +29,23 @@
 </head>
 
 <body>
-  <header id="header"><div class="inner">
-  <div class="alignleft">
-    <h1><a href="/">Zespia</a></h1>
-    <h2><a href="/"></a></h2>
-  </div>
-  <nav id="main-nav" class="alignright">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-    <div class="clearfix"></div>
-  </nav>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Zespia</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+    
+  </ul>
   <div class="clearfix"></div>
-</div></header>
+</nav>
+<div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 
@@ -54,15 +53,13 @@
   
   <div class="post-content">
     <header>
-      <div class="icon"></div>
       
-        <time datetime="2012-01-14T07:52:00.000Z"><a href="/blog/2012/01/14/hello-octopress/">Jan 14, 2012</a></time>
+        <div class="icon"></div>
+        <time datetime="2012-01-14T07:52:00.000Z"><a href="/blog/2012/01/14/hello-octopress/">2012/1/14</a></time>
       
       
         
-          
-            <h1 class="title">Hello Octopress!</h1>
-          
+          <h1 class="title">Hello Octopress!</h1>
         
       
     </header>
@@ -71,7 +68,7 @@
         <p><img src="http://i.minus.com/i4CFI4qZAFEct.png" alt="">
 
 </p>
-<p><a href="http://www.acsite.net/tw/">ACSite</a> 的空間即將在2012/1/31到期，而我又懶得續約，這時看到愈來愈多部落客都從 <a href="http://wordpress.org/">WordPress</a> 轉移到 <a href="http://octopress.org/">Octopress</a>，便開始試用 <a href="http://octopress.org/">Octopress</a>。
+<p><a href="http://www.acsite.net/tw/">ACSite</a> 的空間即將在 2012/1/31 到期，而我又懶得續約，這時看到愈來愈多部落客都從 <a href="http://wordpress.org/">WordPress</a> 轉移到 <a href="http://octopress.org/">Octopress</a>，便開始試用 <a href="http://octopress.org/">Octopress</a>。
 
 </p>
 <p><a href="http://octopress.org/">Octopress</a> 與 <a href="http://wordpress.org/">WordPress</a> 同樣身為部落格系統，卻有相當大的不同：
@@ -108,56 +105,56 @@
 <p><strong>請務必照著步驟做。</strong>
 
 </p>
-<p>1.安裝 <a href="http://itunes.apple.com/us/app/xcode/id448457090?mt=12">Xcode</a>（建議使用<strong>4.1</strong>版），或直接安裝 <a href="https://github.com/kennethreitz/osx-gcc-installer">OSX GCC Installer</a>。
+<p>1. 安裝 <a href="http://itunes.apple.com/us/app/xcode/id448457090?mt=12">Xcode</a>（建議使用<strong>4.1</strong>版），或直接安裝 <a href="https://github.com/kennethreitz/osx-gcc-installer">OSX GCC Installer</a>。
 
 </p>
-<p>2.安裝 <a href="http://mxcl.github.com/homebrew/">Homebrew</a>
+<p>2. 安裝 <a href="http://mxcl.github.com/homebrew/">Homebrew</a>
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>ruby -e <span class="string">"$(curl -fsSL https://raw.github.com/gist/323731)"</span></div><div class="line"><span class="variable">$ </span>brew update</div></pre></td></tr></table></figure></code></pre>
-<p>3.安裝 <a href="http://git-scm.com/">Git</a>
+<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">$</span> <span class="comment">ruby</span> <span class="literal">-</span><span class="comment">e</span> <span class="comment">"$(curl</span> <span class="literal">-</span><span class="comment">fsSL</span> <span class="comment">https://raw</span>.<span class="comment">github</span>.<span class="comment">com/gist/323731)"</span></div><div class="line"><span class="comment">$</span> <span class="comment">brew</span> <span class="comment">update</div></pre></td></tr></table></figure></code></pre>
+<p>3. 安裝 <a href="http://git-scm.com/">Git</a>
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>brew install git</div></pre></td></tr></table></figure></code></pre>
-<p>別忘了Mac上有 <a href="http://www.sourcetreeapp.com/">SourceTree</a> 和 <a href="http://gitx.laullon.com/">GitX</a> 這兩套不錯的Git GUI可以使用！
+<p>別忘了 Mac 上有 <a href="http://www.sourcetreeapp.com/">SourceTree</a> 和 <a href="http://gitx.laullon.com/">GitX</a> 這兩套不錯的 Git GUI 可以使用！
 
 </p>
-<p>4.安裝 <a href="http://beginrescueend.com/">RVM</a>
+<p>4. 安裝 <a href="http://beginrescueend.com/">RVM</a>
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line"><span class="char">$ </span>bash &lt; &lt;(curl -s <span class="method">https:</span>//rvm.beginrescueend.com/install/rvm)</div><div class="line"><span class="char">$ </span>echo <span class="comment">"[[ -s $HOME/.rvm/scripts/rvm ]] &amp;&amp; source $HOME/.rvm/scripts/rvm"</span> >> ~/.profile <span class="char">$ </span>. ~/.profile</div><div class="line"><span class="char">$ </span>source ~/.profile</div></pre></td></tr></table></figure></code></pre>
-<p>5.安裝 <a href="http://www.ruby-lang.org/zh_TW/">Ruby</a>（<a href="http://octopress.org/">Octopress</a> 要求使用<strong>1.9.2</strong>版）
+<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line"><span class="char">$ </span>bash &lt; &lt;(curl -s <span class="method">https:</span>//rvm.beginrescueend.com/install/rvm)</div><div class="line"><span class="char">$ </span>echo <span class="comment">"[[ -s $HOME/.rvm/scripts/rvm ]] &amp;&amp; source $HOME/.rvm/scripts/rvm"</span> &gt;&gt; ~/.profile <span class="char">$ </span>. ~/.profile</div><div class="line"><span class="char">$ </span>source ~/.profile</div></pre></td></tr></table></figure></code></pre>
+<p>5. 安裝 <a href="http://www.ruby-lang.org/zh_TW/">Ruby</a>（<a href="http://octopress.org/">Octopress</a> 要求使用<strong>1.9.2</strong>版）
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>rvm install <span class="number">1.9</span>.<span class="number">2</span></div><div class="line"><span class="variable">$ </span>rvm <span class="number">1.9</span>.<span class="number">2</span> --default</div></pre></td></tr></table></figure></code></pre>
+<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">install</span> <span class="comment">1</span>.<span class="comment">9</span>.<span class="comment">2</span></div><div class="line"><span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">1</span>.<span class="comment">9</span>.<span class="comment">2</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">default</div></pre></td></tr></table></figure></code></pre>
 <p>若是安裝失敗的話，請試著使用以下方式安裝：
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div></pre></td><td class="code"><pre><div class="line"><span class="char">$ </span>rvm remove <span class="number">1.9</span><span class="number">.2</span></div><div class="line"><span class="char">$ </span>export <span class="class">CC</span>=/usr/bin/gcc-<span class="number">4.2</span></div><div class="line"><span class="char">$ </span>brew install readline</div><div class="line"><span class="char">$ </span>brew link readline</div><div class="line"><span class="char">$ </span>rvm install <span class="number">1.9</span><span class="number">.2</span> --with-readline-dir=<span class="char">$r</span>vm_path/usr</div></pre></td></tr></table></figure></code></pre>
-<p>6.安裝 <a href="http://pow.cx/">Pow</a>
+<p>6. 安裝 <a href="http://pow.cx/">Pow</a>
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">$ curl get<span class="variable">.pow</span><span class="variable">.cx</span> | sh</div></pre></td></tr></table></figure></code></pre>
-<p><em>（以上安裝步驟參考自<a href="http://killtw.k2ds.net/blog/2011/10/29/how-to-install-rails/">我這樣安裝Rails - 佑樣の技術筆記</a>）</em>
+<p><em>（以上安裝步驟參考自<a href="http://killtw.k2ds.net/blog/2011/10/29/how-to-install-rails/">我這樣安裝 Rails - 佑樣の技術筆記</a>）</em>
 
 </p>
 <h3>Octopress</h3>
 <p>到目前為止，只不過安裝好 <a href="http://www.ruby-lang.org/zh_TW/">Ruby</a> 罷了，接著才是重頭戲──<a href="http://octopress.org/">Octopress</a> 登場！
 
 </p>
-<p>1.安裝 <a href="https://github.com/sstephenson/rbenv">rbenv</a>
+<p>1. 安裝 <a href="https://github.com/sstephenson/rbenv">rbenv</a>
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>brew install rbenv</div><div class="line"><span class="variable">$ </span>brew install ruby-build</div></pre></td></tr></table></figure></code></pre>
-<p>2.下載 <a href="http://octopress.org/">Octopress</a>
+<p>2. 下載 <a href="http://octopress.org/">Octopress</a>
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="char">$ </span>git clone <span class="method">git:</span>//github.com/imathis/octopress.git octopress</div><div class="line"><span class="char">$ </span>cd octopress</div></pre></td></tr></table></figure></code></pre>
-<p>3.安裝相關套件
+<p>3. 安裝相關套件
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>gem install bundler</div><div class="line"><span class="variable">$ </span>bundle install</div></pre></td></tr></table></figure></code></pre>
-<p>4.安裝預設佈景主題
+<p>4. 安裝預設佈景主題
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>rake install</div></pre></td></tr></table></figure></code></pre>
@@ -166,22 +163,22 @@
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="char">$ </span>cd ~/.pow</div><div class="line"><span class="char">$ </span>ln -s /path-to-octopress</div></pre></td></tr></table></figure></code></pre>
 <h2>發佈</h2>
-<p>1.在 <a href="https://github.com/">GitHub</a> 建立名為<code>http://yourname.github.com</code>的 repository，<code>yourname</code>必須與你的使用者名稱相同，否則會建立專案頁面。
+<p>1. 在 <a href="https://github.com/">GitHub</a> 建立名為<code>http://yourname.github.com</code>的 repository，<code>yourname</code>必須與你的使用者名稱相同，否則會建立專案頁面。
 
 </p>
-<p>2.設定 <a href="https://github.com/">GitHub</a> 資料，並依照指示輸入 GitHub 頁面的 repository 網址。
+<p>2. 設定 <a href="https://github.com/">GitHub</a> 資料，並依照指示輸入 GitHub 頁面的 repository 網址。
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>rake setup_github_pages</div></pre></td></tr></table></figure></code></pre>
-<p>3.建立網誌資料
+<p>3. 建立網誌資料
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>rake generate</div></pre></td></tr></table></figure></code></pre>
-<p>4.發佈至 <a href="https://github.com/">GitHub</a>
+<p>4. 發佈至 <a href="https://github.com/">GitHub</a>
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>rake deploy</div></pre></td></tr></table></figure></code></pre>
-<p>5.建立 commit
+<p>5. 建立 commit
 
 </p>
 <pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>git add .</div><div class="line"><span class="variable">$ </span>git commit -m <span class="string">'your message'</span></div><div class="line"><span class="variable">$ </span>git push origin source</div></pre></td></tr></table></figure></code></pre>
@@ -195,7 +192,7 @@
 <p>在<code>source/CNAME</code>輸入網域名稱
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">echo</span> <span class="string">'your-domain.com'</span> >> source/CNAME</div></pre></td></tr></table></figure></code></pre>
+<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">echo</span> <span class="string">'your-domain.com'</span> &gt;&gt; source/CNAME</div></pre></td></tr></table></figure></code></pre>
 <p>若網域名稱如<code>www.example.com</code>，只需要新增 CNAME 記錄<code>yourname.github.com</code>即可；若如<code>example.com</code>，則必須加入 A 記錄<code>207.97.227.245</code>，請勿使用 CNAME 記錄。
 
 </p>
@@ -239,35 +236,36 @@
 <p>如果你是個 geek，<a href="http://octopress.org/">Octopress</a> 或許是不錯的選擇；如果不是的話，請繼續使用 <a href="http://wordpress.org/">WordPress</a> 吧！
 
 </p>
+
       
     </div>
     <footer>
       
         
         
-          
-          <div class="tags">
-            <a href="/tags/Octopress">Octopress</a>, <a href="/tags/Ruby">Ruby</a>
-          </div>
+  
+  <div class="tags">
+    <a href="/tags/Octopress/">Octopress</a>, <a href="/tags/Ruby/">Ruby</a>
+  </div>
+
         
-        
-          <div class="addthis addthis_toolbox addthis_default_style">
-            
-              <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-            
-            
-              <a class="addthis_button_tweet"></a>
-            
-            
-              <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-            
-            
-              <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-            
-            <a class="addthis_counter addthis_pill_style"></a>
-          </div>
-          <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
-        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -290,69 +288,56 @@
   </form>
 </div>
 
+
+
+
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
   
-    
-    <li><a href="/tags/CSS">CSS</a><small>1</small></li>
+    <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
-    
-    <li><a href="/tags/HTML5">HTML5</a><small>2</small></li>
+    <li><a href="/tags/HTML5/">HTML5</a><small>2</small></li>
   
-    
-    <li><a href="/tags/JavaScript">JavaScript</a><small>6</small></li>
+    <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Mac">Mac</a><small>16</small></li>
+    <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
   
-    
-    <li><a href="/tags/Node.js">Node.js</a><small>2</small></li>
+    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
-    
-    <li><a href="/tags/Octopress">Octopress</a><small>3</small></li>
+    <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PS3">PS3</a><small>5</small></li>
+    <li><a href="/tags/Octopress/">Octopress</a><small>3</small></li>
   
-    
-    <li><a href="/tags/PSP">PSP</a><small>2</small></li>
+    <li><a href="/tags/PS3/">PS3</a><small>5</small></li>
   
-    
-    <li><a href="/tags/Ruby">Ruby</a><small>1</small></li>
+    <li><a href="/tags/PSP/">PSP</a><small>2</small></li>
   
-    
-    <li><a href="/tags/Windows">Windows</a><small>1</small></li>
+    <li><a href="/tags/Ruby/">Ruby</a><small>1</small></li>
   
-    
-    <li><a href="/tags/WordPress">WordPress</a><small>5</small></li>
+    <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
-    
-    <li><a href="/tags/中文化">中文化</a><small>16</small></li>
+    <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
   
-    
-    <li><a href="/tags/主題">主題</a><small>6</small></li>
+    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
-    
-    <li><a href="/tags/同人誌">同人誌</a><small>2</small></li>
+    <li><a href="/tags/主題/">主題</a><small>6</small></li>
   
-    
-    <li><a href="/tags/天降之物">天降之物</a><small>1</small></li>
+    <li><a href="/tags/同人誌/">同人誌</a><small>2</small></li>
   
-    
-    <li><a href="/tags/活動">活動</a><small>2</small></li>
+    <li><a href="/tags/天降之物/">天降之物</a><small>1</small></li>
   
-    
-    <li><a href="/tags/漫畫">漫畫</a><small>6</small></li>
+    <li><a href="/tags/活動/">活動</a><small>2</small></li>
   
-    
-    <li><a href="/tags/輕小說">輕小說</a><small>8</small></li>
+    <li><a href="/tags/漫畫/">漫畫</a><small>6</small></li>
   
-    
-    <li><a href="/tags/遊戲">遊戲</a><small>7</small></li>
+    <li><a href="/tags/輕小說/">輕小說</a><small>8</small></li>
+  
+    <li><a href="/tags/遊戲/">遊戲</a><small>7</small></li>
   
   </ul>
 </div>
+
 
 
 <div class="widget twitter">
