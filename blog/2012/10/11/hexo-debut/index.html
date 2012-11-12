@@ -40,7 +40,7 @@
     
       <li><a href="/archives">Archives</a></li>
     
-      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+      <li><a href="https://github.com/tommy351">GitHub</a></li>
     
   </ul>
   <div class="clearfix"></div>
@@ -116,12 +116,12 @@
 <p>前提是必須先安裝 Node.js，至於怎麼安裝自己 Google 吧
 
 </p>
-<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><div class="line">npm install hexo -g</div></code></pre>
 <p>僅需一步就把 Hexo 本體和所有相依套件安裝完畢，很簡單吧？
 
 </p>
 <h3>初始化</h3>
-<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">hexo init &lt;folder&gt;</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><div class="line">hexo init &lt;folder&gt;</div></code></pre>
 <p>如果指定 <code>&lt;folder&gt;</code>，便會在目前的資料夾建立一個名為 <code>&lt;folder&gt;</code> 的新資料夾；否則會在目前資料夾初始化。
 
 </p>
@@ -133,7 +133,7 @@
 
 </p>
 <h3>建立文章、分頁</h3>
-<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line">hexo new_post &lt;title&gt;</div><div class="line">hexo new_page &lt;title&gt;</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><div class="line">hexo new_post &lt;title&gt;</div><div class="line">hexo new_page &lt;title&gt;</div></code></pre>
 <p>Hexo 已經內建一些外掛了，你可以用這些外掛快速插入元素：
 
 </p>
@@ -150,16 +150,16 @@
 
 </p>
 <h3>生成檔案</h3>
-<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><div class="line">hexo generate</div></code></pre>
 <p>依照環境不同，速度可能會有差別，在我的電腦上需要大約 4 秒鐘。
 
 </p>
 <h3>伺服器</h3>
-<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><div class="line">hexo server</div></code></pre>
 <p>伺服器會跑在 <code>http://localhost:port</code> （<code>port</code> 預設為 <code>4000</code>，可在 <code>_config.yml</code> 設定），也可以搭配 <a href="http://pow.cx/">Pow</a> 使用：
 
 </p>
-<pre><code class="lang-bash"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.pow</div><div class="line">ln -s /path/to/myapp</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><div class="line">cd ~/.pow</div><div class="line">ln -s /path/to/myapp</div></code></pre>
 <p>基本使用差不多就是這樣子，非常簡單。至於外掛和主題的撰寫方法，我之後會在 <a href="https://github.com/tommy351/hexo/wiki">Wiki</a> 補完，你也可以嘗試看看<a href="https://github.com/tommy351/hexo">原始碼</a>。
 
 </p>
@@ -235,11 +235,11 @@
 </div>
 
 
-
-
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
+  
+    <li><a href="/tags/Android/">Android</a><small>1</small></li>
   
     <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
@@ -248,8 +248,6 @@
     <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
     <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
-  
-    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
     <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
@@ -264,8 +262,6 @@
     <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
     <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
-  
-    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
     <li><a href="/tags/主題/">主題</a><small>6</small></li>
   

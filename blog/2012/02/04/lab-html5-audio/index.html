@@ -40,7 +40,7 @@
     
       <li><a href="/archives">Archives</a></li>
     
-      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+      <li><a href="https://github.com/tommy351">GitHub</a></li>
     
   </ul>
   <div class="clearfix"></div>
@@ -77,14 +77,14 @@
 <p>首先必須了解<code>audio</code>標籤的使用方式：
 
 </p>
-<pre><code class="lang-html"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">controls</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.mp3"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-html"><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">controls</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.mp3"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></code></pre>
 <p>輸入以上代碼後，便可在網頁中看到瀏覽器內建的播放器。每種瀏覽器支援的播放類型不一，最保險的方法是備妥<code>mp3</code>、<code>ogg</code>。
 
 </p>
 <p>為了浪費時間，當然不可能用瀏覽器的預設介面，所以刪除<code>controls</code>屬性，透過 JavaScript 操作：
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> audio = document.getElementsByTagName(<span class="string">'audio'</span>)[<span class="number">0</span>];</div><div class="line"><span class="comment">// 播放</span></div><div class="line">audio.play();</div><div class="line"><span class="comment">// 暫停</span></div><div class="line">audio.pause();</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line"><span class="keyword">var</span> audio = document.getElementsByTagName(<span class="string">'audio'</span>)[<span class="number">0</span>];</div><div class="line"><span class="comment">// 播放</span></div><div class="line">audio.play();</div><div class="line"><span class="comment">// 暫停</span></div><div class="line">audio.pause();</div></code></pre>
 <p>只需要懂這兩個函數，就可製作最基礎的播放器了，其他複雜的指令可參閱文末的參考出處。
 
 </p>
@@ -101,7 +101,7 @@
 <p><img src="http://i.minus.com/iXoN5AU2JBOHU.png" alt="">
 
 </p>
-<p>無論是倒影、中間的圓圈進度表都與<a href="http://zh.wikipedia.org/wiki/Cover_Flow">CoverFlow</a>非常相像，但這種樣式實在 <del>太麻煩了</del> 不便使用者操作，所以從<a href="http://www.premiumpixels.com/freebies/compact-music-player-psd/">Premium Pixels</a>偷點子過來，稍微加油添醋一下，完成了播放器介面 Ver. 2。
+<p>無論是倒影、中間的圓圈進度表都與 <a href="http://zh.wikipedia.org/wiki/Cover_Flow">CoverFlow</a> 非常相像，但這種樣式實在 <del>太麻煩了</del> 不便使用者操作，所以從 <a href="http://www.premiumpixels.com/freebies/compact-music-player-psd/">Premium Pixels</a> 偷點子過來，稍微加油添醋一下，完成了播放器介面 Ver. 2。
 
 </p>
 <p><img src="http://i.minus.com/imrTH5W7km1vj.png" alt="Ver.2 與 Ver.1 完全不像？這種事情不重要啦！">
@@ -117,30 +117,30 @@
 <p>時間的控制方式如下，單位為秒數，例如跳至第 100 秒的位置：
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">audio.currentTime = <span class="number">100</span>;</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">audio.currentTime = <span class="number">100</span>;</div></code></pre>
 <p>音量的控制方式如下，範圍為 0~1，例如將音量調整至一半大小：
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">audio.volume = <span class="number">0.5</span>;</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">audio.volume = <span class="number">0.5</span>;</div></code></pre>
 <p><code>audio</code>可綁定<code>play</code>, <code>pause</code>, <code>ended</code>, <code>progress</code>, <code>canplay</code>, <code>timeupdate</code>等事件。<code>play</code>與<code>pause</code>如字面上意思，分別為播放、暫停後生效。
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div></pre></td><td class="code"><pre><div class="line">audio.addEventListener(<span class="string">'play'</span>, <span class="keyword">function</span>(){</div><div class="line">    play.title = <span class="string">'pause'</span>;</div><div class="line">}, <span class="literal">false</span>);</div><div class="line">audio.addEventListener(<span class="string">'pause'</span>, <span class="keyword">function</span>(){</div><div class="line">    play.title = <span class="string">'play'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">audio.addEventListener(<span class="string">'play'</span>, <span class="keyword">function</span>(){</div><div class="line">    play.title = <span class="string">'pause'</span>;</div><div class="line">}, <span class="literal">false</span>);</div><br><div class="line">audio.addEventListener(<span class="string">'pause'</span>, <span class="keyword">function</span>(){</div><div class="line">    play.title = <span class="string">'play'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre>
 <p><code>ended</code>為結束後生效，當音樂結束後，可透過此事件讓時間歸零。
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line">audio.addEventListener(<span class="string">'ended'</span>, <span class="keyword">function</span>(){</div><div class="line">    <span class="keyword">this</span>.currentTime = <span class="number">0</span>;</div><div class="line">}, <span class="literal">false</span>);</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">audio.addEventListener(<span class="string">'ended'</span>, <span class="keyword">function</span>(){</div><div class="line">    <span class="keyword">this</span>.currentTime = <span class="number">0</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre>
 <p>當音樂檔案開始載入後，便會啟動<code>progress</code>事件，可透過此事件監測下載進度。Firefox 可能會發生問題，建議搭配<code>durationchange</code>事件使用。
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></pre></td><td class="code"><pre><div class="line">audio.addEventListener(<span class="string">'progress'</span>, <span class="keyword">function</span>(){</div><div class="line">    <span class="keyword">var</span> endVal = <span class="keyword">this</span>.seekable &amp;&amp; <span class="keyword">this</span>.seekable.length ? <span class="keyword">this</span>.seekable.end(<span class="number">0</span>) : <span class="number">0</span>;</div><div class="line">    buffer.style.width = (<span class="number">100</span> / (<span class="keyword">this</span>.duration || <span class="number">1</span>) * endVal) + <span class="string">'%'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">audio.addEventListener(<span class="string">'progress'</span>, <span class="keyword">function</span>(){</div><div class="line">    <span class="keyword">var</span> endVal = <span class="keyword">this</span>.seekable &amp;&amp; <span class="keyword">this</span>.seekable.length ? <span class="keyword">this</span>.seekable.end(<span class="number">0</span>) : <span class="number">0</span>;</div><div class="line">    buffer.style.width = (<span class="number">100</span> / (<span class="keyword">this</span>.duration || <span class="number">1</span>) * endVal) + <span class="string">'%'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre>
 <p>當音樂下載到一定程度後，<code>canplay</code>事件便會生效，一般會透過此事件初始化播放器。相同類型的事件還有很多，依照啟動順序分別為：<code>loadstart</code>, <code>durationchange</code>, <code>loadeddata</code>, <code>progress</code>, <code>canplay</code>, <code>canplaythrough</code>。
 
 </p>
 <p><code>timeupdate</code>會在音樂播放時不斷生效，可透過此事件更新時間。
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line">audio.addEventListener(<span class="string">'timeupdate'</span>, <span class="keyword">function</span>(){</div><div class="line">    progress.style.width = (<span class="keyword">this</span>.currentTime / <span class="keyword">this</span>.duration) * <span class="number">100</span> + <span class="string">'%'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">audio.addEventListener(<span class="string">'timeupdate'</span>, <span class="keyword">function</span>(){</div><div class="line">    progress.style.width = (<span class="keyword">this</span>.currentTime / <span class="keyword">this</span>.duration) * <span class="number">100</span> + <span class="string">'%'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre>
 <h2>播放列表</h2>
 <p>一個播放器的基礎功能就此完成，能夠播放、暫停、調整音量、調整時間。但這顯然還不夠，播放列表對於播放器而言相當重要。<em>（大概啦）</em>
 
@@ -158,7 +158,7 @@
 <p>範例內已設定了一些參數，可在<code>js/script.js</code>內更改。第 5 行的<code>continous</code>參數為連續播放，第 6 行的<code>autoplay</code>參數為自動播放，第 7 行的<code>playlist</code>陣列請自行設定，壓縮檔內<strong>不會</strong>附帶範例內的音樂檔案。<code>playlist</code>陣列的格式如下：
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> playlist = [</div><div class="line">    {</div><div class="line">        title: <span class="string">'Tell Your World'</span>,</div><div class="line">        artist: <span class="string">'livetune feat. 初音ミク'</span>,</div><div class="line">        album: <span class="string">'Tell Your World'</span>,</div><div class="line">        cover: <span class="string">'cover/tell_your_world.jpg'</span>,</div><div class="line">        mp3: <span class="string">'music/tell_your_world.mp3'</span>,</div><div class="line">        ogg: <span class="string">'music/tell_your_world.ogg'</span></div><div class="line">    }</div><div class="line">];</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line"><span class="keyword">var</span> playlist = [</div><div class="line">    {</div><div class="line">        title: <span class="string">'Tell Your World'</span>,</div><div class="line">        artist: <span class="string">'livetune feat. 初音ミク'</span>,</div><div class="line">        album: <span class="string">'Tell Your World'</span>,</div><div class="line">        cover: <span class="string">'cover/tell_your_world.jpg'</span>,</div><div class="line">        mp3: <span class="string">'music/tell_your_world.mp3'</span>,</div><div class="line">        ogg: <span class="string">'music/tell_your_world.ogg'</span></div><div class="line">    }</div><div class="line">];</div></code></pre>
 <p><code>title</code>為標題，<code>artist</code>為演出者，<code>album</code>為專輯名稱，<code>cover</code>為專輯封面的路徑，<code>mp3</code>、<code>ogg</code>分別為音樂檔案的路徑，建議備妥兩種格式的檔案，<del>要不然 Firefox 和 Opera 不就只能去死了嗎？</del>
 
 </p>
@@ -229,11 +229,11 @@
 </div>
 
 
-
-
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
+  
+    <li><a href="/tags/Android/">Android</a><small>1</small></li>
   
     <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
@@ -242,8 +242,6 @@
     <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
     <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
-  
-    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
     <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
@@ -258,8 +256,6 @@
     <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
     <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
-  
-    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
     <li><a href="/tags/主題/">主題</a><small>6</small></li>
   

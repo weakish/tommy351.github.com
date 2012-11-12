@@ -154,6 +154,13 @@ article.photo .icon:before {
 article.link .icon:before {
   content: '\f0c1';
 }
+article.link .title a:after {
+  content: '\f08e';
+  color: #999;
+  font: 12px FontAwesome;
+  padding-left: 10px;
+  vertical-align: super;
+}
 article .post-content {
   padding: 20px 20px 15px 77px;
   margin-bottom: 50px;
@@ -266,12 +273,6 @@ article header .title a:hover {
   color: #258fb8;
   text-decoration: none;
 }
-article header .title a.link:after {
-  content: '\f08e';
-  color: #999;
-  font: 12px FontAwesome;
-  padding-left: 10px;
-}
 article .entry {
   text-align: justify;
   line-height: 1.6;
@@ -316,7 +317,6 @@ article .entry pre {
   font-family: Monaco, Menlo, Consolas, Courier New, monospace;
 }
 article .entry code {
-  white-space: nowrap;
   background: #eee;
   color: #666;
   padding: 0 5px;
@@ -325,6 +325,15 @@ article .entry code {
   border: 1px solid #ddd;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+}
+article .entry pre {
+  background: #eee;
+  border: 1px solid #ddd;
+  margin-top: 15px;
+  overflow: auto;
+  padding: 7px 15px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 article .entry pre code {
   background: none;
@@ -680,6 +689,7 @@ figure.highlight {
   text-shadow: 0 0 1px #fff;
   line-height: 1.6;
   overflow: auto;
+  position: relative;
 }
 figure.highlight figcaption {
   color: #999;
@@ -688,7 +698,13 @@ figure.highlight figcaption {
   text-shadow: 0 0 1px #fff;
 }
 figure.highlight figcaption a {
-  float: right;
+  position: absolute;
+  right: 15px;
+}
+figure.highlight pre {
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 figure.highlight table {
   margin-top: 0;
@@ -704,71 +720,71 @@ figure.highlight .code {
   padding-left: 15px;
   border-left: 1px solid #fff;
 }
-figure.highlight .code .comment,
-figure.highlight .code .template_comment,
-figure.highlight .code .diff .header,
-figure.highlight .code .doctype,
-figure.highlight .code .pi,
-figure.highlight .code .lisp .string,
-figure.highlight .code .javadoc {
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .doctype,
+pre .pi,
+pre .lisp .string,
+pre .javadoc {
   color: #93a1a1;
   font-style: italic;
 }
-figure.highlight .code .keyword,
-figure.highlight .code .winutils,
-figure.highlight .code .method,
-figure.highlight .code .addition,
-figure.highlight .code .css .tag,
-figure.highlight .code .request,
-figure.highlight .code .status,
-figure.highlight .code .nginx .title {
+pre .keyword,
+pre .winutils,
+pre .method,
+pre .addition,
+pre .css .tag,
+pre .request,
+pre .status,
+pre .nginx .title {
   color: #859900;
 }
-figure.highlight .code .number,
-figure.highlight .code .command,
-figure.highlight .code .string,
-figure.highlight .code .tag .value,
-figure.highlight .code .phpdoc,
-figure.highlight .code .tex .formula,
-figure.highlight .code .regexp,
-figure.highlight .code .hexcolor {
+pre .number,
+pre .command,
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula,
+pre .regexp,
+pre .hexcolor {
   color: #2aa198;
 }
-figure.highlight .code .title,
-figure.highlight .code .localvars,
-figure.highlight .code .chunk,
-figure.highlight .code .decorator,
-figure.highlight .code .built_in,
-figure.highlight .code .identifier,
-figure.highlight .code .vhdl,
-figure.highlight .code .literal,
-figure.highlight .code .id {
+pre .title,
+pre .localvars,
+pre .chunk,
+pre .decorator,
+pre .built_in,
+pre .identifier,
+pre .vhdl,
+pre .literal,
+pre .id {
   color: #268bd2;
 }
-figure.highlight .code .attribute,
-figure.highlight .code .variable,
-figure.highlight .code .lisp .body,
-figure.highlight .code .smalltalk .number,
-figure.highlight .code .constant,
-figure.highlight .code .class .title,
-figure.highlight .code .parent,
-figure.highlight .code .haskell .type {
+pre .attribute,
+pre .variable,
+pre .lisp .body,
+pre .smalltalk .number,
+pre .constant,
+pre .class .title,
+pre .parent,
+pre .haskell .type {
   color: #b58900;
 }
-figure.highlight .code .preprocessor,
-figure.highlight .code .preprocessor .keyword,
-figure.highlight .code .shebang,
-figure.highlight .code .symbol,
-figure.highlight .code .symbol .string,
-figure.highlight .code .diff .change,
-figure.highlight .code .special,
-figure.highlight .code .attr_selector,
-figure.highlight .code .important,
-figure.highlight .code .subst,
-figure.highlight .code .cdata,
-figure.highlight .code .clojure .title {
+pre .preprocessor,
+pre .preprocessor .keyword,
+pre .shebang,
+pre .symbol,
+pre .symbol .string,
+pre .diff .change,
+pre .special,
+pre .attr_selector,
+pre .important,
+pre .subst,
+pre .cdata,
+pre .clojure .title {
   color: #cb4b16;
 }
-figure.highlight .code .deletion {
+pre .deletion {
   color: #dc322f;
 }

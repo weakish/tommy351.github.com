@@ -40,7 +40,7 @@
     
       <li><a href="/archives">Archives</a></li>
     
-      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+      <li><a href="https://github.com/tommy351">GitHub</a></li>
     
   </ul>
   <div class="clearfix"></div>
@@ -85,19 +85,19 @@
 </p>
 <ol>
 <li><p>透過 <a href="https://npmjs.org/">npm</a> 將 Hexo 升級至 0.1。</p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">update</span> -g</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><div class="line">npm update -g</div></code></pre>
 </li>
 <li><p>升級內建的 <a href="https://github.com/tommy351/hexo-theme-light">Light</a> 主題。</p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line">cd themes/<span class="shader"><span class="keyword">light</span></div><div class="line">git pull</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><div class="line">cd themes/light</div><div class="line">git pull</div></code></pre>
 </li>
 <li><p>更新 <code>_config.yml</code>，以下是 0.1 版的預設配置，請依照個人需求自行調整。</p>
-<pre><code class="lang-yaml"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div><div class="line-number">22</div><div class="line-number">23</div><div class="line-number">24</div><div class="line-number">25</div><div class="line-number">26</div><div class="line-number">27</div><div class="line-number">28</div><div class="line-number">29</div><div class="line-number">30</div><div class="line-number">31</div><div class="line-number">32</div><div class="line-number">33</div><div class="line-number">34</div><div class="line-number">35</div><div class="line-number">36</div><div class="line-number">37</div><div class="line-number">38</div><div class="line-number">39</div><div class="line-number">40</div><div class="line-number">41</div><div class="line-number">42</div><div class="line-number">43</div><div class="line-number">44</div><div class="line-number">45</div><div class="line-number">46</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># Basic</span></div><div class="line"><span class="label">title:</span> Hexo</div><div class="line"><span class="label">subtitle:</span> Node<span class="preprocessor">.js</span> blog framework</div><div class="line"><span class="label">description:</span></div><div class="line"><span class="label">url:</span> http://yoursite<span class="preprocessor">.com</span></div><div class="line"><span class="label">author:</span> John Doe</div><div class="line"><span class="label">email:</span></div><div class="line"><span class="label">language:</span></div><div class="line"><span class="preprocessor"># Permalink</span></div><div class="line"><span class="label">root:</span> /</div><div class="line"><span class="label">permalink:</span> :year/:month/:day/:title/</div><div class="line"><span class="label">tag_dir:</span> tags</div><div class="line"><span class="label">archive_dir:</span> archives</div><div class="line"><span class="label">category_dir:</span> posts</div><div class="line"><span class="preprocessor"># Archives</span></div><div class="line"><span class="preprocessor"># 2: Paginate result</span></div><div class="line"><span class="preprocessor"># 1: Display result in same page</span></div><div class="line"><span class="preprocessor"># 0: Disable</span></div><div class="line"><span class="label">archive:</span> <span class="number">2</span></div><div class="line"><span class="label">category:</span> <span class="number">2</span></div><div class="line"><span class="label">tag:</span> <span class="number">2</span></div><div class="line"><span class="preprocessor"># Server</span></div><div class="line"><span class="preprocessor"># Hexo uses Connect to serve static files</span></div><div class="line"><span class="preprocessor"># Reference: http://www.senchalabs.org/connect/</span></div><div class="line"><span class="label">port:</span> <span class="number">4000</span></div><div class="line"><span class="label">logger:</span> false</div><div class="line"><span class="label">logger_format:</span></div><div class="line"><span class="preprocessor"># Date / Time format</span></div><div class="line"><span class="preprocessor"># Hexo uses Moment.js to parse and display date</span></div><div class="line"><span class="preprocessor"># Reference: http://momentjs.com/docs/#/displaying/format/</span></div><div class="line"><span class="label">date_format:</span> MMM D, YYYY</div><div class="line"><span class="label">time_format:</span> H:mm:ss</div><div class="line"><span class="preprocessor"># Pagination</span></div><div class="line"><span class="label">per_page:</span> <span class="number">10</span></div><div class="line"><span class="label">pagination_dir:</span> page</div><div class="line"><span class="preprocessor"># Disqus</span></div><div class="line"><span class="label">disqus_shortname:</span></div><div class="line"><span class="preprocessor"># Extensions</span></div><div class="line"><span class="label">plugins:</span></div><div class="line"><span class="label">theme:</span> light</div><div class="line"><span class="preprocessor"># Enhancement</span></div><div class="line"><span class="label">auto_spacing:</span> false</div><div class="line"><span class="label">titlecase:</span> false</div><div class="line"><span class="preprocessor"># Deploy</span></div><div class="line"><span class="label">deploy:</span></div><div class="line"> type:</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-yaml"><div class="line"><span class="preprocessor"># Basic</span></div><div class="line"><span class="label">title:</span> Hexo</div><div class="line"><span class="label">subtitle:</span> Node<span class="preprocessor">.js</span> blog framework</div><div class="line"><span class="label">description:</span></div><div class="line"><span class="label">url:</span> http://yoursite<span class="preprocessor">.com</span></div><div class="line"><span class="label">author:</span> John Doe</div><div class="line"><span class="label">email:</span></div><div class="line"><span class="label">language:</span></div><br><div class="line"><span class="preprocessor"># Permalink</span></div><div class="line"><span class="label">root:</span> /</div><div class="line"><span class="label">permalink:</span> :year/:month/:day/:title/</div><div class="line"><span class="label">tag_dir:</span> tags</div><div class="line"><span class="label">archive_dir:</span> archives</div><div class="line"><span class="label">category_dir:</span> posts</div><br><div class="line"><span class="preprocessor"># Archives</span></div><div class="line"><span class="label">archive:</span> <span class="number">2</span></div><div class="line"><span class="label">category:</span> <span class="number">2</span></div><div class="line"><span class="label">tag:</span> <span class="number">2</span></div><br><div class="line"><span class="preprocessor"># Server</span></div><div class="line"><span class="label">port:</span> <span class="number">4000</span></div><div class="line"><span class="label">logger:</span> false</div><div class="line"><span class="label">logger_format:</span></div><br><div class="line"><span class="preprocessor"># Date / Time format</span></div><div class="line"><span class="label">date_format:</span> MMM D, YYYY</div><div class="line"><span class="label">time_format:</span> H:mm:ss</div><br><div class="line"><span class="preprocessor"># Pagination</span></div><div class="line"><span class="label">per_page:</span> <span class="number">10</span></div><div class="line"><span class="label">pagination_dir:</span> page</div><br><div class="line"><span class="preprocessor"># Disqus</span></div><div class="line"><span class="label">disqus_shortname:</span></div><br><div class="line"><span class="preprocessor"># Extensions</span></div><div class="line"><span class="label">plugins:</span></div><div class="line"><span class="label">theme:</span> light</div><div class="line"><span class="label">exclude_generator:</span></div><br><div class="line"><span class="preprocessor"># Enhancement</span></div><div class="line"><span class="label">auto_spacing:</span> false</div><div class="line"><span class="label">titlecase:</span> false</div><br><div class="line"><span class="preprocessor"># Deploy</span></div><div class="line"><span class="label">deploy:</span></div><div class="line"> type:</div></code></pre>
 </li>
 <li><p>修改 <code>package.json</code>。</p>
-<pre><code class="lang-json"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line"> "<span class="attribute">name</span>": <span class="value"><span class="string">"hexo"</span></span>,</div><div class="line"> "<span class="attribute">version</span>": <span class="value"><span class="string">"0.0.1"</span></span>,</div><div class="line"> "<span class="attribute">private</span>": <span class="value"><span class="literal">true</span></span>,</div><div class="line"> "<span class="attribute">dependencies</span>": <span class="value">{}</div><div class="line">}</span></div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-json"><div class="line">{</div><div class="line"> "<span class="attribute">name</span>": <span class="value"><span class="string">"hexo"</span></span>,</div><div class="line"> "<span class="attribute">version</span>": <span class="value"><span class="string">"0.0.1"</span></span>,</div><div class="line"> "<span class="attribute">private</span>": <span class="value"><span class="literal">true</span></span>,</div><div class="line"> "<span class="attribute">dependencies</span>": <span class="value">{}</div><div class="line">}</span></div></code></pre>
 </li>
 <li><p>若你之前有設定過佈署的話，請調整 <code>_config.yml</code> 中 <code>deploy</code> 的設定。</p>
-<pre><code class="lang-yaml"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></pre></td><td class="code"><pre><div class="line"><span class="method">deploy:</span></div><div class="line"> <span class="method">type:</span> github</div><div class="line"> <span class="method">repository:</span></div><div class="line"> <span class="method">branch:</span></div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-yaml"><div class="line"><span class="method">deploy:</span></div><div class="line"> <span class="method">type:</span> github</div><div class="line"> <span class="method">repository:</span></div><div class="line"> <span class="method">branch:</span></div></code></pre>
 <p><code>repository</code> 填入 GitHub repo 的連結，若 <code>repository</code> 為 <code>username.github.com</code> 這類型的話，則在 <code>branch</code> 填入 <code>master</code>，否則填入 <code>gh-pages</code>。</p>
 </li>
 </ol>
@@ -118,17 +118,17 @@
 <ol>
 <li><p>設定</p>
 <p>修改 <code>_config.yml</code> 中 <code>deploy</code> 的設定。</p>
-<pre><code class="lang-yaml"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line"><span class="title">deploy</span>:</div><div class="line"> <span class="typedef"><span class="keyword">type</span>: heroku</span></div><div class="line"> repository:</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-yaml"><div class="line"><span class="title">deploy</span>:</div><div class="line"> <span class="typedef"><span class="keyword">type</span>: heroku</span></div><div class="line"> repository:</div></code></pre>
 <p><code>repository</code> 填入 Heroku repo 的連結。</p>
 </li>
 <li><p>建立</p>
 <p>執行以下指令。</p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">hexo</span> setup_deploy</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><div class="line">hexo setup_deploy</div></code></pre>
 <p>Hexo 便會在資料夾中建立 <code>Procfile</code> 和 <code>app.js</code> 兩個檔案。Hexo 使用 <a href="http://www.senchalabs.org/connect/">Connect</a> 處理靜態檔案。</p>
 </li>
 <li><p>佈署</p>
 <p>執行以下指令。</p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">hexo</span> deploy</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-bash"><div class="line">hexo deploy</div></code></pre>
 <p>然後就可以去泡杯咖啡等佈署完成了！</p>
 </li>
 </ol>
@@ -237,7 +237,7 @@
 <p>Hexo 利用 <a href="http://www.senchalabs.org/connect/">Connect</a> 內建的 <a href="http://www.senchalabs.org/connect/logger.html">logger</a> 功能來顯示記錄，使用方式非常簡單，修改 <code>_config.yml</code> 即可開啟。
 
 </p>
-<pre><code class="lang-yaml"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">logger</span>: <span class="string">true</span></div><div class="line"><span class="attribute">logger_format:</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-yaml"><div class="line"><span class="attribute">logger</span>: <span class="string">true</span></div><div class="line"><span class="attribute">logger_format:</div></code></pre>
 <p>記錄的格式 <code>logger_format</code> 可參考 Connect 的 <a href="http://www.senchalabs.org/connect/logger.html">文件</a> 自行修改。
 
 </p>
@@ -316,11 +316,11 @@
 </div>
 
 
-
-
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
+  
+    <li><a href="/tags/Android/">Android</a><small>1</small></li>
   
     <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
@@ -329,8 +329,6 @@
     <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
     <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
-  
-    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
     <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
@@ -345,8 +343,6 @@
     <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
     <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
-  
-    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
     <li><a href="/tags/主題/">主題</a><small>6</small></li>
   

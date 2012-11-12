@@ -40,7 +40,7 @@
     
       <li><a href="/archives">Archives</a></li>
     
-      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+      <li><a href="https://github.com/tommy351">GitHub</a></li>
     
   </ul>
   <div class="clearfix"></div>
@@ -111,30 +111,30 @@
 <p>2. 安裝 <a href="http://mxcl.github.com/homebrew/">Homebrew</a>
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">$</span> <span class="comment">ruby</span> <span class="literal">-</span><span class="comment">e</span> <span class="comment">"$(curl</span> <span class="literal">-</span><span class="comment">fsSL</span> <span class="comment">https://raw</span>.<span class="comment">github</span>.<span class="comment">com/gist/323731)"</span></div><div class="line"><span class="comment">$</span> <span class="comment">brew</span> <span class="comment">update</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="comment">$</span> <span class="comment">ruby</span> <span class="literal">-</span><span class="comment">e</span> <span class="comment">"$(curl</span> <span class="literal">-</span><span class="comment">fsSL</span> <span class="comment">https://raw</span>.<span class="comment">github</span>.<span class="comment">com/gist/323731)"</span></div><div class="line"><span class="comment">$</span> <span class="comment">brew</span> <span class="comment">update</div></code></pre>
 <p>3. 安裝 <a href="http://git-scm.com/">Git</a>
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>brew install git</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="variable">$ </span>brew install git</div></code></pre>
 <p>別忘了 Mac 上有 <a href="http://www.sourcetreeapp.com/">SourceTree</a> 和 <a href="http://gitx.laullon.com/">GitX</a> 這兩套不錯的 Git GUI 可以使用！
 
 </p>
 <p>4. 安裝 <a href="http://beginrescueend.com/">RVM</a>
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line"><span class="char">$ </span>bash &lt; &lt;(curl -s <span class="method">https:</span>//rvm.beginrescueend.com/install/rvm)</div><div class="line"><span class="char">$ </span>echo <span class="comment">"[[ -s $HOME/.rvm/scripts/rvm ]] &amp;&amp; source $HOME/.rvm/scripts/rvm"</span> &gt;&gt; ~/.profile <span class="char">$ </span>. ~/.profile</div><div class="line"><span class="char">$ </span>source ~/.profile</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="char">$ </span>bash &lt; &lt;(curl -s <span class="method">https:</span>//rvm.beginrescueend.com/install/rvm)</div><div class="line"><span class="char">$ </span>echo <span class="comment">"[[ -s $HOME/.rvm/scripts/rvm ]] &amp;&amp; source $HOME/.rvm/scripts/rvm"</span> &gt;&gt; ~/.profile <span class="char">$ </span>. ~/.profile</div><div class="line"><span class="char">$ </span>source ~/.profile</div></code></pre>
 <p>5. 安裝 <a href="http://www.ruby-lang.org/zh_TW/">Ruby</a>（<a href="http://octopress.org/">Octopress</a> 要求使用<strong>1.9.2</strong>版）
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">install</span> <span class="comment">1</span>.<span class="comment">9</span>.<span class="comment">2</span></div><div class="line"><span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">1</span>.<span class="comment">9</span>.<span class="comment">2</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">default</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">install</span> <span class="comment">1</span>.<span class="comment">9</span>.<span class="comment">2</span></div><div class="line"><span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">1</span>.<span class="comment">9</span>.<span class="comment">2</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">default</div></code></pre>
 <p>若是安裝失敗的話，請試著使用以下方式安裝：
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div></pre></td><td class="code"><pre><div class="line"><span class="char">$ </span>rvm remove <span class="number">1.9</span><span class="number">.2</span></div><div class="line"><span class="char">$ </span>export <span class="class">CC</span>=/usr/bin/gcc-<span class="number">4.2</span></div><div class="line"><span class="char">$ </span>brew install readline</div><div class="line"><span class="char">$ </span>brew link readline</div><div class="line"><span class="char">$ </span>rvm install <span class="number">1.9</span><span class="number">.2</span> --with-readline-dir=<span class="char">$r</span>vm_path/usr</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="char">$ </span>rvm remove <span class="number">1.9</span><span class="number">.2</span></div><div class="line"><span class="char">$ </span>export <span class="class">CC</span>=/usr/bin/gcc-<span class="number">4.2</span></div><div class="line"><span class="char">$ </span>brew install readline</div><div class="line"><span class="char">$ </span>brew link readline</div><div class="line"><span class="char">$ </span>rvm install <span class="number">1.9</span><span class="number">.2</span> --with-readline-dir=<span class="char">$r</span>vm_path/usr</div></code></pre>
 <p>6. 安裝 <a href="http://pow.cx/">Pow</a>
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">$ curl get<span class="variable">.pow</span><span class="variable">.cx</span> | sh</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line">$ curl get<span class="variable">.pow</span><span class="variable">.cx</span> | sh</div></code></pre>
 <p><em>（以上安裝步驟參考自<a href="http://killtw.k2ds.net/blog/2011/10/29/how-to-install-rails/">我這樣安裝 Rails - 佑樣の技術筆記</a>）</em>
 
 </p>
@@ -145,23 +145,23 @@
 <p>1. 安裝 <a href="https://github.com/sstephenson/rbenv">rbenv</a>
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>brew install rbenv</div><div class="line"><span class="variable">$ </span>brew install ruby-build</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="variable">$ </span>brew install rbenv</div><div class="line"><span class="variable">$ </span>brew install ruby-build</div></code></pre>
 <p>2. 下載 <a href="http://octopress.org/">Octopress</a>
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="char">$ </span>git clone <span class="method">git:</span>//github.com/imathis/octopress.git octopress</div><div class="line"><span class="char">$ </span>cd octopress</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="char">$ </span>git clone <span class="method">git:</span>//github.com/imathis/octopress.git octopress</div><div class="line"><span class="char">$ </span>cd octopress</div></code></pre>
 <p>3. 安裝相關套件
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>gem install bundler</div><div class="line"><span class="variable">$ </span>bundle install</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="variable">$ </span>gem install bundler</div><div class="line"><span class="variable">$ </span>bundle install</div></code></pre>
 <p>4. 安裝預設佈景主題
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>rake install</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="variable">$ </span>rake install</div></code></pre>
 <p>如此一來就安裝好 <a href="http://octopress.org/">Octopress</a> 了，你可以輸入<code>rake preview</code>從<code>localhost:4000</code>預覽，或是透過 <a href="http://pow.cx/">Pow</a> 預覽：
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div></pre></td><td class="code"><pre><div class="line"><span class="char">$ </span>cd ~/.pow</div><div class="line"><span class="char">$ </span>ln -s /path-to-octopress</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="char">$ </span>cd ~/.pow</div><div class="line"><span class="char">$ </span>ln -s /path-to-octopress</div></code></pre>
 <h2>發佈</h2>
 <p>1. 在 <a href="https://github.com/">GitHub</a> 建立名為<code>http://yourname.github.com</code>的 repository，<code>yourname</code>必須與你的使用者名稱相同，否則會建立專案頁面。
 
@@ -169,19 +169,19 @@
 <p>2. 設定 <a href="https://github.com/">GitHub</a> 資料，並依照指示輸入 GitHub 頁面的 repository 網址。
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>rake setup_github_pages</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="variable">$ </span>rake setup_github_pages</div></code></pre>
 <p>3. 建立網誌資料
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>rake generate</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="variable">$ </span>rake generate</div></code></pre>
 <p>4. 發佈至 <a href="https://github.com/">GitHub</a>
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>rake deploy</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="variable">$ </span>rake deploy</div></code></pre>
 <p>5. 建立 commit
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>git add .</div><div class="line"><span class="variable">$ </span>git commit -m <span class="string">'your message'</span></div><div class="line"><span class="variable">$ </span>git push origin source</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="variable">$ </span>git add .</div><div class="line"><span class="variable">$ </span>git commit -m <span class="string">'your message'</span></div><div class="line"><span class="variable">$ </span>git push origin source</div></code></pre>
 <p>過幾分鐘後 <a href="https://github.com/">GitHub</a> 就會寄信通知你專業建立完成，連上<code>yourname.github.com</code>就能見到你的 <a href="http://octopress.org/">Octopress</a> 囉！
 
 </p>
@@ -192,7 +192,7 @@
 <p>在<code>source/CNAME</code>輸入網域名稱
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">echo</span> <span class="string">'your-domain.com'</span> &gt;&gt; source/CNAME</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line">$ <span class="keyword">echo</span> <span class="string">'your-domain.com'</span> &gt;&gt; source/CNAME</div></code></pre>
 <p>若網域名稱如<code>www.example.com</code>，只需要新增 CNAME 記錄<code>yourname.github.com</code>即可；若如<code>example.com</code>，則必須加入 A 記錄<code>207.97.227.245</code>，請勿使用 CNAME 記錄。
 
 </p>
@@ -204,24 +204,24 @@
 
 </p>
 <h3>文章</h3>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>rake new_post[<span class="string">'title'</span>]</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="variable">$ </span>rake new_post[<span class="string">'title'</span>]</div></code></pre>
 <p>輸入以上代碼後，就可在<code>source/_posts</code>見到<code>yyyy-mm-dd-title.markdown</code>格式的文件，以及以下內容：
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">---</span></div><div class="line"><span class="title">layout</span>: post</div><div class="line"><span class="title">title</span>: <span class="string">"Post Title"</span></div><div class="line"><span class="title">date</span>: <span class="number">2012</span>-<span class="number">01</span>-<span class="number">14</span> <span class="number">15</span>:<span class="number">52</span></div><div class="line"><span class="title">comments</span>: true</div><div class="line"><span class="title">categories</span>:</div><div class="line"><span class="comment">---</span></div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="comment">---</span></div><div class="line"><span class="title">layout</span>: post</div><div class="line"><span class="title">title</span>: <span class="string">"Post Title"</span></div><div class="line"><span class="title">date</span>: <span class="number">2012</span>-<span class="number">01</span>-<span class="number">14</span> <span class="number">15</span>:<span class="number">52</span></div><div class="line"><span class="title">comments</span>: true</div><div class="line"><span class="title">categories</span>:</div><div class="line"><span class="comment">---</span></div></code></pre>
 <p>你可透過以下幾種方式來編輯分類：
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div></pre></td><td class="code"><pre><div class="line"><span class="header"># 單一分類</span></div><div class="line">categories: Sass</div><div class="line"><span class="header"># 多重分類 (1)</span></div><div class="line">categories: [CSS3, Sass, Media Queries]</div><div class="line"><span class="header"># 多重分類 (2)</span></div><div class="line">categories:</div><div class="line"><span class="bullet">- </span>CSS3</div><div class="line"><span class="bullet">- </span>Sass</div><div class="line"><span class="bullet">- </span>Media Queries</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="header"># 單一分類</span></div><div class="line">categories: Sass</div><br><div class="line"><span class="header"># 多重分類 (1)</span></div><div class="line">categories: [CSS3, Sass, Media Queries]</div><br><div class="line"><span class="header"># 多重分類 (2)</span></div><div class="line">categories:</div><div class="line"><span class="bullet">- </span>CSS3</div><div class="line"><span class="bullet">- </span>Sass</div><div class="line"><span class="bullet">- </span>Media Queries</div></code></pre>
 <p><a href="http://octopress.org/">Octopress</a> 完整支援 <a href="http://markdown.tw/">Markdown</a> 語法，另外可利用<code>&lt;!-- more --&gt;</code>達成「詳閱全文」的效果。
 
 </p>
 <h3>分頁</h3>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 一般分頁    </span></div><div class="line"><span class="variable">$ </span>rake new_page[your-page]</div><div class="line"><span class="comment"># 子分頁</span></div><div class="line"><span class="variable">$ </span>rake new_page[your-page/sub-page.html]</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line"><span class="comment"># 一般分頁    </span></div><div class="line"><span class="variable">$ </span>rake new_page[your-page]</div><br><div class="line"><span class="comment"># 子分頁</span></div><div class="line"><span class="variable">$ </span>rake new_page[your-page/sub-page.html]</div></code></pre>
 <p>輸入以上代碼後，就可在<code>source/your-page</code>中見到<code>index.markdown</code>，以及以下內容：
 
 </p>
-<pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"><span class="method">layout:</span> page</div><div class="line"><span class="method">title:</span> <span class="comment">"Page Title"</span></div><div class="line"><span class="method">date:</span> <span class="number">2012</span>-<span class="number">01</span>-<span class="number">14</span> <span class="number">15</span>:<span class="number">52</span></div><div class="line"><span class="method">comments:</span> <span class="keyword">true</span></div><div class="line"><span class="method">sharing:</span> <span class="keyword">true</span></div><div class="line"><span class="method">footer:</span> <span class="keyword">true</span>    </div><div class="line">---</div></pre></td></tr></table></figure></code></pre>
+<pre><code><div class="line">---</div><div class="line"><span class="method">layout:</span> page</div><div class="line"><span class="method">title:</span> <span class="comment">"Page Title"</span></div><div class="line"><span class="method">date:</span> <span class="number">2012</span>-<span class="number">01</span>-<span class="number">14</span> <span class="number">15</span>:<span class="number">52</span></div><div class="line"><span class="method">comments:</span> <span class="keyword">true</span></div><div class="line"><span class="method">sharing:</span> <span class="keyword">true</span></div><div class="line"><span class="method">footer:</span> <span class="keyword">true</span>    </div><div class="line">---</div></code></pre>
 <p>操作方法與文章大同小異，同樣完整支援 <a href="http://markdown.tw/">Markdown</a> 語法。
 
 </p>
@@ -289,11 +289,11 @@
 </div>
 
 
-
-
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
+  
+    <li><a href="/tags/Android/">Android</a><small>1</small></li>
   
     <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
@@ -302,8 +302,6 @@
     <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
     <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
-  
-    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
     <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
@@ -318,8 +316,6 @@
     <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
     <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
-  
-    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
     <li><a href="/tags/主題/">主題</a><small>6</small></li>
   

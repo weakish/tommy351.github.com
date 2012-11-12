@@ -40,7 +40,7 @@
     
       <li><a href="/archives">Archives</a></li>
     
-      <li><a href="https://github.com/tommy351/">GitHub</a></li>
+      <li><a href="https://github.com/tommy351">GitHub</a></li>
     
   </ul>
   <div class="clearfix"></div>
@@ -84,30 +84,30 @@
 <p>以下三種方式擇一即可，下文亦同。
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line">localStorage[<span class="string">'test'</span>] = testValue;</div><div class="line">localStorage.setItem(<span class="string">'test'</span>, testValue);</div><div class="line">localStorage.test = testValue;</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">localStorage[<span class="string">'test'</span>] = testValue;</div><div class="line">localStorage.setItem(<span class="string">'test'</span>, testValue);</div><div class="line">localStorage.test = testValue;</div></code></pre>
 <h3>取得資料</h3>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line">localStorage[<span class="string">'test'</span>];</div><div class="line">localStorage.getItem(<span class="string">'test'</span>);</div><div class="line">localStorage.test;</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">localStorage[<span class="string">'test'</span>];</div><div class="line">localStorage.getItem(<span class="string">'test'</span>);</div><div class="line">localStorage.test;</div></code></pre>
 <h3>刪除資料</h3>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">localStorage.removeItem(<span class="string">'test'</span>);</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">localStorage.removeItem(<span class="string">'test'</span>);</div></code></pre>
 <h3>資料全部清除</h3>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">localStorage.clear();</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">localStorage.clear();</div></code></pre>
 <h2>勾選框（checkbox）</h2>
 <h3>設定資料</h3>
 <p>由於 Storage 僅支援字串，必須使用<code>toString()</code>函數，將 Boolean 值轉為字串才可儲存。
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).prop(<span class="string">'checked'</span>).toString();</div><div class="line"><span class="comment">// 若 jQuery 版本低於 1.6</span></div><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).attr(<span class="string">'checked'</span>).toString();</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).prop(<span class="string">'checked'</span>).toString();</div><br><div class="line"><span class="comment">// 若 jQuery 版本低於 1.6</span></div><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).attr(<span class="string">'checked'</span>).toString();</div></code></pre>
 <h3>取得資料</h3>
 <p>使用<code>===</code>判斷資料。
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ( localStorage[<span class="string">'test'</span>] === <span class="string">'true'</span> ) {</div><div class="line">    <span class="comment">// Do something</span></div><div class="line">}</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line"><span class="keyword">if</span> ( localStorage[<span class="string">'test'</span>] === <span class="string">'true'</span> ) {</div><div class="line">    <span class="comment">// Do something</span></div><div class="line">}</div></code></pre>
 <h2>下拉式選單（select）</h2>
 <h3>設定資料</h3>
 <p>取得選單中<code>:selected</code>的值，並儲存即可。
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div></pre></td><td class="code"><pre><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).find(<span class="string">':selected'</span>).val();</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).find(<span class="string">':selected'</span>).val();</div></code></pre>
 <h2>陣列（array）</h2>
 <h3>設定資料</h3>
 <p>陣列大概是讓我最頭痛的部份，同前文所述，Storage 僅支援字串，所以必須先以特殊的分隔符號來隔開每個元素。<em>（如|, $, ; 等符號，隨你喜歡）</em>
@@ -116,12 +116,12 @@
 <p>如果你在下面的陣列中看到德文，那只是我突然中二病發作而已，<del>如果你看得懂的話代表你也是個廚二</del>。
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = {[<span class="string">'one'</span>, <span class="string">'eins'</span>], [<span class="string">'two'</span>, <span class="string">'zwei'</span>], [<span class="string">'three'</span>, <span class="string">'drew'</span>], [<span class="string">'four'</span>, <span class="string">'vier'</span>]};</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    storage[i] = storage[i].join(<span class="string">';'</span>);</div><div class="line">}</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div><br><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = {[<span class="string">'one'</span>, <span class="string">'eins'</span>], [<span class="string">'two'</span>, <span class="string">'zwei'</span>], [<span class="string">'three'</span>, <span class="string">'drew'</span>], [<span class="string">'four'</span>, <span class="string">'vier'</span>]};</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    storage[i] = storage[i].join(<span class="string">';'</span>);</div><div class="line">}</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div></code></pre>
 <h3>取得資料</h3>
 <p>利用<code>split</code>函數分割字串。
 
 </p>
-<pre><code class="lang-js"><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = localStorage[<span class="string">'test'</span>].split(<span class="string">'|||'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    <span class="comment">// do something</span></div><div class="line">}</div><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = localStorage[<span class="string">'test'</span>].split(<span class="string">'|||'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    <span class="keyword">var</span> item = storage[i].split(<span class="string">';'</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;item.length; j++){</div><div class="line">        <span class="comment">// do something</span></div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure></code></pre>
+<pre><code class="lang-js"><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = localStorage[<span class="string">'test'</span>].split(<span class="string">'|||'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    <span class="comment">// do something</span></div><div class="line">}</div><br><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = localStorage[<span class="string">'test'</span>].split(<span class="string">'|||'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    <span class="keyword">var</span> item = storage[i].split(<span class="string">';'</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;item.length; j++){</div><div class="line">        <span class="comment">// do something</span></div><div class="line">    }</div><div class="line">}</div></code></pre>
 <h2>後記</h2>
 <p>最近因為課業繁忙，網誌都放著生灰超過一個月了，於是心血來潮將最近寫腳本的心得寫成文章，可能會有錯誤，請多見諒。</p>
 
@@ -177,11 +177,11 @@
 </div>
 
 
-
-
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   <ul class="entry">
+  
+    <li><a href="/tags/Android/">Android</a><small>1</small></li>
   
     <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
   
@@ -190,8 +190,6 @@
     <li><a href="/tags/Hexo/">Hexo</a><small>2</small></li>
   
     <li><a href="/tags/JavaScript/">JavaScript</a><small>7</small></li>
-  
-    <li><a href="/tags/Mac/">Mac</a><small>16</small></li>
   
     <li><a href="/tags/Node.js/">Node.js</a><small>3</small></li>
   
@@ -206,8 +204,6 @@
     <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
   
     <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
-  
-    <li><a href="/tags/中文化/">中文化</a><small>16</small></li>
   
     <li><a href="/tags/主題/">主題</a><small>6</small></li>
   
