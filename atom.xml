@@ -3,7 +3,7 @@
   <title><![CDATA[Zespia]]></title>
   <link href="http://zespia.tw/atom.xml" rel="self"/>
   <link href="http://zespia.tw"/>
-  <updated>2012-11-18T16:37:14.248Z</updated>
+  <updated>2012-12-05T16:14:45.585Z</updated>
   <id>http://zespia.tw/</id>
   <author>
     <name><![CDATA[SkyArrow]]></name>
@@ -11,8 +11,63 @@
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
   <entry>
+    <title type="html"><![CDATA[使用 Stream 來拷貝檔案]]></title>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/12/06/nodejs-stream-copy-files/"/>
+    <id>http://zespia.tw/blog/2012/12/06/nodejs-stream-copy-files/</id>
+    <published>2012-12-05T16:14:46.000Z</published>
+    <updated>2012-12-05T16:14:30.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://i.minus.com/iFFlrSnC6IrC8.jpg" alt="K 子 - ぬれ早苗 (id=16398495)">
+
+</p>
+<blockquote>
+<p><strong>Stream</strong> [strim] n. [C] 小河、溪流
+
+</p>
+</blockquote>
+<p>因為 Stream 有這樣的意思，所以找了一張有溪流的圖片當做頁首圖片，<del>要在 Pixiv 上找一張非 R-18 的濕身圖片真難</del>。
+
+</p>
+<p>雖然 <a href="http://zespia.tw/hexo">Hexo</a> 本來就很快了，不過在 <a href="https://github.com/tommy351/hexo/commit/1bfc6324285d7cadeb30f2c4bf4e8ea5fc451d5e">0.1.8</a> 使用 <a href="http://nodejs.org/api/stream.html">Stream</a> 代替原本的檔案複製方法，使靜態檔案的生成速度更加快速。
+
+</p>
+<span id="more"></span>
+
+<p>原本的檔案複製方式是：
+
+</p>
+<pre><code><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">copy</span><span class="params">(source, destination, callback)</span>{</span></div><div class="line">    fs.readFile(source, <span class="keyword">function</span>(err, file){</div><div class="line">        <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">        fs.writeFile(destination, file, callback);</div><div class="line">    });</div><div class="line">}</div></code></pre>
+<p>非常簡單，就是檔案讀取完後再將檔案寫入到目的地。這種方法必須將所有檔案讀取完成後才能寫入，將對地沒有效率多了，使用 <a href="http://nodejs.org/api/stream.html">Stream</a> 則是邊讀取邊寫入，當讀取完成後，寫入也差不多完成了，在處理大檔案時，差別更加明顯。
+
+</p>
+<p>除了檔案讀寫以外，<a href="http://nodejs.org/api/stream.html">Stream</a> 也常用於靜態檔案伺服器，例如 <a href="http://www.senchalabs.org/connect/">Connect</a> 就是用這種方式來處理靜態檔案的。
+
+</p>
+<p>用 <a href="http://nodejs.org/api/stream.html">Stream</a> 的方式來複製檔案，相較於原本的方式，也只不過是多了幾行程式碼而已，如下：
+
+</p>
+<pre><code><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">copy</span><span class="params">(source, destination, callback)</span>{</span></div><div class="line">    var rs = <span class="transposed_variable">fs.</span>createReadStream(source),</div><div class="line">        ws = <span class="transposed_variable">fs.</span>createWriteStream(destination);</div><br><div class="line">    <span class="transposed_variable">rs.</span>pipe(ws).on(<span class="string">'error'</span>, <span class="keyword">function</span>(err)<span class="cell">{</div><div class="line">        if (err) throw err;</div><div class="line">    }</span>);</div><br><div class="line">    <span class="transposed_variable">ws.</span>on(<span class="string">'close'</span>, callback).on(<span class="string">'error'</span>, <span class="keyword">function</span>(err)<span class="cell">{</div><div class="line">        if (err) throw err;</div><div class="line">    }</span>);</div><div class="line">}</div></code></pre>
+<p>首先建立讀取 Stream <code>rs</code> 和寫入 Stream <code>ws</code>，使用 <code>rs.pipe</code> 讀取資料同時將資料寫入至 <code>ws</code>。
+
+</p>
+<p>Stream 使用 <a href="http://nodejs.org/api/events.html">EventEmitter</a>，當結束或發生錯誤時會觸發事件，必須利用 <code>rs.on</code> 和 <code>ws.on</code> 來監聽事件。
+
+</p>
+<p>這種方式實在有點麻煩，如果能寫成 <code>rs.pipe(ws, function(err, callback){})</code> 的形式就好了。
+
+</p>
+<p><img src="http://i.minus.com/iwucHChl9EUD0.png" alt="">
+
+</p>
+<p>根據這種方式實作的 Hexo 0.1.8，實測出來的速度是 1007 ms，而舊版為 2038 ms，平均大約快了 1.5~2 倍左右，只要改寫一點程式碼就能獲得這麼高的效能提昇，非常值得。
+
+</p>
+]]></content>
+    <category scheme="http://zespia.tw/tags/Node.js/" term="Node.js"/>
+    <category scheme="http://zespia.tw/tags/JavaScript/" term="JavaScript"/>
+  </entry>
+  <entry>
     <title type="html"><![CDATA[命運石之門（Steins;Gate）中文版]]></title>
-    <link href="http://zespia.tw/blog/2012/11/19/steins-gate/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/11/19/steins-gate/"/>
     <id>http://zespia.tw/blog/2012/11/19/steins-gate/</id>
     <published>2012-11-18T16:36:38.000Z</published>
     <updated>2012-11-18T16:36:50.000Z</updated>
@@ -91,12 +146,12 @@
 </p>
 <p><a href="http://masterwiki.net/steinsgate/index.php">Steins;Gate/ シュタインズ・ゲート 攻略・考察 Wiki</a></p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FPS3%2F" term="PS3"/>
-    <category scheme="http://zespia.tw/tags%2F%E9%81%8A%E6%88%B2%2F" term="遊戲"/>
+    <category scheme="http://zespia.tw/tags/PS3/" term="PS3"/>
+    <category scheme="http://zespia.tw/tags/遊戲/" term="遊戲"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[新手機 Xperia S]]></title>
-    <link href="http://zespia.tw/blog/2012/11/12/xperia-s/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/11/12/xperia-s/"/>
     <id>http://zespia.tw/blog/2012/11/12/xperia-s/</id>
     <published>2012-11-12T05:48:14.000Z</published>
     <updated>2012-11-12T12:25:44.000Z</updated>
@@ -179,11 +234,11 @@
 <h2>結論</h2>
 <p>雖然有些缺點，不過依然瑕不掩瑜，空機價只要不到 13000 元，真的是一支 CP 值很高的手機。</p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FAndroid%2F" term="Android"/>
+    <category scheme="http://zespia.tw/tags/Android/" term="Android"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Hexo 更新至 0.1]]></title>
-    <link href="http://zespia.tw/blog/2012/10/29/hexo-update-0.1/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/10/29/hexo-update-0.1/"/>
     <id>http://zespia.tw/blog/2012/10/29/hexo-update-0.1/</id>
     <published>2012-10-28T16:25:37.000Z</published>
     <updated>2012-11-12T04:05:25.000Z</updated>
@@ -386,13 +441,13 @@
 
 </p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FNode.js%2F" term="Node.js"/>
-    <category scheme="http://zespia.tw/tags%2FJavaScript%2F" term="JavaScript"/>
-    <category scheme="http://zespia.tw/tags%2FHexo%2F" term="Hexo"/>
+    <category scheme="http://zespia.tw/tags/Node.js/" term="Node.js"/>
+    <category scheme="http://zespia.tw/tags/JavaScript/" term="JavaScript"/>
+    <category scheme="http://zespia.tw/tags/Hexo/" term="Hexo"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Hexo 颯爽登場！]]></title>
-    <link href="http://zespia.tw/blog/2012/10/11/hexo-debut/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/10/11/hexo-debut/"/>
     <id>http://zespia.tw/blog/2012/10/11/hexo-debut/</id>
     <published>2012-10-11T07:22:47.000Z</published>
     <updated>2012-10-29T14:31:15.000Z</updated>
@@ -514,13 +569,13 @@
   allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe>
 
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FJavaScript%2F" term="JavaScript"/>
-    <category scheme="http://zespia.tw/tags%2FNode.js%2F" term="Node.js"/>
-    <category scheme="http://zespia.tw/tags%2FHexo%2F" term="Hexo"/>
+    <category scheme="http://zespia.tw/tags/JavaScript/" term="JavaScript"/>
+    <category scheme="http://zespia.tw/tags/Node.js/" term="Node.js"/>
+    <category scheme="http://zespia.tw/tags/Hexo/" term="Hexo"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[愛夏的煉金工房 ─ 黃昏大地之煉金術士]]></title>
-    <link href="http://zespia.tw/blog/2012/09/05/atelier-ayesha/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/09/05/atelier-ayesha/"/>
     <id>http://zespia.tw/blog/2012/09/05/atelier-ayesha/</id>
     <published>2012-09-05T10:39:00.000Z</published>
     <updated>2012-10-10T16:39:10.000Z</updated>
@@ -580,12 +635,12 @@
 <li>賢者の庵：「真実の探求」「働くおねえさん」「秘宝ハンター」「女子会！」の条件を達成</li>
 </ul>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FPS3%2F" term="PS3"/>
-    <category scheme="http://zespia.tw/tags%2F%E9%81%8A%E6%88%B2%2F" term="遊戲"/>
+    <category scheme="http://zespia.tw/tags/PS3/" term="PS3"/>
+    <category scheme="http://zespia.tw/tags/遊戲/" term="遊戲"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Node.js 初試 ─ Nyanko]]></title>
-    <link href="http://zespia.tw/blog/2012/07/14/nodejs-nyanko/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/07/14/nodejs-nyanko/"/>
     <id>http://zespia.tw/blog/2012/07/14/nodejs-nyanko/</id>
     <published>2012-07-13T16:14:00.000Z</published>
     <updated>2012-10-10T16:37:31.000Z</updated>
@@ -745,12 +800,12 @@
 
 </p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FNode.js%2F" term="Node.js"/>
-    <category scheme="http://zespia.tw/tags%2FJavaScript%2F" term="JavaScript"/>
+    <category scheme="http://zespia.tw/tags/Node.js/" term="Node.js"/>
+    <category scheme="http://zespia.tw/tags/JavaScript/" term="JavaScript"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[私用主題 Phase]]></title>
-    <link href="http://zespia.tw/blog/2012/05/02/new-theme-phase/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/05/02/new-theme-phase/"/>
     <id>http://zespia.tw/blog/2012/05/02/new-theme-phase/</id>
     <published>2012-05-02T01:35:00.000Z</published>
     <updated>2012-09-22T01:18:51.000Z</updated>
@@ -808,12 +863,12 @@
 </p>
 <p>最近大學終於有了著落，空閒的時間變得更多了，也許該找份兼職來做，如果想找我設計佈景主題的話，可透過 Twitter 或 tommy351[at]gmail.com 與我洽談。最後就來一部氷菓 ED 吧，可見京阿尼砸了很多錢在賣肉上，明明只是兩位高中女生在滾床而已，卻能這麼嫵媚......。える好胸，摩耶花好腋啊。</p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FOctopress%2F" term="Octopress"/>
-    <category scheme="http://zespia.tw/tags%2F%E4%B8%BB%E9%A1%8C%2F" term="主題"/>
+    <category scheme="http://zespia.tw/tags/Octopress/" term="Octopress"/>
+    <category scheme="http://zespia.tw/tags/主題/" term="主題"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[First Order]]></title>
-    <link href="http://zespia.tw/blog/2012/03/16/first-order/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/03/16/first-order/"/>
     <id>http://zespia.tw/blog/2012/03/16/first-order/</id>
     <published>2012-03-16T13:06:00.000Z</published>
     <updated>2012-10-10T16:39:05.000Z</updated>
@@ -890,12 +945,12 @@
 
 </p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FWordPress%2F" term="WordPress"/>
-    <category scheme="http://zespia.tw/tags%2F%E4%B8%BB%E9%A1%8C%2F" term="主題"/>
+    <category scheme="http://zespia.tw/tags/WordPress/" term="WordPress"/>
+    <category scheme="http://zespia.tw/tags/主題/" term="主題"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Windows 8 Consumer Preview 試玩]]></title>
-    <link href="http://zespia.tw/blog/2012/03/03/windows-8-preview/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/03/03/windows-8-preview/"/>
     <id>http://zespia.tw/blog/2012/03/03/windows-8-preview/</id>
     <published>2012-03-03T11:54:00.000Z</published>
     <updated>2012-10-10T16:36:09.000Z</updated>
@@ -982,11 +1037,11 @@
 <h2>結論</h2>
 <p>Windows 8 Consumer Preview 讓人感覺不太好用，就像是將 Metro UI 故意強加在 Windows 7 上，Metro UI 雖然美觀，卻失去了 Windows 7 的操作直覺性，希望微軟未來能改進傳統介面與 Metro UI 的整合性，<del>讓我們一起期待<a href="http://www.apple.com/macosx/mountain-lion/">Mountain Lion</a>吧</del>！</p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FWindows%2F" term="Windows"/>
+    <category scheme="http://zespia.tw/tags/Windows/" term="Windows"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 audio 實驗]]></title>
-    <link href="http://zespia.tw/blog/2012/02/04/lab-html5-audio/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/02/04/lab-html5-audio/"/>
     <id>http://zespia.tw/blog/2012/02/04/lab-html5-audio/</id>
     <published>2012-02-04T05:29:00.000Z</published>
     <updated>2012-11-12T05:56:46.000Z</updated>
@@ -1102,12 +1157,12 @@
 <li><a href="http://www.premiumpixels.com/freebies/compact-music-player-psd/">Free PSD: Compact Music Player | Premium Pixels</a></li>
 </ul>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FJavaScript%2F" term="JavaScript"/>
-    <category scheme="http://zespia.tw/tags%2FHTML5%2F" term="HTML5"/>
+    <category scheme="http://zespia.tw/tags/JavaScript/" term="JavaScript"/>
+    <category scheme="http://zespia.tw/tags/HTML5/" term="HTML5"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Slash — 專為 Octopress 設計的極簡主題]]></title>
-    <link href="http://zespia.tw/blog/2012/01/25/slash-theme/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/01/25/slash-theme/"/>
     <id>http://zespia.tw/blog/2012/01/25/slash-theme/</id>
     <published>2012-01-25T08:27:00.000Z</published>
     <updated>2012-10-11T07:07:47.000Z</updated>
@@ -1159,12 +1214,12 @@
 
 </p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2F%E4%B8%BB%E9%A1%8C%2F" term="主題"/>
-    <category scheme="http://zespia.tw/tags%2FOctopress%2F" term="Octopress"/>
+    <category scheme="http://zespia.tw/tags/主題/" term="主題"/>
+    <category scheme="http://zespia.tw/tags/Octopress/" term="Octopress"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[如何利用 CSS 製作多級選單？]]></title>
-    <link href="http://zespia.tw/blog/2012/01/24/css-multi-level-menu/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/01/24/css-multi-level-menu/"/>
     <id>http://zespia.tw/blog/2012/01/24/css-multi-level-menu/</id>
     <published>2012-01-24T00:00:00.000Z</published>
     <updated>2012-09-22T01:22:59.000Z</updated>
@@ -1198,11 +1253,11 @@
 </p>
 <p>寫到最後反而發現詞窮，看來我真不是寫文章的料。總而言之，這是「大概很簡單」教學系列的第二彈，感謝你的收看！</p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FCSS%2F" term="CSS"/>
+    <category scheme="http://zespia.tw/tags/CSS/" term="CSS"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[如何利用 jQuery 製作頁籤？]]></title>
-    <link href="http://zespia.tw/blog/2012/01/21/jquery-tabs/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/01/21/jquery-tabs/"/>
     <id>http://zespia.tw/blog/2012/01/21/jquery-tabs/</id>
     <published>2012-01-21T10:10:00.000Z</published>
     <updated>2012-10-10T16:38:54.000Z</updated>
@@ -1287,11 +1342,11 @@
 </p>
 <p>最後的成果如上圖，當然細部的樣式、動畫請自行設定。希望這篇文章簡單易懂（？）的文章能夠幫助到你。最近預計再寫一篇 CSS Only 的多級選單教學，請拭目以待吧！</p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FJavaScript%2F" term="JavaScript"/>
+    <category scheme="http://zespia.tw/tags/JavaScript/" term="JavaScript"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Hello Octopress!]]></title>
-    <link href="http://zespia.tw/blog/2012/01/14/hello-octopress/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/01/14/hello-octopress/"/>
     <id>http://zespia.tw/blog/2012/01/14/hello-octopress/</id>
     <published>2012-01-14T07:52:00.000Z</published>
     <updated>2012-09-22T01:20:35.000Z</updated>
@@ -1467,12 +1522,12 @@
 
 </p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FOctopress%2F" term="Octopress"/>
-    <category scheme="http://zespia.tw/tags%2FRuby%2F" term="Ruby"/>
+    <category scheme="http://zespia.tw/tags/Octopress/" term="Octopress"/>
+    <category scheme="http://zespia.tw/tags/Ruby/" term="Ruby"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Google+ Motionless & Filter]]></title>
-    <link href="http://zespia.tw/blog/2011/09/17/google-scripts-2/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2011/09/17/google-scripts-2/"/>
     <id>http://zespia.tw/blog/2011/09/17/google-scripts-2/</id>
     <published>2011-09-17T00:00:00.000Z</published>
     <updated>2012-10-10T16:39:03.000Z</updated>
@@ -1496,11 +1551,11 @@
 </p>
 <p><a href="http://userscripts.org/scripts/show/111206">下載（Ver. 1.0.1）</a></p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FJavaScript%2F" term="JavaScript"/>
+    <category scheme="http://zespia.tw/tags/JavaScript/" term="JavaScript"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 Storage 的使用彙整]]></title>
-    <link href="http://zespia.tw/blog/2011/08/04/html5-storage/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2011/08/04/html5-storage/"/>
     <id>http://zespia.tw/blog/2011/08/04/html5-storage/</id>
     <published>2011-08-04T10:01:00.000Z</published>
     <updated>2012-10-10T16:36:49.000Z</updated>
@@ -1564,11 +1619,11 @@
 <h2>後記</h2>
 <p>最近因為課業繁忙，網誌都放著生灰超過一個月了，於是心血來潮將最近寫腳本的心得寫成文章，可能會有錯誤，請多見諒。</p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FHTML5%2F" term="HTML5"/>
+    <category scheme="http://zespia.tw/tags/HTML5/" term="HTML5"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Google+ Hide Comments & Hover Zoom]]></title>
-    <link href="http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/"/>
     <id>http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/</id>
     <published>2011-07-13T00:00:00.000Z</published>
     <updated>2012-09-22T01:21:32.000Z</updated>
@@ -1605,11 +1660,11 @@
 </p>
 <p>我的網誌有種變成雙週刊的趨勢，每兩週才一篇新文章，明後天再發一篇 Steins;Gate 的文章吧。<a href="http://gplus.to/SkyArrow">我的 Google+</a></p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FJavaScript%2F" term="JavaScript"/>
+    <category scheme="http://zespia.tw/tags/JavaScript/" term="JavaScript"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[鍊金術士梅露露 ～亞蘭德的鍊金術士 3～]]></title>
-    <link href="http://zespia.tw/blog/2011/07/01/ps3-meruru/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2011/07/01/ps3-meruru/"/>
     <id>http://zespia.tw/blog/2011/07/01/ps3-meruru/</id>
     <published>2011-07-01T07:44:00.000Z</published>
     <updated>2012-10-10T16:38:37.000Z</updated>
@@ -1693,12 +1748,12 @@
 <h2>連結</h2>
 <p>全 CG <a href="http://www.multiupload.com/DOXTY733OZ">下載</a>｜<a href="https://picasaweb.google.com/105931860008509594725/3?authuser=0&amp;feat=directlink">相簿</a><br><a href="http://meruru.lostgamer.net/">メルルのアトリエ ～アーランドの錬金術士 3～ 攻略 Wiki – Lostgamer</a></p>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FPS3%2F" term="PS3"/>
-    <category scheme="http://zespia.tw/tags%2F%E9%81%8A%E6%88%B2%2F" term="遊戲"/>
+    <category scheme="http://zespia.tw/tags/PS3/" term="PS3"/>
+    <category scheme="http://zespia.tw/tags/遊戲/" term="遊戲"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[Corner 1.0 正式版推出！]]></title>
-    <link href="http://zespia.tw/blog/2011/05/27/corner-theme/"/>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2011/05/27/corner-theme/"/>
     <id>http://zespia.tw/blog/2011/05/27/corner-theme/</id>
     <published>2011-05-27T00:00:00.000Z</published>
     <updated>2012-09-22T01:23:10.000Z</updated>
@@ -1801,102 +1856,7 @@
 </li>
 </ul>
 ]]></content>
-    <category scheme="http://zespia.tw/tags%2FWordPress%2F" term="WordPress"/>
-    <category scheme="http://zespia.tw/tags%2F%E4%B8%BB%E9%A1%8C%2F" term="主題"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[如何使用 Settings API 製作佈景後台選項？]]></title>
-    <link href="http://zespia.tw/blog/2011/05/22/how-to-use-settings-api/"/>
-    <id>http://zespia.tw/blog/2011/05/22/how-to-use-settings-api/</id>
-    <published>2011-05-22T08:02:00.000Z</published>
-    <updated>2012-10-10T16:39:01.000Z</updated>
-    <content type="html"><![CDATA[<p>隨著 WordPress 版本號的推進，不只系統越變越肥大，外掛、佈景主題的條件也越來越嚴苛，全部規定必須使用官方的現有函數製作，雖然 WordPress 的函數庫真的很豐富很好用，不過這麼獨裁的規定著實讓人很不爽。
-
-</p>
-<p>因此，由於官方要求，我必須使用 Settings API 來製作主題選項，但官方文件的資料的資訊實在太少了，在下沒慧根實在看不懂，經過 Google 百般尋覓後，將我較喜歡的幾篇文章（見參考出處）整合寫成了這篇文章，我沒有 PHP 底子，只有在圖書館翻過幾本書，內文可能會有些錯誤，請見諒。
-
-</p>
-<span id="more"></span>
-
-<h2>基礎架構</h2>
-<p>首先，建立一個空白的<code>php</code>檔案，以下以<code>function-admin.php</code>為例，實際情況依個人設定而有差異。然後，在<code>function.php</code>寫入下列程式碼，以引入<code>function-admin.php</code>這個外部檔案。
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="keyword">if</span> ( file_exists( TEMPLATEPATH.<span class="string">'/function-admin.php'</span> ) ) {</div><div class="line">    <span class="keyword">require_once</span>( TEMPLATEPATH.<span class="string">'/function-admin.php'</span> );</div><div class="line">    <span class="variable">$theme_option</span> = <span class="keyword">new</span> theme_option();</div><div class="line">}</div></code></pre>
-<p>接著在<code>function-admin.php</code>建立<code>class</code>，以下以<code>theme_option</code>為例：
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="preprocessor">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">theme_option</span> {</span></div><div class="line">    <span class="comment">// 建立選項區段</span></div><div class="line">    <span class="keyword">private</span> <span class="variable">$sections</span>;</div><br><div class="line">    <span class="comment">// 各個選項的預設值</span></div><div class="line">    <span class="keyword">private</span> <span class="variable">$defaults</span> = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'test_checkbox'</span> =&gt; <span class="string">'0'</span>, <span class="comment">// 0 為停用，1 為啟用</span></div><div class="line">        <span class="string">'test_text'</span> =&gt; <span class="string">''</span>,</div><div class="line">        <span class="string">'test_select'</span> =&gt; <span class="string">'one'</span>,</div><div class="line">        <span class="string">'test_radio'</span> =&gt; <span class="string">'one'</span>,</div><div class="line">        <span class="string">'test_textarea'</span> =&gt; <span class="string">''</span></div><div class="line">    );</div><br><div class="line">    <span class="comment">// checkbox 的陣列，如果選項類型是 checkbox 的話，可能會出一些 "Undefined Index" 的問題，所以需要特別處理</span></div><div class="line">    <span class="keyword">private</span> <span class="variable">$checkboxes</span>;</div><br><div class="line">    <span class="comment">// 初始化</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> {</span></div><div class="line">        <span class="variable">$this</span>-&gt;checkboxes = <span class="keyword">array</span>();</div><br><div class="line">        <span class="variable">$this</span>-&gt;sections[<span class="string">'general'</span>] = <span class="string">'General'</span>;</div><div class="line">        <span class="variable">$this</span>-&gt;sections[<span class="string">'reading'</span>] = <span class="string">'Reading'</span>;</div><div class="line">        <span class="variable">$this</span>-&gt;sections[<span class="string">'other'</span>] = <span class="string">'Other'</span>;</div><br><div class="line">        <span class="comment">// 將各個選項的預設值寫入資料庫</span></div><div class="line">        <span class="variable">$DBOptions</span> = get_option(<span class="string">'pixiv_options'</span>);</div><div class="line">        <span class="variable">$defaults</span> = <span class="variable">$this</span>-&gt;defaults;</div><br><div class="line">        <span class="keyword">if</span> ( !is_array(<span class="variable">$DBOptions</span>) ) <span class="variable">$DBOptions</span> = <span class="keyword">array</span>();</div><br><div class="line">        <span class="keyword">foreach</span> ( <span class="variable">$DBOptions</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$value</span> ) {</div><div class="line">            <span class="keyword">if</span> ( <span class="keyword">isset</span>(<span class="variable">$DBOptions</span>[<span class="variable">$key</span>]) )</div><div class="line">                <span class="variable">$defaults</span>[<span class="variable">$key</span>] = <span class="variable">$DBOptions</span>[<span class="variable">$key</span>];</div><div class="line">        }</div><div class="line">        update_option(<span class="string">'pixiv_options'</span>, <span class="variable">$defaults</span>);</div><br><div class="line">        add_action( <span class="string">'admin_menu'</span>, <span class="keyword">array</span>( &amp;<span class="variable">$this</span>, <span class="string">'add_pages'</span> ) );</div><div class="line">        add_action( <span class="string">'admin_init'</span>, <span class="keyword">array</span>( &amp;<span class="variable">$this</span>, <span class="string">'register_settings'</span> ) );</div><div class="line">    }</div><div class="line">}</div><div class="line"><span class="preprocessor">?&gt;</span></div></code></pre>
-<p>初始化完成後，接著就可邁入下一個步驟「<strong>註冊設定</strong>」。
-
-</p>
-<h2>註冊設定</h2>
-<p>為了要讓佈景選項出現在選單上，新增一個名為<code>add_pages</code>的函數：
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add_pages</span><span class="params">()</span> {</span></div><div class="line">    <span class="variable">$admin_page</span> = add_theme_page( <span class="string">'Theme Options'</span>, <span class="string">'Theme Options'</span>, <span class="string">'edit_theme_options'</span>, <span class="string">'test-settings'</span>, <span class="keyword">array</span>( &amp;<span class="variable">$this</span>, <span class="string">'display_page'</span> ) );</div><div class="line">}</div></code></pre>
-<p>Settings API 的設計雖然提供了一個更簡單的註冊設定的方式，但那僅限於選項很少的時候，若是 Pixiv Custom 這種選項數高達 51 項的主題就不可能一項一項編寫、呼叫個別的函數了，所以我們建立名為<code>create_setting</code>的函數，以精簡、整齊代碼。
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create_setting</span><span class="params">( <span class="variable">$args</span> = array<span class="params">()</span> )</span> {</span></div><div class="line">    <span class="variable">$defaults</span> = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'id'</span>        =&gt; <span class="string">''</span>, <span class="comment">// 選項 id</span></div><div class="line">        <span class="string">'title'</span>        =&gt; <span class="string">''</span>, <span class="comment">// 選項標題</span></div><div class="line">        <span class="string">'desc'</span>        =&gt; <span class="string">''</span>, <span class="comment">// 選項敘述</span></div><div class="line">        <span class="string">'type'</span>        =&gt; <span class="string">'text'</span>, <span class="comment">// 選項類型</span></div><div class="line">        <span class="string">'section'</span>    =&gt; <span class="string">'general'</span>, <span class="comment">// 選項區段（__construct 函數中所設定的參數）</span></div><div class="line">        <span class="string">'choices'</span>    =&gt; <span class="keyword">array</span>(), <span class="comment">// 選項分支（供 radio, select 用）</span></div><div class="line">        <span class="string">'class'</span>        =&gt; <span class="string">''</span>, <span class="comment">// 選項 class</span></div><div class="line">        <span class="string">'before'</span>    =&gt; <span class="string">''</span>, <span class="comment">// 選項前的文字</span></div><div class="line">        <span class="string">'after'</span>        =&gt; <span class="string">''</span> <span class="comment">// 選項後的文字</span></div><div class="line">    );</div><br><div class="line">    extract( wp_parse_args( <span class="variable">$args</span>, <span class="variable">$defaults</span> ) );</div><br><div class="line">    <span class="variable">$field_args</span> = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'type'</span>        =&gt; <span class="variable">$type</span>,</div><div class="line">        <span class="string">'id'</span>        =&gt; <span class="variable">$id</span>,</div><div class="line">        <span class="string">'desc'</span>        =&gt; <span class="variable">$desc</span>,</div><div class="line">        <span class="string">'choices'</span>    =&gt; <span class="variable">$choices</span>,</div><div class="line">        <span class="string">'label_for'</span>    =&gt; <span class="variable">$id</span>,</div><div class="line">        <span class="string">'class'</span>        =&gt; <span class="variable">$class</span>,</div><div class="line">        <span class="string">'before'</span>    =&gt; <span class="variable">$before</span>,</div><div class="line">        <span class="string">'after'</span>        =&gt; <span class="variable">$after</span></div><div class="line">    );</div><br><div class="line">    add_settings_field( <span class="variable">$id</span>, <span class="variable">$title</span>, <span class="keyword">array</span>( <span class="variable">$this</span>, <span class="string">'display_settings'</span> ), <span class="string">'test-settings'</span>, <span class="variable">$section</span>, <span class="variable">$field_args</span> );</div><br><div class="line">    <span class="comment">// 若選項類型為 checkbox，將其加入 checkboxes 陣列</span></div><div class="line">    <span class="keyword">if</span> ( <span class="variable">$type</span> = <span class="string">'checkbox'</span> )</div><div class="line">        <span class="variable">$this</span>-&gt;checkboxes[] = <span class="variable">$id</span>;</div><div class="line">}</div></code></pre>
-<p>若陣列內容為空白，則會依照<code>defaults</code>來建立選項。可依個人使用的不同，加入或刪除變數。
-
-</p>
-<p>接著就得分別填入每個選項的參數了，建立一個名為<code>register_settings</code>的函數。
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register_settings</span><span class="params">()</span> {</span></div><div class="line">    register_setting( <span class="string">'test_options'</span>, <span class="string">'test_options'</span>, <span class="keyword">array</span>( &amp;<span class="variable">$this</span>, <span class="string">'validate_settings'</span> ) );</div><br><div class="line">    <span class="comment">// 新增選項區段</span></div><div class="line">    <span class="keyword">foreach</span> ( <span class="variable">$this</span>-&gt;sections <span class="keyword">as</span> <span class="variable">$slug</span> =&gt; <span class="variable">$title</span> )</div><div class="line">        add_settings_section( <span class="variable">$slug</span>, <span class="string">''</span>, <span class="keyword">array</span>( &amp;<span class="variable">$this</span>, <span class="string">'display_section'</span> ), <span class="string">'test-settings'</span> );</div><br><div class="line">    <span class="comment">// checkbox 設定</span></div><div class="line">    <span class="variable">$this</span>-&gt;create_setting( <span class="keyword">array</span> (</div><div class="line">        <span class="string">'id'</span>        =&gt; <span class="string">'test_checkbox'</span>,</div><div class="line">        <span class="string">'title'</span>        =&gt; <span class="string">'Test Checkbox'</span>,</div><div class="line">        <span class="string">'desc'</span>        =&gt; <span class="string">'Test Checkbox'</span>,</div><div class="line">        <span class="string">'type'</span>        =&gt; <span class="string">'checkbox'</span>,</div><div class="line">        <span class="string">'section'</span>    =&gt; <span class="string">'general'</span></div><div class="line">    ) );</div><div class="line">    <span class="comment">// text 設定</span></div><div class="line">    <span class="variable">$this</span>-&gt;create_setting( <span class="keyword">array</span> (</div><div class="line">        <span class="string">'id'</span>        =&gt; <span class="string">'test_text'</span>,</div><div class="line">        <span class="string">'title'</span>        =&gt; <span class="string">'Test Text'</span>,</div><div class="line">        <span class="string">'desc'</span>        =&gt; <span class="string">'Test Text'</span>,</div><div class="line">        <span class="string">'type'</span>        =&gt; <span class="string">'text'</span>,</div><div class="line">        <span class="string">'section'</span>    =&gt; <span class="string">'general'</span></div><div class="line">    ) );</div><div class="line">    <span class="comment">// select 設定</span></div><div class="line">    <span class="variable">$this</span>-&gt;create_setting( <span class="keyword">array</span> (</div><div class="line">        <span class="string">'id'</span>        =&gt; <span class="string">'test_select'</span>,</div><div class="line">        <span class="string">'title'</span>        =&gt; <span class="string">'Test Select'</span>,</div><div class="line">        <span class="string">'desc'</span>        =&gt; <span class="string">'Test Select'</span>,</div><div class="line">        <span class="string">'type'</span>        =&gt; <span class="string">'select'</span>,</div><div class="line">        <span class="string">'section'</span>    =&gt; <span class="string">'general'</span>,</div><div class="line">        <span class="string">'choices'</span>    =&gt; <span class="keyword">array</span>(</div><div class="line">            <span class="string">'one'</span>    =&gt; <span class="string">'Option One'</span>,</div><div class="line">            <span class="string">'two'</span>    =&gt; <span class="string">'Option Two'</span></div><div class="line">        )</div><div class="line">    ) );</div><div class="line">    <span class="comment">// radio 設定</span></div><div class="line">    <span class="variable">$this</span>-&gt;create_setting( <span class="keyword">array</span> (</div><div class="line">        <span class="string">'id'</span>        =&gt; <span class="string">'test_radio'</span>,</div><div class="line">        <span class="string">'title'</span>        =&gt; <span class="string">'Test Radio'</span>,</div><div class="line">        <span class="string">'desc'</span>        =&gt; <span class="string">'Test Raio'</span>,</div><div class="line">        <span class="string">'type'</span>        =&gt; <span class="string">'radio'</span>,</div><div class="line">        <span class="string">'section'</span>    =&gt; <span class="string">'general'</span>,</div><div class="line">        <span class="string">'choices'</span>    =&gt; <span class="keyword">array</span>(</div><div class="line">            <span class="string">'one'</span>    =&gt; <span class="string">'Option One'</span>,</div><div class="line">            <span class="string">'two'</span>    =&gt; <span class="string">'Option Two'</span></div><div class="line">        )</div><div class="line">    ) );</div><div class="line">    <span class="comment">// textarea 設定</span></div><div class="line">    <span class="variable">$this</span>-&gt;create_setting( <span class="keyword">array</span> (</div><div class="line">        <span class="string">'id'</span>        =&gt; <span class="string">'test_textarea'</span>,</div><div class="line">        <span class="string">'title'</span>        =&gt; <span class="string">'Test Textarea'</span>,</div><div class="line">        <span class="string">'desc'</span>        =&gt; <span class="string">'Test Textarea'</span>,</div><div class="line">        <span class="string">'type'</span>        =&gt; <span class="string">'textarea'</span>,</div><div class="line">        <span class="string">'section'</span>    =&gt; <span class="string">'general'</span></div><div class="line">    ) );</div><div class="line">}</div></code></pre>
-<p>到了這裡，只不過是設定了各個選項的數值罷了，選項頁面還是一片空白，喝點水休息一下，下一步就要正式設定選項頁面的內容了。
-
-</p>
-<h2>顯示頁面</h2>
-<p>首先，新增一個名為<code>display_page</code>的函數。
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">display_page</span><span class="params">()</span> {</span> <span class="preprocessor">?&gt;</span></div><div class="line">    &lt;div class=<span class="string">"wrap"</span>&gt;</div><div class="line">        &lt;div class=<span class="string">"icon32"</span> id=<span class="string">"icon-themes"</span>&gt;&lt;/div&gt;</div><div class="line">        &lt;h2&gt;Theme Options&lt;/h2&gt;</div><div class="line">        &lt;form action=<span class="string">"options.php"</span> method=<span class="string">"post"</span> id=<span class="string">"test_admin"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</div><div class="line">            <span class="preprocessor">&lt;?php</span></div><div class="line">            <span class="keyword">if</span> ( <span class="keyword">isset</span>( <span class="variable">$_GET</span>[<span class="string">'settings-updated'</span>] ) )</div><div class="line">                <span class="keyword">echo</span> <span class="string">'&lt;div class="updated fade"&gt;&lt;p&gt;&lt;strong&gt;Settings saved.&lt;/strong&gt;&lt;/p&gt;'</span>;</div><div class="line">            <span class="preprocessor">?&gt;</span></div><div class="line">            <span class="preprocessor">&lt;?php</span></div><div class="line">            settings_fields(<span class="string">'test_options'</span>);</div><div class="line">            do_settings_sections( <span class="variable">$_GET</span>[<span class="string">'page'</span>] );</div><div class="line">            <span class="preprocessor">?&gt;</span></div><div class="line">            &lt;input type=<span class="string">"submit"</span> name=<span class="string">"test_options[submit]"</span> class=<span class="string">"button-primary"</span> value=<span class="string">"&lt;?php esc_attr_e('Save Changes', 'test'); ?&gt;"</span> /&gt;</div><div class="line">            &lt;input type=<span class="string">"submit"</span> name=<span class="string">"test_options[reset]"</span> class=<span class="string">"button-secondary"</span> onclick=<span class="string">"if(confirm('Are you Sure?')) return true; else return false;"</span> value=<span class="string">"&lt;?php esc_attr_e('Reset to Deafults', 'test'); ?&gt;"</span> /&gt;</div><div class="line">        &lt;/form&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"><span class="preprocessor">&lt;?php</span> }</div></code></pre>
-<p>接著新增一個名為<code>display_section</code>的函數，該函數內容可以為空，也可以設定一些文字、HTML 內容等，輸出的內容會顯示在每個區段的最上方。
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">display_section</span><span class="params">()</span> {</span></div><div class="line">    <span class="comment">// whatever</span></div><div class="line">}</div></code></pre>
-<h2>顯示選項</h2>
-<p>到目前為止，主題選項頁面還是一片白，加入<code>display_settings</code>函數後，主題選項頁面就擁有最基礎的樣貌了。
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">display_settings</span><span class="params">( <span class="variable">$args</span> = array<span class="params">()</span> )</span> {</span></div><div class="line">    extract( <span class="variable">$args</span> );</div><br><div class="line">    <span class="comment">// 取得資料庫內的現有選項</span></div><div class="line">    <span class="variable">$options</span> = get_option(<span class="string">'test_options'</span>);</div><br><div class="line">    <span class="comment">// 以下顯示 register_settings 內所設定的選項參數</span></div><br><div class="line">    <span class="comment">// 如果設定了 class 參數，顯示 class 參數</span></div><div class="line">    <span class="keyword">if</span> ( <span class="variable">$class</span> != <span class="string">''</span> )</div><div class="line">        <span class="keyword">echo</span> <span class="string">'&lt;div class="'</span> . <span class="variable">$class</span> . <span class="string">'"&gt;'</span>;</div><br><div class="line">    <span class="comment">// 如果設定了選項敘述，顯示選項敘述</span></div><div class="line">    <span class="keyword">if</span> ( <span class="variable">$desc</span> != <span class="string">''</span> )</div><div class="line">        <span class="keyword">echo</span> <span class="variable">$desc</span> . <span class="string">'&lt;br /&gt;'</span>;</div><br><div class="line">    <span class="comment">// 如果設定了 before 參數，在選項前顯示 before 參數</span></div><div class="line">    <span class="keyword">if</span> ( <span class="variable">$before</span> != <span class="string">''</span> )</div><div class="line">        <span class="keyword">echo</span> <span class="string">'&lt;label for="'</span> . <span class="variable">$id</span> . <span class="string">'"&gt;'</span> . <span class="variable">$before</span> . <span class="string">'&lt;/label&gt;'</span>;</div><br><div class="line">    <span class="comment">// 偵測選項類型，以下內容可依個人喜好自行設定</span></div><div class="line">    <span class="keyword">switch</span> ( <span class="variable">$type</span> ) {</div><div class="line">        <span class="keyword">case</span> <span class="string">'checkbox'</span>:</div><div class="line">            <span class="keyword">echo</span> <span class="string">'&lt;input type="checkbox" id="'</span> . <span class="variable">$id</span> . <span class="string">'" name="test_options['</span> . <span class="variable">$id</span> . <span class="string">']" value="1"'</span>.checked( <span class="variable">$options</span>[<span class="variable">$id</span>], <span class="number">1</span>, <span class="keyword">false</span> ) . <span class="string">' /&gt;'</span>;</div><br><div class="line">            <span class="keyword">break</span>;</div><br><div class="line">        <span class="keyword">case</span> <span class="string">'select'</span>:</div><div class="line">            <span class="keyword">echo</span> <span class="string">'&lt;select name="test_options['</span> . <span class="variable">$id</span> . <span class="string">']"&gt;'</span>;</div><br><div class="line">            <span class="keyword">foreach</span> ( <span class="variable">$choices</span> <span class="keyword">as</span> <span class="variable">$value</span> =&gt; <span class="variable">$label</span> )</div><div class="line">                <span class="keyword">echo</span> <span class="string">'&lt;option value="'</span> . <span class="variable">$value</span> . <span class="string">'"'</span> . selected( <span class="variable">$options</span>[<span class="variable">$id</span>], <span class="variable">$value</span>, <span class="keyword">false</span> ) . <span class="string">'&gt;'</span> . <span class="variable">$label</span> . <span class="string">'&lt;/option&gt;'</span>;</div><br><div class="line">            <span class="keyword">echo</span> <span class="string">'&lt;/select&gt;'</span>;</div><br><div class="line">            <span class="keyword">break</span>;</div><br><div class="line">        <span class="keyword">case</span> <span class="string">'radio'</span>:</div><div class="line">            <span class="variable">$i</span> = <span class="number">0</span>;</div><div class="line">            <span class="keyword">foreach</span> ( <span class="variable">$choices</span> <span class="keyword">as</span> <span class="variable">$value</span> =&gt; <span class="variable">$label</span> ) {</div><div class="line">                <span class="keyword">echo</span> <span class="string">'&lt;input type="radio" name="test_options['</span> . <span class="variable">$id</span> . <span class="string">']" id="'</span> . <span class="variable">$id</span> . <span class="variable">$i</span> . <span class="string">'" value="'</span> . <span class="variable">$value</span> . <span class="string">'"'</span>. checked( <span class="variable">$options</span>[<span class="variable">$id</span>], <span class="variable">$value</span>, <span class="keyword">false</span> ) . <span class="string">' /&gt;&lt;label for="'</span> . <span class="variable">$id</span> . <span class="string">'"&gt;'</span> . <span class="variable">$label</span> . <span class="string">'&lt;/label&gt;'</span>;</div><div class="line">                <span class="keyword">if</span>( <span class="variable">$i</span> &lt; count(<span class="variable">$options</span>) - <span class="number">1</span> )</div><div class="line">                    <span class="keyword">echo</span> <span class="string">'&lt;br /&gt;'</span>;</div><div class="line">                <span class="variable">$i</span>++;</div><div class="line">            }</div><br><div class="line">            <span class="keyword">break</span>;</div><br><div class="line">        <span class="keyword">case</span> <span class="string">'textarea'</span>:</div><div class="line">            <span class="keyword">echo</span> <span class="string">'&lt;textarea id="'</span> . <span class="variable">$id</span> . <span class="string">'" name="test_options['</span> . <span class="variable">$id</span> . <span class="string">']" cols="95%" rows="10"&gt;'</span> . <span class="variable">$options</span>[<span class="variable">$id</span>] . <span class="string">'&lt;/textarea&gt;'</span>;</div><br><div class="line">            <span class="keyword">break</span>;</div><br><div class="line">        <span class="keyword">case</span> <span class="string">'text'</span>:</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">echo</span> <span class="string">'&lt;input type="text" id="'</span> . <span class="variable">$id</span> . <span class="string">'" name="test_options['</span> . <span class="variable">$id</span> . <span class="string">']" value="'</span> . <span class="variable">$options</span>[<span class="variable">$id</span>] . <span class="string">'" maxlength="'</span> . <span class="variable">$maxlength</span> . <span class="string">'" /&gt;'</span>;</div><br><div class="line">            <span class="keyword">break</span>;</div><div class="line">    }</div><br><div class="line">    <span class="comment">// 如果設定了 after 參數，在選項後顯示 after 參數</span></div><div class="line">    <span class="keyword">if</span> ( <span class="variable">$after</span> != <span class="string">''</span> )</div><div class="line">        <span class="keyword">echo</span> <span class="string">'&lt;label for="'</span> . <span class="variable">$id</span> . <span class="string">'"&gt;'</span> . <span class="variable">$after</span> . <span class="string">'&lt;/label&gt;'</span>;</div><br><div class="line">    <span class="comment">// 如果設定了 class 參數，以 div 包含選項</span></div><div class="line">    <span class="keyword">if</span> ( <span class="variable">$class</span> != <span class="string">''</span> )</div><div class="line">        <span class="keyword">echo</span> <span class="string">'&lt;/div&gt;'</span>;</div><div class="line">}</div></code></pre>
-<p>設定完成後，主題選項頁面就不再孤寥無幾了，但儲存似乎有些問題？沒錯，因為 Settings API 在<code>checkbox</code>的處理上有些問題，<code>checkbox</code>若停用就不會將數值寫入資料庫了，所以我們必須在選項儲存前先進行驗證，把停用的<code>checkbox</code>值補上<code>0</code>，此外，目前重設按鈕也沒有反應，也必須透過同樣的方式，事先偵測輸入值，若使用者按下重設按鈕，則拋棄現有設定，將開頭所設定的<code>defaults</code>變數寫入資料庫。
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">validate_settings</span><span class="params">( <span class="variable">$input</span> )</span> {</span></div><br><div class="line">    <span class="variable">$options</span> = get_option(<span class="string">'test_options'</span>);</div><div class="line">    <span class="variable">$valid_input</span> = <span class="variable">$options</span>;</div><br><div class="line">    <span class="variable">$submit</span> = ( ! <span class="keyword">empty</span>( <span class="variable">$input</span>[<span class="string">'submit'</span>] ) ? <span class="keyword">true</span> : <span class="keyword">false</span> );</div><div class="line">    <span class="variable">$reset</span> = ( ! <span class="keyword">empty</span>( <span class="variable">$input</span>[<span class="string">'reset'</span>] ) ? <span class="keyword">true</span> : <span class="keyword">false</span> );</div><br><div class="line">    <span class="keyword">if</span> ( <span class="variable">$submit</span> ) {</div><div class="line">        <span class="comment">// 若 checkbox 停用，補 "0" 儲存至資料庫</span></div><div class="line">        <span class="keyword">foreach</span> ( <span class="variable">$this</span>-&gt;checkboxes <span class="keyword">as</span> <span class="variable">$id</span> ) {</div><div class="line">            <span class="keyword">if</span> ( <span class="keyword">isset</span>( <span class="variable">$options</span>[<span class="variable">$id</span>] ) &amp;&amp; ! <span class="keyword">isset</span>( <span class="variable">$input</span>[<span class="variable">$id</span>] ) )</div><div class="line">                <span class="variable">$input</span>[<span class="variable">$id</span>] = <span class="string">'0'</span>;</div><div class="line">        }</div><br><div class="line">        <span class="variable">$valid_input</span> = <span class="variable">$input</span>;</div><br><div class="line">    } <span class="keyword">elseif</span> ( <span class="variable">$reset</span> ) {</div><div class="line">        <span class="comment">// 使用事先設定的預設值寫入資料庫</span></div><div class="line">        <span class="variable">$valid_input</span> = <span class="variable">$this</span>-&gt;defaults;</div><div class="line">    }</div><br><div class="line">    <span class="keyword">return</span> <span class="variable">$valid_input</span>;</div><div class="line">}</div></code></pre>
-<h2>自定 JavaScript 與 CSS 樣式</h2>
-<p>如果只是基本的主題選項的話，第四步便可以宣告結束了，但如果想要進一步的設定 Javascript 與 CSS 樣式呢？你可以加入以下的函數，直接引入外部檔案，或是直接寫在 PHP 檔案也可以。<br><em>※ 附註：若直接使用 $ 當作 jQuery 標籤的話，可能會有衝突問題，請使用其他字串代替，或改為<code>jQuery(document).ready(function($){...});</code></em>
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">styles</span><span class="params">()</span> {</span></div><div class="line">    wp_enqueue_style(<span class="string">'testAdminCSS'</span>, get_template_directory_uri().<span class="string">'/admin/admin.css'</span>);</div><div class="line">}</div><br><div class="line"><span class="comment">// 引入 Javascript</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">scripts</span><span class="params">()</span> {</span></div><div class="line">    wp_enqueue_script(<span class="string">'testAdminJS'</span>, get_template_directory_uri().<span class="string">'/admin/admin.js'</span>);</div><div class="line">}</div></code></pre>
-<p>然後在<code>add_pages</code>函數中，加入以下程式碼，就可成功引入 CSS 與 Javascript 了。
-
-</p>
-<pre><code class="lang-php"><div class="line">add_action( <span class="string">'admin_print_scripts-'</span> . <span class="variable">$admin_page</span>, <span class="keyword">array</span>( &amp;<span class="variable">$this</span>, <span class="string">'scripts'</span> ) );</div><div class="line">add_action( <span class="string">'admin_print_styles-'</span> . <span class="variable">$admin_page</span>, <span class="keyword">array</span>( &amp;<span class="variable">$this</span>, <span class="string">'styles'</span> ) );</div></code></pre>
-<p>那麼該如何做出 Pixiv Custom 式樣的分頁呢？因為我 PHP 功力差，所以主要透過 Javascript 來包裝，你或許會有更好的方法也說不定。
-首先，修改<code>display_page</code>函數，在你喜歡的地方加入以下程式碼：
-
-</p>
-<pre><code class="lang-html"><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"test_switch"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">id</span>=<span class="value">"tab0"</span>&gt;</span>分頁 1<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">id</span>=<span class="value">"tab1"</span>&gt;</span>分頁 2<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 依此類推... --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
-<p>這樣選項頁面就會出現各個區段的連結文字了，接下來只要透過 Javascript 包裝表格，搭配 CSS 控制表格顯示即可。<br><em>※ ID 必須符合<code>__construct</code>函數中的參數，前面再加上上述程式碼的前綴字元。</em>
-
-</p>
-<pre><code class="lang-js"><div class="line">jQuery(document).ready(<span class="keyword">function</span>($){</div><div class="line">    <span class="keyword">var</span> cookie = $.cookie(<span class="string">'pixiv_tabs'</span>) || <span class="number">0</span>;</div><div class="line">    showTab(cookie);</div><br><div class="line">    $(<span class="string">"#pixiv_switch a"</span>).click(<span class="keyword">function</span>(){</div><div class="line">        <span class="keyword">var</span> tab = $(<span class="keyword">this</span>).prop(<span class="string">'id'</span>).replace(<span class="regexp">/tab/</span>,<span class="string">''</span>);</div><div class="line">        showTab(tab);</div><div class="line">    });</div><div class="line">});</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showTab</span><span class="params">(id)</span>{</span></div><div class="line">    jQuery(<span class="string">'#test_switch a'</span>).removeClass(<span class="string">'current'</span>);</div><div class="line">    jQuery(<span class="string">'#test_switch a'</span>).eq(id).addClass(<span class="string">'current'</span>);</div><div class="line">    jQuery(<span class="string">'form#test table'</span>).hide();</div><div class="line">    jQuery(<span class="string">'form#test table'</span>).eq(id).fadeIn();</div><div class="line">    jQuery.cookie(<span class="string">'test_tabs'</span>,id,{expires: <span class="number">0.5</span>});</div><div class="line">}</div><br><div class="line"><span class="comment">/**</div><div class="line"> * Cookie plugin</div><div class="line"> *</div><div class="line"> * Copyright (c) 2006 Klaus Hartl (stilbuero.de)</div><div class="line"> * Dual licensed under the MIT and GPL licenses:</div><div class="line"> * http://www.opensource.org/licenses/mit-license.php</div><div class="line"> * http://www.gnu.org/licenses/gpl.html</div><div class="line"> *</div><div class="line"> */</span></div><div class="line">jQuery.cookie = <span class="keyword">function</span>(name, value, options) {</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> value != <span class="string">'undefined'</span>) {</div><div class="line">        options = options || {};</div><div class="line">        <span class="keyword">if</span> (value === <span class="literal">null</span>) {</div><div class="line">            value = <span class="string">''</span>;</div><div class="line">            options.expires = -<span class="number">1</span>;</div><div class="line">        }</div><div class="line">        <span class="keyword">var</span> expires = <span class="string">''</span>;</div><div class="line">        <span class="keyword">if</span> (options.expires &amp;&amp; (<span class="keyword">typeof</span> options.expires == <span class="string">'number'</span> || options.expires.toUTCString)) {</div><div class="line">            <span class="keyword">var</span> date;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> options.expires == <span class="string">'number'</span>) {</div><div class="line">                date = <span class="keyword">new</span> Date();</div><div class="line">                date.setTime(date.getTime() + (options.expires * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>));</div><div class="line">            } <span class="keyword">else</span> {</div><div class="line">                date = options.expires;</div><div class="line">            }</div><div class="line">            expires = <span class="string">'; expires='</span> + date.toUTCString();</div><div class="line">        }</div><div class="line">        <span class="keyword">var</span> path = options.path ? <span class="string">'; path='</span> + (options.path) : <span class="string">''</span>;</div><div class="line">        <span class="keyword">var</span> domain = options.domain ? <span class="string">'; domain='</span> + (options.domain) : <span class="string">''</span>;</div><div class="line">        <span class="keyword">var</span> secure = options.secure ? <span class="string">'; secure'</span> : <span class="string">''</span>;</div><div class="line">        document.cookie = [name, <span class="string">'='</span>, encodeURIComponent(value), expires, path, domain, secure].join(<span class="string">''</span>);</div><div class="line">    } <span class="keyword">else</span> {</div><div class="line">        <span class="keyword">var</span> cookieValue = <span class="literal">null</span>;</div><div class="line">        <span class="keyword">if</span> (document.cookie &amp;&amp; document.cookie != <span class="string">''</span>) {</div><div class="line">            <span class="keyword">var</span> cookies = document.cookie.split(<span class="string">';'</span>);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; cookies.length; i++) {</div><div class="line">                <span class="keyword">var</span> cookie = jQuery.trim(cookies[i]);</div><div class="line">                <span class="keyword">if</span> (cookie.substring(<span class="number">0</span>, name.length + <span class="number">1</span>) == (name + <span class="string">'='</span>)) {</div><div class="line">                    cookieValue = decodeURIComponent(cookie.substring(name.length + <span class="number">1</span>));</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                }</div><div class="line">            }</div><div class="line">        }</div><div class="line">        <span class="keyword">return</span> cookieValue;</div><div class="line">    }</div><div class="line">};</div></code></pre>
-<h2>套用</h2>
-<p>這個步驟相對而言就比較簡單了，首先在想要套用選項的位置加入以下程式碼，並設定
-
-</p>
-<pre><code class="lang-php"><div class="line"><span class="variable">$option</span> = get_options(<span class="string">'test_options'</span>);</div><br><div class="line"><span class="comment">// checkbox 的情況</span></div><div class="line"><span class="keyword">if</span> ( <span class="variable">$options</span>[<span class="string">'test_checkbox'</span>] ) {</div><div class="line">    ...</div><div class="line">} <span class="keyword">else</span> {</div><div class="line">    ...</div><div class="line">}</div><div class="line"><span class="comment">// 也可使用以下寫法</span></div><div class="line"><span class="variable">$options</span>[<span class="string">'test_checkbox'</span>] ? ... : ...;</div><br><div class="line"><span class="comment">// text, textarea 的情況</span></div><div class="line"><span class="keyword">if</span> ( <span class="variable">$options</span>[<span class="string">'test_text'</span>] ) {</div><div class="line">    <span class="keyword">echo</span> <span class="variable">$options</span>[<span class="string">'test_text'</span>];</div><div class="line">    ...</div><div class="line">}</div><br><div class="line"><span class="comment">// select, radio 的情況</span></div><div class="line"><span class="keyword">if</span> ( <span class="variable">$options</span>[<span class="string">'test_select'</span>] == <span class="string">'one'</span> ) {</div><div class="line">    ...</div><div class="line">} <span class="keyword">elseif</span> ( <span class="variable">$options</span>[<span class="string">'test_select'</span>] == <span class="string">'two'</span> ) {</div><div class="line">    ...</div><div class="line">} <span class="keyword">else</span> {</div><div class="line">    ...</div><div class="line">}</div></code></pre>
-<h2>參考出處</h2>
-<p><a href="http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/">Extended WordPress Settings API Tutorial</a><br><a href="http://www.chipbennett.net/2011/02/17/incorporating-the-settings-api-in-wordpress-themes">Incorporating the Settings API in WordPress Themes</a><br><a href="http://codex.wordpress.org/Main_Page">WordPress Codex</a><br><a href="https://github.com/carhartl/jquery-cookie">jQuery cookie plugin</a>
-
-</p>
-<h2>後記</h2>
-<p>這大概是我寫過最長的一篇文章，內容可能會有點枯燥乏味、充滿錯誤，<del>而且一張萌圖都沒有</del>，各位客倌就把這當成一篇筆記文章吧！</p>
-]]></content>
-    <category scheme="http://zespia.tw/tags%2FWordPress%2F" term="WordPress"/>
+    <category scheme="http://zespia.tw/tags/WordPress/" term="WordPress"/>
+    <category scheme="http://zespia.tw/tags/主題/" term="主題"/>
   </entry>
 </feed>
