@@ -425,7 +425,7 @@ article .entry .pullquote {
 }
 article footer {
   margin-top: 15px;
-  padding-top: 15px;
+  padding-top: 10px;
   border-top: 1px solid #ddd;
   color: #999;
   font-size: 0.9em;
@@ -455,6 +455,7 @@ article footer .categories,
 article footer .tags {
   position: relative;
   padding-left: 25px;
+  margin: 5px 0;
 }
 article footer .categories:before,
 article footer .tags:before {
@@ -652,11 +653,13 @@ article footer .addthis iframe {
   text-shadow: 0 0 1px #fff;
   line-height: 1.6;
   overflow: auto;
+  color: #666;
 }
 .entry .gist .gist-file {
   border: none;
   font-family: inherit;
   margin: 0;
+  font-size: 0.9em;
 }
 .entry .gist .gist-file .gist-data {
   background: none;
@@ -672,6 +675,7 @@ article footer .addthis iframe {
   margin-top: 5px;
   padding: 0;
   text-shadow: 0 0 1px #fff;
+  font-size: 100%;
 }
 .entry .gist .gist-file .gist-meta a {
   color: #258fb8;

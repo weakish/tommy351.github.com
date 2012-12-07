@@ -3,13 +3,86 @@
   <title><![CDATA[Zespia]]></title>
   <link href="http://zespia.tw/atom.xml" rel="self"/>
   <link href="http://zespia.tw"/>
-  <updated>2012-12-05T16:14:45.585Z</updated>
+  <updated>2012-12-07T12:02:25.800Z</updated>
   <id>http://zespia.tw/</id>
   <author>
     <name><![CDATA[SkyArrow]]></name>
     <email><![CDATA[tommy351@gmail.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[Phase — 史上最漂亮也最吃資源的主題]]></title>
+    <link href="http://zespia.tw/http://zespia.tw/blog/2012/12/07/hexo-theme-phase/"/>
+    <id>http://zespia.tw/blog/2012/12/07/hexo-theme-phase/</id>
+    <published>2012-12-07T10:36:03.000Z</published>
+    <updated>2012-12-07T12:02:19.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://i.minus.com/icsKsGRjMpstw.png" alt="">
+
+</p>
+<p>在轉到 Hexo 之前，我一直都在使用這個<a href="http://zespia.tw/blog/2012/05/02/new-theme-phase/">私用主題 Phase</a>，曾經承諾過我用膩了就公開發佈，於是今天就有這篇文章了。
+
+</p>
+<p>這個主題是以 <a href="http://zespia.tw/Octopress-Theme-Slash/index_tw.html">Slash</a> 為基礎開發的，所以大部分的特性都繼承下來了，除了 Responsive Design 和 Twitter Live Stream 以外。
+
+</p>
+<ul>
+<li>Phase Beam 動態背景</li>
+<li>自動讀取圖片的<code>alt</code>屬性，並在圖片下方顯示註解。</li>
+<li>內建 <a href="http://fancyapps.com/fancybox/">Fancybox</a>，讓您輕鬆展示您的作品。</li>
+<li>自動將 HTML5 video、iframe、object 等嵌入式影片縮放至頁面寬度。</li>
+<li><a href="http://zespia.tw/hexo-theme-phase">預覽...</a></li>
+</ul>
+<p>Phase Beam 動態背景的效果非常絢麗，但是也非常吃資源，電腦或瀏覽器效能不佳的使用者開啟時可能會當機，至於 IE8，<del>你何時產生了我曾經積極支援過它的錯覺？</del>
+
+</p>
+<span id="more"></span>
+
+<h2>安裝</h2>
+<p>Octopress 版本：
+
+</p>
+<pre><code><div class="line"><span class="title">cd</span> octopress</div><div class="line"><span class="title">git</span> clone git://github.com/tommy351/octopress-theme-phase.git .themes/phase</div><div class="line"><span class="title">rake</span> install['phase']</div><div class="line"><span class="title">rake</span> generate</div></code></pre>
+<p>為了推廣 Hexo，順便把主題移植過去了，往後的主題開發都會以 Hexo 為主，但仍會以 MIT License 開放原始碼，想要在 Octopress 使用的人可以自行開發移植版本。
+
+</p>
+<pre><code><div class="line"><span class="title">cd</span> hexo</div><div class="line">git clone <span class="url">git://github.com/tommy351/hexo-theme-phase.git</span> themes/phase</div></code></pre>
+<p>Hexo 版本安裝後別忘了將<code>_config.yml</code>內的<code>theme</code>參數調整為<code>phase</code>。
+
+</p>
+<h2>FAQ</h2>
+<h3>Octopress 版和 Hexo 版有什麼差別？</h3>
+<ul>
+<li>Octopress 版沒有相簿（photo）和連結（link）兩種布局</li>
+<li>部分樣式的微妙差別</li>
+<li><del>Octopress 速度比較慢</del></li>
+</ul>
+<h3>如何編輯選單？</h3>
+<ul>
+<li>Octopress 版本：編輯<code>source/_includes/custom/navigation.html</code>。</li>
+<li>Phase 版本：編輯<code>_config.yml</code>的<code>menu</code>參數。</li>
+</ul>
+<h3>如何關閉 Fancybox？</h3>
+<p>對於 Chrome 來說，同時執行 Phase Beam 和 Fancybox 的動畫似乎是一件很吃力的事情，所以你也可以選擇關閉 Fancybox 功能。
+
+</p>
+<ul>
+<li>Octopress 版本：刪除<code>source/_includes/after_footer.html</code>的第 1 行。</li>
+<li>Hexo 版本：<code>_config.yml</code>的<code>fancybox</code>參數調整為<code>false</code>。</li>
+</ul>
+<h3>如何關閉 Phase Beam？</h3>
+<p>我覺得用 Phase 還關閉 Phase Beam 實在是一件很沒有意義的事情，關閉了 Phase Beam 的 Phase 就只是一個背景黑漆漆的 Slash 而已，沒有任何特色，相較於 Slash 還少了一些功能，但是我還是稍微說明吧。
+
+</p>
+<ul>
+<li>Octopress 版本：刪除<code>source/_includes/after_footer.html</code>的第 2 行。</li>
+<li>Hexo 版本：刪除<code>layout/_partial/after_footer.ejs</code>的最後一行。</li>
+</ul>
+<p>如果還有其他問題或想法，歡迎在下方留言。</p>
+]]></content>
+    <category scheme="http://zespia.tw/tags/Hexo/" term="Hexo"/>
+    <category scheme="http://zespia.tw/tags/Octopress/" term="Octopress"/>
+    <category scheme="http://zespia.tw/tags/Node.js/" term="Node.js"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[使用 Stream 來拷貝檔案]]></title>
     <link href="http://zespia.tw/http://zespia.tw/blog/2012/12/06/nodejs-stream-copy-files/"/>
@@ -1750,113 +1823,5 @@
 ]]></content>
     <category scheme="http://zespia.tw/tags/PS3/" term="PS3"/>
     <category scheme="http://zespia.tw/tags/遊戲/" term="遊戲"/>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Corner 1.0 正式版推出！]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2011/05/27/corner-theme/"/>
-    <id>http://zespia.tw/blog/2011/05/27/corner-theme/</id>
-    <published>2011-05-27T00:00:00.000Z</published>
-    <updated>2012-09-22T01:23:10.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://i.minus.com/igeV3vBq0HbXR.jpg" alt="">
-
-</p>
-<p>日前在法雅客時，碰巧看到了展示中的 Windows Phone 7，雖然我個人不是很喜歡微軟，不過 WP7 看來真的擺脫了前代的束縛，順暢又簡潔的介面不輸 iPhone。於是我便想依照 WP7 的風格來設計一個佈景主題，起初還摸不著頭緒，直到開學之後才突然靈感迸發，果然人類都必須直到開學後才會開始努力嗎...orz。
-
-</p>
-<p>這次相較於 Pixiv Custom，大幅簡化了部分語法，本來也想試著嘗試簡化後者的語法，不過之前我做得太混亂了，連我都有點看不懂 XD，於是便放棄了。
-
-</p>
-<p>此佈景支援 WordPress 3.0 功能，「<strong>自定選單</strong>」以及「<strong>自定背景</strong>」，可支援 Banner 聯播，只需將「<strong>700x200px</strong>」的圖片放入<code>/headers</code>資料夾內，頁面重新整理時便會隨機顯示圖片。1.0 正式版已<strong>新增</strong>以下功能：
-
-</p>
-<ul>
-<li>AJAX 頁面導覽</li>
-<li>分享按鈕</li>
-<li>留言功能按鈕提示</li>
-<li>重新改版佈景設定頁面</li>
-</ul>
-<span id="more"></span>
-
-<h2>瀏覽器支援</h2>
-<p>完整支援 Mozilla Firefox,  Google Chrome, Safari, Opera, Internet Explorer 8，但 Internet Explorer 7&amp;6 有部分留言列表問題。
-
-</p>
-<h2>下載</h2>
-<p><a href="http://wordpress.org/extend/themes/download/corner.1.0.9.zip">正式版 (Ver. 1.0.9)</a><br><a href="http://wp-themes.com/corner">預覽</a>
-
-</p>
-<h2>更新記錄</h2>
-<ul>
-<li>1.0.9<ul>
-<li><strong>修改</strong> - 修復圖片與文字中沒有留白的問題</li>
-<li><strong>修改</strong> - 將<code>$content_width</code>更改為 660</li>
-<li><strong>修改</strong> - 修復後台重設按鈕的問題</li>
-<li><strong>移除</strong> - 分頁中「留言已停用」的提示</li>
-</ul>
-</li>
-<li>1.0.8<ul>
-<li><strong>修改</strong> – 使用 Settings API 完成較安全的後台頁面</li>
-</ul>
-</li>
-<li>1.0.7<ul>
-<li><strong>修改</strong> – 修復文章浮動（float）問題</li>
-<li><strong>修改</strong> – 變更背景圖片以符合較大的螢幕解析度</li>
-<li><strong>移除</strong> – 因為 WordPress 3.0 內建<code>automatic_feed_links()</code>函數，故<strong>移除</strong><code>&lt;head&gt;</code>標籤內的 RSS 連結</head></li>
-</ul>
-</li>
-<li>1.0.6<ul>
-<li><strong>新增</strong> - 定義置頂文章的樣式</li>
-<li><strong>新增</strong> - 在 404 頁面中<strong>新增</strong>搜尋欄與標籤雲供訪客使用</li>
-<li><strong>新增</strong> - 後台頁面使用 cookie 記憶上一次開啟的分頁（時效一天）</li>
-<li><strong>新增</strong> - 「繼續閱讀」連結</li>
-<li><strong>修改</strong> - 搜尋欄改採<code>search_form()</code>函數</li>
-<li><strong>修改</strong> - 更改字元編碼宣告</li>
-<li><strong>修改</strong> - 後台頁面改採<code>checked()</code>與<code>selected()</code>函數簡化代碼</li>
-</ul>
-</li>
-<li>1.0.5<ul>
-<li><strong>修改</strong> - 重新設計搜尋欄的動畫</li>
-<li><strong>修改</strong> - 棄用不安全的 AJAX 頁面導覽方式，改為呼叫函數的方式，缺點是修改後僅能使用於首頁</li>
-<li><strong>修改</strong> - 修復後台頁面<code>Undefined Index</code>的問題</li>
-<li><strong>修改</strong> - 新增<code>search-failed.php</code>，為搜尋失敗的訪客提供更詳細的說明</li>
-<li><strong>修改</strong> - 簡化並加強<code>comment.js</code></li>
-</ul>
-</li>
-<li>1.0.4<ul>
-<li><strong>修改</strong> - 某些伺服器會有<code>Cannot modify header information</code>的 PHP 問題，將<code>function.php</code>中的函數修改後排除</li>
-</ul>
-</li>
-<li>1.0.2<ul>
-<li><strong>新增</strong> - 首頁的其他布局（概要與縮圖、僅標題）</li>
-<li><strong>新增</strong> - 在首頁及彙整頁面中顯示日期</li>
-<li><strong>新增</strong> - 標記留言為「管理員」或「審核中」</li>
-<li><strong>新增</strong> - TinyMCE 編輯器的自定樣式表</li>
-<li><strong>新增</strong> - WordPress 預設的自定頁首圖片</li>
-<li><strong>修改</strong> - 置頂文章的樣式</li>
-<li><strong>修改</strong> - 修復無法列印字元</li>
-<li><strong>修改</strong> - 部分管理頁面的翻譯</li>
-<li><strong>修改</strong> - 使用<code>get_template_part()</code>函數縮減代碼</li>
-<li><strong>修改</strong> - 重新設計搜尋欄的動畫</li>
-</ul>
-</li>
-<li>1.0.1<ul>
-<li><strong>新增</strong> - 可調整標題大小</li>
-<li><strong>新增</strong> - 副標題顯示</li>
-<li><strong>修改</strong> - 將選單深度增至無限</li>
-</ul>
-</li>
-<li>1.0<ul>
-<li><strong>新增</strong> - AJAX 頁面導覽</li>
-<li><strong>新增</strong> - 留言功能按鈕提示</li>
-<li><strong>新增</strong> - 文章分享按鈕</li>
-<li><strong>新增</strong> - 回覆留言前增加「@使用者名稱」連結</li>
-<li><strong>修改</strong> - 佈景設定頁面</li>
-<li><strong>修改</strong> - 簡化 CSS 與 Javascript 代碼</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    <category scheme="http://zespia.tw/tags/WordPress/" term="WordPress"/>
-    <category scheme="http://zespia.tw/tags/主題/" term="主題"/>
   </entry>
 </feed>
