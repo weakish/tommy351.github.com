@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Pixiv Custom 2.0 更新！代碼更精簡，功能更豐富！ | Zespia</title>
+  <meta name="author" content="SkyArrow">
+  
+  <meta name="description" content="這次的更新主要就只有四個字，「精簡代碼」，讓檔案保持在上一版的大小外又新增了一些更為詳細的後台設定，廢話不多說，以下就是本次的更新內容：">
+  
+  
+  <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+
+  <meta property="og:title" content="Pixiv Custom 2.0 更新！代碼更精簡，功能更豐富！"/>
+  <meta property="og:site_name" content="Zespia"/>
+
+  <link rel="alternate" href="http://feeds.feedburner.com/zespia" title="Zespia" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4910098-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Zespia</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="https://github.com/tommy351">GitHub</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2011-04-12T00:00:00.000Z"><a href="/blog/2011/04/12/pixiv-custom-2-0-update/">2011/4/12</a></time>
+      
+      
+  
+    <h1 class="title">Pixiv Custom 2.0 更新！代碼更精簡，功能更豐富！</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><img src="http://i.minus.com/iZT3XSFQ268L4.jpg" alt="其實這張圖與本文內容沒什麼關係，純粹當做福利罷了（id=18097491）">
+
+</p>
+<p>這次的更新主要就只有四個字，「<strong>精簡代碼</strong>」，讓檔案保持在上一版的大小外又<strong>新增</strong>了一些更為詳細的後台設定，廢話不多說，以下就是本次的更新內容：
+
+</p>
+<span id="more"></span>
+
+<h2>更新記錄</h2>
+<ul>
+<li>2.1.5<ul>
+<li><strong>修改</strong> - 搜尋建議的寬度</li>
+</ul>
+</li>
+<li>2.1.4<ul>
+<li><strong>修改</strong> - 修復 XSS 漏洞</li>
+<li><strong>移除</strong> - 自定分享連結的代碼</li>
+</ul>
+</li>
+<li>2.1.3<ul>
+<li><strong>新增</strong> - 搜尋取消按鈕</li>
+<li><strong>新增</strong> - 文章側邊欄也能調整至與首頁側邊欄相同的寬度</li>
+<li><strong>修改</strong> - 修復後台<code>textarea</code>選項，前台顯示已編碼資料的問題</li>
+<li><strong>修改</strong> - 「更多分享」的動畫</li>
+</ul>
+</li>
+<li>2.1.2<ul>
+<li><strong>新增</strong> - Google +1 按鈕</li>
+<li><strong>修改</strong> - Chrome 現在也能使用自動載入功能了！</li>
+<li><strong>修改</strong> - 修復 XSS 漏洞，使用<code>esc_attr</code>編碼每個選項資料</li>
+<li><strong>修改</strong> - 修復留言回覆通知的內容設定無法生效的問題</li>
+<li><strong>修改</strong> - 引用樣式</li>
+</ul>
+</li>
+<li>2.1.1<ul>
+<li><strong>新增</strong> - 自動載入功能 (實驗中，目前僅限 Firefox, Opera 能使用)</li>
+<li><strong>新增</strong> - Google +1 按鈕</li>
+</ul>
+</li>
+<li>2.1.0<ul>
+<li><strong>新增</strong> - HTML5</li>
+<li><strong>新增</strong> - 頁首選單中新增了一些預設的圖片可供使用</li>
+<li><strong>修改</strong> - 簡化留言的 AJAX 程式碼，重新設計動畫，並加入了 AJAX 留言導覽</li>
+<li><strong>修改</strong> - AJAX 導覽現在也能適用於彙整、分類、標籤、搜尋頁面</li>
+<li><strong>移除</strong> - 自定 Logo 功能</li>
+</ul>
+</li>
+<li>2.0.7<ul>
+<li><strong>新增</strong> - 後台頁面新增「重設至預設值」功能</li>
+<li><strong>修改</strong> - 改採用 Settings API 製作後台頁面，以增進安全性</li>
+</ul>
+</li>
+<li>2.0.4<ul>
+<li><strong>修改</strong> - 選單項目過多時樣式錯誤的問題</li>
+</ul>
+</li>
+<li>2.0.2<ul>
+<li><strong>修改</strong> - 增進 AJAX 導覽功能的安全性，但因此只限用於首頁導覽</li>
+</ul>
+</li>
+<li>2.0<ul>
+<li><strong>新增</strong> - AJAX 導覽功能</li>
+<li><strong>新增</strong> - 選單無限深度</li>
+<li><strong>新增</strong> - 新增<code>style-editor.css</code>，使用者可在後台文章編輯頁面中檢視文章的實際樣貌（調整中）</li>
+<li><strong>新增</strong> - 搜尋建議開關</li>
+<li><strong>新增</strong> - 連結顏色預覽</li>
+<li><strong>新增</strong> - 更細部的分享按鈕設定</li>
+<li><strong>新增</strong> - 留言回覆通知的設定預覽</li>
+<li><strong>新增</strong> - 後台自動隱藏停用的子選項</li>
+<li><strong>新增</strong> - 首頁 / 彙整頁面的文章預覽布局（完整 / 概要與縮圖 / 僅標題）</li>
+<li><strong>修改</strong> - 重新編寫 3 欄式布局的結構，以優先載入主欄內容、加強 SEO 效能</li>
+<li><strong>修改</strong> - 更改側邊欄的行為，側邊欄 2 尚未設定的情況下會先套用側邊欄 1 的內容，文章側邊欄尚未設定的情況下會先套用首頁側邊欄的內容</li>
+<li><strong>修改</strong> - 文章的分類頁籤以及後台分頁頁籤的外觀</li>
+<li><strong>修改</strong> - 後台英文翻譯、排版</li>
+<li><strong>移除</strong> - 為了配合官方，原本的 Logo 設定功能改為進入「主題」→「頁首」設定</li>
+</ul>
+</li>
+</ul>
+<p>聽起來似乎沒什麼，事實上新增的功能也沒幾個，大部分的更動都是精簡代碼，所以為了增加霸氣，一次將版本號躍升到 2.0。（毆）相容性尚未測試，不過應該能夠完美支援除 IE 外的所有瀏覽器，如果有任何問題的話，請在下方留言吧。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/WordPress/">WordPress</a>, <a href="/tags/主題/">主題</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div></div>
+    <aside id="sidebar" class="alignright">
+<div class="search">
+  <form action="http://google.com/search" method="get" accept-charset="utf-8">
+    <input type="text" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:zespia.tw">
+  </form>
+</div>
+
+
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Android/">Android</a><small>1</small></li>
+  
+    <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
+  
+    <li><a href="/tags/HTML5/">HTML5</a><small>2</small></li>
+  
+    <li><a href="/tags/Hexo/">Hexo</a><small>3</small></li>
+  
+    <li><a href="/tags/JavaScript/">JavaScript</a><small>8</small></li>
+  
+    <li><a href="/tags/Node.js/">Node.js</a><small>5</small></li>
+  
+    <li><a href="/tags/Octopress/">Octopress</a><small>4</small></li>
+  
+    <li><a href="/tags/PS3/">PS3</a><small>6</small></li>
+  
+    <li><a href="/tags/PSP/">PSP</a><small>2</small></li>
+  
+    <li><a href="/tags/Ruby/">Ruby</a><small>1</small></li>
+  
+    <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
+  
+    <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
+  
+    <li><a href="/tags/主題/">主題</a><small>6</small></li>
+  
+    <li><a href="/tags/同人誌/">同人誌</a><small>2</small></li>
+  
+    <li><a href="/tags/活動/">活動</a><small>2</small></li>
+  
+    <li><a href="/tags/漫畫/">漫畫</a><small>6</small></li>
+  
+    <li><a href="/tags/輕小說/">輕小說</a><small>8</small></li>
+  
+    <li><a href="/tags/遊戲/">遊戲</a><small>8</small></li>
+  
+  </ul>
+</div>
+
+
+
+<div class="widget twitter">
+  <h3 class="title">Tweets</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+var twitter_stream = ['tommy351', 5, false];
+</script>
+<script src="/js/twitter.js"></script>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2013 SkyArrow
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'zespiatw';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

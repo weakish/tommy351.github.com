@@ -3,7 +3,7 @@
   <title><![CDATA[Zespia]]></title>
   <link href="http://zespia.tw/atom.xml" rel="self"/>
   <link href="http://zespia.tw"/>
-  <updated>2013-01-17T09:29:34.628Z</updated>
+  <updated>2013-01-17T09:30:11.191Z</updated>
   <id>http://zespia.tw/</id>
   <author>
     <name><![CDATA[SkyArrow]]></name>
@@ -12,8 +12,8 @@
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
   <entry>
     <title type="html"><![CDATA[Phase — 史上最漂亮也最吃資源的主題]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/12/07/hexo-theme-phase/"/>
-    <id>http://zespia.tw/uncategorized/2012/12/07/hexo-theme-phase/</id>
+    <link href="http://zespia.tw/blog/2012/12/07/hexo-theme-phase/"/>
+    <id>http://zespia.tw/blog/2012/12/07/hexo-theme-phase/</id>
     <published>2012-12-07T10:36:03.000Z</published>
     <updated>2013-01-12T16:52:33.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/icsKsGRjMpstw.png" alt="">
@@ -87,8 +87,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[使用 Stream 來拷貝檔案]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/12/06/nodejs-stream-copy-files/"/>
-    <id>http://zespia.tw/uncategorized/2012/12/06/nodejs-stream-copy-files/</id>
+    <link href="http://zespia.tw/blog/2012/12/06/nodejs-stream-copy-files/"/>
+    <id>http://zespia.tw/blog/2012/12/06/nodejs-stream-copy-files/</id>
     <published>2012-12-05T16:14:46.000Z</published>
     <updated>2012-12-05T16:14:30.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iFFlrSnC6IrC8.jpg" alt="K 子 - ぬれ早苗 (id=16398495)">
@@ -144,8 +144,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[命運石之門（Steins;Gate）中文版]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/11/19/steins-gate/"/>
-    <id>http://zespia.tw/uncategorized/2012/11/19/steins-gate/</id>
+    <link href="http://zespia.tw/blog/2012/11/19/steins-gate/"/>
+    <id>http://zespia.tw/blog/2012/11/19/steins-gate/</id>
     <published>2012-11-18T16:36:38.000Z</published>
     <updated>2012-11-18T16:36:50.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iFsuGusXg32tv.jpg" alt="">
@@ -228,8 +228,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[新手機 Xperia S]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/11/12/xperia-s/"/>
-    <id>http://zespia.tw/uncategorized/2012/11/12/xperia-s/</id>
+    <link href="http://zespia.tw/blog/2012/11/12/xperia-s/"/>
+    <id>http://zespia.tw/blog/2012/11/12/xperia-s/</id>
     <published>2012-11-12T05:48:14.000Z</published>
     <updated>2013-01-16T10:04:28.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iZPlBKqBYIzo4.jpg" alt="因為手邊沒相機，所以拿網路上的照片代替">
@@ -315,8 +315,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Hexo 更新至 0.1]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/10/29/hexo-update-0.1/"/>
-    <id>http://zespia.tw/uncategorized/2012/10/29/hexo-update-0.1/</id>
+    <link href="http://zespia.tw/blog/2012/10/29/hexo-update-0.1/"/>
+    <id>http://zespia.tw/blog/2012/10/29/hexo-update-0.1/</id>
     <published>2012-10-28T16:25:37.000Z</published>
     <updated>2012-11-12T04:05:25.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibn0sBufi4xK4S.jpg" alt="らぐほのえりか - モリサマー (id=31068919)">
@@ -377,8 +377,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[Hexo 颯爽登場！]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/10/11/hexo-debut/"/>
-    <id>http://zespia.tw/uncategorized/2012/10/11/hexo-debut/</id>
+    <link href="http://zespia.tw/blog/2012/10/11/hexo-debut/"/>
+    <id>http://zespia.tw/blog/2012/10/11/hexo-debut/</id>
     <published>2012-10-11T07:22:47.000Z</published>
     <updated>2012-10-29T14:31:15.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibpMKNkpRxVwsK.jpg" alt="ちり - Super sonic Child (id=29663134)">
@@ -511,8 +511,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[愛夏的煉金工房 ─ 黃昏大地之煉金術士]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/09/05/atelier-ayesha/"/>
-    <id>http://zespia.tw/uncategorized/2012/09/05/atelier-ayesha/</id>
+    <link href="http://zespia.tw/blog/2012/09/05/atelier-ayesha/"/>
+    <id>http://zespia.tw/blog/2012/09/05/atelier-ayesha/</id>
     <published>2012-09-05T10:39:00.000Z</published>
     <updated>2013-01-17T08:37:07.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibobbTlfxZgITW.jpg" alt="阿霞的鍊金工房 ─ 黃昏市場之煉金術士">
@@ -576,8 +576,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[Node.js 初試 ─ Nyanko]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/07/14/nodejs-nyanko/"/>
-    <id>http://zespia.tw/uncategorized/2012/07/14/nodejs-nyanko/</id>
+    <link href="http://zespia.tw/blog/2012/07/14/nodejs-nyanko/"/>
+    <id>http://zespia.tw/blog/2012/07/14/nodejs-nyanko/</id>
     <published>2012-07-13T16:14:00.000Z</published>
     <updated>2012-10-10T16:37:31.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iKst8nFEGcU8A.png" alt="">
@@ -743,8 +743,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[私用主題 Phase]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/05/02/new-theme-phase/"/>
-    <id>http://zespia.tw/uncategorized/2012/05/02/new-theme-phase/</id>
+    <link href="http://zespia.tw/blog/2012/05/02/new-theme-phase/"/>
+    <id>http://zespia.tw/blog/2012/05/02/new-theme-phase/</id>
     <published>2012-05-02T01:35:00.000Z</published>
     <updated>2012-09-22T01:18:51.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iMujOkELjjcra.png" alt="">
@@ -806,8 +806,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[First Order]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/03/16/first-order/"/>
-    <id>http://zespia.tw/uncategorized/2012/03/16/first-order/</id>
+    <link href="http://zespia.tw/blog/2012/03/16/first-order/"/>
+    <id>http://zespia.tw/blog/2012/03/16/first-order/</id>
     <published>2012-03-16T13:06:00.000Z</published>
     <updated>2012-10-10T16:39:05.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iNmV7aO65tXdE.jpg" alt="ユイザキ - ミサカとおしゃべりしよ (id=22543726)">
@@ -888,8 +888,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[Windows 8 Consumer Preview 試玩]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/03/03/windows-8-preview/"/>
-    <id>http://zespia.tw/uncategorized/2012/03/03/windows-8-preview/</id>
+    <link href="http://zespia.tw/blog/2012/03/03/windows-8-preview/"/>
+    <id>http://zespia.tw/blog/2012/03/03/windows-8-preview/</id>
     <published>2012-03-03T11:54:00.000Z</published>
     <updated>2012-10-10T16:36:09.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iQ6n16BPfbQc.jpg" alt="">
@@ -979,8 +979,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 audio 實驗]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/02/04/lab-html5-audio/"/>
-    <id>http://zespia.tw/uncategorized/2012/02/04/lab-html5-audio/</id>
+    <link href="http://zespia.tw/blog/2012/02/04/lab-html5-audio/"/>
+    <id>http://zespia.tw/blog/2012/02/04/lab-html5-audio/</id>
     <published>2012-02-04T05:29:00.000Z</published>
     <updated>2012-11-12T05:56:46.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/inE9d4C1xPbYD.png" alt="">
@@ -1109,8 +1109,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[Slash — 專為 Octopress 設計的極簡主題]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/01/25/slash-theme/"/>
-    <id>http://zespia.tw/uncategorized/2012/01/25/slash-theme/</id>
+    <link href="http://zespia.tw/blog/2012/01/25/slash-theme/"/>
+    <id>http://zespia.tw/blog/2012/01/25/slash-theme/</id>
     <published>2012-01-25T08:27:00.000Z</published>
     <updated>2012-10-11T07:07:47.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i8oyJmY5lRJEJ.png" alt="">
@@ -1166,8 +1166,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[如何利用 CSS 製作多級選單？]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/01/24/css-multi-level-menu/"/>
-    <id>http://zespia.tw/uncategorized/2012/01/24/css-multi-level-menu/</id>
+    <link href="http://zespia.tw/blog/2012/01/24/css-multi-level-menu/"/>
+    <id>http://zespia.tw/blog/2012/01/24/css-multi-level-menu/</id>
     <published>2012-01-24T00:00:00.000Z</published>
     <updated>2012-09-22T01:22:59.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibx37Gknqf5wtK.PNG" alt="一般常見的選單">
@@ -1206,8 +1206,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[如何利用 jQuery 製作頁籤？]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/01/21/jquery-tabs/"/>
-    <id>http://zespia.tw/uncategorized/2012/01/21/jquery-tabs/</id>
+    <link href="http://zespia.tw/blog/2012/01/21/jquery-tabs/"/>
+    <id>http://zespia.tw/blog/2012/01/21/jquery-tabs/</id>
     <published>2012-01-21T10:10:00.000Z</published>
     <updated>2012-10-10T16:38:54.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i3hFGFugcShjF.jpg" alt="在文章中放入不相干的圖片好像已經成為定番？隨便啦">
@@ -1301,8 +1301,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[Hello Octopress!]]></title>
-    <link href="http://zespia.tw/uncategorized/2012/01/14/hello-octopress/"/>
-    <id>http://zespia.tw/uncategorized/2012/01/14/hello-octopress/</id>
+    <link href="http://zespia.tw/blog/2012/01/14/hello-octopress/"/>
+    <id>http://zespia.tw/blog/2012/01/14/hello-octopress/</id>
     <published>2012-01-14T07:52:00.000Z</published>
     <updated>2012-09-22T01:20:35.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i4CFI4qZAFEct.png" alt="">
@@ -1482,8 +1482,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[Google+ Motionless & Filter]]></title>
-    <link href="http://zespia.tw/uncategorized/2011/09/17/google-scripts-2/"/>
-    <id>http://zespia.tw/uncategorized/2011/09/17/google-scripts-2/</id>
+    <link href="http://zespia.tw/blog/2011/09/17/google-scripts-2/"/>
+    <id>http://zespia.tw/blog/2011/09/17/google-scripts-2/</id>
     <published>2011-09-17T00:00:00.000Z</published>
     <updated>2012-10-10T16:39:03.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ieJceSDuuo3RS.png" alt="サイノウサンプラー | ryosios（id=21795820）">
@@ -1510,8 +1510,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 Storage 的使用彙整]]></title>
-    <link href="http://zespia.tw/uncategorized/2011/08/04/html5-storage/"/>
-    <id>http://zespia.tw/uncategorized/2011/08/04/html5-storage/</id>
+    <link href="http://zespia.tw/blog/2011/08/04/html5-storage/"/>
+    <id>http://zespia.tw/blog/2011/08/04/html5-storage/</id>
     <published>2011-08-04T10:01:00.000Z</published>
     <updated>2012-10-10T16:36:49.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ich1TucSOe08P.jpg" alt="找不到相關的圖，各位就把小惡魔胸前的脂肪塊當做 Storage 吧！（id=21000433）">
@@ -1586,8 +1586,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[Google+ Hide Comments & Hover Zoom]]></title>
-    <link href="http://zespia.tw/uncategorized/2011/07/13/firefox-google-plus-plugins/"/>
-    <id>http://zespia.tw/uncategorized/2011/07/13/firefox-google-plus-plugins/</id>
+    <link href="http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/"/>
+    <id>http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/</id>
     <published>2011-07-13T00:00:00.000Z</published>
     <updated>2012-09-22T01:21:32.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ihQ0s0iWJDgNU.jpeg" alt="">
@@ -1627,8 +1627,8 @@ logger_format:
   </entry>
   <entry>
     <title type="html"><![CDATA[鍊金術士梅露露 ～亞蘭德的鍊金術士 3～]]></title>
-    <link href="http://zespia.tw/uncategorized/2011/07/01/ps3-meruru/"/>
-    <id>http://zespia.tw/uncategorized/2011/07/01/ps3-meruru/</id>
+    <link href="http://zespia.tw/blog/2011/07/01/ps3-meruru/"/>
+    <id>http://zespia.tw/blog/2011/07/01/ps3-meruru/</id>
     <published>2011-07-01T07:44:00.000Z</published>
     <updated>2012-10-10T16:38:37.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ib1v5x6fsVI7ue.jpeg" alt="相機又被老媽搶走了，反正我攝影技術也不好，乾脆直接貼官網的桌布吧（逃）">

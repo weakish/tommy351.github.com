@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>私用主題 Phase | Zespia</title>
+  <meta name="author" content="SkyArrow">
+  
+  <meta name="description" content="一段時間沒更新網誌了，最近大學有了著落之後，便決定抽空寫篇文章。自從 Slash 發佈之後，使用者日漸增多，不時會有 Pull Request，大概已經有數十個網誌都選用 Slash 作為佈景主題，雖然獲得了極大的成就感，不過林北不爽「撞主題」的感覺，所以決定再製作一個屬於自己的佈景主題。">
+  
+  
+  <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+
+  <meta property="og:title" content="私用主題 Phase"/>
+  <meta property="og:site_name" content="Zespia"/>
+
+  <link rel="alternate" href="http://feeds.feedburner.com/zespia" title="Zespia" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4910098-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Zespia</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="https://github.com/tommy351">GitHub</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-05-02T01:35:00.000Z"><a href="/blog/2012/05/02/new-theme-phase/">2012/5/2</a></time>
+      
+      
+  
+    <h1 class="title">私用主題 Phase</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><img src="http://i.minus.com/iMujOkELjjcra.png" alt="">
+
+</p>
+<p>一段時間沒更新網誌了，最近大學有了著落之後，便決定抽空寫篇文章。自從 <a href="http://zespia.tw/Octopress-Theme-Slash/index_tw.html">Slash</a> 發佈之後，使用者日漸增多，不時會有 Pull Request，大概已經有數十個網誌都選用 <a href="http://zespia.tw/Octopress-Theme-Slash/index_tw.html">Slash</a> 作為佈景主題，雖然獲得了極大的成就感，不過林北不爽「撞主題」的感覺，所以決定再製作一個屬於自己的佈景主題。
+
+</p>
+<span id="more"></span>
+
+<p><img src="http://i.minus.com/iYr8rVrPO07gr.jpg" alt="">
+
+</p>
+<p>起初決定以星辰、銀河作為主題，但就是找不到想要的那種感覺，而我又是 Photoshop 苦手，要我自己用 Photoshop 畫出想要的那種感覺實在有點困難。
+
+</p>
+<div class="video-container"><iframe width="420" height="315" src="http://www.youtube.com/embed/RiekCHOivVE" frameborder="0" allowfullscreen></iframe></div>
+
+<p>之後，偶然發現了一套 Android Live Wallpaper「Phase Beam」，這配色，這流暢滑順的動畫，就是我要的感覺，但是網路上只能找到 1440x1080 的圖片，作為背景圖片有點太迷你了，於是我便決定利用 HTML5 Canvas 來繪製類似 Phase Beam 的背景。
+
+</p>
+<h2>背景</h2>
+<p>HTML5 Canvas 的運作方式不如想像中簡單，我花了好幾小時才勉強用得上來，特別是輻射漸層（Radial Gradient），我搞了好久才終於搞懂這鬼東西的運作方式，天殺的是哪個傢伙想出<code>createRadialGradient(x1,y1,r1,x2,y2,r2)</code>這種奇怪的鬼函數的。
+
+</p>
+<p><img src="http://i.minus.com/ibnLcNP2voPZTx.png" alt="">
+
+</p>
+<p>使用方法搞定之後，其他便簡單許多了，只要記得繪製下一格動畫前，必須先使用<code>clearRect(x,y,width,height)</code>清空 Canvas，否則便會出現如上圖的慘狀。
+
+</p>
+<h3>參考資料</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en/Canvas_tutorial">Canvas tutorial - MDN</a></li>
+</ul>
+<h2>字體</h2>
+<p><img src="http://i.minus.com/iizFaxHHCWTjT.png" alt="Pontano Sans v.s. Helvetica Neue v.s. Helvetica Neue Light">
+
+</p>
+<p>整個佈景主題全都是 <a href="http://en.wikipedia.org/wiki/Helvetica#Neue_Helvetica_.281983.29">Helvetica Neue Light</a> 似乎會讓人有些視覺疲勞，於是這次加入了 <a href="http://www.google.com/webfonts/specimen/Pontano+Sans">Pontano Sans</a> 作為標題字體，<a href="http://www.google.com/webfonts/specimen/Pontano+Sans">Pontano Sans</a> 的粗細與 <a href="http://en.wikipedia.org/wiki/Helvetica#Neue_Helvetica_.281983.29">Helvetica Neue Light</a> 大致相同，不過小寫字母更窄了些。
+
+</p>
+<p><img src="http://i.minus.com/ibf2JncEj5mdzJ.png" alt="">
+
+</p>
+<p>這次除了 Logo 以外，完全改用 <a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a> 字體作為圖示，相容性什麼的我也沒在管了，反正能支援到 IE 8+ 就夠了。
+
+</p>
+<h2>後記</h2>
+<div class="video-container"><iframe width="560" height="315" src="http://www.youtube.com/embed/ZMhwixvwMUs" frameborder="0" allowfullscreen></iframe></div>
+
+<p>Phase 還有一些部分尚未完成，不過我已經迫不及待想用了，餘下的部份就等之後慢慢補完吧。
+
+</p>
+<p>最近大學終於有了著落，空閒的時間變得更多了，也許該找份兼職來做，如果想找我設計佈景主題的話，可透過 Twitter 或 tommy351[at]gmail.com 與我洽談。最後就來一部氷菓 ED 吧，可見京阿尼砸了很多錢在賣肉上，明明只是兩位高中女生在滾床而已，卻能這麼嫵媚......。える好胸，摩耶花好腋啊。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Octopress/">Octopress</a>, <a href="/tags/主題/">主題</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div></div>
+    <aside id="sidebar" class="alignright">
+<div class="search">
+  <form action="http://google.com/search" method="get" accept-charset="utf-8">
+    <input type="text" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:zespia.tw">
+  </form>
+</div>
+
+
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Android/">Android</a><small>1</small></li>
+  
+    <li><a href="/tags/CSS/">CSS</a><small>1</small></li>
+  
+    <li><a href="/tags/HTML5/">HTML5</a><small>2</small></li>
+  
+    <li><a href="/tags/Hexo/">Hexo</a><small>3</small></li>
+  
+    <li><a href="/tags/JavaScript/">JavaScript</a><small>8</small></li>
+  
+    <li><a href="/tags/Node.js/">Node.js</a><small>5</small></li>
+  
+    <li><a href="/tags/Octopress/">Octopress</a><small>4</small></li>
+  
+    <li><a href="/tags/PS3/">PS3</a><small>6</small></li>
+  
+    <li><a href="/tags/PSP/">PSP</a><small>2</small></li>
+  
+    <li><a href="/tags/Ruby/">Ruby</a><small>1</small></li>
+  
+    <li><a href="/tags/Windows/">Windows</a><small>1</small></li>
+  
+    <li><a href="/tags/WordPress/">WordPress</a><small>5</small></li>
+  
+    <li><a href="/tags/主題/">主題</a><small>6</small></li>
+  
+    <li><a href="/tags/同人誌/">同人誌</a><small>2</small></li>
+  
+    <li><a href="/tags/活動/">活動</a><small>2</small></li>
+  
+    <li><a href="/tags/漫畫/">漫畫</a><small>6</small></li>
+  
+    <li><a href="/tags/輕小說/">輕小說</a><small>8</small></li>
+  
+    <li><a href="/tags/遊戲/">遊戲</a><small>8</small></li>
+  
+  </ul>
+</div>
+
+
+
+<div class="widget twitter">
+  <h3 class="title">Tweets</h3>
+  <ul id="tweets"></ul>
+</div>
+
+<script type="text/javascript">
+var twitter_stream = ['tommy351', 5, false];
+</script>
+<script src="/js/twitter.js"></script>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2013 SkyArrow
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'zespiatw';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
