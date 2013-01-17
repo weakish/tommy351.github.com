@@ -3,7 +3,7 @@
   <title><![CDATA[Zespia]]></title>
   <link href="http://zespia.tw/atom.xml" rel="self"/>
   <link href="http://zespia.tw"/>
-  <updated>2012-12-07T12:43:36.738Z</updated>
+  <updated>2013-01-17T09:29:34.628Z</updated>
   <id>http://zespia.tw/</id>
   <author>
     <name><![CDATA[SkyArrow]]></name>
@@ -12,10 +12,10 @@
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
   <entry>
     <title type="html"><![CDATA[Phase — 史上最漂亮也最吃資源的主題]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/12/07/hexo-theme-phase/"/>
-    <id>http://zespia.tw/blog/2012/12/07/hexo-theme-phase/</id>
+    <link href="http://zespia.tw/uncategorized/2012/12/07/hexo-theme-phase/"/>
+    <id>http://zespia.tw/uncategorized/2012/12/07/hexo-theme-phase/</id>
     <published>2012-12-07T10:36:03.000Z</published>
-    <updated>2012-12-07T12:02:19.000Z</updated>
+    <updated>2013-01-12T16:52:33.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/icsKsGRjMpstw.png" alt="">
 
 </p>
@@ -41,11 +41,13 @@
 <p>Octopress 版本：
 
 </p>
-<pre><code><div class="line"><span class="title">cd</span> octopress</div><div class="line"><span class="title">git</span> clone git://github.com/tommy351/octopress-theme-phase.git .themes/phase</div><div class="line"><span class="title">rake</span> install['phase']</div><div class="line"><span class="title">rake</span> generate</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="title">cd</span> octopress</div><div class="line"><span class="title">git</span> clone git://github.com/tommy351/octopress-theme-phase.git .themes/phase</div><div class="line"><span class="title">rake</span> install['phase']</div><div class="line"><span class="title">rake</span> generate</div></code></pre></td></tr></table></figure>
+
 <p>為了推廣 Hexo，順便把主題移植過去了，往後的主題開發都會以 Hexo 為主，但仍會以 MIT License 開放原始碼，想要在 Octopress 使用的人可以自行開發移植版本。
 
 </p>
-<pre><code><div class="line"><span class="title">cd</span> hexo</div><div class="line">git clone <span class="url">git://github.com/tommy351/hexo-theme-phase.git</span> themes/phase</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="title">cd</span> hexo</div><div class="line">git clone <span class="url">git://github.com/tommy351/hexo-theme-phase.git</span> themes/phase</div></code></pre></td></tr></table></figure>
+
 <p>Hexo 版本安裝後別忘了將<code>_config.yml</code>內的<code>theme</code>參數調整為<code>phase</code>。
 
 </p>
@@ -85,8 +87,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[使用 Stream 來拷貝檔案]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/12/06/nodejs-stream-copy-files/"/>
-    <id>http://zespia.tw/blog/2012/12/06/nodejs-stream-copy-files/</id>
+    <link href="http://zespia.tw/uncategorized/2012/12/06/nodejs-stream-copy-files/"/>
+    <id>http://zespia.tw/uncategorized/2012/12/06/nodejs-stream-copy-files/</id>
     <published>2012-12-05T16:14:46.000Z</published>
     <updated>2012-12-05T16:14:30.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iFFlrSnC6IrC8.jpg" alt="K 子 - ぬれ早苗 (id=16398495)">
@@ -108,7 +110,8 @@
 <p>原本的檔案複製方式是：
 
 </p>
-<pre><code><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">copy</span><span class="params">(source, destination, callback)</span>{</span></div><div class="line">    fs.readFile(source, <span class="keyword">function</span>(err, file){</div><div class="line">        <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">        fs.writeFile(destination, file, callback);</div><div class="line">    });</div><div class="line">}</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">copy</span><span class="params">(source, destination, callback)</span>{</span></div><div class="line">	fs.readFile(source, <span class="keyword">function</span>(err, file){</div><div class="line">		<span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">		fs.writeFile(destination, file, callback);</div><div class="line">	});</div><div class="line">}</div></code></pre></td></tr></table></figure>
+
 <p>非常簡單，就是檔案讀取完後再將檔案寫入到目的地。這種方法必須將所有檔案讀取完成後才能寫入，將對地沒有效率多了，使用 <a href="http://nodejs.org/api/stream.html">Stream</a> 則是邊讀取邊寫入，當讀取完成後，寫入也差不多完成了，在處理大檔案時，差別更加明顯。
 
 </p>
@@ -118,7 +121,8 @@
 <p>用 <a href="http://nodejs.org/api/stream.html">Stream</a> 的方式來複製檔案，相較於原本的方式，也只不過是多了幾行程式碼而已，如下：
 
 </p>
-<pre><code><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">copy</span><span class="params">(source, destination, callback)</span>{</span></div><div class="line">    var rs = <span class="transposed_variable">fs.</span>createReadStream(source),</div><div class="line">        ws = <span class="transposed_variable">fs.</span>createWriteStream(destination);</div><br><div class="line">    <span class="transposed_variable">rs.</span>pipe(ws).on(<span class="string">'error'</span>, <span class="keyword">function</span>(err)<span class="cell">{</div><div class="line">        if (err) throw err;</div><div class="line">    }</span>);</div><br><div class="line">    <span class="transposed_variable">ws.</span>on(<span class="string">'close'</span>, callback).on(<span class="string">'error'</span>, <span class="keyword">function</span>(err)<span class="cell">{</div><div class="line">        if (err) throw err;</div><div class="line">    }</span>);</div><div class="line">}</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">copy</span><span class="params">(source, destination, callback)</span>{</span></div><div class="line">	var rs = <span class="transposed_variable">fs.</span>createReadStream(source),</div><div class="line">		ws = <span class="transposed_variable">fs.</span>createWriteStream(destination);</div><div class="line">		</div><div class="line">	<span class="transposed_variable">rs.</span>pipe(ws).on(<span class="string">'error'</span>, <span class="keyword">function</span>(err)<span class="cell">{</div><div class="line">		if (err) throw err;</div><div class="line">	}</span>);</div><div class="line">	</div><div class="line">	<span class="transposed_variable">ws.</span>on(<span class="string">'close'</span>, callback).on(<span class="string">'error'</span>, <span class="keyword">function</span>(err)<span class="cell">{</div><div class="line">		if (err) throw err;</div><div class="line">	}</span>);</div><div class="line">}</div></code></pre></td></tr></table></figure>
+
 <p>首先建立讀取 Stream <code>rs</code> 和寫入 Stream <code>ws</code>，使用 <code>rs.pipe</code> 讀取資料同時將資料寫入至 <code>ws</code>。
 
 </p>
@@ -140,8 +144,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[命運石之門（Steins;Gate）中文版]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/11/19/steins-gate/"/>
-    <id>http://zespia.tw/blog/2012/11/19/steins-gate/</id>
+    <link href="http://zespia.tw/uncategorized/2012/11/19/steins-gate/"/>
+    <id>http://zespia.tw/uncategorized/2012/11/19/steins-gate/</id>
     <published>2012-11-18T16:36:38.000Z</published>
     <updated>2012-11-18T16:36:50.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iFsuGusXg32tv.jpg" alt="">
@@ -224,10 +228,10 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[新手機 Xperia S]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/11/12/xperia-s/"/>
-    <id>http://zespia.tw/blog/2012/11/12/xperia-s/</id>
+    <link href="http://zespia.tw/uncategorized/2012/11/12/xperia-s/"/>
+    <id>http://zespia.tw/uncategorized/2012/11/12/xperia-s/</id>
     <published>2012-11-12T05:48:14.000Z</published>
-    <updated>2012-11-12T12:25:44.000Z</updated>
+    <updated>2013-01-16T10:04:28.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iZPlBKqBYIzo4.jpg" alt="因為手邊沒相機，所以拿網路上的照片代替">
 
 </p>
@@ -311,8 +315,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Hexo 更新至 0.1]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/10/29/hexo-update-0.1/"/>
-    <id>http://zespia.tw/blog/2012/10/29/hexo-update-0.1/</id>
+    <link href="http://zespia.tw/uncategorized/2012/10/29/hexo-update-0.1/"/>
+    <id>http://zespia.tw/uncategorized/2012/10/29/hexo-update-0.1/</id>
     <published>2012-10-28T16:25:37.000Z</published>
     <updated>2012-11-12T04:05:25.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibn0sBufi4xK4S.jpg" alt="らぐほのえりか - モリサマー (id=31068919)">
@@ -335,159 +339,12 @@
 </p>
 <ol>
 <li><p>透過 <a href="https://npmjs.org/">npm</a> 將 Hexo 升級至 0.1。</p>
-<pre><code class="lang-bash"><div class="line">npm update -g</div></code></pre>
-</li>
-<li><p>升級內建的 <a href="https://github.com/tommy351/hexo-theme-light">Light</a> 主題。</p>
-<pre><code class="lang-bash"><div class="line">cd themes/light</div><div class="line">git pull</div></code></pre>
-</li>
-<li><p>更新 <code>_config.yml</code>，以下是 0.1 版的預設配置，請依照個人需求自行調整。</p>
-<pre><code class="lang-yaml"><div class="line"><span class="preprocessor"># Basic</span></div><div class="line"><span class="label">title:</span> Hexo</div><div class="line"><span class="label">subtitle:</span> Node<span class="preprocessor">.js</span> blog framework</div><div class="line"><span class="label">description:</span></div><div class="line"><span class="label">url:</span> http://yoursite<span class="preprocessor">.com</span></div><div class="line"><span class="label">author:</span> John Doe</div><div class="line"><span class="label">email:</span></div><div class="line"><span class="label">language:</span></div><br><div class="line"><span class="preprocessor"># Permalink</span></div><div class="line"><span class="label">root:</span> /</div><div class="line"><span class="label">permalink:</span> :year/:month/:day/:title/</div><div class="line"><span class="label">tag_dir:</span> tags</div><div class="line"><span class="label">archive_dir:</span> archives</div><div class="line"><span class="label">category_dir:</span> posts</div><br><div class="line"><span class="preprocessor"># Archives</span></div><div class="line"><span class="label">archive:</span> <span class="number">2</span></div><div class="line"><span class="label">category:</span> <span class="number">2</span></div><div class="line"><span class="label">tag:</span> <span class="number">2</span></div><br><div class="line"><span class="preprocessor"># Server</span></div><div class="line"><span class="label">port:</span> <span class="number">4000</span></div><div class="line"><span class="label">logger:</span> false</div><div class="line"><span class="label">logger_format:</span></div><br><div class="line"><span class="preprocessor"># Date / Time format</span></div><div class="line"><span class="label">date_format:</span> MMM D, YYYY</div><div class="line"><span class="label">time_format:</span> H:mm:ss</div><br><div class="line"><span class="preprocessor"># Pagination</span></div><div class="line"><span class="label">per_page:</span> <span class="number">10</span></div><div class="line"><span class="label">pagination_dir:</span> page</div><br><div class="line"><span class="preprocessor"># Disqus</span></div><div class="line"><span class="label">disqus_shortname:</span></div><br><div class="line"><span class="preprocessor"># Extensions</span></div><div class="line"><span class="label">plugins:</span></div><div class="line"><span class="label">theme:</span> light</div><div class="line"><span class="label">exclude_generator:</span></div><br><div class="line"><span class="preprocessor"># Enhancement</span></div><div class="line"><span class="label">auto_spacing:</span> false</div><div class="line"><span class="label">titlecase:</span> false</div><br><div class="line"><span class="preprocessor"># Deploy</span></div><div class="line"><span class="label">deploy:</span></div><div class="line"> type:</div></code></pre>
-</li>
-<li><p>修改 <code>package.json</code>。</p>
-<pre><code class="lang-json"><div class="line">{</div><div class="line"> "<span class="attribute">name</span>": <span class="value"><span class="string">"hexo"</span></span>,</div><div class="line"> "<span class="attribute">version</span>": <span class="value"><span class="string">"0.0.1"</span></span>,</div><div class="line"> "<span class="attribute">private</span>": <span class="value"><span class="literal">true</span></span>,</div><div class="line"> "<span class="attribute">dependencies</span>": <span class="value">{}</div><div class="line">}</span></div></code></pre>
-</li>
-<li><p>若你之前有設定過佈署的話，請調整 <code>_config.yml</code> 中 <code>deploy</code> 的設定。</p>
-<pre><code class="lang-yaml"><div class="line"><span class="method">deploy:</span></div><div class="line"> <span class="method">type:</span> github</div><div class="line"> <span class="method">repository:</span></div><div class="line"> <span class="method">branch:</span></div></code></pre>
-<p><code>repository</code> 填入 GitHub repo 的連結，若 <code>repository</code> 為 <code>username.github.com</code> 這類型的話，則在 <code>branch</code> 填入 <code>master</code>，否則填入 <code>gh-pages</code>。</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div><div class="line-number">22</div><div class="line-number">23</div><div class="line-number">24</div><div class="line-number">25</div><div class="line-number">26</div><div class="line-number">27</div><div class="line-number">28</div><div class="line-number">29</div><div class="line-number">30</div><div class="line-number">31</div><div class="line-number">32</div><div class="line-number">33</div><div class="line-number">34</div><div class="line-number">35</div><div class="line-number">36</div><div class="line-number">37</div><div class="line-number">38</div><div class="line-number">39</div><div class="line-number">40</div><div class="line-number">41</div><div class="line-number">42</div><div class="line-number">43</div><div class="line-number">44</div><div class="line-number">45</div><div class="line-number">46</div><div class="line-number">47</div><div class="line-number">48</div><div class="line-number">49</div><div class="line-number">50</div><div class="line-number">51</div><div class="line-number">52</div><div class="line-number">53</div><div class="line-number">54</div><div class="line-number">55</div><div class="line-number">56</div><div class="line-number">57</div><div class="line-number">58</div><div class="line-number">59</div><div class="line-number">60</div><div class="line-number">61</div><div class="line-number">62</div><div class="line-number">63</div><div class="line-number">64</div><div class="line-number">65</div><div class="line-number">66</div><div class="line-number">67</div><div class="line-number">68</div><div class="line-number">69</div><div class="line-number">70</div><div class="line-number">71</div><div class="line-number">72</div><div class="line-number">73</div><div class="line-number">74</div><div class="line-number">75</div><div class="line-number">76</div><div class="line-number">77</div><div class="line-number">78</div><div class="line-number">79</div><div class="line-number">80</div><div class="line-number">81</div><div class="line-number">82</div><div class="line-number">83</div><div class="line-number">84</div><div class="line-number">85</div><div class="line-number">86</div><div class="line-number">87</div><div class="line-number">88</div><div class="line-number">89</div><div class="line-number">90</div><div class="line-number">91</div><div class="line-number">92</div><div class="line-number">93</div><div class="line-number">94</div><div class="line-number">95</div><div class="line-number">96</div><div class="line-number">97</div><div class="line-number">98</div><div class="line-number">99</div><div class="line-number">100</div><div class="line-number">101</div><div class="line-number">102</div><div class="line-number">103</div><div class="line-number">104</div><div class="line-number">105</div><div class="line-number">106</div><div class="line-number">107</div><div class="line-number">108</div><div class="line-number">109</div><div class="line-number">110</div><div class="line-number">111</div><div class="line-number">112</div><div class="line-number">113</div><div class="line-number">114</div><div class="line-number">115</div><div class="line-number">116</div><div class="line-number">117</div><div class="line-number">118</div><div class="line-number">119</div><div class="line-number">120</div><div class="line-number">121</div><div class="line-number">122</div><div class="line-number">123</div><div class="line-number">124</div><div class="line-number">125</div><div class="line-number">126</div><div class="line-number">127</div><div class="line-number">128</div><div class="line-number">129</div><div class="line-number">130</div><div class="line-number">131</div><div class="line-number">132</div><div class="line-number">133</div><div class="line-number">134</div><div class="line-number">135</div><div class="line-number">136</div><div class="line-number">137</div><div class="line-number">138</div><div class="line-number">139</div><div class="line-number">140</div><div class="line-number">141</div><div class="line-number">142</div><div class="line-number">143</div><div class="line-number">144</div><div class="line-number">145</div><div class="line-number">146</div><div class="line-number">147</div><div class="line-number">148</div><div class="line-number">149</div><div class="line-number">150</div><div class="line-number">151</div><div class="line-number">152</div><div class="line-number">153</div><div class="line-number">154</div><div class="line-number">155</div><div class="line-number">156</div><div class="line-number">157</div><div class="line-number">158</div><div class="line-number">159</div><div class="line-number">160</div><div class="line-number">161</div><div class="line-number">162</div><div class="line-number">163</div><div class="line-number">164</div><div class="line-number">165</div><div class="line-number">166</div><div class="line-number">167</div><div class="line-number">168</div><div class="line-number">169</div><div class="line-number">170</div><div class="line-number">171</div><div class="line-number">172</div><div class="line-number">173</div><div class="line-number">174</div><div class="line-number">175</div><div class="line-number">176</div><div class="line-number">177</div><div class="line-number">178</div><div class="line-number">179</div><div class="line-number">180</div><div class="line-number">181</div><div class="line-number">182</div><div class="line-number">183</div><div class="line-number">184</div><div class="line-number">185</div><div class="line-number">186</div><div class="line-number">187</div><div class="line-number">188</div><div class="line-number">189</div><div class="line-number">190</div><div class="line-number">191</div><div class="line-number">192</div><div class="line-number">193</div><div class="line-number">194</div><div class="line-number">195</div><div class="line-number">196</div><div class="line-number">197</div><div class="line-number">198</div><div class="line-number">199</div><div class="line-number">200</div><div class="line-number">201</div><div class="line-number">202</div><div class="line-number">203</div><div class="line-number">204</div><div class="line-number">205</div><div class="line-number">206</div><div class="line-number">207</div><div class="line-number">208</div><div class="line-number">209</div><div class="line-number">210</div><div class="line-number">211</div><div class="line-number">212</div><div class="line-number">213</div></code></pre></td><td class="code"><pre><code><div class="line">  npm update -g</div><div class="line">  ```</div><div class="line">  </div><div class="line">2. 升級內建的 [Light] 主題。</div><br><div class="line">  ``` bash</div><div class="line">  cd themes/light</div><div class="line">  git pull</div><div class="line">  ```</div><div class="line">  </div><div class="line">3. 更新 `_config.yml`，以下是 0.1 版的預設配置，請依照個人需求自行調整。</div><br><div class="line">  ``` yaml</div><div class="line">  <span class="comment"># Basic</span></div><div class="line">  title: Hexo</div><div class="line">  subtitle: Node.js blog framework</div><div class="line">  description:</div><div class="line">  url: http://yoursite.com</div><div class="line">  author: John Doe</div><div class="line">  email:</div><div class="line">  language:</div><br><div class="line">  <span class="comment"># Permalink</span></div><div class="line">  root: /</div><div class="line">  permalink: :year/:month/:day/:title/</div><div class="line">  tag_dir: tags</div><div class="line">  archive_dir: archives</div><div class="line">  category_dir: posts</div><br><div class="line">  <span class="comment"># Archives</span></div><div class="line">  archive: 2</div><div class="line">  category: 2</div><div class="line">  tag: 2</div><br><div class="line">  <span class="comment"># Server</span></div><div class="line">  port: 4000</div><div class="line">  logger: <span class="literal">false</span></div><div class="line">  logger_format:</div><br><div class="line">  <span class="comment"># Date / Time format</span></div><div class="line">  date_format: MMM D, YYYY</div><div class="line">  time_format: H:mm:ss</div><br><div class="line">  <span class="comment"># Pagination</span></div><div class="line">  per_page: 10</div><div class="line">  pagination_dir: page</div><br><div class="line">  <span class="comment"># Disqus</span></div><div class="line">  disqus_shortname:</div><br><div class="line">  <span class="comment"># Extensions</span></div><div class="line">  plugins:</div><div class="line">  theme: light</div><div class="line">  exclude_generator:</div><br><div class="line">  <span class="comment"># Enhancement</span></div><div class="line">  auto_spacing: <span class="literal">false</span></div><div class="line">  titlecase: <span class="literal">false</span></div><br><div class="line">  <span class="comment"># Deploy</span></div><div class="line">  deploy:</div><div class="line">    type:</div><div class="line">  ```</div><br><div class="line">4. 修改 `package.json`。</div><br><div class="line">  ``` json</div><div class="line">  {</div><div class="line">    <span class="string">"name"</span>: <span class="string">"hexo"</span>,</div><div class="line">    <span class="string">"version"</span>: <span class="string">"0.0.1"</span>,</div><div class="line">    <span class="string">"private"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">"dependencies"</span>: {}</div><div class="line">  }</div><div class="line">  ```</div><br><div class="line">5. 若你之前有設定過佈署的話，請調整 `_config.yml` 中 `deploy` 的設定。</div><br><div class="line">  ``` yaml</div><div class="line">  deploy:</div><div class="line">    type: github</div><div class="line">    repository:</div><div class="line">    branch:</div><div class="line">  ```</div><br><div class="line">  `repository` 填入 GitHub repo 的連結，若 `repository` 為 `username.github.com` 這類型的話，則在 `branch` 填入 `master`，否則填入 `gh-pages`。</div><br><div class="line">** 以上步驟完成後，即可使用 0.1 的 Hexo 了！**</div><br><div class="line"><span class="comment">## 新功能</span></div><br><div class="line">0.1 當然不是白升級的，我加入了一些 &lt;del&gt; 無關緊要的 &lt;/del&gt; 新功能。</div><br><div class="line"><span class="comment">### Heroku 佈署</span></div><br><div class="line">除了 [GitHub] 之外，0.1 新增了 [Heroku] 的支援，雖然 [Heroku] 的使用本來就非常簡易，但身為一名 &lt;del&gt; 懶人 &lt;/del&gt;，能夠輕鬆設定當然是再好也不過了。</div><br><div class="line">我將佈署寫成了附加元件（Extension）的形式，因此日後所有的佈署方式應該都只需要三個步驟便能完成設定。</div><br><div class="line">1. 設定</div><br><div class="line">  修改 `_config.yml` 中 `deploy` 的設定。</div><br><div class="line">  ``` yaml</div><div class="line">  deploy:</div><div class="line">    type: heroku</div><div class="line">    repository:</div><div class="line">  ```</div><div class="line">  </div><div class="line">  `repository` 填入 Heroku repo 的連結。</div><br><div class="line">2. 建立</div><br><div class="line">  執行以下指令。</div><br><div class="line">  ``` bash</div><div class="line">  hexo setup_deploy</div><div class="line">  ```</div><br><div class="line">  Hexo 便會在資料夾中建立 `Procfile` 和 `app.js` 兩個檔案。Hexo 使用 [Connect] 處理靜態檔案。</div><br><div class="line">3. 佈署</div><br><div class="line">  執行以下指令。</div><br><div class="line">  ``` bash</div><div class="line">  hexo deploy</div><div class="line">  ```</div><br><div class="line">  然後就可以去泡杯咖啡等佈署完成了！</div><br><div class="line"><span class="comment">### 附加元件</span></div><br><div class="line">0.1 新增了更多種的附加元件（Extension），所有能夠分離的模組幾乎都成為了附加元件，目前總共有 7 種附加元件，分別是：</div><br><div class="line">- **Generator**：負責建立靜態檔案</div><div class="line">- **Renderer**：負責處理模版檔案</div><div class="line">- **Helper**：模版檔案內的函數</div><div class="line">- **Deployer**：負責佈署靜態檔案</div><div class="line">- **Processor**：負責處理原始檔案</div><div class="line">- **Tag**：文章檔案內的函數</div><div class="line">- **Console**：命令列介面（CLI）</div><br><div class="line">Hexo 使用以上的附加元件來建立靜態檔案，而執行步驟大致上為：</div><br><div class="line">Processor (with Tag) → Renderer (with Helper) → Generator</div><br><div class="line">Hexo 已事先內建了一些必須的附加元件：</div><br><div class="line">- **Generator**：負責建立靜態檔案</div><div class="line">  - home：首頁</div><div class="line">  - post：文章</div><div class="line">  - page：分頁</div><div class="line">  - category：分類彙整</div><div class="line">  - tag：標籤彙整</div><div class="line">  - archive：文章彙整（所有文章、每年文章、每月文章）</div><div class="line">- **Renderer**：負責處理模版檔案</div><div class="line">  - ejs：處理 [EJS] 檔案（.ejs）</div><div class="line">  - markdown：處理 [Markdown] 檔案（.md, .markdown, .mkd, .mkdn, .mdwn, .mdtxt, .mdtext）</div><div class="line">  - stylus：處理 [Stylus] 檔案，內含 [nib]（.styl, .stylus）</div><div class="line">  - swig：處理 [Swig] 檔案（.swig）</div><div class="line">  - yaml：處理 [Yaml] 檔案（.yml, .yaml）</div><div class="line">- **Helper**：模版檔案內的函數</div><div class="line">  - css：快速加入 CSS 檔案</div><div class="line">  - js：快速加入 JS 檔案</div><div class="line">  - escape：過濾 `&lt;`, `&gt;`, `<span class="string">'`, `"` 等符號</div><div class="line">  - trim：過濾空白</div><div class="line">  - strip：過濾 HTML 標籤</div><div class="line">  - partial：載入其他模版檔案（使用方式與 [express-partials] 相同）</div><div class="line">  - titlecase：將標題轉為合適的大小寫</div><div class="line">  - tagcloud：標籤雲</div><div class="line">- **Deployer**：負責佈署靜態檔案</div><div class="line">  - github</div><div class="line">  - heroku</div><div class="line">- **Processor**：負責處理原始檔案</div><div class="line">  - clear：清理上次建立的靜態檔案（清理 `public` 資料夾）</div><div class="line">  - load：載入原始檔案</div><div class="line">  - analyze：分析原始檔案</div><div class="line">  - theme：安裝主題</div><div class="line">- **Tag**：文章檔案內的函數（使用方式都和 [Octopress] 差不多）</div><div class="line">  - blockquote：插入 Block quote。</div><div class="line">  - code：插入程式碼。</div><div class="line">  - gist：插入 [Gist] 程式碼。</div><div class="line">  - jsfiddle：插入 [jsFiddle] 程式碼。</div><div class="line">  - pullquote：插入 [Pull quote](http://en.wikipedia.org/wiki/Pull_quote)</div><div class="line">  - youtube：插入 [Youtube] 影片</div><div class="line">  - vimeo：插入 [Vimeo] 影片 </div><div class="line">- **Console**：命令列介面（CLI）</div><div class="line">  - init：初始化</div><div class="line">  - config：顯示 `_config.yml` 的內容</div><div class="line">  - generate：建立靜態檔案</div><div class="line">  - server：開啟伺服器</div><div class="line">  - deploy：佈署</div><div class="line">  - new：建立新的文章</div><br><div class="line">有些附加元件因為需要另外安裝模組，所以沒有放進主程式內：</div><br><div class="line">- [hexo-generator-feed]：建立 RSS Feed</div><div class="line">- [hexo-generator-sitemap]：建立 Sitemap</div><div class="line">- [hexo-renderer-coffeescript]：處理 [CoffeeScript] 檔案（.coffee）</div><div class="line">- [hexo-renderer-haml]：處理 [Haml] 檔案（.haml）</div><div class="line">- [hexo-renderer-jade]：處理 [Jade] 檔案（.jade）</div><div class="line">- [hexo-renderer-less]：處理 [Less] 檔案（.less）</div><br><div class="line">使用 `npm install &lt;plugin&gt;` 安裝完畢之後，在 `_config.yml` 的 `plugins` 新增外掛名稱即可使用。</div><br><div class="line">附加元件的寫法可以參照 [原始碼](https://github.com/tommy351/hexo/tree/master/lib)。</div><br><div class="line">## 小改變</div><br><div class="line">### 伺服器新增記錄功能</div><br><div class="line">Hexo 利用 [Connect] 內建的 [logger](http://www.senchalabs.org/connect/logger.html) 功能來顯示記錄，使用方式非常簡單，修改 `_config.yml` 即可開啟。</div><br></code></pre></td></tr></table></figure> yaml
+logger: true
+logger_format:
+```</p>
 </li>
 </ol>
-<p><strong>以上步驟完成後，即可使用 0.1 的 Hexo 了！</strong>
-
-</p>
-<h2>新功能</h2>
-<p>0.1 當然不是白升級的，我加入了一些 <del>無關緊要的</del> 新功能。
-
-</p>
-<h3>Heroku 佈署</h3>
-<p>除了 <a href="https://github.com">GitHub</a> 之外，0.1 新增了 <a href="http://www.heroku.com/">Heroku</a> 的支援，雖然 <a href="http://www.heroku.com/">Heroku</a> 的使用本來就非常簡易，但身為一名 <del>懶人</del>，能夠輕鬆設定當然是再好也不過了。
-
-</p>
-<p>我將佈署寫成了附加元件（Extension）的形式，因此日後所有的佈署方式應該都只需要三個步驟便能完成設定。
-
-</p>
-<ol>
-<li><p>設定</p>
-<p>修改 <code>_config.yml</code> 中 <code>deploy</code> 的設定。</p>
-<pre><code class="lang-yaml"><div class="line"><span class="title">deploy</span>:</div><div class="line"> <span class="typedef"><span class="keyword">type</span>: heroku</span></div><div class="line"> repository:</div></code></pre>
-<p><code>repository</code> 填入 Heroku repo 的連結。</p>
-</li>
-<li><p>建立</p>
-<p>執行以下指令。</p>
-<pre><code class="lang-bash"><div class="line">hexo setup_deploy</div></code></pre>
-<p>Hexo 便會在資料夾中建立 <code>Procfile</code> 和 <code>app.js</code> 兩個檔案。Hexo 使用 <a href="http://www.senchalabs.org/connect/">Connect</a> 處理靜態檔案。</p>
-</li>
-<li><p>佈署</p>
-<p>執行以下指令。</p>
-<pre><code class="lang-bash"><div class="line">hexo deploy</div></code></pre>
-<p>然後就可以去泡杯咖啡等佈署完成了！</p>
-</li>
-</ol>
-<h3>附加元件</h3>
-<p>0.1 新增了更多種的附加元件（Extension），所有能夠分離的模組幾乎都成為了附加元件，目前總共有 7 種附加元件，分別是：
-
-</p>
-<ul>
-<li><strong>Generator</strong>：負責建立靜態檔案</li>
-<li><strong>Renderer</strong>：負責處理模版檔案</li>
-<li><strong>Helper</strong>：模版檔案內的函數</li>
-<li><strong>Deployer</strong>：負責佈署靜態檔案</li>
-<li><strong>Processor</strong>：負責處理原始檔案</li>
-<li><strong>Tag</strong>：文章檔案內的函數</li>
-<li><strong>Console</strong>：命令列介面（CLI）</li>
-</ul>
-<p>Hexo 使用以上的附加元件來建立靜態檔案，而執行步驟大致上為：
-
-</p>
-<p>Processor (with Tag) → Renderer (with Helper) → Generator
-
-</p>
-<p>Hexo 已事先內建了一些必須的附加元件：
-
-</p>
-<ul>
-<li><strong>Generator</strong>：負責建立靜態檔案<ul>
-<li>home：首頁</li>
-<li>post：文章</li>
-<li>page：分頁</li>
-<li>category：分類彙整</li>
-<li>tag：標籤彙整</li>
-<li>archive：文章彙整（所有文章、每年文章、每月文章）</li>
-</ul>
-</li>
-<li><strong>Renderer</strong>：負責處理模版檔案<ul>
-<li>ejs：處理 <a href="https://github.com/visionmedia/ejs">EJS</a> 檔案（.ejs）</li>
-<li>markdown：處理 <a href="http://daringfireball.net/projects/markdown/">Markdown</a> 檔案（.md, .markdown, .mkd, .mkdn, .mdwn, .mdtxt, .mdtext）</li>
-<li>stylus：處理 <a href="http://learnboost.github.com/stylus/">Stylus</a> 檔案，內含 <a href="http://visionmedia.github.com/nib/">nib</a>（.styl, .stylus）</li>
-<li>swig：處理 <a href="http://paularmstrong.github.com/swig/">Swig</a> 檔案（.swig）</li>
-<li>yaml：處理 <a href="http://www.yaml.org/">Yaml</a> 檔案（.yml, .yaml）</li>
-</ul>
-</li>
-<li><strong>Helper</strong>：模版檔案內的函數<ul>
-<li>css：快速加入 CSS 檔案</li>
-<li>js：快速加入 JS 檔案</li>
-<li>escape：過濾 <code>&lt;</code>, <code>&gt;</code>, <code>&#39;</code>, <code>&quot;</code> 等符號</li>
-<li>trim：過濾空白</li>
-<li>strip：過濾 HTML 標籤</li>
-<li>partial：載入其他模版檔案（使用方式與 <a href="https://github.com/publicclass/express-partials">express-partials</a> 相同）</li>
-<li>titlecase：將標題轉為合適的大小寫</li>
-<li>tagcloud：標籤雲</li>
-</ul>
-</li>
-<li><strong>Deployer</strong>：負責佈署靜態檔案<ul>
-<li>github</li>
-<li>heroku</li>
-</ul>
-</li>
-<li><strong>Processor</strong>：負責處理原始檔案<ul>
-<li>clear：清理上次建立的靜態檔案（清理 <code>public</code> 資料夾）</li>
-<li>load：載入原始檔案</li>
-<li>analyze：分析原始檔案</li>
-<li>theme：安裝主題</li>
-</ul>
-</li>
-<li><strong>Tag</strong>：文章檔案內的函數（使用方式都和 <a href="http://octopress.org">Octopress</a> 差不多）<ul>
-<li>blockquote：插入 Block quote。</li>
-<li>code：插入程式碼。</li>
-<li>gist：插入 <a href="https://gist.github.com/">Gist</a> 程式碼。</li>
-<li>jsfiddle：插入 <a href="http://jsfiddle.net/">jsFiddle</a> 程式碼。</li>
-<li>pullquote：插入 <a href="http://en.wikipedia.org/wiki/Pull_quote">Pull quote</a></li>
-<li>youtube：插入 <a href="https://www.youtube.com/">Youtube</a> 影片</li>
-<li>vimeo：插入 <a href="http://vimeo.com/">Vimeo</a> 影片 </li>
-</ul>
-</li>
-<li><strong>Console</strong>：命令列介面（CLI）<ul>
-<li>init：初始化</li>
-<li>config：顯示 <code>_config.yml</code> 的內容</li>
-<li>generate：建立靜態檔案</li>
-<li>server：開啟伺服器</li>
-<li>deploy：佈署</li>
-<li>new：建立新的文章</li>
-</ul>
-</li>
-</ul>
-<p>有些附加元件因為需要另外安裝模組，所以沒有放進主程式內：
-
-</p>
-<ul>
-<li><a href="https://github.com/tommy351/hexo-plugins/tree/master/generator/feed">hexo-generator-feed</a>：建立 RSS Feed</li>
-<li><a href="https://github.com/tommy351/hexo-plugins/tree/master/generator/sitemap">hexo-generator-sitemap</a>：建立 Sitemap</li>
-<li><a href="https://github.com/tommy351/hexo-plugins/tree/master/renderer/coffeescript">hexo-renderer-coffeescript</a>：處理 <a href="http://coffeescript.org/">CoffeeScript</a> 檔案（.coffee）</li>
-<li><a href="https://github.com/tommy351/hexo-plugins/tree/master/renderer/haml">hexo-renderer-haml</a>：處理 <a href="http://haml.info/">Haml</a> 檔案（.haml）</li>
-<li><a href="https://github.com/tommy351/hexo-plugins/tree/master/renderer/jade">hexo-renderer-jade</a>：處理 <a href="http://jade-lang.com/">Jade</a> 檔案（.jade）</li>
-<li><a href="https://github.com/tommy351/hexo-plugins/tree/master/renderer/less">hexo-renderer-less</a>：處理 <a href="http://lesscss.org/">Less</a> 檔案（.less）</li>
-</ul>
-<p>使用 <code>npm install &lt;plugin&gt;</code> 安裝完畢之後，在 <code>_config.yml</code> 的 <code>plugins</code> 新增外掛名稱即可使用。
-
-</p>
-<p>附加元件的寫法可以參照 <a href="https://github.com/tommy351/hexo/tree/master/lib">原始碼</a>。
-
-</p>
-<h2>小改變</h2>
-<h3>伺服器新增記錄功能</h3>
-<p>Hexo 利用 <a href="http://www.senchalabs.org/connect/">Connect</a> 內建的 <a href="http://www.senchalabs.org/connect/logger.html">logger</a> 功能來顯示記錄，使用方式非常簡單，修改 <code>_config.yml</code> 即可開啟。
-
-</p>
-<pre><code class="lang-yaml"><div class="line"><span class="attribute">logger</span>: <span class="string">true</span></div><div class="line"><span class="attribute">logger_format:</div></code></pre>
 <p>記錄的格式 <code>logger_format</code> 可參考 Connect 的 <a href="http://www.senchalabs.org/connect/logger.html">文件</a> 自行修改。
 
 </p>
@@ -520,8 +377,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Hexo 颯爽登場！]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/10/11/hexo-debut/"/>
-    <id>http://zespia.tw/blog/2012/10/11/hexo-debut/</id>
+    <link href="http://zespia.tw/uncategorized/2012/10/11/hexo-debut/"/>
+    <id>http://zespia.tw/uncategorized/2012/10/11/hexo-debut/</id>
     <published>2012-10-11T07:22:47.000Z</published>
     <updated>2012-10-29T14:31:15.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibpMKNkpRxVwsK.jpg" alt="ちり - Super sonic Child (id=29663134)">
@@ -575,12 +432,14 @@
 <p>前提是必須先安裝 Node.js，至於怎麼安裝自己 Google 吧
 
 </p>
-<pre><code class="lang-bash"><div class="line">npm install hexo -g</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line">npm install hexo -g</div></code></pre></td></tr></table></figure>
+
 <p>僅需一步就把 Hexo 本體和所有相依套件安裝完畢，很簡單吧？
 
 </p>
 <h3>初始化</h3>
-<pre><code class="lang-bash"><div class="line">hexo init &lt;folder&gt;</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line">hexo init &lt;folder&gt;</div></code></pre></td></tr></table></figure>
+
 <p>如果指定 <code>&lt;folder&gt;</code>，便會在目前的資料夾建立一個名為 <code>&lt;folder&gt;</code> 的新資料夾；否則會在目前資料夾初始化。
 
 </p>
@@ -592,7 +451,8 @@
 
 </p>
 <h3>建立文章、分頁</h3>
-<pre><code class="lang-bash"><div class="line">hexo new_post &lt;title&gt;</div><div class="line">hexo new_page &lt;title&gt;</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div></code></pre></td><td class="code"><pre><code><div class="line">hexo new_post &lt;title&gt;</div><div class="line">hexo new_page &lt;title&gt;</div></code></pre></td></tr></table></figure>
+
 <p>Hexo 已經內建一些外掛了，你可以用這些外掛快速插入元素：
 
 </p>
@@ -609,16 +469,19 @@
 
 </p>
 <h3>生成檔案</h3>
-<pre><code class="lang-bash"><div class="line">hexo generate</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line">hexo generate</div></code></pre></td></tr></table></figure>
+
 <p>依照環境不同，速度可能會有差別，在我的電腦上需要大約 4 秒鐘。
 
 </p>
 <h3>伺服器</h3>
-<pre><code class="lang-bash"><div class="line">hexo server</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line">hexo server</div></code></pre></td></tr></table></figure>
+
 <p>伺服器會跑在 <code>http://localhost:port</code> （<code>port</code> 預設為 <code>4000</code>，可在 <code>_config.yml</code> 設定），也可以搭配 <a href="http://pow.cx/">Pow</a> 使用：
 
 </p>
-<pre><code class="lang-bash"><div class="line">cd ~/.pow</div><div class="line">ln -s /path/to/myapp</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div></code></pre></td><td class="code"><pre><code><div class="line">cd ~/.pow</div><div class="line">ln -s /path/to/myapp</div></code></pre></td></tr></table></figure>
+
 <p>基本使用差不多就是這樣子，非常簡單。至於外掛和主題的撰寫方法，我之後會在 <a href="https://github.com/tommy351/hexo/wiki">Wiki</a> 補完，你也可以嘗試看看<a href="https://github.com/tommy351/hexo">原始碼</a>。
 
 </p>
@@ -648,10 +511,10 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[愛夏的煉金工房 ─ 黃昏大地之煉金術士]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/09/05/atelier-ayesha/"/>
-    <id>http://zespia.tw/blog/2012/09/05/atelier-ayesha/</id>
+    <link href="http://zespia.tw/uncategorized/2012/09/05/atelier-ayesha/"/>
+    <id>http://zespia.tw/uncategorized/2012/09/05/atelier-ayesha/</id>
     <published>2012-09-05T10:39:00.000Z</published>
-    <updated>2012-10-10T16:39:10.000Z</updated>
+    <updated>2013-01-17T08:37:07.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibobbTlfxZgITW.jpg" alt="阿霞的鍊金工房 ─ 黃昏市場之煉金術士">
 
 </p>
@@ -713,8 +576,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Node.js 初試 ─ Nyanko]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/07/14/nodejs-nyanko/"/>
-    <id>http://zespia.tw/blog/2012/07/14/nodejs-nyanko/</id>
+    <link href="http://zespia.tw/uncategorized/2012/07/14/nodejs-nyanko/"/>
+    <id>http://zespia.tw/uncategorized/2012/07/14/nodejs-nyanko/</id>
     <published>2012-07-13T16:14:00.000Z</published>
     <updated>2012-10-10T16:37:31.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iKst8nFEGcU8A.png" alt="">
@@ -751,11 +614,13 @@
 <p><a href="https://github.com/creationix/nvm/">nvm</a> 就是類似於 <a href="https://rvm.io/">rvm</a> 的版本管理工具，可隨意安裝、替換不同的 <a href="http://nodejs.org/">Node.js</a> 版本。
 
 </p>
-<pre><code><div class="line"><span class="variable">$ </span>git clone <span class="symbol">git:</span>/<span class="regexp">/github.com/creationix</span><span class="regexp">/nvm.git ~/nvm</span></div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="variable">$ </span>git clone <span class="symbol">git:</span>/<span class="regexp">/github.com/creationix</span><span class="regexp">/nvm.git ~/nvm</span></div></code></pre></td></tr></table></figure>
+
 <p>安裝完後必須在 <code>.bash_profile</code> 加入以下內容才可直接使用。
 
 </p>
-<pre><code><div class="line">. ~/<span class="variable">.nvm</span>/nvm<span class="variable">.sh</span></div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line">. ~/<span class="variable">.nvm</span>/nvm<span class="variable">.sh</span></div></code></pre></td></tr></table></figure>
+
 <p>而 <a href="http://npmjs.org/">npm</a> 則是類似於 <a href="http://rubygems.org/">gem</a> 的模組管理工具，只要安裝 <a href="http://nodejs.org/">Node.js</a> 就會附贈，不需要另外安裝。
 
 </p>
@@ -878,8 +743,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[私用主題 Phase]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/05/02/new-theme-phase/"/>
-    <id>http://zespia.tw/blog/2012/05/02/new-theme-phase/</id>
+    <link href="http://zespia.tw/uncategorized/2012/05/02/new-theme-phase/"/>
+    <id>http://zespia.tw/uncategorized/2012/05/02/new-theme-phase/</id>
     <published>2012-05-02T01:35:00.000Z</published>
     <updated>2012-09-22T01:18:51.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iMujOkELjjcra.png" alt="">
@@ -941,8 +806,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[First Order]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/03/16/first-order/"/>
-    <id>http://zespia.tw/blog/2012/03/16/first-order/</id>
+    <link href="http://zespia.tw/uncategorized/2012/03/16/first-order/"/>
+    <id>http://zespia.tw/uncategorized/2012/03/16/first-order/</id>
     <published>2012-03-16T13:06:00.000Z</published>
     <updated>2012-10-10T16:39:05.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iNmV7aO65tXdE.jpg" alt="ユイザキ - ミサカとおしゃべりしよ (id=22543726)">
@@ -1023,8 +888,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Windows 8 Consumer Preview 試玩]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/03/03/windows-8-preview/"/>
-    <id>http://zespia.tw/blog/2012/03/03/windows-8-preview/</id>
+    <link href="http://zespia.tw/uncategorized/2012/03/03/windows-8-preview/"/>
+    <id>http://zespia.tw/uncategorized/2012/03/03/windows-8-preview/</id>
     <published>2012-03-03T11:54:00.000Z</published>
     <updated>2012-10-10T16:36:09.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/iQ6n16BPfbQc.jpg" alt="">
@@ -1114,8 +979,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 audio 實驗]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/02/04/lab-html5-audio/"/>
-    <id>http://zespia.tw/blog/2012/02/04/lab-html5-audio/</id>
+    <link href="http://zespia.tw/uncategorized/2012/02/04/lab-html5-audio/"/>
+    <id>http://zespia.tw/uncategorized/2012/02/04/lab-html5-audio/</id>
     <published>2012-02-04T05:29:00.000Z</published>
     <updated>2012-11-12T05:56:46.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/inE9d4C1xPbYD.png" alt="">
@@ -1130,14 +995,16 @@
 <p>首先必須了解<code>audio</code>標籤的使用方式：
 
 </p>
-<pre><code class="lang-html"><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">controls</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.mp3"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"music.ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></code></pre></td><td class="code"><pre><code><div class="line">&lt;audio controls&gt;</div><div class="line">	&lt;source src="music.mp3"&gt;</div><div class="line">	&lt;source src="music.ogg"&gt;</div><div class="line">&lt;/audio&gt;</div></code></pre></td></tr></table></figure>
+
 <p>輸入以上代碼後，便可在網頁中看到瀏覽器內建的播放器。每種瀏覽器支援的播放類型不一，最保險的方法是備妥<code>mp3</code>、<code>ogg</code>。
 
 </p>
 <p>為了浪費時間，當然不可能用瀏覽器的預設介面，所以刪除<code>controls</code>屬性，透過 JavaScript 操作：
 
 </p>
-<pre><code class="lang-js"><div class="line"><span class="keyword">var</span> audio = document.getElementsByTagName(<span class="string">'audio'</span>)[<span class="number">0</span>];</div><div class="line"><span class="comment">// 播放</span></div><div class="line">audio.play();</div><div class="line"><span class="comment">// 暫停</span></div><div class="line">audio.pause();</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="keyword">var</span> audio = document.getElementsByTagName(<span class="string">'audio'</span>)[<span class="number">0</span>];</div><div class="line"><span class="comment">// 播放</span></div><div class="line">audio.play();</div><div class="line"><span class="comment">// 暫停</span></div><div class="line">audio.pause();</div></code></pre></td></tr></table></figure>
+
 <p>只需要懂這兩個函數，就可製作最基礎的播放器了，其他複雜的指令可參閱文末的參考出處。
 
 </p>
@@ -1170,30 +1037,36 @@
 <p>時間的控制方式如下，單位為秒數，例如跳至第 100 秒的位置：
 
 </p>
-<pre><code class="lang-js"><div class="line">audio.currentTime = <span class="number">100</span>;</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line">audio.currentTime = <span class="number">100</span>;</div></code></pre></td></tr></table></figure>
+
 <p>音量的控制方式如下，範圍為 0~1，例如將音量調整至一半大小：
 
 </p>
-<pre><code class="lang-js"><div class="line">audio.volume = <span class="number">0.5</span>;</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line">audio.volume = <span class="number">0.5</span>;</div></code></pre></td></tr></table></figure>
+
 <p><code>audio</code>可綁定<code>play</code>, <code>pause</code>, <code>ended</code>, <code>progress</code>, <code>canplay</code>, <code>timeupdate</code>等事件。<code>play</code>與<code>pause</code>如字面上意思，分別為播放、暫停後生效。
 
 </p>
-<pre><code class="lang-js"><div class="line">audio.addEventListener(<span class="string">'play'</span>, <span class="keyword">function</span>(){</div><div class="line">    play.title = <span class="string">'pause'</span>;</div><div class="line">}, <span class="literal">false</span>);</div><br><div class="line">audio.addEventListener(<span class="string">'pause'</span>, <span class="keyword">function</span>(){</div><div class="line">    play.title = <span class="string">'play'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div></code></pre></td><td class="code"><pre><code><div class="line">audio.addEventListener(<span class="string">'play'</span>, <span class="keyword">function</span>(){</div><div class="line">	play.title = <span class="string">'pause'</span>;</div><div class="line">}, <span class="literal">false</span>);</div><br><div class="line">audio.addEventListener(<span class="string">'pause'</span>, <span class="keyword">function</span>(){</div><div class="line">	play.title = <span class="string">'play'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre></td></tr></table></figure>
+
 <p><code>ended</code>為結束後生效，當音樂結束後，可透過此事件讓時間歸零。
 
 </p>
-<pre><code class="lang-js"><div class="line">audio.addEventListener(<span class="string">'ended'</span>, <span class="keyword">function</span>(){</div><div class="line">    <span class="keyword">this</span>.currentTime = <span class="number">0</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></code></pre></td><td class="code"><pre><code><div class="line">audio.addEventListener(<span class="string">'ended'</span>, <span class="keyword">function</span>(){</div><div class="line">	<span class="keyword">this</span>.currentTime = <span class="number">0</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre></td></tr></table></figure>
+
 <p>當音樂檔案開始載入後，便會啟動<code>progress</code>事件，可透過此事件監測下載進度。Firefox 可能會發生問題，建議搭配<code>durationchange</code>事件使用。
 
 </p>
-<pre><code class="lang-js"><div class="line">audio.addEventListener(<span class="string">'progress'</span>, <span class="keyword">function</span>(){</div><div class="line">    <span class="keyword">var</span> endVal = <span class="keyword">this</span>.seekable &amp;&amp; <span class="keyword">this</span>.seekable.length ? <span class="keyword">this</span>.seekable.end(<span class="number">0</span>) : <span class="number">0</span>;</div><div class="line">    buffer.style.width = (<span class="number">100</span> / (<span class="keyword">this</span>.duration || <span class="number">1</span>) * endVal) + <span class="string">'%'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></code></pre></td><td class="code"><pre><code><div class="line">audio.addEventListener(<span class="string">'progress'</span>, <span class="keyword">function</span>(){</div><div class="line">	<span class="keyword">var</span> endVal = <span class="keyword">this</span>.seekable && <span class="keyword">this</span>.seekable.length ? <span class="keyword">this</span>.seekable.end(<span class="number">0</span>) : <span class="number">0</span>;</div><div class="line">	buffer.style.width = (<span class="number">100</span> / (<span class="keyword">this</span>.duration || <span class="number">1</span>) * endVal) + <span class="string">'%'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre></td></tr></table></figure>
+
 <p>當音樂下載到一定程度後，<code>canplay</code>事件便會生效，一般會透過此事件初始化播放器。相同類型的事件還有很多，依照啟動順序分別為：<code>loadstart</code>, <code>durationchange</code>, <code>loadeddata</code>, <code>progress</code>, <code>canplay</code>, <code>canplaythrough</code>。
 
 </p>
 <p><code>timeupdate</code>會在音樂播放時不斷生效，可透過此事件更新時間。
 
 </p>
-<pre><code class="lang-js"><div class="line">audio.addEventListener(<span class="string">'timeupdate'</span>, <span class="keyword">function</span>(){</div><div class="line">    progress.style.width = (<span class="keyword">this</span>.currentTime / <span class="keyword">this</span>.duration) * <span class="number">100</span> + <span class="string">'%'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></code></pre></td><td class="code"><pre><code><div class="line">audio.addEventListener(<span class="string">'timeupdate'</span>, <span class="keyword">function</span>(){</div><div class="line">	progress.style.width = (<span class="keyword">this</span>.currentTime / <span class="keyword">this</span>.duration) * <span class="number">100</span> + <span class="string">'%'</span>;</div><div class="line">}, <span class="literal">false</span>);</div></code></pre></td></tr></table></figure>
+
 <h2>播放列表</h2>
 <p>一個播放器的基礎功能就此完成，能夠播放、暫停、調整音量、調整時間。但這顯然還不夠，播放列表對於播放器而言相當重要。<em>（大概啦）</em>
 
@@ -1211,7 +1084,8 @@
 <p>範例內已設定了一些參數，可在<code>js/script.js</code>內更改。第 5 行的<code>continous</code>參數為連續播放，第 6 行的<code>autoplay</code>參數為自動播放，第 7 行的<code>playlist</code>陣列請自行設定，壓縮檔內<strong>不會</strong>附帶範例內的音樂檔案。<code>playlist</code>陣列的格式如下：
 
 </p>
-<pre><code class="lang-js"><div class="line"><span class="keyword">var</span> playlist = [</div><div class="line">    {</div><div class="line">        title: <span class="string">'Tell Your World'</span>,</div><div class="line">        artist: <span class="string">'livetune feat. 初音ミク'</span>,</div><div class="line">        album: <span class="string">'Tell Your World'</span>,</div><div class="line">        cover: <span class="string">'cover/tell_your_world.jpg'</span>,</div><div class="line">        mp3: <span class="string">'music/tell_your_world.mp3'</span>,</div><div class="line">        ogg: <span class="string">'music/tell_your_world.ogg'</span></div><div class="line">    }</div><div class="line">];</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="keyword">var</span> playlist = [</div><div class="line">	{</div><div class="line">		title: <span class="string">'Tell Your World'</span>,</div><div class="line">		artist: <span class="string">'livetune feat. 初音ミク'</span>,</div><div class="line">		album: <span class="string">'Tell Your World'</span>,</div><div class="line">		cover: <span class="string">'cover/tell_your_world.jpg'</span>,</div><div class="line">		mp3: <span class="string">'music/tell_your_world.mp3'</span>,</div><div class="line">		ogg: <span class="string">'music/tell_your_world.ogg'</span></div><div class="line">	}</div><div class="line">];</div></code></pre></td></tr></table></figure>
+
 <p><code>title</code>為標題，<code>artist</code>為演出者，<code>album</code>為專輯名稱，<code>cover</code>為專輯封面的路徑，<code>mp3</code>、<code>ogg</code>分別為音樂檔案的路徑，建議備妥兩種格式的檔案，<del>要不然 Firefox 和 Opera 不就只能去死了嗎？</del>
 
 </p>
@@ -1235,8 +1109,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Slash — 專為 Octopress 設計的極簡主題]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/01/25/slash-theme/"/>
-    <id>http://zespia.tw/blog/2012/01/25/slash-theme/</id>
+    <link href="http://zespia.tw/uncategorized/2012/01/25/slash-theme/"/>
+    <id>http://zespia.tw/uncategorized/2012/01/25/slash-theme/</id>
     <published>2012-01-25T08:27:00.000Z</published>
     <updated>2012-10-11T07:07:47.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i8oyJmY5lRJEJ.png" alt="">
@@ -1292,8 +1166,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[如何利用 CSS 製作多級選單？]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/01/24/css-multi-level-menu/"/>
-    <id>http://zespia.tw/blog/2012/01/24/css-multi-level-menu/</id>
+    <link href="http://zespia.tw/uncategorized/2012/01/24/css-multi-level-menu/"/>
+    <id>http://zespia.tw/uncategorized/2012/01/24/css-multi-level-menu/</id>
     <published>2012-01-24T00:00:00.000Z</published>
     <updated>2012-09-22T01:22:59.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ibx37Gknqf5wtK.PNG" alt="一般常見的選單">
@@ -1308,12 +1182,14 @@
 <span id="more"></span>
 
 <h3>HTML</h3>
-<pre><code class="lang-html"><div class="line"><span class="tag">&lt;<span class="title">nav</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">ul</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">ul</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="title">li</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2-1<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="title">ul</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2-1-1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2-1-2<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2-2<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 2-3<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 3<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>選單 4<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">nav</span>&gt;</span></div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div></code></pre></td><td class="code"><pre><code><div class="line">&lt;nav&gt;</div><div class="line">	&lt;ul&gt;</div><div class="line">		&lt;li&gt;&lt;a href=""&gt; 選單 1&lt;/a&gt;&lt;/li&gt;</div><div class="line">		&lt;li&gt;</div><div class="line">			&lt;a href=""&gt; 選單 2&lt;/a&gt;</div><div class="line">			&lt;ul&gt;</div><div class="line">				&lt;li&gt;</div><div class="line">					&lt;a href=""&gt; 選單 2-1&lt;/a&gt;</div><div class="line">					&lt;ul&gt;</div><div class="line">						&lt;li&gt;&lt;a href=""&gt; 選單 2-1-1&lt;/a&gt;&lt;/li&gt;</div><div class="line">						&lt;li&gt;&lt;a href=""&gt; 選單 2-1-2&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;/ul&gt;</div><div class="line">				&lt;/li&gt;</div><div class="line">				&lt;li&gt;&lt;a href=""&gt; 選單 2-2&lt;/a&gt;&lt;/li&gt;</div><div class="line">				&lt;li&gt;&lt;a href=""&gt; 選單 2-3&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;/ul&gt;</div><div class="line">		&lt;/li&gt;</div><div class="line">		&lt;li&gt;&lt;a href=""&gt; 選單 3&lt;/a&gt;&lt;/li&gt;</div><div class="line">		&lt;li&gt;&lt;a href=""&gt; 選單 4&lt;/a&gt;&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/nav&gt;</div></code></pre></td></tr></table></figure>
+
 <p>選單的 HTML 如上，所有的選單物件都是可點選的連結，理論上無限層級。
 
 </p>
 <h3>CSS</h3>
-<pre><code class="lang-css"><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative;</span></span> <span class="comment">/* 使子選單依照母選單的座標顯示 */</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 設定母選單的連結樣式 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="tag">a</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">url(detail.png)</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 當母選單下沒有子選單時，也就是說只有一個連結時，隱藏 detail.png */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="tag">a</span><span class="pseudo">:only-child</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> none;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span><span class="pseudo">:hover</span> &gt; <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> block;</span></span> <span class="comment">/* 滑鼠滑入母選單後，顯示子選單 */</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 二級選單顯示於一級選單的正下方 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute;</span></span></div><div class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">100</span>%;</span></span></div><div class="line">  <span class="rule"><span class="attribute">list-style</span>:<span class="value"> none;</span></span></div><div class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> none;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 三級選單則顯示於二級選單的右方 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">ul</span> <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute;</span></span></div><div class="line">  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">100</span>%;</span></span></div><div class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div><div class="line-number">22</div><div class="line-number">23</div><div class="line-number">24</div><div class="line-number">25</div><div class="line-number">26</div><div class="line-number">27</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative;</span></span> <span class="comment">/* 使子選單依照母選單的座標顯示 */</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 設定母選單的連結樣式 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="tag">a</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">url(detail.png)</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 當母選單下沒有子選單時，也就是說只有一個連結時，隱藏 detail.png */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span> <span class="tag">a</span><span class="pseudo">:only-child</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">background</span>:<span class="value"> none;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="tag">ul</span> <span class="tag">li</span><span class="pseudo">:hover</span> &<span class="tag">gt</span>; <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> block;</span></span> <span class="comment">/* 滑鼠滑入母選單後，顯示子選單 */</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 二級選單顯示於一級選單的正下方 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute;</span></span></div><div class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">100</span>%;</span></span></div><div class="line">  <span class="rule"><span class="attribute">list-style</span>:<span class="value"> none;</span></span></div><div class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> none;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="comment">/* 三級選單則顯示於二級選單的右方 */</span></div><div class="line"><span class="tag">ul</span> <span class="tag">ul</span> <span class="tag">ul</span> <span class="rules">{</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute;</span></span></div><div class="line">  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">100</span>%;</span></span></div><div class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div></code></pre></td></tr></table></figure>
+
 <p>這樣就完成了所有步驟，不需要繁複的 JavaScript，是不是很簡單呢？
 
 </p>
@@ -1330,8 +1206,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[如何利用 jQuery 製作頁籤？]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/01/21/jquery-tabs/"/>
-    <id>http://zespia.tw/blog/2012/01/21/jquery-tabs/</id>
+    <link href="http://zespia.tw/uncategorized/2012/01/21/jquery-tabs/"/>
+    <id>http://zespia.tw/uncategorized/2012/01/21/jquery-tabs/</id>
     <published>2012-01-21T10:10:00.000Z</published>
     <updated>2012-10-10T16:38:54.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i3hFGFugcShjF.jpg" alt="在文章中放入不相干的圖片好像已經成為定番？隨便啦">
@@ -1350,14 +1226,17 @@
 </p>
 <h2>基礎</h2>
 <h3>HTML</h3>
-<pre><code class="lang-html"><div class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"tabs"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"enable"</span>&gt;</span>頁籤 1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>頁籤 2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>頁籤 3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>頁籤 4<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"contents"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span>&gt;</span>頁籤 1 的內容<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span>&gt;</span>頁籤 2 的內容<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span>&gt;</span>頁籤 3 的內容<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span>&gt;</span>頁籤 4 的內容<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div></code></pre></td><td class="code"><pre><code><div class="line">&lt;ul id="tabs"&gt;</div><div class="line">	&lt;li class="enable"&gt; 頁籤 1&lt;/li&gt;</div><div class="line">	&lt;li&gt; 頁籤 2&lt;/li&gt;</div><div class="line">	&lt;li&gt; 頁籤 3&lt;/li&gt;</div><div class="line">	&lt;li&gt; 頁籤 4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;div id="contents"&gt;</div><div class="line">	&lt;div&gt; 頁籤 1 的內容 &lt;/div&gt;</div><div class="line">	&lt;div&gt; 頁籤 2 的內容 &lt;/div&gt;</div><div class="line">	&lt;div&gt; 頁籤 3 的內容 &lt;/div&gt;</div><div class="line">	&lt;div&gt; 頁籤 4 的內容 &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></code></pre></td></tr></table></figure>
+
 <p>以<code>ul#tabs</code>當作標籤，而<code>#contents</code>內則是頁籤內容。我盡可能簡化 HTML 中不必要的欄位，其他功能都將在 JS 中實現。
 
 </p>
 <h3>CSS</h3>
-<pre><code class="lang-css"><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ccc</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> none;</span></span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block;</span></span></div><div class="line">    <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">5</span>px;</span></span></div><div class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5</span>px <span class="number">10</span>px;</span></span></div><div class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#999</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">cursor</span>:<span class="value"> pointer;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="pseudo">:hover</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#666</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="class">.enable</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> -<span class="number">1</span>px;</span></span></div><div class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#333</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#contents</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ccc</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">16</span>px <span class="hexcolor">#ccc</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#contents</span> &gt; <span class="tag">div</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> none;</span></span></div><div class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> justify;</span></span></div><div class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10</span>px <span class="number">15</span>px;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#contents</span> &gt; <span class="tag">div</span><span class="pseudo">:first-of-type</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> block;</span></span></div><div class="line"><span class="rule">}</span></span></div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div><div class="line-number">22</div><div class="line-number">23</div><div class="line-number">24</div><div class="line-number">25</div><div class="line-number">26</div><div class="line-number">27</div><div class="line-number">28</div><div class="line-number">29</div><div class="line-number">30</div><div class="line-number">31</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ccc</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> none;</span></span></div><div class="line">	<span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block;</span></span></div><div class="line">	<span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">5</span>px;</span></span></div><div class="line">	<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5</span>px <span class="number">10</span>px;</span></span></div><div class="line">	<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#999</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">cursor</span>:<span class="value"> pointer;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="pseudo">:hover</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#666</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="class">.enable</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> -<span class="number">1</span>px;</span></span></div><div class="line">	<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#333</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#contents</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ccc</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">16</span>px <span class="hexcolor">#ccc</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#contents</span> &<span class="tag">gt</span>; <span class="tag">div</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">display</span>:<span class="value"> none;</span></span></div><div class="line">	<span class="rule"><span class="attribute">text-align</span>:<span class="value"> justify;</span></span></div><div class="line">	<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10</span>px <span class="number">15</span>px;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#contents</span> &<span class="tag">gt</span>; <span class="tag">div</span><span class="pseudo">:first-of-type</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">display</span>:<span class="value"> block;</span></span></div><div class="line"><span class="rule">}</span></span></div></code></pre></td></tr></table></figure>
+
 <h3>JS</h3>
-<pre><code class="lang-js"><div class="line">(<span class="keyword">function</span>($){</div><div class="line">    <span class="comment">// 用 each 遍歷頁籤</span></div><div class="line">    $(<span class="string">'#tabs li'</span>).each(<span class="keyword">function</span>(i){</div><div class="line">        <span class="keyword">var</span> _i = i;</div><br><div class="line">        <span class="comment">// 綁定 click 事件到頁籤上，若要改為滑鼠移入切換頁籤的話，將 click 改為 mouseenter</span></div><div class="line">        $(<span class="keyword">this</span>).click(<span class="keyword">function</span>(){</div><div class="line">            <span class="comment">// 移除其他頁籤的 class，並將 class 新增至所選頁籤</span></div><div class="line">            $(<span class="keyword">this</span>).parent().children().removeClass(<span class="string">'enable'</span>).eq(_i).addClass(<span class="string">'enable'</span>);</div><div class="line">            <span class="comment">// 隱藏其他頁籤的內容，並顯示所選頁籤的內容</span></div><div class="line">            $(<span class="string">'#contents'</span>).children(<span class="string">'div'</span>).hide().eq(_i).show();</div><div class="line">        });</div><div class="line">    });</div><div class="line">})(jQuery);</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div></code></pre></td><td class="code"><pre><code><div class="line">(<span class="keyword">function</span>($){</div><div class="line">	<span class="comment">// 用 each 遍歷頁籤</span></div><div class="line">	$(<span class="string">'#tabs li'</span>).each(<span class="keyword">function</span>(i){</div><div class="line">		<span class="keyword">var</span> _i = i;</div><br><div class="line">		<span class="comment">// 綁定 click 事件到頁籤上，若要改為滑鼠移入切換頁籤的話，將 click 改為 mouseenter</span></div><div class="line">		$(<span class="keyword">this</span>).click(<span class="keyword">function</span>(){</div><div class="line">			<span class="comment">// 移除其他頁籤的 class，並將 class 新增至所選頁籤</span></div><div class="line">			$(<span class="keyword">this</span>).parent().children().removeClass(<span class="string">'enable'</span>).eq(_i).addClass(<span class="string">'enable'</span>);</div><div class="line">			<span class="comment">// 隱藏其他頁籤的內容，並顯示所選頁籤的內容</span></div><div class="line">			$(<span class="string">'#contents'</span>).children(<span class="string">'div'</span>).hide().eq(_i).show();</div><div class="line">		});</div><div class="line">	});</div><div class="line">})(jQuery);</div></code></pre></td></tr></table></figure>
+
 <p>首先透過<code>each</code>遍歷所有頁籤（<code>#tabs li</code>），並在所有頁籤上綁定事件。
 
 </p>
@@ -1376,12 +1255,14 @@
 
 </p>
 <h3>HTML</h3>
-<pre><code class="lang-html"><div class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"tabs"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"enable"</span>&gt;</span>頁籤 1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>頁籤 2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>頁籤 3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>頁籤 4<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"contents"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">div</span>&gt;</span>頁籤 1 的內容<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">div</span>&gt;</span>頁籤 2 的內容<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">div</span>&gt;</span>頁籤 3 的內容<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">div</span>&gt;</span>頁籤 4 的內容<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div></code></pre></td><td class="code"><pre><code><div class="line">&lt;ul id="tabs"&gt;</div><div class="line">	&lt;li class="enable"&gt; 頁籤 1&lt;/li&gt;</div><div class="line">	&lt;li&gt; 頁籤 2&lt;/li&gt;</div><div class="line">	&lt;li&gt; 頁籤 3&lt;/li&gt;</div><div class="line">	&lt;li&gt; 頁籤 4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;div id="container"&gt;</div><div class="line">	&lt;div id="contents"&gt;</div><div class="line">		&lt;div&gt; 頁籤 1 的內容 &lt;/div&gt;</div><div class="line">		&lt;div&gt; 頁籤 2 的內容 &lt;/div&gt;</div><div class="line">		&lt;div&gt; 頁籤 3 的內容 &lt;/div&gt;</div><div class="line">		&lt;div&gt; 頁籤 4 的內容 &lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></code></pre></td></tr></table></figure>
+
 <p>進階篇的 HTML 結構與基礎篇只有一點小差別，僅在原本的<code>#contents</code>的區塊外又包了一層<code>#container</code>。
 
 </p>
 <h3>CSS</h3>
-<pre><code class="lang-css"><div class="line"><span class="id">#tabs</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> relative;</span></span></div><div class="line">    <span class="rule"><span class="attribute">z-index</span>:<span class="value"> <span class="number">1</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ccc</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> none;</span></span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block;</span></span></div><div class="line">    <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">5</span>px;</span></span></div><div class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5</span>px <span class="number">10</span>px;</span></span></div><div class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#999</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">cursor</span>:<span class="value"> pointer;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="pseudo">:hover</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#666</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="class">.enable</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> -<span class="number">1</span>px;</span></span></div><div class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#333</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#container</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ccc</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">16</span>px <span class="hexcolor">#ccc</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">500</span>px;</span></span></div><div class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> relative;</span></span></div><div class="line">    <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#contents</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute;</span></span></div><div class="line">    <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">0</span>;</span></span></div><div class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">2000</span>px;</span></span> <span class="comment">/* 內容寬度 * 頁籤數 */</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#contents</span> &gt; <span class="tag">div</span><span class="rules">{</div><div class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10</span>px <span class="number">15</span>px;</span></span></div><div class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> justify;</span></span></div><div class="line">    <span class="rule"><span class="attribute">float</span>:<span class="value"> left;</span></span></div><div class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">470</span>px;</span></span> <span class="comment">/* 內容寬度 - 左右 padding */</span></div><div class="line"><span class="rule">}</span></span></div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div><div class="line-number">22</div><div class="line-number">23</div><div class="line-number">24</div><div class="line-number">25</div><div class="line-number">26</div><div class="line-number">27</div><div class="line-number">28</div><div class="line-number">29</div><div class="line-number">30</div><div class="line-number">31</div><div class="line-number">32</div><div class="line-number">33</div><div class="line-number">34</div><div class="line-number">35</div><div class="line-number">36</div><div class="line-number">37</div><div class="line-number">38</div><div class="line-number">39</div><div class="line-number">40</div><div class="line-number">41</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="id">#tabs</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">position</span>:<span class="value"> relative;</span></span></div><div class="line">	<span class="rule"><span class="attribute">z-index</span>:<span class="value"> <span class="number">1</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ccc</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> none;</span></span></div><div class="line">	<span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block;</span></span></div><div class="line">	<span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">5</span>px;</span></span></div><div class="line">	<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5</span>px <span class="number">10</span>px;</span></span></div><div class="line">	<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#999</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">cursor</span>:<span class="value"> pointer;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="pseudo">:hover</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#666</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#tabs</span> <span class="tag">li</span><span class="class">.enable</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> -<span class="number">1</span>px;</span></span></div><div class="line">	<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#333</span>;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#container</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ddd</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ccc</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">16</span>px <span class="hexcolor">#ccc</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">500</span>px;</span></span></div><div class="line">	<span class="rule"><span class="attribute">position</span>:<span class="value"> relative;</span></span></div><div class="line">	<span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden;</span></span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#contents</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute;</span></span></div><div class="line">	<span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">0</span>;</span></span></div><div class="line">	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">2000</span>px;</span></span> <span class="comment">/* 內容寬度 * 頁籤數 */</span></div><div class="line"><span class="rule">}</span></span></div><div class="line"><span class="id">#contents</span> &<span class="tag">gt</span>; <span class="tag">div</span><span class="rules">{</div><div class="line">	<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10</span>px <span class="number">15</span>px;</span></span></div><div class="line">	<span class="rule"><span class="attribute">text-align</span>:<span class="value"> justify;</span></span></div><div class="line">	<span class="rule"><span class="attribute">float</span>:<span class="value"> left;</span></span></div><div class="line">	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">470</span>px;</span></span> <span class="comment">/* 內容寬度 - 左右 padding */</span></div><div class="line"><span class="rule">}</span></span></div></code></pre></td></tr></table></figure>
+
 <p><code>#contents</code>改為<code>absolute</code>（絕對定位），並設定寬度為「內容寬度 × 頁籤數量」。<code>#contents</code>內的<code>div</code>別忘了加上<code>float: left;</code>，如此一來頁籤內容才會排成一橫列，將寬度設為「內容寬度 － 左右 padding」。
 
 </p>
@@ -1389,7 +1270,8 @@
 
 </p>
 <h3>JS</h3>
-<pre><code class="lang-js"><div class="line">(<span class="keyword">function</span>($){</div><div class="line">    <span class="keyword">var</span> trigger = <span class="literal">false</span>;</div><br><div class="line">    <span class="comment">// 使內容高度等於第一頁籤內容高度 + 上下 padding</span></div><div class="line">    $(<span class="string">'#container'</span>).css(<span class="string">'height'</span>, $(<span class="string">'#contents div'</span>).eq(<span class="number">0</span>).height() + <span class="number">20</span>);</div><br><div class="line">    <span class="comment">// 用 each 遍歷頁籤</span></div><div class="line">    <span class="keyword">var</span> tabs = $(<span class="string">'#tabs li'</span>).each(<span class="keyword">function</span>(i){</div><div class="line">        <span class="keyword">var</span> _i = i;</div><br><div class="line">        <span class="comment">// 為每個頁籤新增 tabid 屬性</span></div><div class="line">        <span class="comment">// 綁定 click 事件到頁籤上，若要改為滑鼠移入切換頁籤的話，將 click 改為 mouseenter</span></div><div class="line">        $(<span class="keyword">this</span>).attr(<span class="string">'tabid'</span>, i).click(<span class="keyword">function</span>(){</div><div class="line">            <span class="comment">// 當 trigger 為 false 時才作用，避免重複點按造成瀏覽器 crash</span></div><div class="line">            <span class="keyword">if</span> (trigger == <span class="literal">false</span>){</div><div class="line">                <span class="comment">// 取得目前的 tabid，以計算動畫的間距值（內容寬度 * 頁籤間距）</span></div><div class="line">                <span class="keyword">var</span> now = parseInt($(<span class="keyword">this</span>).parent().children(<span class="string">'.enable'</span>).attr(<span class="string">'tabid'</span>)),</div><div class="line">                    gap = <span class="number">500</span> * (_i - now);</div><div class="line">                    trigger = <span class="literal">true</span>;</div><br><div class="line">                <span class="comment">// 移除其他頁籤的 class，並將 class 新增至目前頁籤</span></div><div class="line">                $(<span class="keyword">this</span>).parent().children().removeClass(<span class="string">'enable'</span>).eq(_i).addClass(<span class="string">'enable'</span>);</div><div class="line">                <span class="comment">// 使內容移動一定間距</span></div><div class="line">                $(<span class="string">'#contents'</span>).animate({left: <span class="string">'-='</span>+gap}, <span class="number">500</span>);</div><div class="line">                <span class="comment">// 使內容高度符合所選頁籤內容的高度（所選頁籤內容高度 + 上下 padding），動畫全部結束後，使 trigger 值返回 false</span></div><div class="line">                $(<span class="string">'#container'</span>).animate({height: $(<span class="string">'#contents'</span>).children().eq(_i).height() + <span class="number">20</span>}, <span class="number">500</span>, <span class="keyword">function</span>(){</div><div class="line">                    trigger = <span class="literal">false</span>;</div><div class="line">                });</div><div class="line">            }</div><div class="line">        });</div><div class="line">    });</div><div class="line">})(jQuery);</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div><div class="line-number">15</div><div class="line-number">16</div><div class="line-number">17</div><div class="line-number">18</div><div class="line-number">19</div><div class="line-number">20</div><div class="line-number">21</div><div class="line-number">22</div><div class="line-number">23</div><div class="line-number">24</div><div class="line-number">25</div><div class="line-number">26</div><div class="line-number">27</div><div class="line-number">28</div><div class="line-number">29</div><div class="line-number">30</div><div class="line-number">31</div><div class="line-number">32</div></code></pre></td><td class="code"><pre><code><div class="line">(<span class="keyword">function</span>($){</div><div class="line">	<span class="keyword">var</span> trigger = <span class="literal">false</span>;</div><br><div class="line">	<span class="comment">// 使內容高度等於第一頁籤內容高度 + 上下 padding</span></div><div class="line">	$(<span class="string">'#container'</span>).css(<span class="string">'height'</span>, $(<span class="string">'#contents div'</span>).eq(<span class="number">0</span>).height() + <span class="number">20</span>);</div><br><div class="line">	<span class="comment">// 用 each 遍歷頁籤</span></div><div class="line">	<span class="keyword">var</span> tabs = $(<span class="string">'#tabs li'</span>).each(<span class="keyword">function</span>(i){</div><div class="line">		<span class="keyword">var</span> _i = i;</div><br><div class="line">		<span class="comment">// 為每個頁籤新增 tabid 屬性</span></div><div class="line">		<span class="comment">// 綁定 click 事件到頁籤上，若要改為滑鼠移入切換頁籤的話，將 click 改為 mouseenter</span></div><div class="line">		$(<span class="keyword">this</span>).attr(<span class="string">'tabid'</span>, i).click(<span class="keyword">function</span>(){</div><div class="line">			<span class="comment">// 當 trigger 為 false 時才作用，避免重複點按造成瀏覽器 crash</span></div><div class="line">			<span class="keyword">if</span> (trigger == <span class="literal">false</span>){</div><div class="line">				<span class="comment">// 取得目前的 tabid，以計算動畫的間距值（內容寬度 * 頁籤間距）</span></div><div class="line">				<span class="keyword">var</span> now = parseInt($(<span class="keyword">this</span>).parent().children(<span class="string">'.enable'</span>).attr(<span class="string">'tabid'</span>)),</div><div class="line">					gap = <span class="number">500</span> * (_i - now);</div><div class="line">					trigger = <span class="literal">true</span>;</div><br><div class="line">				<span class="comment">// 移除其他頁籤的 class，並將 class 新增至目前頁籤</span></div><div class="line">				$(<span class="keyword">this</span>).parent().children().removeClass(<span class="string">'enable'</span>).eq(_i).addClass(<span class="string">'enable'</span>);</div><div class="line">				<span class="comment">// 使內容移動一定間距</span></div><div class="line">				$(<span class="string">'#contents'</span>).animate({left: <span class="string">'-='</span>+gap}, <span class="number">500</span>);</div><div class="line">				<span class="comment">// 使內容高度符合所選頁籤內容的高度（所選頁籤內容高度 + 上下 padding），動畫全部結束後，使 trigger 值返回 false</span></div><div class="line">				$(<span class="string">'#container'</span>).animate({height: $(<span class="string">'#contents'</span>).children().eq(_i).height() + <span class="number">20</span>}, <span class="number">500</span>, <span class="keyword">function</span>(){</div><div class="line">					trigger = <span class="literal">false</span>;</div><div class="line">				});</div><div class="line">			}</div><div class="line">		});</div><div class="line">	});</div><div class="line">})(jQuery);</div></code></pre></td></tr></table></figure>
+
 <p>原理與基礎篇有些差別，必須在頁籤上新增<code>tabid</code>屬性，不過透過 JS 代勞即可。
 
 </p>
@@ -1419,8 +1301,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Hello Octopress!]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2012/01/14/hello-octopress/"/>
-    <id>http://zespia.tw/blog/2012/01/14/hello-octopress/</id>
+    <link href="http://zespia.tw/uncategorized/2012/01/14/hello-octopress/"/>
+    <id>http://zespia.tw/uncategorized/2012/01/14/hello-octopress/</id>
     <published>2012-01-14T07:52:00.000Z</published>
     <updated>2012-09-22T01:20:35.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/i4CFI4qZAFEct.png" alt="">
@@ -1600,8 +1482,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Google+ Motionless & Filter]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2011/09/17/google-scripts-2/"/>
-    <id>http://zespia.tw/blog/2011/09/17/google-scripts-2/</id>
+    <link href="http://zespia.tw/uncategorized/2011/09/17/google-scripts-2/"/>
+    <id>http://zespia.tw/uncategorized/2011/09/17/google-scripts-2/</id>
     <published>2011-09-17T00:00:00.000Z</published>
     <updated>2012-10-10T16:39:03.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ieJceSDuuo3RS.png" alt="サイノウサンプラー | ryosios（id=21795820）">
@@ -1628,8 +1510,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[HTML5 Storage 的使用彙整]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2011/08/04/html5-storage/"/>
-    <id>http://zespia.tw/blog/2011/08/04/html5-storage/</id>
+    <link href="http://zespia.tw/uncategorized/2011/08/04/html5-storage/"/>
+    <id>http://zespia.tw/uncategorized/2011/08/04/html5-storage/</id>
     <published>2011-08-04T10:01:00.000Z</published>
     <updated>2012-10-10T16:36:49.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ich1TucSOe08P.jpg" alt="找不到相關的圖，各位就把小惡魔胸前的脂肪塊當做 Storage 吧！（id=21000433）">
@@ -1651,30 +1533,36 @@
 <p>以下三種方式擇一即可，下文亦同。
 
 </p>
-<pre><code class="lang-js"><div class="line">localStorage[<span class="string">'test'</span>] = testValue;</div><div class="line">localStorage.setItem(<span class="string">'test'</span>, testValue);</div><div class="line">localStorage.test = testValue;</div></code></pre>
-<h3>取得資料</h3>
-<pre><code class="lang-js"><div class="line">localStorage[<span class="string">'test'</span>];</div><div class="line">localStorage.getItem(<span class="string">'test'</span>);</div><div class="line">localStorage.test;</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></code></pre></td><td class="code"><pre><code><div class="line">localStorage[<span class="string">'test'</span>] = testValue;</div><div class="line">localStorage.setItem(<span class="string">'test'</span>, testValue);</div><div class="line">localStorage.test = testValue;</div></code></pre></td></tr></table></figure>
+### 取得資料
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></code></pre></td><td class="code"><pre><code><div class="line">localStorage[<span class="string">'test'</span>];</div><div class="line">localStorage.getItem(<span class="string">'test'</span>);</div><div class="line">localStorage.test;</div></code></pre></td></tr></table></figure>
+
 <h3>刪除資料</h3>
-<pre><code class="lang-js"><div class="line">localStorage.removeItem(<span class="string">'test'</span>);</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line">localStorage.removeItem(<span class="string">'test'</span>);</div></code></pre></td></tr></table></figure>
+
 <h3>資料全部清除</h3>
-<pre><code class="lang-js"><div class="line">localStorage.clear();</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line">localStorage.clear();</div></code></pre></td></tr></table></figure>
+
 <h2>勾選框（checkbox）</h2>
 <h3>設定資料</h3>
 <p>由於 Storage 僅支援字串，必須使用<code>toString()</code>函數，將 Boolean 值轉為字串才可儲存。
 
 </p>
-<pre><code class="lang-js"><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).prop(<span class="string">'checked'</span>).toString();</div><br><div class="line"><span class="comment">// 若 jQuery 版本低於 1.6</span></div><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).attr(<span class="string">'checked'</span>).toString();</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div></code></pre></td><td class="code"><pre><code><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).prop(<span class="string">'checked'</span>).toString();</div><br><div class="line"><span class="comment">// 若 jQuery 版本低於 1.6</span></div><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).attr(<span class="string">'checked'</span>).toString();</div></code></pre></td></tr></table></figure>
+
 <h3>取得資料</h3>
 <p>使用<code>===</code>判斷資料。
 
 </p>
-<pre><code class="lang-js"><div class="line"><span class="keyword">if</span> ( localStorage[<span class="string">'test'</span>] === <span class="string">'true'</span> ) {</div><div class="line">    <span class="comment">// Do something</span></div><div class="line">}</div></code></pre>
-<h2>下拉式選單（select）</h2>
-<h3>設定資料</h3>
-<p>取得選單中<code>:selected</code>的值，並儲存即可。
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="keyword">if</span> ( localStorage[<span class="string">'test'</span>] === <span class="string">'true'</span> ) {</div><div class="line">    <span class="comment">// Do something</span></div><div class="line">}</div></code></pre></td></tr></table></figure>
+## 下拉式選單（select）
+### 設定資料
 
-</p>
-<pre><code class="lang-js"><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).find(<span class="string">':selected'</span>).val();</div></code></pre>
+取得選單中<code>:selected</code>的值，並儲存即可。
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div></code></pre></td><td class="code"><pre><code><div class="line">localStorage[<span class="string">'test'</span>] = $(<span class="string">'#test'</span>).find(<span class="string">':selected'</span>).val();</div></code></pre></td></tr></table></figure>
+
 <h2>陣列（array）</h2>
 <h3>設定資料</h3>
 <p>陣列大概是讓我最頭痛的部份，同前文所述，Storage 僅支援字串，所以必須先以特殊的分隔符號來隔開每個元素。<em>（如|, $, ; 等符號，隨你喜歡）</em>
@@ -1683,12 +1571,14 @@
 <p>如果你在下面的陣列中看到德文，那只是我突然中二病發作而已，<del>如果你看得懂的話代表你也是個廚二</del>。
 
 </p>
-<pre><code class="lang-js"><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div><br><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = {[<span class="string">'one'</span>, <span class="string">'eins'</span>], [<span class="string">'two'</span>, <span class="string">'zwei'</span>], [<span class="string">'three'</span>, <span class="string">'drew'</span>], [<span class="string">'four'</span>, <span class="string">'vier'</span>]};</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    storage[i] = storage[i].join(<span class="string">';'</span>);</div><div class="line">}</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div><br><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = {[<span class="string">'one'</span>, <span class="string">'eins'</span>], [<span class="string">'two'</span>, <span class="string">'zwei'</span>], [<span class="string">'three'</span>, <span class="string">'drew'</span>], [<span class="string">'four'</span>, <span class="string">'vier'</span>]};</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">	storage[i] = storage[i].join(<span class="string">';'</span>);</div><div class="line">}</div><div class="line">localStorage[<span class="string">'test'</span>] = storage.join(<span class="string">'|||'</span>);</div></code></pre></td></tr></table></figure>
+
 <h3>取得資料</h3>
 <p>利用<code>split</code>函數分割字串。
 
 </p>
-<pre><code class="lang-js"><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = localStorage[<span class="string">'test'</span>].split(<span class="string">'|||'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    <span class="comment">// do something</span></div><div class="line">}</div><br><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = localStorage[<span class="string">'test'</span>].split(<span class="string">'|||'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">    <span class="keyword">var</span> item = storage[i].split(<span class="string">';'</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;item.length; j++){</div><div class="line">        <span class="comment">// do something</span></div><div class="line">    }</div><div class="line">}</div></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div><div class="line-number">7</div><div class="line-number">8</div><div class="line-number">9</div><div class="line-number">10</div><div class="line-number">11</div><div class="line-number">12</div><div class="line-number">13</div><div class="line-number">14</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="comment">// 一維陣列</span></div><div class="line"><span class="keyword">var</span> storage = localStorage[<span class="string">'test'</span>].split(<span class="string">'|||'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">	<span class="comment">// do something</span></div><div class="line">}</div><br><div class="line"><span class="comment">// 二維陣列（多維陣列亦同）</span></div><div class="line"><span class="keyword">var</span> storage = localStorage[<span class="string">'test'</span>].split(<span class="string">'|||'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;storage.length; i++){</div><div class="line">	<span class="keyword">var</span> item = storage[i].split(<span class="string">';'</span>);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;item.length; j++){</div><div class="line">		<span class="comment">// do something</span></div><div class="line">	}</div><div class="line">}</div></code></pre></td></tr></table></figure>
+
 <h2>後記</h2>
 <p>最近因為課業繁忙，網誌都放著生灰超過一個月了，於是心血來潮將最近寫腳本的心得寫成文章，可能會有錯誤，請多見諒。</p>
 ]]></content>
@@ -1696,8 +1586,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[Google+ Hide Comments & Hover Zoom]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/"/>
-    <id>http://zespia.tw/blog/2011/07/13/firefox-google-plus-plugins/</id>
+    <link href="http://zespia.tw/uncategorized/2011/07/13/firefox-google-plus-plugins/"/>
+    <id>http://zespia.tw/uncategorized/2011/07/13/firefox-google-plus-plugins/</id>
     <published>2011-07-13T00:00:00.000Z</published>
     <updated>2012-09-22T01:21:32.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ihQ0s0iWJDgNU.jpeg" alt="">
@@ -1718,8 +1608,8 @@
 <p>此腳本的功能如上圖，啟用後會在每篇文章的留言後加入 &quot;Toggle comments&quot; 的連結，點擊 &quot;Toggle comments&quot; 連結可以展開、摺疊留言。
 
 </p>
-<blockquote><p>已停止更新</p>
-<footer></footer></blockquote>
+<notextile><blockquote><p>已停止更新</p>
+<footer></footer></blockquote></notextile>
 
 <h2>Google+ Hover Zoom</h2>
 <p><img src="http://i.minus.com/i4Xjzr8VGpgHM.jpg" alt="">
@@ -1737,8 +1627,8 @@
   </entry>
   <entry>
     <title type="html"><![CDATA[鍊金術士梅露露 ～亞蘭德的鍊金術士 3～]]></title>
-    <link href="http://zespia.tw/http://zespia.tw/blog/2011/07/01/ps3-meruru/"/>
-    <id>http://zespia.tw/blog/2011/07/01/ps3-meruru/</id>
+    <link href="http://zespia.tw/uncategorized/2011/07/01/ps3-meruru/"/>
+    <id>http://zespia.tw/uncategorized/2011/07/01/ps3-meruru/</id>
     <published>2011-07-01T07:44:00.000Z</published>
     <updated>2012-10-10T16:38:37.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://i.minus.com/ib1v5x6fsVI7ue.jpeg" alt="相機又被老媽搶走了，反正我攝影技術也不好，乾脆直接貼官網的桌布吧（逃）">
@@ -1754,8 +1644,8 @@
 <p>本作襲承托托莉的 True End 而來。亞蘭德共和國西北方的一處小國「阿路斯王國」，是個比亞蘭德還有更多發展空間的邊境國家。在 5 年後，阿路斯將與亞蘭德合併，於是亞蘭德派遣了煉金術士「托托莉」，協助發展這個國家成為大都市，淘氣調皮的公主「梅露露」對煉金術產生了興趣，因此決定成為托托莉的弟子，然而遭到了父王的反對。不過父王最後還是心軟，決定給梅露露 3 年的時間，使這個小國的人口從 100 人提升到 3 萬人，如果達成就會繼續讓梅露露研究煉金術。
 
 </p>
-<blockquote><p>我操，你這爸爸好歹也進行一下開發吧，人口只有 100 人連稱為「國家」都有點困難了啊！</p>
-<footer></footer></blockquote>
+<notextile><blockquote><p>我操，你這爸爸好歹也進行一下開發吧，人口只有 100 人連稱為「國家」都有點困難了啊！</p>
+<footer></footer></blockquote></notextile>
 
 <p>這代的畫面相較於前兩代又進步了一些，光影的處理做得更棒了，<a href="http://www.nicovideo.jp/watch/sm14822011"><del>精美的 3D 模組也讓人感到讚嘆</del></a>；在介面上，提供了更貼心的服務，可以直接從「開拓」和「依賴」頁面連結到調和選單，特殊的道具也做了清楚的標示。此外，這一代女主角的聲音大概是我最喜歡的，沒有前兩代過嗲的感覺。
 
