@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Phase — 史上最漂亮也最吃資源的主題 | Zespia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <header id="header">
+  <div id="banner"></div>
+  <h1 id="logo-wrap">
+    <a href="/" id="logo">Zespia</a>
+  </h1>
+  <div id="header-shadow"></div>
+  <div class="outer">
+    <nav id="main-nav" class="inner">
+      <ul class="main-nav-list">
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="/">Home</a>
+          </li>
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="/archives">Archives</a>
+          </li>
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="https://github.com/tommy351">GitHub</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+  <div class="outer">
+    <div class="inner"><article class="article article-type-post">
+  <a href="/blog/2012/12/07/hexo-theme-phase/" class="article-date">
+  <time datetime="2012-12-07T10:36:03.000Z">2012/12/7</time>
+</a>
+  <div class="article-inner">
+    <header class="article-header">
+      
+  
+    <h1 class="article-title">Phase — 史上最漂亮也最吃資源的主題</h1>
+  
+
+    </header>
+    <div class="article-entry">
+      
+        <p><img src="http://i.minus.com/icsKsGRjMpstw.png" alt=""></p>
+<p>在轉到 Hexo 之前，我一直都在使用這個<a href="http://zespia.tw/blog/2012/05/02/new-theme-phase/">私用主題 Phase</a>，曾經承諾過我用膩了就公開發佈，於是今天就有這篇文章了。</p>
+<p>這個主題是以 <a href="http://zespia.tw/Octopress-Theme-Slash/index_tw.html">Slash</a> 為基礎開發的，所以大部分的特性都繼承下來了，除了 Responsive Design 和 Twitter Live Stream 以外。</p>
+<ul>
+<li>Phase Beam 動態背景</li>
+<li>自動讀取圖片的<code>alt</code>屬性，並在圖片下方顯示註解。</li>
+<li>內建 <a href="http://fancyapps.com/fancybox/" target="_blank">Fancybox</a>，讓您輕鬆展示您的作品。</li>
+<li>自動將 HTML5 video、iframe、object 等嵌入式影片縮放至頁面寬度。</li>
+<li><a href="http://zespia.tw/hexo-theme-phase">預覽…</a></li>
+</ul>
+<p>Phase Beam 動態背景的效果非常絢麗，但是也非常吃資源，電腦或瀏覽器效能不佳的使用者開啟時可能會當機，至於 IE8，<del>你何時產生了我曾經積極支援過它的錯覺？</del></p>
+<a id="more"></a>
+
+<h2>安裝</h2>
+<p>Octopress 版本：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="title">cd</span> octopress
+<span class="title">git</span> clone git://github.com/tommy351/octopress-theme-phase.git .themes/phase
+<span class="title">rake</span> install['phase']
+<span class="title">rake</span> generate
+</pre></td></tr></table></figure>
+
+<p>為了推廣 Hexo，順便把主題移植過去了，往後的主題開發都會以 Hexo 為主，但仍會以 MIT License 開放原始碼，想要在 Octopress 使用的人可以自行開發移植版本。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="title">cd</span> hexo
+git clone <span class="url">git://github.com/tommy351/hexo-theme-phase.git</span> themes/phase
+</pre></td></tr></table></figure>
+
+<p>Hexo 版本安裝後別忘了將<code>_config.yml</code>內的<code>theme</code>參數調整為<code>phase</code>。</p>
+<h2>FAQ</h2>
+<h3>Octopress 版和 Hexo 版有什麼差別？</h3>
+<ul>
+<li>Octopress 版沒有相簿（photo）和連結（link）兩種布局</li>
+<li>部分樣式的微妙差別</li>
+<li><del>Octopress 速度比較慢</del></li>
+</ul>
+<h3>如何編輯選單？</h3>
+<ul>
+<li>Octopress 版本：編輯<code>source/_includes/custom/navigation.html</code>。</li>
+<li>Phase 版本：編輯<code>_config.yml</code>的<code>menu</code>參數。</li>
+</ul>
+<h3>如何關閉 Fancybox？</h3>
+<p>對於 Chrome 來說，同時執行 Phase Beam 和 Fancybox 的動畫似乎是一件很吃力的事情，所以你也可以選擇關閉 Fancybox 功能。</p>
+<ul>
+<li>Octopress 版本：刪除<code>source/_includes/after_footer.html</code>的第 1 行。</li>
+<li>Hexo 版本：<code>_config.yml</code>的<code>fancybox</code>參數調整為<code>false</code>。</li>
+</ul>
+<h3>如何關閉 Phase Beam？</h3>
+<p>我覺得用 Phase 還關閉 Phase Beam 實在是一件很沒有意義的事情，關閉了 Phase Beam 的 Phase 就只是一個背景黑漆漆的 Slash 而已，沒有任何特色，相較於 Slash 還少了一些功能，但是我還是稍微說明吧。</p>
+<ul>
+<li>Octopress 版本：刪除<code>source/_includes/after_footer.html</code>的第 2 行。</li>
+<li>Hexo 版本：刪除<code>layout/_partial/after_footer.ejs</code>的最後一行。</li>
+</ul>
+<p>如果還有其他問題或想法，歡迎在下方留言。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zespia.tw/blog/2012/12/07/hexo-theme-phase/" data-id="gcf0vdczamgcmplc" class="article-share-link">Share</a>
+      
+        <a href="http://zespia.tw/blog/2012/12/07/hexo-theme-phase/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node.js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+    <a href="/blog/2013/11/10/dragons-crown/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">魔龍寶冠</div>
+    </a>
+  
+  
+    <a href="/blog/2012/12/06/nodejs-stream-copy-files/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用 Stream 來拷貝檔案</div>
+    </a>
+  
+</nav>
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">&copy; 2013 SkyArrow</div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  var disqus_shortname = 'zespiatw';
+  
+  var disqus_url = 'http://zespia.tw/blog/2012/12/07/hexo-theme-phase/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>

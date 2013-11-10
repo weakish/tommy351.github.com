@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Node.js 初試 ─ Nyanko | Zespia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <header id="header">
+  <div id="banner"></div>
+  <h1 id="logo-wrap">
+    <a href="/" id="logo">Zespia</a>
+  </h1>
+  <div id="header-shadow"></div>
+  <div class="outer">
+    <nav id="main-nav" class="inner">
+      <ul class="main-nav-list">
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="/">Home</a>
+          </li>
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="/archives">Archives</a>
+          </li>
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="https://github.com/tommy351">GitHub</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+  <div class="outer">
+    <div class="inner"><article class="article article-type-post">
+  <a href="/blog/2012/07/14/nodejs-nyanko/" class="article-date">
+  <time datetime="2012-07-13T16:14:00.000Z">2012/7/14</time>
+</a>
+  <div class="article-inner">
+    <header class="article-header">
+      
+  
+    <h1 class="article-title">Node.js 初試 ─ Nyanko</h1>
+  
+
+    </header>
+    <div class="article-entry">
+      
+        <p><img src="http://i.minus.com/iKst8nFEGcU8A.png" alt=""></p>
+<p>數個月前，接到了來自 <a href="http://caramel623.k2-ani.com/" target="_blank">卡梅爾 Anime</a> 的委託，請我重新設計一個 <a href="http://wordpress.org/" target="_blank">WordPress</a> 主題，因為我當時正忙著準備備審資料，因此而暫時擱置了一段時間。</p>
+<p>又過了一個月，我加入了畢籌會（畢業典禮籌劃會），忙著 <del>和妹子聊天</del> 製作畢業影片，而完全忽略了這回事。</p>
+<p>直到畢業後，我突然想起這件事，便決定開始著手進行；然而因為去年提交 <a href="http://wordpress.org/" target="_blank">WordPress</a> 主題一直被退件令我一直懷恨在心，我毅然決定捨棄 <a href="http://wordpress.org/" target="_blank">WordPress</a>，自己從頭打造一個類似於 <a href="http://wordpress.org/" target="_blank">WordPress</a> 的 CMS 系統。</p>
+<a id="more"></a>
+
+<h2>序章</h2>
+<p><img src="http://i.minus.com/iEfVZ8aIjqOKG.png" alt=""></p>
+<p>在進入本文之前，先說明一下何謂 <a href="http://nodejs.org/" target="_blank">Node.js</a> 吧：</p>
+<p><a href="http://nodejs.org/" target="_blank">Node.js</a> 是一個 JavaScript 函式庫，使用了 <a href="http://zh.wikipedia.org/wiki/V8_%28JavaScript%E5%BC%95%E6%93%8E%29" target="_blank">V8 引擎</a> 讓 JavaScript 能在伺服器上執行，其事件驅動、非阻塞式 I/O 的形式使 <a href="http://nodejs.org/" target="_blank">Node.js</a> 能夠高效運作，模組化的規格使其便於開發。（有錯請鞭）</p>
+<p>總而言之，<strong><a href="http://nodejs.org/" target="_blank">Node.js</a> 很好用</strong>。</p>
+<h2>安裝</h2>
+<p><a href="http://nodejs.org/" target="_blank">Node.js</a> 的安裝非常簡單，只要安裝 <a href="https://github.com/creationix/nvm/" target="_blank">nvm</a> 及 <a href="http://npmjs.org/" target="_blank">npm</a> 即可。（以下以 Mac 為例）</p>
+<p><a href="https://github.com/creationix/nvm/" target="_blank">nvm</a> 就是類似於 <a href="https://rvm.io/" target="_blank">rvm</a> 的版本管理工具，可隨意安裝、替換不同的 <a href="http://nodejs.org/" target="_blank">Node.js</a> 版本。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="variable">$ </span>git clone <span class="symbol">git:</span>/<span class="regexp">/github.com/creationix</span><span class="regexp">/nvm.git ~/nvm</span>
+</pre></td></tr></table></figure>
+
+<p>安裝完後必須在 <code>.bash_profile</code> 加入以下內容才可直接使用。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>. ~/<span class="variable">.nvm</span>/nvm<span class="variable">.sh</span>
+</pre></td></tr></table></figure>
+
+<p>而 <a href="http://npmjs.org/" target="_blank">npm</a> 則是類似於 <a href="http://rubygems.org/" target="_blank">gem</a> 的模組管理工具，只要安裝 <a href="http://nodejs.org/" target="_blank">Node.js</a> 就會附贈，不需要另外安裝。</p>
+<h2>模組</h2>
+<p><a href="http://nodejs.org/" target="_blank">Node.js</a> 雖然還是個剛起步的應用，不過已有很多的現成模組可供使用。以下是我用到的模組：</p>
+<ul>
+<li><a href="http://expressjs.com/" target="_blank">Express</a>：處理瀏覽器請求，用它做出 <a href="http://zh.wikipedia.org/wiki/REST" target="_blank">REST</a> 架構簡直小菜一碟。</li>
+<li><a href="http://www.senchalabs.org/connect/" target="_blank">Connect</a>：<a href="http://expressjs.com/" target="_blank">Express</a> 的基礎，<a href="http://expressjs.com/" target="_blank">Express</a> 的許多功能都是從 <a href="http://www.senchalabs.org/connect/" target="_blank">Connect</a> 借來的，不過我只是要用它的 Gzip middleware 而已。</li>
+<li><a href="https://github.com/visionmedia/ejs" target="_blank">EJS</a>：模版引擎之一，<a href="http://nodejs.org/" target="_blank">Node.js</a> 預設使用 <a href="http://jade-lang.com/" target="_blank">Jade</a>，但是 <a href="http://jade-lang.com/" target="_blank">Jade</a> 實在簡潔到讓人看不懂，所以決定使用 <a href="https://github.com/visionmedia/ejs" target="_blank">EJS</a>。</li>
+<li><a href="https://github.com/LearnBoost/stylus" target="_blank">Stylus</a>：本來想繼續使用 <a href="http://sass-lang.com/" target="_blank">Sass</a>，後來發現 <a href="https://github.com/LearnBoost/stylus" target="_blank">Stylus</a> 的語法更加簡潔，而且與 <a href="http://expressjs.com/" target="_blank">Express</a> 的配合度極加！</li>
+<li><a href="https://github.com/visionmedia/nib" target="_blank">Nib</a>：<a href="https://github.com/LearnBoost/stylus" target="_blank">Stylus</a> 之於 <a href="https://github.com/visionmedia/nib" target="_blank">Nib</a> 猶如 <a href="http://sass-lang.com/" target="_blank">Sass</a> 之於 <a href="http://compass-style.org/" target="_blank">Compass</a>，<a href="https://github.com/visionmedia/nib" target="_blank">Nib</a> 內建許多方便的 CSS3 工具。</li>
+<li><a href="https://github.com/kissjs/node-mongoskin" target="_blank">Mongoskin</a>：使用簡易的 <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> 工具，大部分的函數都和原本的 <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> 很像，但是可以省掉開啟和關閉連結這些麻煩的動作。原本要用 <a href="https://github.com/LearnBoost/mongoose" target="_blank">Mongoose</a>，但是發現它還得先設定 Scheme，這實在有夠麻煩，而且完全與 <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> 的設計相違背，所以果斷放棄。</li>
+<li><a href="https://github.com/chjj/marked/" target="_blank">Marked</a>：Markdown 解析器。</li>
+<li><a href="https://github.com/ncb000gt/node.bcrypt.js/" target="_blank">Bcrypt</a>：聽說 <a href="https://github.com/ncb000gt/node.bcrypt.js/" target="_blank">Bcrypt</a> 是目前最安全的密碼儲存方式。</li>
+<li><a href="https://github.com/andris9/Nodemailer/" target="_blank">Nodemailer</a>：能夠輕鬆與 Gmail 整合的寄信模組。</li>
+<li><a href="https://github.com/caolan/async/" target="_blank">Async</a>：<a href="http://nodejs.org/" target="_blank">Node.js</a> 中有很多工作都是異步進行，因此造成嵌套嵌不完的窘境，我程式寫了一週才發現有這麼好用的模組 orz。</li>
+<li><a href="http://momentjs.com/" target="_blank">Moment</a>：日期解析模組。</li>
+<li><a href="https://github.com/mishoo/UglifyJS" target="_blank">UglifyJS</a>：JavaScript 壓縮 / 美化模組，效能和 <a href="https://developers.google.com/closure/compiler/" target="_blank">Google Closure Compiler</a> 有得拼。</li>
+<li><a href="http://socket.io/" target="_blank">Socket.io</a>：超讚的 WebSocket 模組，瀏覽器支援度超讚！</li>
+<li><a href="https://github.com/kcbanner/connect-mongo/" target="_blank">connect-mongo</a>：本來 Session 我都儲存在記憶體，但這樣似乎不適合 production 環境，所以改把 Session 儲存在 <a href="http://www.mongodb.org/" target="_blank">MongoDB</a>。</li>
+</ul>
+<p>另外附贈超好用除錯工具：</p>
+<ul>
+<li><a href="https://github.com/fgnass/node-dev" target="_blank">node-dev</a>：偵測檔案更改，自動重啟伺服器。</li>
+</ul>
+<h2>存放空間</h2>
+<p>基本上寫程式還是和之前一樣，都是 SAN 值不斷乘著雲霄飛車高低起伏的過程，隨著 Bug 愈來愈多，愈來愈厭惡過去的自己怎麼笨到會犯這種智障級的錯誤。</p>
+<p><strong>不過這些都不是重點。</strong></p>
+<p>網站寫好了重點就是要有地方存放。</p>
+<p>PHP 遍地都有等著你蹂躪的免費空間。</p>
+<p>但是 Node 能用的就只有這些啊！<a href="https://github.com/joyent/node/wiki/Node-Hosting" target="_blank">https://github.com/joyent/node/wiki/Node-Hosting</a></p>
+<ul>
+<li><a href="http://nodester.com/" target="_blank">Nodester</a>：雖然免費但是一直 deploy 失敗，沒辦法安裝 <a href="https://github.com/ncb000gt/node.bcrypt.js/" target="_blank">bcrypt</a>。</li>
+<li><a href="http://cnodejs.net/" target="_blank">NAE</a>：速度好慢，而且很常掛點。</li>
+<li><a href="http://www.cloudfoundry.com/" target="_blank">Cloud Foundry</a>：沒辦法安裝 <a href="https://github.com/ncb000gt/node.bcrypt.js/" target="_blank">bcrypt</a>。</li>
+<li><a href="http://www.dotcloud.com/" target="_blank">DotCloud</a>：不知道為啥總是 deploy 失敗。</li>
+<li><a href="http://nodejitsu.com/" target="_blank">Nodejitsu</a>：只要一行 <code>jitsu deploy</code> 就能 deploy 了，但是下個月就要收費了哭哭。</li>
+<li><a href="http://heroku.com/" target="_blank">Heroku</a>：雖然沒辦法玩 WebSocket（30 秒連線限制），但是最穩定。</li>
+</ul>
+<p>身為窮學生的我只能選慢吞吞的 <a href="http://heroku.com/" target="_blank">Heroku</a> 哭哭喔！</p>
+<blockquote>
+<p>截稿前發現了 <a href="http://www.appfog.com/" target="_blank">AppFog</a>，是一個建構於 <a href="http://www.cloudfoundry.com/" target="_blank">Cloud Foundry</a> 的服務，介面很漂亮，不過還沒試用。</p>
+</blockquote>
+<p>相較於 Node 而言，MongoDB 就不用煩惱了，目前我所知有兩個免費的服務。</p>
+<ul>
+<li><a href="https://mongohq.com/" target="_blank">MongoHQ</a>：免費 16 MB</li>
+<li><a href="https://mongolab.com/" target="_blank">MongoLab</a>：免費 240 MB</li>
+</ul>
+<p>明眼人都知道要選 <a href="https://mongolab.com/" target="_blank">MongoLab</a> 啊啊啊啊啊！！！！<del>就像胸部一樣，大一點的總是比較好啊啊啊啊啊！！！！</del></p>
+<h2>外觀</h2>
+<p>因為代碼很髒而且 Bug 一堆，所以就不在這裡獻醜了。</p>
+<p><img src="http://i.minus.com/icykBz9L04Ydf.png" alt=""></p>
+<p>後台很普通，很明顯就是抄襲 <a href="http://wordpress.org/" target="_blank">WordPress</a> 的沒特色主題。</p>
+<p><img src="http://i.minus.com/iiCgTOcyLp2Km.png" alt=""></p>
+<p>前台本來想做成這樣，但圖片處理實在太麻煩，這種也許比較適合平板使用？</p>
+<p><img src="http://i.minus.com/iCuLiRAi4Birx.png" alt=""></p>
+<p>因此只能改成這個樣子了，可以很明顯的看出，就跟 <a href="https://plus.google.com/" target="_blank">Google+</a> 一樣，頁面主體很明顯的往左偏，右邊一大片空白什麼也沒有，<del>以後可以拿來放廣告</del>。</p>
+<p><img src="http://i.minus.com/illxd31CdxXIq.png" alt=""></p>
+<p>不過這也是有原因的，搜尋列和聊天室都會從左邊滑出。</p>
+<h2>未來</h2>
+<p>目前 0.0.7 版已經完成，不過尚未 deploy 至 <a href="http://heroku.com/" target="_blank">Heroku</a>，主要是強化快取的部分，事先儲存已渲染過的網頁，就不用在每次瀏覽時都讀取資料庫。</p>
+<p>等到 Bug 都除完之後，大概就會發佈原始碼了，我能看到那一天的到來嗎……？</p>
+<h2>後記</h2>
+<p><img src="http://i.minus.com/ibqU7BQBnIPo5u.png" alt=" 對不起，圖片下載不完全，想看紗羽ㄋㄟㄋㄟ的請自己找吧。(id=28562767)"></p>
+<p>因為最近一個月都在忙這東西，所以網誌都放到生菇了，之後還會在寫一篇愛夏的文章，敬請期待！</p>
+<p><a href="http://nyanko.herokuapp.com/" target="_blank">Nyanko</a> 目前正在封測中，也許會有很多 Bug，如果找到 Bug 的話麻煩透過左側工具列上的「意見反饋」向我回報。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zespia.tw/blog/2012/07/14/nodejs-nyanko/" data-id="hmb9r0lay9y3h1iw" class="article-share-link">Share</a>
+      
+        <a href="http://zespia.tw/blog/2012/07/14/nodejs-nyanko/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node.js/">Node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+    <a href="/blog/2012/09/05/atelier-ayesha/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">愛夏的煉金工房 ─ 黃昏大地之煉金術士</div>
+    </a>
+  
+  
+    <a href="/blog/2012/05/02/new-theme-phase/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">私用主題 Phase</div>
+    </a>
+  
+</nav>
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">&copy; 2013 SkyArrow</div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  var disqus_shortname = 'zespiatw';
+  
+  var disqus_url = 'http://zespia.tw/blog/2012/07/14/nodejs-nyanko/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>

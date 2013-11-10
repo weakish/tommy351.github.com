@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Slash — 專為 Octopress 設計的極簡主題 | Zespia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <header id="header">
+  <div id="banner"></div>
+  <h1 id="logo-wrap">
+    <a href="/" id="logo">Zespia</a>
+  </h1>
+  <div id="header-shadow"></div>
+  <div class="outer">
+    <nav id="main-nav" class="inner">
+      <ul class="main-nav-list">
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="/">Home</a>
+          </li>
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="/archives">Archives</a>
+          </li>
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="https://github.com/tommy351">GitHub</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+  <div class="outer">
+    <div class="inner"><article class="article article-type-post">
+  <a href="/blog/2012/01/25/slash-theme/" class="article-date">
+  <time datetime="2012-01-25T08:27:00.000Z">2012/1/25</time>
+</a>
+  <div class="article-inner">
+    <header class="article-header">
+      
+  
+    <h1 class="article-title">Slash — 專為 Octopress 設計的極簡主題</h1>
+  
+
+    </header>
+    <div class="article-entry">
+      
+        <p><img src="http://i.minus.com/i8oyJmY5lRJEJ.png" alt=""></p>
+<p><a href="http://octopress.org/" target="_blank">Octopress</a> 雖然預設主題相當漂亮，支援眾多 HTML5 的新特性，但每個網誌都是同一個主題，令人有些厭煩。在決定轉移到 <a href="http://octopress.org/" target="_blank">Octopress</a> 的第一刻起，我就開始著手設計適用於 <a href="http://octopress.org/" target="_blank">Octopress</a> 的主題，在今天終於把檔案整理完畢，集合成一個獨立的 repo。</p>
+<a id="more"></a>
+
+<p>做為一個 <a href="http://octopress.org/" target="_blank">Octopress</a> 主題，當然不能輸給原本的預設主題，Slash 擁有以下特性：</p>
+<ul>
+<li>自動讀取圖片的<code>alt</code>屬性，並在圖片下方顯示註解。</li>
+<li>內建 <a href="http://fancyapps.com/fancybox/" target="_blank">Fancybox</a>，讓您輕鬆展示您的作品。</li>
+<li>自動將 HTML5 <code>video</code>、<code>iframe</code>、<code>object</code>等嵌入式影片縮放至頁面寬度。</li>
+<li>支援 responsive layouts，無論電腦、手機、平板都能獲得極佳的使用體驗。</li>
+<li><a href="http://zespia.tw/Octopress-Theme-Slash/index_tw.html">更多介紹…</a></li>
+</ul>
+<h2>安裝</h2>
+<p>只需在終端機輸入以下指令，即可完成安裝：</p>
+<pre><code><span class="variable">$ </span>cd octopress
+<span class="variable">$ </span>git clone <span class="symbol">git:</span>/<span class="regexp">/github.com/tommy</span>351/<span class="constant">Octopress</span>-<span class="constant">Theme</span>-<span class="constant">Slash</span>.git .themes/slash
+<span class="variable">$ </span>rake install[<span class="string">'slash'</span>]
+<span class="variable">$ </span>rake generate</code></pre>
+<p>使用 zsh 時發生問題嗎？試試看<code>rake install\[&#39;slash&#39;\]</code>。</p>
+<h2>Q&amp;A</h2>
+<h3>如何顯示右上角的 Facebook 連結？</h3>
+<p>在<code>_config.yml</code>新增<code>facebook_user</code>參數，並填入您的 Facebook ID。</p>
+<h3>如何編輯選單？</h3>
+<p>編輯<code>slash</code>→<code>source</code>→<code>_includes</code>→<code>custom</code>→<code>navigation.html</code>。</p>
+<h3>如何隱藏頁首的 Twitter 訊息串？</h3>
+<p>刪除<code>slash</code>→<code>source</code>→<code>_layouts</code>→<code>default.html</code>的第 6 行。</p>
+<h3>如何關閉 Fancybox？</h3>
+<ol>
+<li>刪除<code>slash</code>→<code>source</code>→<code>_includes</code>→<code>after_footer.html</code>的第 4 行。</li>
+<li>刪除<code>slash</code>→<code>source</code>→<code>javascripts</code>→<code>caption.js</code>第 14 行。</li>
+</ol>
+<p>如果還有其他問題或建議，歡迎在以下留言。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zespia.tw/blog/2012/01/25/slash-theme/" data-id="8c3f65vc2l74jqpq" class="article-share-link">Share</a>
+      
+        <a href="http://zespia.tw/blog/2012/01/25/slash-theme/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主題/">主題</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+    <a href="/blog/2012/02/04/lab-html5-audio/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">HTML5 audio 實驗</div>
+    </a>
+  
+  
+    <a href="/blog/2012/01/24/css-multi-level-menu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">如何利用 CSS 製作多級選單？</div>
+    </a>
+  
+</nav>
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">&copy; 2013 SkyArrow</div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  var disqus_shortname = 'zespiatw';
+  
+  var disqus_url = 'http://zespia.tw/blog/2012/01/25/slash-theme/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>

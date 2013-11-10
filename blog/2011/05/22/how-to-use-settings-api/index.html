@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何使用 Settings API 製作佈景後台選項？ | Zespia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <header id="header">
+  <div id="banner"></div>
+  <h1 id="logo-wrap">
+    <a href="/" id="logo">Zespia</a>
+  </h1>
+  <div id="header-shadow"></div>
+  <div class="outer">
+    <nav id="main-nav" class="inner">
+      <ul class="main-nav-list">
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="/">Home</a>
+          </li>
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="/archives">Archives</a>
+          </li>
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="https://github.com/tommy351">GitHub</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+  <div class="outer">
+    <div class="inner"><article class="article article-type-post">
+  <a href="/blog/2011/05/22/how-to-use-settings-api/" class="article-date">
+  <time datetime="2011-05-22T08:02:00.000Z">2011/5/22</time>
+</a>
+  <div class="article-inner">
+    <header class="article-header">
+      
+  
+    <h1 class="article-title">如何使用 Settings API 製作佈景後台選項？</h1>
+  
+
+    </header>
+    <div class="article-entry">
+      
+        <p>隨著 WordPress 版本號的推進，不只系統越變越肥大，外掛、佈景主題的條件也越來越嚴苛，全部規定必須使用官方的現有函數製作，雖然 WordPress 的函數庫真的很豐富很好用，不過這麼獨裁的規定著實讓人很不爽。</p>
+<p>因此，由於官方要求，我必須使用 Settings API 來製作主題選項，但官方文件的資料的資訊實在太少了，在下沒慧根實在看不懂，經過 Google 百般尋覓後，將我較喜歡的幾篇文章（見參考出處）整合寫成了這篇文章，我沒有 PHP 底子，只有在圖書館翻過幾本書，內文可能會有些錯誤，請見諒。</p>
+<a id="more"></a>
+
+<h2>基礎架構</h2>
+<p>首先，建立一個空白的<code>php</code>檔案，以下以<code>function-admin.php</code>為例，實際情況依個人設定而有差異。然後，在<code>function.php</code>寫入下列程式碼，以引入<code>function-admin.php</code>這個外部檔案。</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="keyword">if</span> ( file_exists( TEMPLATEPATH.<span class="string">'/function-admin.php'</span> ) ) {
+  <span class="keyword">require_once</span>( TEMPLATEPATH.<span class="string">'/function-admin.php'</span> );
+  <span class="variable">$theme_option</span> = <span class="keyword">new</span> theme_option();
+}
+</pre></td></tr></table></figure>
+
+<p>接著在<code>function-admin.php</code>建立<code>class</code>，以下以<code>theme_option</code>為例：</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre></td><td class="code"><pre><span class="preprocessor">&lt;?php</span>
+<span class="class"><span class="keyword">class</span> <span class="title">theme_option</span> {</span>
+  <span class="comment">// 建立選項區段</span>
+  <span class="keyword">private</span> <span class="variable">$sections</span>;
+ 
+  <span class="comment">// 各個選項的預設值</span>
+  <span class="keyword">private</span> <span class="variable">$defaults</span> = <span class="keyword">array</span>(
+    <span class="string">'test_checkbox'</span> =&gt; <span class="string">'0'</span>, <span class="comment">// 0 為停用，1 為啟用</span>
+    <span class="string">'test_text'</span> =&gt; <span class="string">''</span>,
+    <span class="string">'test_select'</span> =&gt; <span class="string">'one'</span>,
+    <span class="string">'test_radio'</span> =&gt; <span class="string">'one'</span>,
+    <span class="string">'test_textarea'</span> =&gt; <span class="string">''</span>
+  );
+ 
+  <span class="comment">// checkbox 的陣列，如果選項類型是 checkbox 的話，可能會出一些 "Undefined Index" 的問題，所以需要特別處理</span>
+  <span class="keyword">private</span> <span class="variable">$checkboxes</span>;
+ 
+  <span class="comment">// 初始化</span>
+  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> {</span>
+    <span class="variable">$this</span>-&gt;checkboxes = <span class="keyword">array</span>();
+ 
+    <span class="variable">$this</span>-&gt;sections[<span class="string">'general'</span>] = <span class="string">'General'</span>;
+    <span class="variable">$this</span>-&gt;sections[<span class="string">'reading'</span>] = <span class="string">'Reading'</span>;
+    <span class="variable">$this</span>-&gt;sections[<span class="string">'other'</span>] = <span class="string">'Other'</span>;
+ 
+    <span class="comment">// 將各個選項的預設值寫入資料庫</span>
+    <span class="variable">$DBOptions</span> = get_option(<span class="string">'pixiv_options'</span>);
+    <span class="variable">$defaults</span> = <span class="variable">$this</span>-&gt;defaults;
+ 
+    <span class="keyword">if</span> ( !is_array(<span class="variable">$DBOptions</span>) ) <span class="variable">$DBOptions</span> = <span class="keyword">array</span>();
+ 
+    <span class="keyword">foreach</span> ( <span class="variable">$DBOptions</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$value</span> ) {
+      <span class="keyword">if</span> ( <span class="keyword">isset</span>(<span class="variable">$DBOptions</span>[<span class="variable">$key</span>]) )
+        <span class="variable">$defaults</span>[<span class="variable">$key</span>] = <span class="variable">$DBOptions</span>[<span class="variable">$key</span>];
+    }
+    update_option(<span class="string">'pixiv_options'</span>, <span class="variable">$defaults</span>);
+ 
+    add_action( <span class="string">'admin_menu'</span>, <span class="keyword">array</span>( &<span class="variable">$this</span>, <span class="string">'add_pages'</span> ) );
+    add_action( <span class="string">'admin_init'</span>, <span class="keyword">array</span>( &<span class="variable">$this</span>, <span class="string">'register_settings'</span> ) );
+  }
+}
+<span class="preprocessor">?&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>初始化完成後，接著就可邁入下一個步驟「<strong>註冊設定</strong>」。</p>
+<h2>註冊設定</h2>
+<p>為了要讓佈景選項出現在選單上，新增一個名為<code>add_pages</code>的函數：</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add_pages</span><span class="params">()</span> {</span>
+  <span class="variable">$admin_page</span> = add_theme_page( <span class="string">'Theme Options'</span>, <span class="string">'Theme Options'</span>, <span class="string">'edit_theme_options'</span>, <span class="string">'test-settings'</span>, <span class="keyword">array</span>( &<span class="variable">$this</span>, <span class="string">'display_page'</span> ) );
+}
+</pre></td></tr></table></figure>
+
+<p>Settings API 的設計雖然提供了一個更簡單的註冊設定的方式，但那僅限於選項很少的時候，若是 Pixiv Custom 這種選項數高達 51 項的主題就不可能一項一項編寫、呼叫個別的函數了，所以我們建立名為<code>create_setting</code>的函數，以精簡、整齊代碼。</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create_setting</span><span class="params">( <span class="variable">$args</span> = array<span class="params">()</span> )</span> {</span>
+  <span class="variable">$defaults</span> = <span class="keyword">array</span>(
+    <span class="string">'id'</span>		=&gt; <span class="string">''</span>, <span class="comment">// 選項 id</span>
+    <span class="string">'title'</span>		=&gt; <span class="string">''</span>, <span class="comment">// 選項標題</span>
+    <span class="string">'desc'</span>		=&gt; <span class="string">''</span>, <span class="comment">// 選項敘述</span>
+    <span class="string">'type'</span>		=&gt; <span class="string">'text'</span>, <span class="comment">// 選項類型</span>
+    <span class="string">'section'</span>	=&gt; <span class="string">'general'</span>, <span class="comment">// 選項區段（__construct 函數中所設定的參數）</span>
+    <span class="string">'choices'</span>	=&gt; <span class="keyword">array</span>(), <span class="comment">// 選項分支（供 radio, select 用）</span>
+    <span class="string">'class'</span>		=&gt; <span class="string">''</span>, <span class="comment">// 選項 class</span>
+    <span class="string">'before'</span>	=&gt; <span class="string">''</span>, <span class="comment">// 選項前的文字</span>
+    <span class="string">'after'</span>		=&gt; <span class="string">''</span> <span class="comment">// 選項後的文字</span>
+  );
+ 
+  extract( wp_parse_args( <span class="variable">$args</span>, <span class="variable">$defaults</span> ) );
+ 
+  <span class="variable">$field_args</span> = <span class="keyword">array</span>(
+    <span class="string">'type'</span>		=&gt; <span class="variable">$type</span>,
+    <span class="string">'id'</span>		=&gt; <span class="variable">$id</span>,
+    <span class="string">'desc'</span>		=&gt; <span class="variable">$desc</span>,
+    <span class="string">'choices'</span>	=&gt; <span class="variable">$choices</span>,
+    <span class="string">'label_for'</span>	=&gt; <span class="variable">$id</span>,
+    <span class="string">'class'</span>		=&gt; <span class="variable">$class</span>,
+    <span class="string">'before'</span>	=&gt; <span class="variable">$before</span>,
+    <span class="string">'after'</span>		=&gt; <span class="variable">$after</span>
+  );
+ 
+  add_settings_field( <span class="variable">$id</span>, <span class="variable">$title</span>, <span class="keyword">array</span>( <span class="variable">$this</span>, <span class="string">'display_settings'</span> ), <span class="string">'test-settings'</span>, <span class="variable">$section</span>, <span class="variable">$field_args</span> );
+ 
+  <span class="comment">// 若選項類型為 checkbox，將其加入 checkboxes 陣列</span>
+  <span class="keyword">if</span> ( <span class="variable">$type</span> = <span class="string">'checkbox'</span> )
+    <span class="variable">$this</span>-&gt;checkboxes[] = <span class="variable">$id</span>;
+}
+</pre></td></tr></table></figure>
+
+<p>若陣列內容為空白，則會依照<code>defaults</code>來建立選項。可依個人使用的不同，加入或刪除變數。</p>
+<p>接著就得分別填入每個選項的參數了，建立一個名為<code>register_settings</code>的函數。</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register_settings</span><span class="params">()</span> {</span>
+  register_setting( <span class="string">'test_options'</span>, <span class="string">'test_options'</span>, <span class="keyword">array</span>( &<span class="variable">$this</span>, <span class="string">'validate_settings'</span> ) );
+ 
+  <span class="comment">// 新增選項區段</span>
+  <span class="keyword">foreach</span> ( <span class="variable">$this</span>-&gt;sections <span class="keyword">as</span> <span class="variable">$slug</span> =&gt; <span class="variable">$title</span> )
+    add_settings_section( <span class="variable">$slug</span>, <span class="string">''</span>, <span class="keyword">array</span>( &<span class="variable">$this</span>, <span class="string">'display_section'</span> ), <span class="string">'test-settings'</span> );
+ 
+  <span class="comment">// checkbox 設定</span>
+  <span class="variable">$this</span>-&gt;create_setting( <span class="keyword">array</span> (
+    <span class="string">'id'</span>		=&gt; <span class="string">'test_checkbox'</span>,
+    <span class="string">'title'</span>		=&gt; <span class="string">'Test Checkbox'</span>,
+    <span class="string">'desc'</span>		=&gt; <span class="string">'Test Checkbox'</span>,
+    <span class="string">'type'</span>		=&gt; <span class="string">'checkbox'</span>,
+    <span class="string">'section'</span>	=&gt; <span class="string">'general'</span>
+  ) );
+  <span class="comment">// text 設定</span>
+  <span class="variable">$this</span>-&gt;create_setting( <span class="keyword">array</span> (
+    <span class="string">'id'</span>		=&gt; <span class="string">'test_text'</span>,
+    <span class="string">'title'</span>		=&gt; <span class="string">'Test Text'</span>,
+    <span class="string">'desc'</span>		=&gt; <span class="string">'Test Text'</span>,
+    <span class="string">'type'</span>		=&gt; <span class="string">'text'</span>,
+    <span class="string">'section'</span>	=&gt; <span class="string">'general'</span>
+  ) );
+  <span class="comment">// select 設定</span>
+  <span class="variable">$this</span>-&gt;create_setting( <span class="keyword">array</span> (
+    <span class="string">'id'</span>		=&gt; <span class="string">'test_select'</span>,
+    <span class="string">'title'</span>		=&gt; <span class="string">'Test Select'</span>,
+    <span class="string">'desc'</span>		=&gt; <span class="string">'Test Select'</span>,
+    <span class="string">'type'</span>		=&gt; <span class="string">'select'</span>,
+    <span class="string">'section'</span>	=&gt; <span class="string">'general'</span>,
+    <span class="string">'choices'</span>	=&gt; <span class="keyword">array</span>(
+      <span class="string">'one'</span>	=&gt; <span class="string">'Option One'</span>,
+      <span class="string">'two'</span>	=&gt; <span class="string">'Option Two'</span>
+    )
+  ) );
+  <span class="comment">// radio 設定</span>
+  <span class="variable">$this</span>-&gt;create_setting( <span class="keyword">array</span> (
+    <span class="string">'id'</span>		=&gt; <span class="string">'test_radio'</span>,
+    <span class="string">'title'</span>		=&gt; <span class="string">'Test Radio'</span>,
+    <span class="string">'desc'</span>		=&gt; <span class="string">'Test Raio'</span>,
+    <span class="string">'type'</span>		=&gt; <span class="string">'radio'</span>,
+    <span class="string">'section'</span>	=&gt; <span class="string">'general'</span>,
+    <span class="string">'choices'</span>	=&gt; <span class="keyword">array</span>(
+      <span class="string">'one'</span>	=&gt; <span class="string">'Option One'</span>,
+      <span class="string">'two'</span>	=&gt; <span class="string">'Option Two'</span>
+    )
+  ) );
+  <span class="comment">// textarea 設定</span>
+  <span class="variable">$this</span>-&gt;create_setting( <span class="keyword">array</span> (
+    <span class="string">'id'</span>		=&gt; <span class="string">'test_textarea'</span>,
+    <span class="string">'title'</span>		=&gt; <span class="string">'Test Textarea'</span>,
+    <span class="string">'desc'</span>		=&gt; <span class="string">'Test Textarea'</span>,
+    <span class="string">'type'</span>		=&gt; <span class="string">'textarea'</span>,
+    <span class="string">'section'</span>	=&gt; <span class="string">'general'</span>
+  ) );
+}
+</pre></td></tr></table></figure>
+
+<p>到了這裡，只不過是設定了各個選項的數值罷了，選項頁面還是一片空白，喝點水休息一下，下一步就要正式設定選項頁面的內容了。</p>
+<h2>顯示頁面</h2>
+<p>首先，新增一個名為<code>display_page</code>的函數。</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">display_page</span><span class="params">()</span> {</span> <span class="preprocessor">?&gt;</span>
+  &lt;div class=<span class="string">"wrap"</span>&gt;
+    &lt;div class=<span class="string">"icon32"</span> id=<span class="string">"icon-themes"</span>&gt;&lt;/div&gt;
+    &lt;h2&gt;Theme Options&lt;/h2&gt;
+    &lt;form action=<span class="string">"options.php"</span> method=<span class="string">"post"</span> id=<span class="string">"test_admin"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;
+      <span class="preprocessor">&lt;?php</span>
+      <span class="keyword">if</span> ( <span class="keyword">isset</span>( <span class="variable">$_GET</span>[<span class="string">'settings-updated'</span>] ) )
+        <span class="keyword">echo</span> <span class="string">'&lt;div class="updated fade"&gt;&lt;p&gt;&lt;strong&gt;Settings saved.&lt;/strong&gt;&lt;/p&gt;'</span>;
+      <span class="preprocessor">?&gt;</span>
+      <span class="preprocessor">&lt;?php</span>
+      settings_fields(<span class="string">'test_options'</span>);
+      do_settings_sections( <span class="variable">$_GET</span>[<span class="string">'page'</span>] );
+      <span class="preprocessor">?&gt;</span>
+      &lt;input type=<span class="string">"submit"</span> name=<span class="string">"test_options[submit]"</span> class=<span class="string">"button-primary"</span> value=<span class="string">"&lt;?php esc_attr_e('Save Changes', 'test'); ?&gt;"</span> /&gt;
+      &lt;input type=<span class="string">"submit"</span> name=<span class="string">"test_options[reset]"</span> class=<span class="string">"button-secondary"</span> onclick=<span class="string">"if(confirm('Are you Sure?')) return true; else return false;"</span> value=<span class="string">"&lt;?php esc_attr_e('Reset to Deafults', 'test'); ?&gt;"</span> /&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+<span class="preprocessor">&lt;?php</span> }
+</pre></td></tr></table></figure>
+
+<p>接著新增一個名為<code>display_section</code>的函數，該函數內容可以為空，也可以設定一些文字、HTML 內容等，輸出的內容會顯示在每個區段的最上方。</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">display_section</span><span class="params">()</span> {</span>
+  <span class="comment">// whatever</span>
+}
+</pre></td></tr></table></figure>
+
+<h2>顯示選項</h2>
+<p>到目前為止，主題選項頁面還是一片白，加入<code>display_settings</code>函數後，主題選項頁面就擁有最基礎的樣貌了。</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">display_settings</span><span class="params">( <span class="variable">$args</span> = array<span class="params">()</span> )</span> {</span>
+  extract( <span class="variable">$args</span> );
+ 
+  <span class="comment">// 取得資料庫內的現有選項</span>
+  <span class="variable">$options</span> = get_option(<span class="string">'test_options'</span>);
+ 
+  <span class="comment">// 以下顯示 register_settings 內所設定的選項參數</span>
+ 
+  <span class="comment">// 如果設定了 class 參數，顯示 class 參數</span>
+  <span class="keyword">if</span> ( <span class="variable">$class</span> != <span class="string">''</span> )
+    <span class="keyword">echo</span> <span class="string">'&lt;div class="'</span> . <span class="variable">$class</span> . <span class="string">'"&gt;'</span>;
+ 
+  <span class="comment">// 如果設定了選項敘述，顯示選項敘述</span>
+  <span class="keyword">if</span> ( <span class="variable">$desc</span> != <span class="string">''</span> )
+    <span class="keyword">echo</span> <span class="variable">$desc</span> . <span class="string">'&lt;br /&gt;'</span>;
+ 
+  <span class="comment">// 如果設定了 before 參數，在選項前顯示 before 參數</span>
+  <span class="keyword">if</span> ( <span class="variable">$before</span> != <span class="string">''</span> )
+    <span class="keyword">echo</span> <span class="string">'&lt;label for="'</span> . <span class="variable">$id</span> . <span class="string">'"&gt;'</span> . <span class="variable">$before</span> . <span class="string">'&lt;/label&gt;'</span>;
+ 
+  <span class="comment">// 偵測選項類型，以下內容可依個人喜好自行設定</span>
+  <span class="keyword">switch</span> ( <span class="variable">$type</span> ) {
+    <span class="keyword">case</span> <span class="string">'checkbox'</span>:
+      <span class="keyword">echo</span> <span class="string">'&lt;input type="checkbox" id="'</span> . <span class="variable">$id</span> . <span class="string">'" name="test_options['</span> . <span class="variable">$id</span> . <span class="string">']" value="1"'</span>.checked( <span class="variable">$options</span>[<span class="variable">$id</span>], <span class="number">1</span>, <span class="keyword">false</span> ) . <span class="string">' /&gt;'</span>;
+ 
+      <span class="keyword">break</span>;
+ 
+    <span class="keyword">case</span> <span class="string">'select'</span>:
+      <span class="keyword">echo</span> <span class="string">'&lt;select name="test_options['</span> . <span class="variable">$id</span> . <span class="string">']"&gt;'</span>;
+ 
+      <span class="keyword">foreach</span> ( <span class="variable">$choices</span> <span class="keyword">as</span> <span class="variable">$value</span> =&gt; <span class="variable">$label</span> )
+        <span class="keyword">echo</span> <span class="string">'&lt;option value="'</span> . <span class="variable">$value</span> . <span class="string">'"'</span> . selected( <span class="variable">$options</span>[<span class="variable">$id</span>], <span class="variable">$value</span>, <span class="keyword">false</span> ) . <span class="string">'&gt;'</span> . <span class="variable">$label</span> . <span class="string">'&lt;/option&gt;'</span>;
+ 
+      <span class="keyword">echo</span> <span class="string">'&lt;/select&gt;'</span>;
+ 
+      <span class="keyword">break</span>;
+ 
+    <span class="keyword">case</span> <span class="string">'radio'</span>:
+      <span class="variable">$i</span> = <span class="number">0</span>;
+      <span class="keyword">foreach</span> ( <span class="variable">$choices</span> <span class="keyword">as</span> <span class="variable">$value</span> =&gt; <span class="variable">$label</span> ) {
+        <span class="keyword">echo</span> <span class="string">'&lt;input type="radio" name="test_options['</span> . <span class="variable">$id</span> . <span class="string">']" id="'</span> . <span class="variable">$id</span> . <span class="variable">$i</span> . <span class="string">'" value="'</span> . <span class="variable">$value</span> . <span class="string">'"'</span>. checked( <span class="variable">$options</span>[<span class="variable">$id</span>], <span class="variable">$value</span>, <span class="keyword">false</span> ) . <span class="string">' /&gt;&lt;label for="'</span> . <span class="variable">$id</span> . <span class="string">'"&gt;'</span> . <span class="variable">$label</span> . <span class="string">'&lt;/label&gt;'</span>;
+        <span class="keyword">if</span>( <span class="variable">$i</span> &lt; count(<span class="variable">$options</span>) - <span class="number">1</span> )
+          <span class="keyword">echo</span> <span class="string">'&lt;br /&gt;'</span>;
+        <span class="variable">$i</span>++;
+      }
+ 
+      <span class="keyword">break</span>;
+ 
+    <span class="keyword">case</span> <span class="string">'textarea'</span>:
+      <span class="keyword">echo</span> <span class="string">'&lt;textarea id="'</span> . <span class="variable">$id</span> . <span class="string">'" name="test_options['</span> . <span class="variable">$id</span> . <span class="string">']" cols="95%" rows="10"&gt;'</span> . <span class="variable">$options</span>[<span class="variable">$id</span>] . <span class="string">'&lt;/textarea&gt;'</span>;
+ 
+      <span class="keyword">break</span>;
+ 
+    <span class="keyword">case</span> <span class="string">'text'</span>:
+    <span class="keyword">default</span>:
+      <span class="keyword">echo</span> <span class="string">'&lt;input type="text" id="'</span> . <span class="variable">$id</span> . <span class="string">'" name="test_options['</span> . <span class="variable">$id</span> . <span class="string">']" value="'</span> . <span class="variable">$options</span>[<span class="variable">$id</span>] . <span class="string">'" maxlength="'</span> . <span class="variable">$maxlength</span> . <span class="string">'" /&gt;'</span>;
+ 
+      <span class="keyword">break</span>;
+  }
+ 
+  <span class="comment">// 如果設定了 after 參數，在選項後顯示 after 參數</span>
+  <span class="keyword">if</span> ( <span class="variable">$after</span> != <span class="string">''</span> )
+    <span class="keyword">echo</span> <span class="string">'&lt;label for="'</span> . <span class="variable">$id</span> . <span class="string">'"&gt;'</span> . <span class="variable">$after</span> . <span class="string">'&lt;/label&gt;'</span>;
+ 
+  <span class="comment">// 如果設定了 class 參數，以 div 包含選項</span>
+  <span class="keyword">if</span> ( <span class="variable">$class</span> != <span class="string">''</span> )
+    <span class="keyword">echo</span> <span class="string">'&lt;/div&gt;'</span>;
+}
+</pre></td></tr></table></figure>
+
+<p>設定完成後，主題選項頁面就不再孤寥無幾了，但儲存似乎有些問題？沒錯，因為 Settings API 在<code>checkbox</code>的處理上有些問題，<code>checkbox</code>若停用就不會將數值寫入資料庫了，所以我們必須在選項儲存前先進行驗證，把停用的<code>checkbox</code>值補上<code>0</code>，此外，目前重設按鈕也沒有反應，也必須透過同樣的方式，事先偵測輸入值，若使用者按下重設按鈕，則拋棄現有設定，將開頭所設定的<code>defaults</code>變數寫入資料庫。</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">validate_settings</span><span class="params">( <span class="variable">$input</span> )</span> {</span>
+ 
+  <span class="variable">$options</span> = get_option(<span class="string">'test_options'</span>);
+  <span class="variable">$valid_input</span> = <span class="variable">$options</span>;
+ 
+  <span class="variable">$submit</span> = ( ! <span class="keyword">empty</span>( <span class="variable">$input</span>[<span class="string">'submit'</span>] ) ? <span class="keyword">true</span> : <span class="keyword">false</span> );
+  <span class="variable">$reset</span> = ( ! <span class="keyword">empty</span>( <span class="variable">$input</span>[<span class="string">'reset'</span>] ) ? <span class="keyword">true</span> : <span class="keyword">false</span> );
+ 
+  <span class="keyword">if</span> ( <span class="variable">$submit</span> ) {
+    <span class="comment">// 若 checkbox 停用，補 "0" 儲存至資料庫</span>
+    <span class="keyword">foreach</span> ( <span class="variable">$this</span>-&gt;checkboxes <span class="keyword">as</span> <span class="variable">$id</span> ) {
+      <span class="keyword">if</span> ( <span class="keyword">isset</span>( <span class="variable">$options</span>[<span class="variable">$id</span>] ) && ! <span class="keyword">isset</span>( <span class="variable">$input</span>[<span class="variable">$id</span>] ) )
+        <span class="variable">$input</span>[<span class="variable">$id</span>] = <span class="string">'0'</span>;
+    }
+ 
+    <span class="variable">$valid_input</span> = <span class="variable">$input</span>;
+ 
+  } <span class="keyword">elseif</span> ( <span class="variable">$reset</span> ) {
+    <span class="comment">// 使用事先設定的預設值寫入資料庫</span>
+    <span class="variable">$valid_input</span> = <span class="variable">$this</span>-&gt;defaults;
+  }
+ 
+  <span class="keyword">return</span> <span class="variable">$valid_input</span>;
+}
+</pre></td></tr></table></figure>
+
+<h2>自定 JavaScript 與 CSS 樣式</h2>
+<p>如果只是基本的主題選項的話，第四步便可以宣告結束了，但如果想要進一步的設定 Javascript 與 CSS 樣式呢？你可以加入以下的函數，直接引入外部檔案，或是直接寫在 PHP 檔案也可以。<br><em>※ 附註：若直接使用 $ 當作 jQuery 標籤的話，可能會有衝突問題，請使用其他字串代替，或改為<code>jQuery(document).ready(function($){...});</code></em></p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">styles</span><span class="params">()</span> {</span>
+  wp_enqueue_style(<span class="string">'testAdminCSS'</span>, get_template_directory_uri().<span class="string">'/admin/admin.css'</span>);
+}
+ 
+<span class="comment">// 引入 Javascript</span>
+<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">scripts</span><span class="params">()</span> {</span>
+  wp_enqueue_script(<span class="string">'testAdminJS'</span>, get_template_directory_uri().<span class="string">'/admin/admin.js'</span>);
+}
+</pre></td></tr></table></figure>
+
+<p>然後在<code>add_pages</code>函數中，加入以下程式碼，就可成功引入 CSS 與 Javascript 了。</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>add_action( <span class="string">'admin_print_scripts-'</span> . <span class="variable">$admin_page</span>, <span class="keyword">array</span>( &<span class="variable">$this</span>, <span class="string">'scripts'</span> ) );
+add_action( <span class="string">'admin_print_styles-'</span> . <span class="variable">$admin_page</span>, <span class="keyword">array</span>( &<span class="variable">$this</span>, <span class="string">'styles'</span> ) );
+</pre></td></tr></table></figure>
+
+<p>那麼該如何做出 Pixiv Custom 式樣的分頁呢？因為我 PHP 功力差，所以主要透過 Javascript 來包裝，你或許會有更好的方法也說不定。<br>首先，修改<code>display_page</code>函數，在你喜歡的地方加入以下程式碼：</p>
+<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"test_switch"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">id</span>=<span class="value">"tab0"</span>&gt;</span>分頁 1<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">id</span>=<span class="value">"tab1"</span>&gt;</span>分頁 2<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="comment">&lt;!-- 依此類推... --&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>這樣選項頁面就會出現各個區段的連結文字了，接下來只要透過 Javascript 包裝表格，搭配 CSS 控制表格顯示即可。<br><em>※ ID 必須符合<code>__construct</code>函數中的參數，前面再加上上述程式碼的前綴字元。</em></p>
+<figure class="highlight lang-js"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+</pre></td><td class="code"><pre>jQuery(document).ready(<span class="keyword">function</span>($){
+  <span class="keyword">var</span> cookie = $.cookie(<span class="string">'pixiv_tabs'</span>) || <span class="number">0</span>;
+  showTab(cookie);
+ 
+  $(<span class="string">"#pixiv_switch a"</span>).click(<span class="keyword">function</span>(){
+    <span class="keyword">var</span> tab = $(<span class="keyword">this</span>).prop(<span class="string">'id'</span>).replace(<span class="regexp">/tab/</span>,<span class="string">''</span>);
+    showTab(tab);
+  });
+});
+<span class="function"><span class="keyword">function</span> <span class="title">showTab</span><span class="params">(id)</span>{</span>
+  jQuery(<span class="string">'#test_switch a'</span>).removeClass(<span class="string">'current'</span>);
+  jQuery(<span class="string">'#test_switch a'</span>).eq(id).addClass(<span class="string">'current'</span>);
+  jQuery(<span class="string">'form#test table'</span>).hide();
+  jQuery(<span class="string">'form#test table'</span>).eq(id).fadeIn();
+  jQuery.cookie(<span class="string">'test_tabs'</span>,id,{expires: <span class="number">0.5</span>});
+}
+ 
+<span class="comment">/**
+ * Cookie plugin
+ *
+ * Copyright (c) 2006 Klaus Hartl (stilbuero.de)
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ */</span>
+jQuery.cookie = <span class="keyword">function</span>(name, value, options) {
+    <span class="keyword">if</span> (<span class="keyword">typeof</span> value != <span class="string">'undefined'</span>) {
+        options = options || {};
+        <span class="keyword">if</span> (value === <span class="literal">null</span>) {
+            value = <span class="string">''</span>;
+            options.expires = -<span class="number">1</span>;
+        }
+        <span class="keyword">var</span> expires = <span class="string">''</span>;
+        <span class="keyword">if</span> (options.expires && (<span class="keyword">typeof</span> options.expires == <span class="string">'number'</span> || options.expires.toUTCString)) {
+            <span class="keyword">var</span> date;
+            <span class="keyword">if</span> (<span class="keyword">typeof</span> options.expires == <span class="string">'number'</span>) {
+                date = <span class="keyword">new</span> Date();
+                date.setTime(date.getTime() + (options.expires * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>));
+            } <span class="keyword">else</span> {
+                date = options.expires;
+            }
+            expires = <span class="string">'; expires='</span> + date.toUTCString();
+        }
+        <span class="keyword">var</span> path = options.path ? <span class="string">'; path='</span> + (options.path) : <span class="string">''</span>;
+        <span class="keyword">var</span> domain = options.domain ? <span class="string">'; domain='</span> + (options.domain) : <span class="string">''</span>;
+        <span class="keyword">var</span> secure = options.secure ? <span class="string">'; secure'</span> : <span class="string">''</span>;
+        document.cookie = [name, <span class="string">'='</span>, encodeURIComponent(value), expires, path, domain, secure].join(<span class="string">''</span>);
+    } <span class="keyword">else</span> {
+        <span class="keyword">var</span> cookieValue = <span class="literal">null</span>;
+        <span class="keyword">if</span> (document.cookie && document.cookie != <span class="string">''</span>) {
+            <span class="keyword">var</span> cookies = document.cookie.split(<span class="string">';'</span>);
+            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; cookies.length; i++) {
+                <span class="keyword">var</span> cookie = jQuery.trim(cookies[i]);
+                <span class="keyword">if</span> (cookie.substring(<span class="number">0</span>, name.length + <span class="number">1</span>) == (name + <span class="string">'='</span>)) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + <span class="number">1</span>));
+                    <span class="keyword">break</span>;
+                }
+            }
+        }
+        <span class="keyword">return</span> cookieValue;
+    }
+};
+</pre></td></tr></table></figure>
+
+<h2>套用</h2>
+<p>這個步驟相對而言就比較簡單了，首先在想要套用選項的位置加入以下程式碼，並設定</p>
+<figure class="highlight lang-php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="code"><pre><span class="variable">$option</span> = get_options(<span class="string">'test_options'</span>);
+ 
+<span class="comment">// checkbox 的情況</span>
+<span class="keyword">if</span> ( <span class="variable">$options</span>[<span class="string">'test_checkbox'</span>] ) {
+  ...
+} <span class="keyword">else</span> {
+  ...
+}
+<span class="comment">// 也可使用以下寫法</span>
+<span class="variable">$options</span>[<span class="string">'test_checkbox'</span>] ? ... : ...;
+ 
+<span class="comment">// text, textarea 的情況</span>
+<span class="keyword">if</span> ( <span class="variable">$options</span>[<span class="string">'test_text'</span>] ) {
+  <span class="keyword">echo</span> <span class="variable">$options</span>[<span class="string">'test_text'</span>];
+  ...
+}
+ 
+<span class="comment">// select, radio 的情況</span>
+<span class="keyword">if</span> ( <span class="variable">$options</span>[<span class="string">'test_select'</span>] == <span class="string">'one'</span> ) {
+  ...
+} <span class="keyword">elseif</span> ( <span class="variable">$options</span>[<span class="string">'test_select'</span>] == <span class="string">'two'</span> ) {
+  ...
+} <span class="keyword">else</span> {
+  ...
+}
+</pre></td></tr></table></figure>
+
+<h2>參考出處</h2>
+<p><a href="http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/" target="_blank">Extended WordPress Settings API Tutorial</a><br><a href="http://www.chipbennett.net/2011/02/17/incorporating-the-settings-api-in-wordpress-themes" target="_blank">Incorporating the Settings API in WordPress Themes</a><br><a href="http://codex.wordpress.org/Main_Page" target="_blank">WordPress Codex</a><br><a href="https://github.com/carhartl/jquery-cookie" target="_blank">jQuery cookie plugin</a></p>
+<h2>後記</h2>
+<p>這大概是我寫過最長的一篇文章，內容可能會有點枯燥乏味、充滿錯誤，<del>而且一張萌圖都沒有</del>，各位客倌就把這當成一篇筆記文章吧！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zespia.tw/blog/2011/05/22/how-to-use-settings-api/" data-id="dbbyshh178mmk5mr" class="article-share-link">Share</a>
+      
+        <a href="http://zespia.tw/blog/2011/05/22/how-to-use-settings-api/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/">WordPress</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+    <a href="/blog/2011/05/27/corner-theme/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">Corner 1.0 正式版推出！</div>
+    </a>
+  
+  
+    <a href="/blog/2011/04/12/pixiv-custom-2-0-update/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Pixiv Custom 2.0 更新！代碼更精簡，功能更豐富！</div>
+    </a>
+  
+</nav>
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">&copy; 2013 SkyArrow</div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  var disqus_shortname = 'zespiatw';
+  
+  var disqus_url = 'http://zespia.tw/blog/2011/05/22/how-to-use-settings-api/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>

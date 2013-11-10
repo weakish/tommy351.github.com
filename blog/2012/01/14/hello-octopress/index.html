@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hello Octopress! | Zespia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <header id="header">
+  <div id="banner"></div>
+  <h1 id="logo-wrap">
+    <a href="/" id="logo">Zespia</a>
+  </h1>
+  <div id="header-shadow"></div>
+  <div class="outer">
+    <nav id="main-nav" class="inner">
+      <ul class="main-nav-list">
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="/">Home</a>
+          </li>
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="/archives">Archives</a>
+          </li>
+        
+          <li class="main-nav-item">
+            <a class="main-nav-link" href="https://github.com/tommy351">GitHub</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+  <div class="outer">
+    <div class="inner"><article class="article article-type-post">
+  <a href="/blog/2012/01/14/hello-octopress/" class="article-date">
+  <time datetime="2012-01-14T07:52:00.000Z">2012/1/14</time>
+</a>
+  <div class="article-inner">
+    <header class="article-header">
+      
+  
+    <h1 class="article-title">Hello Octopress!</h1>
+  
+
+    </header>
+    <div class="article-entry">
+      
+        <p><img src="http://i.minus.com/i4CFI4qZAFEct.png" alt=""></p>
+<p><a href="http://www.acsite.net/tw/" target="_blank">ACSite</a> 的空間即將在 2012/1/31 到期，而我又懶得續約，這時看到愈來愈多部落客都從 <a href="http://wordpress.org/" target="_blank">WordPress</a> 轉移到 <a href="http://octopress.org/" target="_blank">Octopress</a>，便開始試用 <a href="http://octopress.org/" target="_blank">Octopress</a>。</p>
+<p><a href="http://octopress.org/" target="_blank">Octopress</a> 與 <a href="http://wordpress.org/" target="_blank">WordPress</a> 同樣身為部落格系統，卻有相當大的不同：</p>
+<ul>
+<li><strong><a href="http://wordpress.org/" target="_blank">WordPress</a>：</strong><ul>
+<li>PHP</li>
+<li>動態網頁</li>
+<li>外掛多樣</li>
+<li>速度慢</li>
+<li>使用簡單</li>
+</ul>
+</li>
+<li><strong><a href="http://octopress.org/" target="_blank">Octopress</a>：</strong><ul>
+<li>Ruby</li>
+<li>靜態網頁</li>
+<li>剛起步，外掛還很少</li>
+<li>速度快</li>
+<li>geek 才會用</li>
+</ul>
+</li>
+</ul>
+<p>以下將簡單介紹 <a href="http://octopress.org/" target="_blank">Octopress</a> 的安裝與使用。</p>
+<a id="more"></a>
+
+<h2>安裝</h2>
+<h3>Ruby</h3>
+<p><a href="http://octopress.org/" target="_blank">Octopress</a> 的安裝非常簡單，首先你需要準備 <a href="http://www.ruby-lang.org/zh_TW/" target="_blank">Ruby</a> 的環境，以下以 Mac 為示範：</p>
+<p><strong>請務必照著步驟做。</strong></p>
+<p>1. 安裝 <a href="http://itunes.apple.com/us/app/xcode/id448457090?mt=12" target="_blank">Xcode</a>（建議使用<strong>4.1</strong>版），或直接安裝 <a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">OSX GCC Installer</a>。</p>
+<p>2. 安裝 <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a></p>
+<pre><code><span class="comment">$</span> <span class="comment">ruby</span> <span class="literal">-</span><span class="comment">e</span> <span class="comment">"$(curl</span> <span class="literal">-</span><span class="comment">fsSL</span> <span class="comment">https://raw</span>.<span class="comment">github</span>.<span class="comment">com/gist/323731)"</span>
+<span class="comment">$</span> <span class="comment">brew</span> <span class="comment">update</code></pre>
+<p>3. 安裝 <a href="http://git-scm.com/" target="_blank">Git</a></p>
+<pre><code><span class="variable">$ </span>brew install git</code></pre>
+<p>別忘了 Mac 上有 <a href="http://www.sourcetreeapp.com/" target="_blank">SourceTree</a> 和 <a href="http://gitx.laullon.com/" target="_blank">GitX</a> 這兩套不錯的 Git GUI 可以使用！</p>
+<p>4. 安裝 <a href="http://beginrescueend.com/" target="_blank">RVM</a></p>
+<pre><code><span class="char">$ </span>bash &lt; &lt;(curl -s <span class="method">https:</span>//rvm.beginrescueend.com/install/rvm)
+<span class="char">$ </span>echo <span class="comment">"[[ -s $HOME/.rvm/scripts/rvm ]] &amp;&amp; source $HOME/.rvm/scripts/rvm"</span> &gt;&gt; ~/.profile <span class="char">$ </span>. ~/.profile
+<span class="char">$ </span>source ~/.profile</code></pre>
+<p>5. 安裝 <a href="http://www.ruby-lang.org/zh_TW/" target="_blank">Ruby</a>（<a href="http://octopress.org/" target="_blank">Octopress</a> 要求使用<strong>1.9.2</strong>版）</p>
+<pre><code><span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">install</span> <span class="comment">1</span>.<span class="comment">9</span>.<span class="comment">2</span>
+<span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">1</span>.<span class="comment">9</span>.<span class="comment">2</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">default</code></pre>
+<p>若是安裝失敗的話，請試著使用以下方式安裝：</p>
+<pre><code><span class="char">$ </span>rvm remove <span class="number">1.9</span><span class="number">.2</span>
+<span class="char">$ </span>export <span class="class">CC</span>=/usr/bin/gcc-<span class="number">4.2</span>
+<span class="char">$ </span>brew install readline
+<span class="char">$ </span>brew link readline
+<span class="char">$ </span>rvm install <span class="number">1.9</span><span class="number">.2</span> --with-readline-dir=<span class="char">$r</span>vm_path/usr</code></pre>
+<p>6. 安裝 <a href="http://pow.cx/" target="_blank">Pow</a></p>
+<pre><code>$ curl get<span class="variable">.pow</span><span class="variable">.cx</span> | sh</code></pre>
+<p><em>（以上安裝步驟參考自<a href="http://killtw.k2ds.net/blog/2011/10/29/how-to-install-rails/" target="_blank">我這樣安裝 Rails - 佑樣の技術筆記</a>）</em></p>
+<h3>Octopress</h3>
+<p>到目前為止，只不過安裝好 <a href="http://www.ruby-lang.org/zh_TW/" target="_blank">Ruby</a> 罷了，接著才是重頭戲──<a href="http://octopress.org/" target="_blank">Octopress</a> 登場！</p>
+<p>1. 安裝 <a href="https://github.com/sstephenson/rbenv" target="_blank">rbenv</a></p>
+<pre><code><span class="variable">$ </span>brew install rbenv
+<span class="variable">$ </span>brew install ruby-build</code></pre>
+<p>2. 下載 <a href="http://octopress.org/" target="_blank">Octopress</a></p>
+<pre><code><span class="char">$ </span>git clone <span class="method">git:</span>//github.com/imathis/octopress.git octopress
+<span class="char">$ </span>cd octopress</code></pre>
+<p>3. 安裝相關套件</p>
+<pre><code><span class="variable">$ </span>gem install bundler
+<span class="variable">$ </span>bundle install</code></pre>
+<p>4. 安裝預設佈景主題</p>
+<pre><code><span class="variable">$ </span>rake install</code></pre>
+<p>如此一來就安裝好 <a href="http://octopress.org/" target="_blank">Octopress</a> 了，你可以輸入<code>rake preview</code>從<code>localhost:4000</code>預覽，或是透過 <a href="http://pow.cx/" target="_blank">Pow</a> 預覽：</p>
+<pre><code><span class="char">$ </span>cd ~/.pow
+<span class="char">$ </span>ln -s /path-to-octopress</code></pre>
+<h2>發佈</h2>
+<p>1. 在 <a href="https://github.com/" target="_blank">GitHub</a> 建立名為<code>http://yourname.github.com</code>的 repository，<code>yourname</code>必須與你的使用者名稱相同，否則會建立專案頁面。</p>
+<p>2. 設定 <a href="https://github.com/" target="_blank">GitHub</a> 資料，並依照指示輸入 GitHub 頁面的 repository 網址。</p>
+<pre><code><span class="variable">$ </span>rake setup_github_pages</code></pre>
+<p>3. 建立網誌資料</p>
+<pre><code><span class="variable">$ </span>rake generate</code></pre>
+<p>4. 發佈至 <a href="https://github.com/" target="_blank">GitHub</a></p>
+<pre><code><span class="variable">$ </span>rake deploy</code></pre>
+<p>5. 建立 commit</p>
+<pre><code><span class="variable">$ </span>git add .
+<span class="variable">$ </span>git commit -m <span class="string">'your message'</span>
+<span class="variable">$ </span>git push origin source</code></pre>
+<p>過幾分鐘後 <a href="https://github.com/" target="_blank">GitHub</a> 就會寄信通知你專業建立完成，連上<code>yourname.github.com</code>就能見到你的 <a href="http://octopress.org/" target="_blank">Octopress</a> 囉！</p>
+<p>若要進一步設定，請編輯 <a href="http://octopress.org/" target="_blank">Octopress</a> 根目錄中的<code>_config.yml</code>。</p>
+<h3>自定網域</h3>
+<p>在<code>source/CNAME</code>輸入網域名稱</p>
+<pre><code>$ <span class="keyword">echo</span> <span class="string">'your-domain.com'</span> &gt;&gt; source/CNAME</code></pre>
+<p>若網域名稱如<code>www.example.com</code>，只需要新增 CNAME 記錄<code>yourname.github.com</code>即可；若如<code>example.com</code>，則必須加入 A 記錄<code>207.97.227.245</code>，請勿使用 CNAME 記錄。</p>
+<p><em>（以上安裝步驟參考自 <a href="http://octopress.org/docs/" target="_blank">Octopress Documentation</a>）</em></p>
+<h2>寫作</h2>
+<p>雖然安裝看起來很麻煩，不過寫作文章相當簡單！</p>
+<h3>文章</h3>
+<pre><code><span class="variable">$ </span>rake new_post[<span class="string">'title'</span>]</code></pre>
+<p>輸入以上代碼後，就可在<code>source/_posts</code>見到<code>yyyy-mm-dd-title.markdown</code>格式的文件，以及以下內容：</p>
+<pre><code><span class="comment">---</span>
+<span class="title">layout</span>: post
+<span class="title">title</span>: <span class="string">"Post Title"</span>
+<span class="title">date</span>: <span class="number">2012</span>-<span class="number">01</span>-<span class="number">14</span> <span class="number">15</span>:<span class="number">52</span>
+<span class="title">comments</span>: true
+<span class="title">categories</span>:
+<span class="comment">---</span></code></pre>
+<p>你可透過以下幾種方式來編輯分類：</p>
+<pre><code><span class="header"># 單一分類</span>
+categories: Sass
+<span class="header"># 多重分類 (1)</span>
+categories: [CSS3, Sass, Media Queries]
+<span class="header"># 多重分類 (2)</span>
+categories:
+<span class="bullet">- </span>CSS3
+<span class="bullet">- </span>Sass
+<span class="bullet">- </span>Media Queries</code></pre>
+<p><a href="http://octopress.org/" target="_blank">Octopress</a> 完整支援 <a href="http://markdown.tw/" target="_blank">Markdown</a> 語法，另外可利用<code>&lt;!-- more --&gt;</code>達成「詳閱全文」的效果。</p>
+<h3>分頁</h3>
+<pre><code><span class="comment"># 一般分頁    </span>
+<span class="variable">$ </span>rake new_page[your-page]
+<span class="comment"># 子分頁</span>
+<span class="variable">$ </span>rake new_page[your-page/sub-page.html]</code></pre>
+<p>輸入以上代碼後，就可在<code>source/your-page</code>中見到<code>index.markdown</code>，以及以下內容：</p>
+<pre><code>---
+<span class="method">layout:</span> page
+<span class="method">title:</span> <span class="comment">"Page Title"</span>
+<span class="method">date:</span> <span class="number">2012</span>-<span class="number">01</span>-<span class="number">14</span> <span class="number">15</span>:<span class="number">52</span>
+<span class="method">comments:</span> <span class="keyword">true</span>
+<span class="method">sharing:</span> <span class="keyword">true</span>
+<span class="method">footer:</span> <span class="keyword">true</span>    
+---</code></pre>
+<p>操作方法與文章大同小異，同樣完整支援 <a href="http://markdown.tw/" target="_blank">Markdown</a> 語法。</p>
+<h3>建立</h3>
+<p>輸入<code>rake generate</code>即可建立文章或分頁，輸入<code>rake deploy</code>就會將文章 pull 到<a href="https://github.com/" target="_blank">GitHub</a>上。</p>
+<h2>結論</h2>
+<p>經過這幾天的試用結果，老實說 <a href="http://octopress.org/" target="_blank">Octopress</a> 實在有夠難用，沒有如 <a href="http://wordpress.org/" target="_blank">WordPress</a> 的強大管理介面，所有操作<em>（包括新增文章、分頁）</em>都必須透過終端；然而撰寫文章比 <a href="http://wordpress.org/" target="_blank">WordPress</a> 快多了，不需忍耐 <a href="http://wordpress.org/" target="_blank">WordPress</a> 慢吞吞的編輯器，在 local 用 <a href="http://markdown.tw/" target="_blank">Markdown</a> 寫完就能直接 deploy 到 <a href="https://github.com/" target="_blank">GitHub</a> 上。</p>
+<p>如果你是個 geek，<a href="http://octopress.org/" target="_blank">Octopress</a> 或許是不錯的選擇；如果不是的話，請繼續使用 <a href="http://wordpress.org/" target="_blank">WordPress</a> 吧！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zespia.tw/blog/2012/01/14/hello-octopress/" data-id="jwuk4r0lpujku78v" class="article-share-link">Share</a>
+      
+        <a href="http://zespia.tw/blog/2012/01/14/hello-octopress/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li></ul>
+
+    </footer>
+  </div>
+  
+    <nav id="article-nav">
+  
+    <a href="/blog/2012/01/21/jquery-tabs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">如何利用 jQuery 製作頁籤？</div>
+    </a>
+  
+  
+    <a href="/blog/2011/09/17/google-scripts-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Google+ Motionless &amp; Filter</div>
+    </a>
+  
+</nav>
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">&copy; 2013 SkyArrow</div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  var disqus_shortname = 'zespiatw';
+  
+  var disqus_url = 'http://zespia.tw/blog/2012/01/14/hello-octopress/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>
