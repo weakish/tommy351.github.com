@@ -75,7 +75,7 @@
 }
 </pre></td></tr></table></figure>
 
-<p>非常簡單，就是檔案讀取完後再將檔案寫入到目的地。這種方法必須將所有檔案讀取完成後才能寫入，將對地沒有效率多了，使用 <a href="http://nodejs.org/api/stream.html" target="_blank">Stream</a> 則是邊讀取邊寫入，當讀取完成後，寫入也差不多完成了，在處理大檔案時，差別更加明顯。</p>
+<p>非常簡單，就是檔案讀取完後再將檔案寫入到目的地。這種方法必須將所有檔案讀取完成後才能寫入，相對地沒有效率多了，使用 <a href="http://nodejs.org/api/stream.html" target="_blank">Stream</a> 則是邊讀取邊寫入，當讀取完成後，寫入也差不多完成了，在處理大檔案時，差別更加明顯。</p>
 <p>除了檔案讀寫以外，<a href="http://nodejs.org/api/stream.html" target="_blank">Stream</a> 也常用於靜態檔案伺服器，例如 <a href="http://www.senchalabs.org/connect/" target="_blank">Connect</a> 就是用這種方式來處理靜態檔案的。</p>
 <p>用 <a href="http://nodejs.org/api/stream.html" target="_blank">Stream</a> 的方式來複製檔案，相較於原本的方式，也只不過是多了幾行程式碼而已，如下：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
